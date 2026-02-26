@@ -16,7 +16,8 @@ gm-skill/
 │   ├── battletech-commander.md  # Mech mercenary company
 │   ├── vtm.md               # Vampire: The Masquerade
 │   ├── warhammer-fantasy.md # Old World (corruption, Chaos, factions)
-│   └── warhammer-40k.md     # Grimdark far future (Imperium, Chaos, Xenos)
+│   ├── warhammer-40k.md     # Grimdark far future (Imperium, Chaos, Xenos)
+│   └── china-1900-1952.md   # Warlords, Revolution, Survival
 ├── commands/
 │   ├── rp.md                # Main /rp command
 │   └── rp/                  # Subcommands
@@ -124,6 +125,13 @@ Complete setting packs — pick one at session start.
 - Psychic powers with Perils, weapon stats
 - For: military campaigns, Inquisitorial investigations, heresy
 
+**china-1900-1952.md** — Warlords, Revolution, Survival:
+- 52 years: Boxer Rebellion → Warlord Era → Japanese Invasion → Civil War
+- All factions grey (Qing, Warlords, KMT, CCP, Japan)
+- Loyalty, Ideology, Survival, Reputation mechanics
+- Hyperinflation economics, HOI4 approach to atrocities
+- For: soldiers, spies, refugees, revolutionaries
+
 ## Saves
 
 Saves stored in `saves/[name].md` inside repo.
@@ -160,3 +168,24 @@ Typical context usage:
 - Full ruleset (1000 lines): ~6-8k tokens
 - Long campaign save (30h): ~15-20k tokens
 - Total: ~15-17% of 200k context
+
+## Commit Conventions
+
+```
+[core]    — Core GM system (gm-skill.md, commands/)
+[ruleset] — Update existing ruleset
+[new]     — Add new ruleset
+[fix]     — Bug fixes
+[docs]    — Documentation only
+[save]    — Session saves
+```
+
+Examples:
+```
+[core] Add new mechanic to gm-skill.md
+[ruleset] Expand warhammer-fantasy (combat, NPCs, fate system)
+[new] China 1900-1952: Warlords, Revolution, Survival
+[fix] Correct faction clock math in sengoku.md
+[docs] Update README with new commands
+[save] Campaign: The Long March session 5
+```
