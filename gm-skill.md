@@ -49,18 +49,32 @@ HIDDEN ROLLS (GM in thinking):
 - Roll BEFORE player response, play by result
 
 RESPONSE OPTIONS:
-- Mark stat on EVERY option: [STR], [DEX], [INT], [WIS], [CHA], [CON]
-- Trivial actions no roll: [-] (sit, drink, leave, approach)
-- Multi-stage options: [CHA/WIS] = first one roll, then another
+- Trivial actions no roll: [-]
+- NEVER hide roll behind [-] because "chance is low" — player decides
 
-EXAMPLE OPTIONS:
-1. [-] Approach the person, ask who they are
-2. [WIS] Examine them and the street — signs of disease, ambush, corruption
-3. [WIS/INT] Look around, recalling what you know about plagues in these parts
-4. [-] Dismount, tie the horse — let them approach
-5. [CHA] Call out authoritatively: "You from the baron? Come here."
-6. [CHA/WIS] Call out, reading their reaction — lying? afraid?
-7. [DEX] Dismount quietly, observe from cover
+OPTION FORMAT:
+[MODIFIERS] Action text
+
+All modifiers in one bracket, comma-separated:
+- STAT (required if roll needed): STR, DEX, CON, INT, WIS, CHA
+- STAT/STAT: multi-stage roll (first then second)
+- ADV / DIS: advantage / disadvantage
+- +effect: positive modifier (skill, ability, terrain, etc.)
+- -effect: negative modifier (wound, condition, etc.)
+- Heroism: uses heroism point
+- Bargain: X: devil's bargain with complication X
+
+DON'T state base stats as modifiers (e.g. "-CHA 1") — player sees their sheet.
+
+EXAMPLES:
+1. [-] Approach, ask who they are
+2. [WIS] Examine the street — ambush signs?
+3. [WIS/INT] Look around, recall what you know
+4. [CHA, DIS, -wounded] Intimidate despite bleeding
+5. [DEX, ADV, +surprise] Strike from hiding
+6. [STR, +charge, +downhill] Rush them with momentum
+7. [CHA, Heroism] Rally the troops — all or nothing
+8. [DEX, Bargain: weapon damaged] Parry the blow
 
 NPCs AREN'T FRIENDS:
 - Everyone has their own agenda, don't help for free
@@ -160,6 +174,69 @@ Scale: 1-5 (6+ supernatural)
 
 ---
 
+## STAT THRESHOLDS
+
+High stats unlock powerful abilities. Level 5 = human peak. Level 8 = legendary/supernatural.
+
+### STR (Strength)
+```
+STR 5+: EXPANDED CRIT — crit on 18-20 (instead of just 20)
+
+STR 8+: TITAN'S BLOW — Once per combat, declare before rolling.
+        On hit: maximum damage (no roll) + target CON save DC 10+STR or stunned 1 turn.
+        On miss: deal half damage anyway (raw force).
+        Witnesses: enemies who see this must WIS DC 15 or become demoralized (-2 to attacks).
+```
+
+### DEX (Dexterity)
+```
+DEX 5+: UNTOUCHABLE — Once per combat, completely negate one attack you can see.
+        Plus passive EVASION: AoE/traps — success = 0 damage, failure = half damage.
+
+DEX 8+: FLURRY — two attacks per turn (each with separate roll). Supernatural speed.
+```
+
+### CON (Constitution)
+```
+CON 5+: IRON BODY — Auto-resist first poison/disease per day.
+        At 0 HP: auto-stabilize (no death saves needed unless hit again).
+
+CON 8+: UNKILLABLE — Don't die until HP reaches -CON×5.
+        Keep fighting while bleeding out. Death saves only begin when combat ends.
+```
+
+### INT (Intelligence)
+```
+INT 5+: TACTICAL INSIGHT — Once per scene, ask GM one tactical detail
+        (enemy weakness, hidden path, true intentions, trap mechanism).
+
+INT 8+: MASTERMIND — Once per day, declare "I planned for this."
+        Retroactively establish one reasonable preparation (bribed guard, hidden weapon,
+        planted evidence). Must fit character's resources and access.
+```
+
+### WIS (Wisdom)
+```
+WIS 5+: DANGER SENSE — Cannot be surprised.
+        Advantage on saves vs traps, ambushes, illusions.
+
+WIS 8+: PROPHECY — Once per session, ask GM "What happens if we [action]?"
+        Receive truthful answer (may be cryptic).
+        Plus TRUE SIGHT: auto-detect lies, illusions, disguises, shapeshifters.
+```
+
+### CHA (Charisma)
+```
+CHA 5+: COMMANDING PRESENCE — Once per scene, reroll failed social check.
+        Allies in earshot: +2 to loyalty/crisis rolls.
+
+CHA 8+: CULT OF PERSONALITY — Once per day, turn hostile NPC to neutral
+        OR neutral NPC to devoted ally. Not mind control — they genuinely BELIEVE.
+        Betraying them later has severe narrative consequences.
+```
+
+---
+
 ## CHARACTER CREATION
 
 ### Build (race + class)
@@ -247,12 +324,10 @@ Opportunity attack: leaving melee = enemy attacks with reaction
 
 **Flanking:** 2+ allies in melee with same target = +2 to attack each
 
-**STR in combat:**
-- +STR to melee damage
-- STR 5+ = crit on 19-20 (instead of just 20)
-
-**DEX in combat:**
-- DEX 5+ = two attacks per turn (each with separate roll)
+**Damage modifiers:**
+- STR → melee damage
+- DEX → ranged damage
+- INT → magic damage
 
 **Dual-wielding:**
 - Weapon in each hand = strike with each (separate rolls)
