@@ -17,7 +17,12 @@ gm-skill/
 │   ├── vtm.md               # Vampire: The Masquerade
 │   ├── warhammer-fantasy.md # Old World (corruption, Chaos, factions)
 │   ├── warhammer-40k.md     # Grimdark far future (Imperium, Chaos, Xenos)
-│   └── china-1900-1952.md   # Warlords, Revolution, Survival
+│   ├── china-1900-1952.md   # Warlords, Revolution, Survival
+│   ├── pirates.md           # Golden Age of Piracy (fantasy)
+│   ├── witcher.md           # Monster Hunters (Sapkowski + CDPR)
+│   ├── cyberpunk-red.md     # Dark Future (R. Talsorian 2020/RED/2077)
+│   ├── shadowrun-lite.md    # Magic + Cyber + Corps (Simplified Shadowrun)
+│   └── frostpunk.md         # Frozen Steampunk Survival (City as Entity)
 ├── commands/
 │   ├── rp.md                # Main /rp command
 │   └── rp/                  # Subcommands
@@ -131,6 +136,49 @@ Complete setting packs — pick one at session start.
 - Loyalty, Ideology, Survival, Reputation mechanics
 - Hyperinflation economics, HOI4 approach to atrocities
 - For: soldiers, spies, refugees, revolutionaries
+
+**pirates.md** — Golden Age of Piracy (Fantasy):
+- Era 1650-1730, high magic, world travel
+- Ship mechanics, naval combat, boarding
+- Infamy, Pirate Code, Curses system
+- Bestiary (Kraken, Sirens, Davy Jones, Dragon Turtles)
+- Voodoo/sea magic rituals
+- For: treasure hunts, revenge, fleet building, freedom fights
+
+**witcher.md** — Monster Hunters (Sapkowski + CDPR):
+- Era 1200s-1268, before and during Northern Wars
+- 6 Witcher Schools (Wolf, Cat, Griffin, Bear, Viper, Manticore)
+- Signs magic system, Toxicity, alchemy
+- Full bestiary (50+ monsters with tactics)
+- Hunt cycle mechanics, moral dilemmas
+- For: monster contracts, grim moral choices, lesser evil
+
+**cyberpunk-red.md** — Dark Future (R. Talsorian):
+- Era 2045-2077, Time of the Red to Reunification
+- 10 Roles (Solo, Netrunner, Tech, Medtech, Media, Exec, Lawman, Fixer, Nomad, Rockerboy)
+- Humanity/Cyberpsychosis system, cyberware tables
+- Quick-Jack Netrunning (same initiative as meat combat)
+- Night City districts, Megacorps, Gangs
+- Gig cycle, Street Cred, Heat mechanics
+- For: edgerunner mercs, corporate espionage, gang wars
+
+**shadowrun-lite.md** — Magic + Cyber + Corps:
+- Era 2070-2080, Sixth World
+- 8 Archetypes (Street Sam, Decker, Mage, Shaman, Rigger, Face, Adept, Technomancer)
+- Essence/Magic system, 5 metatypes (Human, Elf, Dwarf, Ork, Troll)
+- Quick-Jack Matrix with Trace Clock
+- Seattle sprawl, Megacorps, Criminal Syndicates, Gangs
+- Run Cycle, Street Cred, Heat mechanics
+- For: shadowrunners, corporate espionage, magic + chrome
+
+**frostpunk.md** — Frozen Steampunk Survival:
+- Era 1886-1888, alternate volcanic winter
+- City as Entity (Population, Hope, Discontent, Resources)
+- Temperature Clock, Generator mechanics
+- Two play modes: City Management + Individual (Expeditions)
+- Laws system: Order vs Faith paths
+- Two-mode play: Zoom out (city) or zoom in (scout teams)
+- For: survival management, moral dilemmas, desperate choices
 
 ## Saves
 
