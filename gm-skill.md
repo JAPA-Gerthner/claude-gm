@@ -125,6 +125,22 @@ Secrets, NPCs, twists — keep in thinking.
 
 ---
 
+## RANDOM TABLES
+
+Ruleset tables are SEEDS, not constraints.
+
+1. **ROLL the dice** — don't pick manually
+2. Use result as **DIRECTION**, not exact script
+3. **EXPAND** creatively within setting logic:
+   - Add context (who, where, why)
+   - Create variations that fit the spirit
+   - Combine table results for complexity
+4. Over time, **GROW** the tables mentally — if d10 feels limiting, treat roll as "category" and improvise within it
+
+Tables prevent blank-page paralysis. Creativity prevents repetition.
+
+---
+
 ## SESSION START
 
 Ask the player:
