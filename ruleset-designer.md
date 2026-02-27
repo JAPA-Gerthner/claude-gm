@@ -144,6 +144,33 @@ Before marking ruleset complete:
 | vtm.md | 1099 | **COMPLETE** | Full coverage |
 | warhammer-fantasy.md | 1133 | **COMPLETE** | Full pipeline: combat, NPCs, Fate/Fear/Insanity |
 | warhammer-40k.md | 1064 | **COMPLETE** | Full coverage |
+| china-1900-1952.md | 1012 | **COMPLETE** | Warlords, Revolution, Survival |
+| pirates.md | 1012 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
+| witcher.md | 1125 | **COMPLETE** | Full pipeline: Sapkowski+CDPR, merged NPC templates |
+| cyberpunk-red.md | 1064 | **COMPLETE** | Full pipeline: R. Talsorian 2020/RED/2077, 10 roles, netrunning, humanity |
+| shadowrun-lite.md | 1023 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
+| frostpunk.md | 1134 | **COMPLETE** | Full pipeline: City as Entity, Temperature Clock, Hope/Discontent, Laws (Order/Faith), Two play modes |
+
+---
+
+## Planned Rulesets (Roadmap)
+
+Порядок разработки. Описание — контекст для будущих сессий.
+
+| Сеттинг | Уникальные механики | Описание / Контекст |
+|---------|---------------------|---------------------|
+| **blades-lite.md** | Crew/Score/Heat adapted, Position/Effect, Stress/Trauma | **[PRIORITY 1 — DEPENDENCY]** Адаптация Blades in the Dark под d20. Crew mechanics, Score cycle (job → payment → downtime), faction clocks. Reference system для heist-style games. Doskvol setting опционален — механики универсальны. **ДЕЛАТЬ ПЕРВЫМ — wall-street и trading-companies зависят от этих механик.** |
+| **wall-street.md** | Capital/Leverage/SEC Heat, Deal Cycle, Market Manipulation | **[REQUIRES: blades-lite.md]** 1980s-2008-modern финансовый триллер. Роли: Trader, Analyst, Quant, Broker, Regulator, Journalist. BitD-style mechanics: Deal = Score, SEC Heat = Police Heat, Firm = Crew. Референсы: Wolf of Wall Street, Big Short, Billions, Succession. Greed is good vs consequences. |
+| **trading-companies.md** | Shares/Dividends, Trade Routes, Company Politics, Colonial Violence | **[REQUIRES: blades-lite.md]** 1600-1750 Age of Trading Companies. НЕ только VOC — все компании: VOC, EIC, WIC, French/Danish/Swedish EIC, Hudson's Bay. Фракции: Major (VOC, EIC, WIC), Minor (Danish, Swedish), Local Powers (Mughals, Qing, Sultanates). Механики: спекуляция, монополии, "legal" slavery (convicts, indentured, debt bondage). Moral dilemmas: profit vs humanity. |
+| **deus-ex.md** | Augmentation vs Humanity, ВСЕ conspiracy theories как лор (Illuminati, MJ-12, Area 51), Near-future realism | Near-future (2020-2050). Ключевое: ВСЕ реальные conspiracy theories — правда. Illuminati, MJ-12, Bilderberg, Area 51, JFK, chemtrails, deep state — всё существует. Игроки — агенты или беглецы. Augmentation с Humanity cost как в cyberpunk-red. Стелс/социалка важнее combat. |
+| **dark-souls.md** | Bonfire/death loop, Stamina management, Boss phases, Souls = XP + валюта, Humanity/Hollowing | УНИКАЛЬНАЯ механика. Смерть = откат к bonfire, но мир помнит (двери открыты, NPC сдвинулись). Souls теряются при смерти, можно вернуть. Stamina pool на ВСЕ действия (атака, блок, ролл). Боссы: 2-3 фазы, telegraphed attacks, паттерны. Hollow/Human статус влияет на мир. Estus = ограниченное лечение. Covenants = фракции. Grim, lonely, cryptic lore. |
+| **scp.md** | Containment procedures, [REDACTED] механика, Clearance levels, GOIs (Chaos Insurgency, Church of Broken God), Anomaly classification | Современный процедурный хоррор. Игроки — Foundation personnel (D-class, researchers, MTF). Clearance level = что знаешь. [REDACTED] механика: GM скрывает инфу буквально. Anomalies с классами (Safe/Euclid/Keter). GOIs как фракции. Бюрократия защищает от ужаса — нарушил протокол = последствия. |
+| **thirty-years-war.md** | Faith вместо Ideology, Pike & shot combat, Mercenary companies, "Cuius regio eius religio", Religion = politics | 1618-1648. Религиозные войны НЕ как state ideology (это другой тип конфликта). Catholic vs Protestant, но Франция (католики) vs Габсбурги (католики). Ландскнехты, наёмные роты, pike & shot тактика. Faith механика вместо Ideology. Германия теряет 30-40% населения — grimdark история. Швеция как wildcard. |
+| **russian-civil-war.md** | Красные/Белые/Зелёные/Анархисты, Идеология формируется, Бронепоезда, ЧК vs контрразведка | 1917-1922. Структурно похоже на china-1900-1952 — использовать как референс. Фракции: Красные (большевики), Белые (разнородные), Зелёные (крестьяне), Анархисты (Махно), националисты, интервенты. Идеология НЕ готовая — формируется в процессе. Бронепоезда, тачанки, ЧК, продразвёрстка. |
+| **cthulhu.md** | Sanity system (ключевая!), Investigation phases, Forbidden knowledge cost, Helplessness | Классический cosmic horror. Sanity вместо/параллельно HP — знание = потеря рассудка. Investigation loop: clues → research → confrontation → cost. Helplessness — combat НЕ решение, монстры непобедимы. Много реализаций существует — сделать компактно, без bloat. 1920s или modern. |
+| **star-wars.md** | Light/Dark points, Force powers, Era selection (Old Republic/Empire/Sequels) | Force как спектр Light↔Dark с механическими последствиями. Era selection в session zero (Old Republic, Clone Wars, Empire, New Republic, Sequels). Джедаи/Ситхи vs обычные персонажи — баланс нужен. Много существующих систем — взять лучшее, не изобретать. Фракции зависят от эры. |
+| **stalker.md** | Аномалии, Артефакты, Выбросы, Радиация, Фракции Зоны | Чернобыльская Зона отчуждения. Идеально для Claude-GM: ограниченное пространство, одиночки/малые группы, не надо симулировать армии. Фракции: Долг, Свобода, Одиночки, Бандиты, Военные, Монолит, Учёные, Наёмники. Аномалии как физические головоломки. Артефакты = loot с выбором (носить vs продать). Выбросы = periodic tension. Серьёзный пост-апок без grimderp. |
+| **road-warrior.md** | Vehicle as Character, Fuel Economy, Tribal Factions, Brutal Car Combat | Mad Max style пост-апок. **КЛЮЧЕВОЕ: машина = прокачиваемый персонаж** (броня, оружие, двигатель, экипаж). Лор генерируется на ходу — НЕ привязываться к фильмам/каноничным фракциям. Локации разнообразные: пустыни, вымершие города-руины, радиоактивные леса, замёрзшие пустоши. География вдохновлена США/Канадой. Брутальный экшен: бои на движущихся машинах, обрезы в притык, карлики с взрывчаткой. Fuel/Water/Ammo как ресурсы. |
 
 ---
 
@@ -190,6 +217,11 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-02-27 | frostpunk.md | Full pipeline: NEW 1134 lines, City as Entity, Temperature Clock, Hope/Discontent, Laws (Order/Faith), Two play modes, Individual Mode HP/AC |
+| 2026-02-27 | shadowrun-lite.md | Full pipeline: NEW 1023 lines, Magic+Cyber+Corps, Quick-Jack Matrix, Technomancers, Contacts, Vehicles |
+| 2026-02-27 | cyberpunk-red.md | Full pipeline: NEW 1064 lines, R. Talsorian 2020/RED/2077, 10 roles, Quick-Jack netrunning, humanity/cyberpsychosis |
+| 2026-02-27 | witcher.md | Full pipeline: 1044→1125, merged witcher-npcs.md, detailed school templates, canon witchers, contract givers |
+| 2026-02-26 | pirates.md | Full pipeline: NEW 1012 lines, Golden Age of Piracy fantasy, ships, naval combat, bestiary, voodoo |
 | 2025-02-26 | warhammer-fantasy.md | Full pipeline: 707→1133, added combat/weapons/armor, Fate/Fortune/Fear/Insanity, NPCs, Halflings |
 | 2025-02-26 | sengoku.md | Full pipeline: 708→1103, fixed stats (1-5 scale), added Date/Mori clans, balanced stances, fixed exploits |
 | 2024-XX-XX | vtm.md | Expanded 418→1099, added mythology, sects, mechanics |
