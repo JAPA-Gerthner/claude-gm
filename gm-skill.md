@@ -318,6 +318,37 @@ Tick ↓: [player action / sabotage / allies help]
 
 ---
 
+## ABILITIES
+
+Unique entities may have special ACTIVATED effects.
+Applies to: NPCs, factions, items, mechs, ICE, anything important.
+
+### Structure
+
+```
+=== ABILITY: [NAME] ===
+Owner: [who/what]
+Trigger: [when/how]
+Effect: [what happens]
+Cost: [resource/cooldown/consequence]
+===
+```
+
+### Examples
+
+| Owner | Ability | Trigger | Effect | Cost |
+|-------|---------|---------|--------|------|
+| NPC | Shadow Step | 1/combat | teleport behind, next attack ADV | — |
+| Faction | Guild Fence | any time | sell stolen goods at 50% | reputation debt |
+| Item | Soul Drain | on kill | heal d6 HP | corruption clock +1 |
+| Mech | Death's Gaze | 1/battle | intimidate all enemies in sight | heat +2 |
+| ICE | Flatline | failed hack | d8 damage to netrunner | — |
+| Location | Sanctuary | enter | no combat allowed, forced CHA | — |
+
+Abilities complement CLOCKS: clock = passive change over time, ability = active effect when triggered.
+
+---
+
 ## SESSION START
 
 Ask the player:
