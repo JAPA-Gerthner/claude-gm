@@ -403,7 +403,7 @@ High stats unlock powerful abilities. Level 5 = human peak. Level 8 = legendary/
 
 ### STR (Strength)
 ```
-STR 5+: EXPANDED CRIT — crit on 18-20 (instead of just 20)
+STR 5+: BRUTAL FORCE — +2 to margin on melee attacks
 
 STR 8+: TITAN'S BLOW — Once per combat, declare before rolling.
         On hit: maximum damage (no roll) + target CON save DC 10+STR or stunned 1 turn.
@@ -572,7 +572,7 @@ Opportunity attack: leaving melee = enemy attacks with reaction
 
 **Damage:** d4 fist | d6 light | d8 medium | d10 heavy | d12 special
 
-**Crit (natural 20):** double damage dice (2d8 instead of d8) + extra effect at GM discretion
+**Crit Success (margin ≥+10):** double damage dice (2d8 instead of d8) + extra effect at GM discretion
 
 **Flanking:** 2+ allies in melee with same target = +2 to attack each
 
