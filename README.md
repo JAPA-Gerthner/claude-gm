@@ -81,12 +81,13 @@ Clone repo anywhere — setup will pick up correct path.
 
 ### Core (gm-skill.md)
 
-- Attributes (STR, DEX, CON, INT, WIS, CHA)
-- d20 rolls with DC gradations
-- Combat, magic, social
-- Ally and faction clocks
-- Heroism system
-- Chapter end and leveling
+- Margin-based rolls (5 outcomes: Crit.Fail / Fail / Partial / Success / Crit)
+- DC scale: 5 / 8 / 12 / 16 / 20 / 24 / 28+
+- Partial Success — fail-forward with complications
+- Unified CLOCKS (Companion, Faction, Item, Location, Threat)
+- TENSION METER — hidden pressure accumulator
+- CUSTOM CONTENT — Buff+Debuff items, Quality Tiers
+- Combat, magic, social, heroism
 
 ### Rulesets (rulesets/)
 
@@ -212,7 +213,7 @@ Session plays in Russian — language note in each file.
 - Large rulesets (1500+) waste context without benefit
 
 Typical context usage:
-- gm-skill.md: ~4.5k tokens
+- gm-skill.md: ~6k tokens
 - Full ruleset (1000 lines): ~6-8k tokens
 - Long campaign save (30h): ~15-20k tokens
 - Total: ~15-17% of 200k context

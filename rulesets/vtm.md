@@ -151,26 +151,18 @@ HUMANITY: ●●●●●●●○○○ (7/10 start)
 HUMANITY LOSS:
 
 Transgression severity → MENTAL roll vs DC
-Fail = -1 Humanity
 
-DC 8 (minor):
-- Killing in self-defense
-- Feeding with minor harm
+DC 8 (minor): Killing in self-defense, feeding with minor harm
+DC 12 (moderate): Killing a mortal, torture, betraying ally
+DC 16 (severe): Killing innocent for pleasure, diablerie, mass murder
+DC 20 (monstrous): Killing a child, genocide, atrocities
 
-DC 12 (moderate):
-- Killing a mortal
-- Torture for information
-- Betraying ally
-
-DC 16 (severe):
-- Killing innocent for pleasure
-- Diablerie
-- Mass murder
-
-DC 20 (monstrous):
-- Killing a child
-- Genocide
-- Something truly fucked up
+Margin-based outcomes:
+Crit.Fail (≤-6): Beast Ascendant — Humanity -2, immediate Frenzy check
+Fail (-5 to -1): Stain — Humanity -1
+Partial (0 to +4): Haunted — no Humanity loss, but -1 to next control check
+Success (+5 to +9): Justified — no Humanity loss, conscience intact
+Crit.Success (+10+): Transcended — no loss, +1 Humanity possible (GM decides)
 
 RESTORATION:
 - Redemption (difficult, requires roleplay)
@@ -204,8 +196,12 @@ TERROR (flee):
 CONTROL CHECK:
 d20 + MENTAL - Hunger vs DC (depends on trigger)
 
-Success: control the beast
-Fail: Frenzy for d4 turns
+Margin-based outcomes:
+Crit.Fail (≤-6): Lost to the Beast — Frenzy d6 turns, Humanity check after
+Fail (-5 to -1): Frenzy — d4 turns, no Humanity check
+Partial (0 to +4): Riding the Wave — 1 turn of Beast action, then control
+Success (+5 to +9): Mastered — Beast contained, shaken but in control
+Crit.Success (+10+): Iron Will — Beast silenced, +2 to next control check tonight
 
 DURING FRENZY:
 - No control — GM describes actions
@@ -891,7 +887,8 @@ SIREN — Seduction
 
 ```
 ROLLS:
-d20 + stat vs DC (as in base)
+d20 + stat vs DC (margin-based from gm-skill.md)
+≤-6 Crit.Fail | -5..-1 Fail | 0..+4 Partial | +5..+9 Success | +10+ Crit
 Disciplines usually auto-success or stat vs resistance
 
 COMBAT:

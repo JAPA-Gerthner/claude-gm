@@ -426,10 +426,17 @@ Triggered when single attack deals 10+ damage after armor.
 
 **Pursuit Points:** 0-10 scale. 0 = contact, 10 = escape.
 
-Roll: DEX + Drive + d20 + Handling vs opponent.
-- Win by 1-4: ±1 point
-- Win by 5-9: ±2 points
-- Win by 10+: ±3 points
+Roll: d20 + DEX + Drive + Handling vs opponent's roll.
+Calculate margin: Your roll - Opponent roll.
+
+```
+Margin-based outcomes:
+Crit.Fail (≤-6): Crash/spin — lose 3 points, vehicle damage check
+Fail (-5 to -1): Losing ground — lose 2 points
+Partial (0 to +4): Stalemate — ±1 point (chaser's favor)
+Success (+5 to +9): Gaining — gain 2 points
+Crit.Success (+10+): Outmaneuver — gain 3 points + free action (ram/shoot/shortcut)
+```
 
 ### Vehicle Combat
 
@@ -457,9 +464,9 @@ Every network has layers. Simple = 2 floors, Corp HQ = 5 floors.
 
 | Floor | Content | DV |
 |-------|---------|-----|
-| 1-2 | Lobby, basic files | 10 |
-| 3-4 | Controls, security | 14 |
-| 5 | Root access | 17 |
+| 1-2 | Lobby, basic files | 8 |
+| 3-4 | Controls, security | 12 |
+| 5 | Root access | 16 |
 | 6 | Black (hidden) | 20 |
 
 ### Netrunner Turn
@@ -1013,10 +1020,13 @@ JOBS COMPLETED: [tally]
 ### DCs
 | Difficulty | DC |
 |------------|-----|
-| Easy | 10 |
-| Medium | 14 |
-| Hard | 17 |
-| Hardcore | 20 |
+| Easy | 8 |
+| Medium | 12 |
+| Hard | 16 |
+| Very Hard | 20 |
+| Extreme | 24 |
+
+Margin: ≤-6 Crit.Fail | -5..-1 Fail | 0..+4 Partial | +5..+9 Success | +10+ Crit
 
 ### Damage Scale
 - d4: Fist, knife

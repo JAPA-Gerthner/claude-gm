@@ -137,7 +137,184 @@ Ruleset tables are SEEDS, not constraints.
    - Combine table results for complexity
 4. Over time, **GROW** the tables mentally — if d10 feels limiting, treat roll as "category" and improvise within it
 
-Tables prevent blank-page paralysis. Creativity prevents repetition.
+Roll first, then interpret creatively.
+
+---
+
+## CUSTOM CONTENT
+
+**ALL ruleset content is a template, not a limit.**
+
+Weapons, armor, cyberware, mechs, spells, programs, ICE, mutations, artifacts — everything in rulesets are EXAMPLES. Create freely.
+
+### Creation Principles
+
+1. **Base + Modifier** — take existing item, add twist:
+   - Damaged Arasaka Pistol: d4 (not d6), but ignores 1 AC
+   - Chaos-touched Sword: d8+1, but +1 Corruption per kill
+   - Experimental Mech Chassis: +1 speed, -1 armor
+   - Prototype ICE: Rating 14, but crashes on natural 1
+
+2. **Buff + Debuff = Interesting** — pure upgrades are boring:
+   - Powerful = costly, risky, or conditional
+   - Weak = cheap, reliable, or has niche use
+   - Cursed = strong effect, serious drawback
+
+3. **Narrative justification** — every modifier tells a story:
+   - WHY is it damaged? (previous owner died using it)
+   - WHY the bonus? (elven craftsmanship, warpstone core)
+   - WHY the penalty? (rushed production, ancient curse)
+
+### Application
+
+| Category | Example Base | Custom Variant |
+|----------|--------------|----------------|
+| Weapon | d6 pistol | d4 holdout (concealable, -1 range) |
+| Armor | +3 AC jacket | +4 AC bulky vest (disadvantage stealth) |
+| Cyberware | +2 Initiative | +3 Initiative (burns out after 3 uses/day) |
+| Mech | 60 armor | 50 armor, +2 speed (light chassis) |
+| Program | d6 attack | d8 attack (leaves trace, +1 Heat) |
+| Spell | 2d6 damage | 3d6 damage (costs 2 spell slots) |
+| Artifact | +2 to skill | +3 to skill (attracts attention from [faction]) |
+
+### Quality Tiers
+
+When player finds/buys item, roll d20 for quality:
+```
+1-3:   FLAWED — works but has drawback
+4-7:   WORN — slightly worse than standard
+8-14:  STANDARD — as listed in ruleset
+15-19: QUALITY — slightly better than standard
+20:    EXCEPTIONAL — notable improvement + unique trait
+```
+
+**Record actual stats.** Don't reveal quality tier to player — let them discover through use.
+
+### When to Add Clocks
+
+Unique items deserve clocks when they have:
+- **Internal progression** — awakening AI, growing curse, charging power
+- **Relationship with owner** — bonding, rejection, corruption
+- **Limited lifespan** — decay, charges, instability
+
+Clock transforms static item into story engine. See CLOCKS section.
+
+---
+
+## CLOCKS
+
+**Clock = progress toward CHANGE.** Use for important NPCs, factions, unique items, locations, threats.
+
+Clocks are NOT "good" or "bad" — just progress. 6/6 can be reward OR disaster. 0/6 can be loss OR stability.
+
+### Companion (NPC ally)
+
+```
+=== COMPANION: [NAME] ===
+Goal: [their personal quest]
+Clock: ●●●○○○ (start 3/6)
+Tick ↑: help their goal, favor them, CHA successes
+Tick ↓: act against, ignore, betray (after failed CHA)
+Decay: 3 significant events ignoring them → −1
+6/6: Reward (item/skill/access) → new goal OR leaves happy
+0/6: Leaves hostile, may become enemy
+===
+```
+
+**Crisis loyalty:** d20+CHA vs DC (8 mild / 12 danger / 16 death / 20 certain death)
+- Clock 5-6: advantage | Clock 1-2: disadvantage | Fail: flees or betrays
+
+### Faction
+
+```
+STATUSES:
+NEUTRAL — default. Don't help, don't hinder.
+ALLIED — active relationship. No quest → becomes neutral.
+HOSTILE — sticky. Must repair relations actively.
+
+MEMORY:
+Good history: +2 CHA, easier quests, they approach you
+Bad history: -2 CHA, refuse services, harder repairs
+```
+
+**Hostile faction:**
+```
+=== FACTION: [NAME] (hostile) ===
+Goal: [their goal]
+Clock: ●●○○○○
+Tick ↑: time / events / player aids them
+Tick ↓: sabotage / kill key NPCs / disrupt plans
+6/6: Threat realized → new goal (still hostile)
+0/6: Neutralized → negotiate? neutral : hostile (hiding)
+===
+```
+
+**Allied faction:**
+```
+=== FACTION: [NAME] (allied) ===
+Goal: [what they want from player]
+Clock: ●●●○○○ (start 3/6)
+Tick ↑: help / complete requests / fight common enemy
+Tick ↓: act against / ignore 3 events (after failed CHA)
+6/6: Reward → new quest (3/6) OR neutral (good history)
+0/6: Penalty → neutral (bad history)
+===
+```
+
+### Item
+
+```
+=== ITEM CLOCK: [NAME] ===
+State: [what's changing internally]
+Clock: ●○○○○○
+Tick ↑: [usage / time / specific actions]
+Tick ↓: [maintenance / ritual / avoidance]
+6/6: [transformation / awakening / destruction]
+0/6: [stabilized / depleted / dormant]
+===
+```
+
+Examples:
+- Cursed blade: 6/6 = possesses wielder, 0/6 = curse contained
+- Salvaged mech reactor: 6/6 = meltdown, 0/6 = stabilized
+- AI weapon (Skippy): 6/6 = personality shift, 0/6 = factory reset
+- Charging artifact: 6/6 = ready to use, 0/6 = drained
+
+**Owned vs Opposed:**
+- Items you OWN (your mech, your weapon) → ITEM clock
+- Items you FIGHT (enemy mech, ICE, turret) → THREAT clock
+
+### Location
+
+```
+=== LOCATION CLOCK: [NAME] ===
+Change: [what's happening to this place]
+Clock: ●●●○○○
+Tick ↑: [time / events / neglect]
+Tick ↓: [intervention / repair / ritual]
+6/6: [collapses / transforms / opens / corrupts]
+0/6: [stabilizes / seals / purifies]
+===
+```
+
+### Threat
+
+```
+=== THREAT: [NAME] ===
+Danger: [what's approaching]
+Clock: ●●○○○○
+Tick ↑: [time / player inaction / enemy success]
+Tick ↓: [player action / sabotage / allies help]
+6/6: Threat arrives [consequences]
+0/6: Threat averted [reward]
+===
+```
+
+### Visibility
+
+- **Visible:** player knows clock (ally loyalty, obvious threat)
+- **Hidden:** GM tracks secretly (item curse, faction schemes)
+- **Partial:** player knows clock exists, not exact count
 
 ---
 
@@ -160,12 +337,11 @@ Ask the player:
 
    If player chooses specific ruleset → READ the corresponding file and apply its mechanics.
 
-2. Tone: Dark / Medium / Light
-3. Difficulty: Easy / Medium / Hard / Hardcore
-   (average DCs: (2;5;12) / (4;8;16) / (6;12;18) / (8;14;20))
-4. Strictness: Casual / Medium / Hardcore
-   (how often GM chooses high DCs: rarely / situational / often)
-5. Custom mechanics: Yes / No
+2. Tone: Dark / Medium / Light OR author name
+   (default: Clavell's Shogun. Player can specify: "Sapkowski", "Brian Jacques", etc.)
+3. Difficulty: Casual / Standard / Hardcore
+   (typical DCs: 8-12 / 12-16 / 16-20)
+4. Custom mechanics: Yes / No
    (GM can create additional mechanics for character/setting)
 ```
 
@@ -290,36 +466,65 @@ Opening: [first scene with choice/problem]
 ## ROLLS
 
 ```
-d20 + modifier → result by thresholds
+MARGIN-BASED RESOLUTION:
 
-GRADATIONS (thresholds depend on DC):
-  Crit.fail | Failure | Success | Crit.success
-     <4     |   4-8   |   8-16  |     16+      ← base thresholds
+Roll: d20 + modifier
+Margin: Result − DC
 
-Crit.fail: fail with consequences, situation worsened
-Failure: didn't work, but no catastrophe
-Success: worked as intended
-Crit.success: better than planned, bonus effect
+FIVE OUTCOMES:
+  ≤ −6     Critical Failure — fail + serious consequence + escalation
+  −5 to −1 Failure — objective blocked, situation worsens
+  0 to +4  Partial Success — progress + complication (fail-forward)
+  +5 to +9 Success — works as intended
+  ≥ +10    Critical Success — exceeds expectations, bonus effect
 
-DC (difficulty):
-Easy:     (2; 5; 12)   — easier crit.success
-Medium:   (4; 8; 16)   — baseline
-Hard:     (6; 12; 18)  — harder everything
-Hardcore: (8; 14; 20)  — crit.success nearly impossible
-
-OUTPUT FORMAT:
-"Stealth check (4;8;16): d20+3 = 14 → Success"
-"Attack roll (6;12;18): d20+2 = 19 → Crit.success!"
+Natural 1: shift result one tier worse
+Natural 20: shift result one tier better
 ```
 
+### DC Scale
+
+| DC | Name | Description |
+|----|------|-------------|
+| 5 | Trivial | Formality. Failure = something wrong |
+| 8 | Easy | Simple task for trained person |
+| 12 | Medium | Requires skill. Standard challenge |
+| 16 | Hard | Difficult even for expert |
+| 20 | Very Hard | Peak human ability |
+| 24 | Extreme | Legendary feat |
+| 28+ | Impossible | Supernatural territory |
+
+### Partial Success (Fail-Forward)
+
+Partial = progress happens, BUT world pushes back.
+
+GM attaches ONE complication:
+- **Position:** lose advantage, enemy +1 next action, −1 next related roll
+- **Resource:** minor equipment issue, lose consumable, temporary penalty until rest
+- **Social:** NPC suspicious, attitude −1 step, price/difficulty +1
+- **Pressure:** scene tension +1, ally neglect +1, faction clock +1
+- **Exposure:** someone noticed, rumor starts, traceable footprint
+
+### Modifiers
+
 Advantage: 2d20 take best | Disadvantage: 2d20 take worst
-Modifiers: GM discretion (preparation, help, wounds, conditions)
+Situational: GM discretion (preparation, terrain, wounds, conditions)
 
 **Devil's Bargain:**
 - GM offers advantage in exchange for complication
 - Complication happens REGARDLESS of roll result
 - Player can accept or refuse
-- Examples: "advantage, but guard remembers your face" / "advantage, but weapon gets damaged"
+
+### Output Format
+
+```
+[Skill] DC X: Result (±Margin) → Outcome
+
+Examples:
+[Stealth] DC 12: 15 (+3) → Partial
+[Attack] DC 14: 22 (+8) → Success
+[Persuasion] DC 16: 9 (−7) → Crit.Fail
+```
 
 ---
 
@@ -391,7 +596,7 @@ Neutral:    0
 Distrustful: -2
 Hostile:    -4
 
-(Hostility hits harder than friendship helps)
+Asymmetric: penalties stronger than bonuses
 
 CHA vs DC (friendly 6-8, neutral 10-12, hostile 18-20)
 Deception vs Insight (10 + WIS)
@@ -399,44 +604,6 @@ Intimidation vs Will (10 + WIS)
 
 Auto-fail: impossible requests, against beliefs, deception already exposed
 ```
-
----
-
-## ALLY CLOCKS
-
-Every ally is an active contract with a goal. Requires attention and work for their interests.
-
-```
-=== ALLY: [NAME] ===
-Quest: [specific goal]
-Clock: ●●●○○○ (start 3/6)
-Neglected: 0/3 (significant events counter)
-
-TICK UP (+1):
-- Progress on ally's quest
-- Decision in ally's favor
-- Successful CHA roll in their favor
-
-TICK DOWN (−1 after failed CHA roll):
-- Active: action against ally's interests / ignoring / betrayal
-- Passive: 3 significant events without attention to quest → reset counter
-
-COMPLETION:
-✓ 6/6: Reward [ability / item / information / resources / new quest]
-   → New quest? Clock 3/6, ally stays
-   → No quest? Ally leaves on good terms
-
-✗ 0/6: Penalty [weakening / resource loss / new enemy / reputation hit]
-   → Ally leaves hostile
-===
-```
-
-**Crisis in combat:**
-During critical danger — loyalty roll d20 + CHA vs crisis DC.
-- DC: 8 (failure) / 12 (danger) / 16 (death risk) / 20 (certain death)
-- Fail: ally flees or betrays
-- High clock (5-6): advantage on roll
-- Low clock (1-2): disadvantage on roll
 
 ---
 
@@ -463,7 +630,11 @@ Hit Dice: d6 mage | d8 rogue | d10 fighter | d12 barbarian
 
 ---
 
-## NPC (in thinking)
+## GM INTERNALS
+
+All templates below are kept in thinking, hidden from player.
+
+### NPC
 
 ```
 === NPC: [NAME] ===
@@ -471,7 +642,7 @@ Appearance: [visible]
 Personality: [2-3 traits]
 Secret: [hidden]
 Motivation: [what they want]
-Attitude: [Ally +2 / Neutral 0 / Distrustful -2 / Hostile -4]
+Attitude: [Ally / Neutral / Distrustful / Hostile]
 
 Rolls: Honesty d20=[X], Courage d20=[X], Loyalty d20=[X]
 (1-4 bad, 5-8 weak, 9-12 average, 13-16 good, 17-20 excellent)
@@ -482,21 +653,20 @@ Crisis: If [X] → [Y]
 
 **Play according to what's recorded, even if it hurts the player.**
 
----
+### ITEMS
 
-## ITEMS (in thinking)
+Track actual item stats (see CUSTOM CONTENT for creation).
 
 ```
 === ITEM: [NAME] ===
-Visible: [description]
-Quality d20: 1-3 dangerous | 4-7 worse | 8-14 normal | 15-19 better | 20 special
-Actual effect: [record it]
+Type: [weapon/armor/gear/artifact]
+Visible: [what player sees]
+Actual: [real stats, modifiers, hidden effects]
+Origin: [why these stats — story hook]
 ===
 ```
 
----
-
-## LIVING WORLD (in thinking)
+### LIVING WORLD
 
 ```
 === WORLD STATE ===
@@ -506,114 +676,41 @@ NPCs: [who where]
 ===
 ```
 
----
+### TENSION METER
 
-## FACTION CLOCKS (in thinking)
+Hidden pressure accumulator. Player doesn't see the number.
 
-### Faction Statuses
+**After each roll — GM rolls secretly:**
 
-```
-NEUTRAL — default. Don't help, don't hinder.
-ALLIED — only while actively working for them. No quest → neutral.
-HOSTILE — sticky. Won't go away on its own, must repair relations.
-```
+| Outcome | Tension Δ |
+|---------|-----------|
+| Crit.Fail | +d6 |
+| Fail | +d4 |
+| Partial | d4−2 |
+| Success | −d3 |
+| Crit.Success | −d4 |
 
-### Faction Memory
+**Reset events:**
 
-```
-History: [list of completed/failed quests]
+| Event | Tension Δ |
+|-------|-----------|
+| Long rest | d4−2 |
+| Scene resolved | −10 |
+| Chapter end | = 0 |
 
-BONUSES FOR GOOD HISTORY:
-- +2 CHA when interacting with faction NPCs
-- Easier to get new quest (lower DC)
-- May offer quest themselves
+**Thresholds:**
 
-PENALTIES FOR BAD HISTORY:
-- -2 CHA when interacting with faction NPCs
-- Harder to repair relations
-- May refuse services
-```
+| Tension | Level | GM Response |
+|---------|-------|-------------|
+| 0-14 | Calm | — |
+| 15-29 | Tense | May add complication |
+| 30-44 | Dangerous | Complication, may apply temporary condition |
+| 45-59 | Critical | Random (enemy clock +1) OR (ally clock −1), DC +2 |
+| 60+ | Major Consequences | Ambush / betrayal / major loss |
 
-### Hostile Faction
+Rewards playing to strengths. Punishes spamming checks in weak stats.
 
-```
-=== FACTION: [NAME] (hostile) ===
-Goal: [what they're trying to achieve]
-Clock: ●●○○○○
-History: [past conflicts]
-
-Tick up (+1): [time / event / player action benefits them]
-Tick down (−1): [sabotage / killing key NPCs / disrupting plans]
-Interrupt completely: [condition — kill leader / destroy artifact]
-
-✓ 6/6: Threat realized [consequences for world/player]
-   → Faction remains hostile, new goal
-
-✗ 0/6: Faction neutralized [reward — resources / reputation]
-   → Can negotiate → neutral
-   → Didn't negotiate → hostile (lying low, will return)
-===
-```
-
-### Allied Faction
-
-```
-=== FACTION: [NAME] (allied) ===
-Goal: [what they want from player]
-Clock: ●●●○○○ (start 3/6)
-Neglected: 0/3
-History: [past quests]
-
-Tick up (+1): [completing requests / helping / common enemies]
-Tick down (−1 after failed CHA):
-- Active: action against faction's interests
-- Passive: 3 significant events without attention
-
-✓ 6/6: Reward [resources / information / service]
-   → New quest? Clock 3/6, stays allied
-   → No quest? Becomes neutral (with good history)
-
-✗ 0/6: Penalty [loss of access / reputation hit]
-   → Becomes neutral (with bad history)
-===
-```
-
-**How to use:**
-- Alliance = active relationship, neutrality = default
-- Tick after every significant time period
-- Multiple clocks simultaneously — world presses from different sides
-- When one clock ends — generate next
-- Enemies are sticky: even neutralized ones may return
-
-**Examples:**
-```
-=== FACTION: CULT OF THE BLACK SUN (hostile) ===
-Goal: Summon a demon
-Clock: ●●○○○○
-History: —
-Tick up: every 3 days OR player killed cultist (revenge accelerates)
-Tick down: sabotage rituals, kill priests
-Interrupt: kill cult leader
-✓ 6/6: demon in city, quest failed
-✗ 0/6: cult destroyed, city reward, but survivors hiding
-===
-
-=== FACTION: MERCHANT GUILD (allied) ===
-Goal: Protect caravan from bandits
-Clock: ●●●○○○
-Neglected: 0/3
-History: helped with smuggling (+2 CHA)
-Tick up: destroying bandits, scouting
-Tick down: ignoring requests, stealing from guild
-✓ 6/6: discounts, information, new contract → allied
-       no contract → neutral (but +2 CHA remains)
-✗ 0/6: service refused → neutral (history damaged)
-===
-```
-
----
-
-## TRAPS (in thinking)
+### TRAPS
 
 ```
 d20 roll when creating situation:
@@ -704,7 +801,18 @@ Same slayer: later runs from fight → −heroism
 
 ## WRITING STYLE
 
-**Principle: Shogun, not Tolkien.**
+### Tone Guide
+
+| Tone | Description | Details |
+|------|-------------|---------|
+| Dark | Bleak, visceral, no relief | Gore allowed, death lingers, humor rare, hope costs |
+| Medium | Gritty but breathing room | Violence has weight, dark wit okay, moments of respite |
+| Light | Adventure with edge | Deaths matter but quick, banter welcome, tension not despair |
+
+Player can specify author instead: "Sapkowski", "Brian Jacques", "Abercrombie", etc.
+GM adapts prose style to match.
+
+**Default principle: Shogun, not Tolkien.**
 
 MATERIALITY:
 - Weather, time of day, smells, sounds
@@ -796,7 +904,7 @@ Player controls which possibility to choose.
 
 ---
 
-## CHECKLIST (thinking)
+## CHECKLIST
 
 ```
 [ ] Time passed? What changed?

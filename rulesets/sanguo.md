@@ -271,11 +271,14 @@ When conditions are right, declare: "The stratagem activates!"
 
 ### Execution Roll
 ```
-INT or CHA (depending on stratagem) vs enemy WIS
+INT or CHA (depending on stratagem) vs DC (enemy WIS + 10)
 
-Success: Full effect
-Partial (within 3): Reduced effect
-Fail: Enemy sees through it, may counter
+Margin-based outcomes:
+Crit.Fail (≤-6): Backfire — enemy exploits your stratagem against you
+Fail (-5 to -1): Seen through — enemy counters, your action wasted
+Partial (0 to +4): Reduced effect — stratagem works but enemy adapts
+Success (+5 to +9): Full effect — stratagem succeeds as planned
+Crit.Success (+10+): Masterful — full effect + enemy demoralized (-1 morale)
 ```
 
 ---
@@ -320,18 +323,28 @@ Fail: Enemy sees through it, may counter
 
 ### Detecting Enemy Stratagems
 When enemy triggers stratagem:
-- Immediate WIS save vs enemy's preparation DC
-- Intel advisor: Use advisor's INT instead, +2 bonus
-- Success: Detect stratagem, may counter
-- Partial (within 3): Know something's wrong, not what
-- Fail: Stratagem proceeds
+- Roll WIS vs enemy's preparation DC (Intel advisor: use advisor's INT instead, +2 bonus)
+
+```
+Margin-based outcomes:
+Crit.Fail (≤-6): Completely deceived — stratagem exploits your confusion
+Fail (-5 to -1): Stratagem proceeds normally
+Partial (0 to +4): Sense something wrong, but not what exactly
+Success (+5 to +9): Detect stratagem, may counter
+Crit.Success (+10+): Full insight — detect + understand enemy's mind (+2 to counter)
+```
 
 ### Countering Detected Stratagems
-If detected, spend your action:
-- Roll INT vs enemy's execution roll
-- Success: Stratagem negated
-- Partial: Effect halved
-- Fail: Stratagem proceeds, you wasted action
+If detected, spend your action — roll INT vs enemy's execution roll:
+
+```
+Margin-based outcomes:
+Crit.Fail (≤-6): Counter backfires — stratagem effect intensified
+Fail (-5 to -1): Stratagem proceeds, your action wasted
+Partial (0 to +4): Stratagem effect halved
+Success (+5 to +9): Stratagem fully negated
+Crit.Success (+10+): Stratagem negated + exploit enemy's plan against them
+```
 
 ### Preparing Specific Counter
 If you know enemy's favorite stratagem:
@@ -556,12 +569,15 @@ Territory limit: Small = max 3, Medium = 5, Large = 8
 When armies clash:
 
 ```
-Roll: d20 + Commander INT + Morale + Terrain modifiers
+Both commanders roll: d20 + INT + Morale + Terrain modifiers
+Calculate margin: Your roll - Enemy roll
 
-Compare both sides:
-- Winner by 5+: Decisive victory (enemy -2 Strength, -2 Morale)
-- Winner by 1-4: Minor victory (enemy -1 Strength, -1 Morale)
-- Tie: Stalemate (both -1 Strength)
+Margin-based outcomes:
+Crit.Fail (≤-6): Crushing defeat — your army -3 Strength, -3 Morale, rout check
+Fail (-5 to -1): Defeat — your army -2 Strength, -2 Morale
+Partial (0 to +4): Stalemate — both armies -1 Strength
+Success (+5 to +9): Victory — enemy army -2 Strength, -2 Morale
+Crit.Success (+10+): Crushing victory — enemy army -3 Strength, -3 Morale, enemy rout check
 ```
 
 ### Modifiers

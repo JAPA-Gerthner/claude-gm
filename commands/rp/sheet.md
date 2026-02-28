@@ -31,6 +31,9 @@ Party morale: ●●●○○ (X/5)
 Location: [where]
 Depth/Level: [if applicable]
 Known nearby threats: [if any]
+
+=== MARGIN THRESHOLDS ===
+≤-6 Crit.Fail | -5..-1 Fail | 0..+4 Partial | +5..+9 Success | +10+ Crit
 ===
 ```
 

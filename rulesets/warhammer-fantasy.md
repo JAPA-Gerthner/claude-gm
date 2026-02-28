@@ -456,7 +456,14 @@ ULGU (Shadow) — Grey Wizard
 
 ```
 CASTING ROLL: d20 + INT + Wind Affinity (0 untrained, +2 trained, +4 master)
-vs DC (simple 10, standard 15, powerful 18, legendary 22)
+vs DC (simple 8, standard 12, powerful 16, legendary 20)
+
+Margin-based outcomes:
+Crit.Fail (≤-6): Catastrophic Miscast — Major Miscast + spell fails
+Fail (-5 to -1): Fizzle — spell fails, Wind disturbed (GM describes)
+Partial (0 to +4): Strained — reduced effect OR full effect + Minor Miscast
+Success (+5 to +9): Controlled — spell works as intended
+Crit.Success (+10+): Empowered — maximum effect, no Miscast risk
 
 SPELL SYSTEM: Narrative-driven. Wizards can attempt any effect
 fitting their Wind. GM sets DC based on scope/power.
@@ -538,8 +545,13 @@ OTHERS: Taal (nature), Rhya (fertility), Verena (justice), Shallya (mercy), Mana
 ```
 PRAYER:
 Roll CHA + Faith vs DC
-Success: Blessing activates
-Failure: God is busy / you're unworthy
+
+Margin-based outcomes:
+Crit.Fail (≤-6): Divine Displeasure — blessing denied, -1 Reputation with god
+Fail (-5 to -1): Unheard — no effect, god is busy
+Partial (0 to +4): Heard — minor comfort, +1 to next related save
+Success (+5 to +9): Blessed — blessing activates as intended
+Crit.Success (+10+): Divine Favor — blessing at maximum power + sign from god
 
 DIVINE FAVOR = FACTION REPUTATION WITH YOUR GOD
 Treat your deity as a faction (tracked in Part VI).
@@ -841,16 +853,23 @@ Human 2-3 | Dwarf 1-2 | Elf 1-2 | Halfling 3-4
 ```
 FEAR (Rating 1-3): Beastmen, Trolls, Undead
 Check: d20 + WIS vs DC (10 + Rating × 2)
-Failure: Flee 1 round OR -2 to all rolls vs source
+
+Margin-based outcomes:
+Crit.Fail (≤-6): Broken — flee screaming d4 rounds, drop items, +1 Insanity
+Fail (-5 to -1): Shaken — flee 1 round OR -2 to all rolls vs source
+Partial (0 to +4): Unnerved — -1 to next roll vs source
+Success (+5 to +9): Steady — no penalty, face the horror
+Crit.Success (+10+): Resolute — immune to this source's Fear for encounter
 
 TERROR (Rating 1-3): Vampires, Greater Daemons, Dragons
 Check: d20 + WIS vs DC (12 + Rating × 3)
-Failure by <5: As Fear
-Failure by 5+: Roll d6:
-  1-2: Flee screaming, drop items
-  3-4: Collapse prone, can only crawl
-  5: Attack nearest creature (any)
-  6: Gain 1 Insanity
+
+Margin-based outcomes:
+Crit.Fail (≤-6): Shattered — collapse prone, +1 Insanity, cannot act d4 rounds
+Fail (-5 to -1): Overwhelmed — as Fear Crit.Fail (flee screaming, drop items)
+Partial (0 to +4): Terrified — as Fear Fail (-2 to all rolls vs source)
+Success (+5 to +9): Brave — face the terror, no penalty
+Crit.Success (+10+): Fearless — immune to this source's Terror for encounter, +2 vs it
 
 IMMUNE TO FEAR: Lizardmen, Undead, Daemons, Slayers
 ```
