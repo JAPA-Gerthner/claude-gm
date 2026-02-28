@@ -330,9 +330,9 @@ Deckers act on normal initiative. No separate Matrix phase.
 
 | Rating | Examples | Base DV |
 |--------|----------|---------|
-| Green | Home, small biz | 10 |
-| Orange | Corp office | 14 |
-| Red | Corp facility | 17 |
+| Green | Home, small biz | 8 |
+| Orange | Corp office | 12 |
+| Red | Corp facility | 16 |
 | Black | Megacorp core | 20+ |
 
 ### Decker Actions
@@ -477,9 +477,16 @@ Deckers act on normal initiative. No separate Matrix phase.
 ### Chase Rules
 
 **Pursuit Points:** Start 3. 0 = caught. 6 = escaped.
-- Each round: d20 + DEX + Handling vs opponent
-- Win by 4+: ±1 point (fleeing gains, chasing subtracts)
-- Win by 8+: ±2 points
+Each round: d20 + DEX + Handling vs opponent's roll.
+
+```
+Margin-based outcomes:
+Crit.Fail (≤-6): Crash/blocked — lose 2 points, vehicle damage
+Fail (-5 to -1): Losing ground — lose 1 point
+Partial (0 to +4): Stalemate — no change
+Success (+5 to +9): Gaining — gain 1 point
+Crit.Success (+10+): Outmaneuver — gain 2 points + free action
+```
 
 ### Vehicle Combat
 
@@ -581,16 +588,18 @@ The Big Ten. Extraterritorial sovereigns.
 Johnson contacts fixer. Team meets neutral ground.
 
 **Negotiation:** CHA vs DC (Johnson's resistance).
-- Easy Johnson (desperate): DC 10
-- Standard Johnson: DC 14
-- Hard Johnson (corp): DC 18
+- Easy Johnson (desperate): DC 8
+- Standard Johnson: DC 12
+- Hard Johnson (corp): DC 16
 
-| Success | Effect |
-|---------|--------|
-| Beat by 1-3 | Standard pay |
-| Beat by 4-7 | +20% pay OR better intel |
-| Beat by 8+ | +30% pay AND better intel |
-| Fail | Take it or leave it |
+```
+Margin-based outcomes:
+Crit.Fail (≤-6): Insulted — Johnson walks, job lost
+Fail (-5 to -1): Take it or leave it — base pay, no extras
+Partial (0 to +4): Standard deal — base pay
+Success (+5 to +9): Good terms — +20% pay OR better intel
+Crit.Success (+10+): Your terms — +30% pay AND better intel
+```
 
 **Base Pay by Job:**
 | Job Type | Per Runner |

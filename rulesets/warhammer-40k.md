@@ -518,6 +518,13 @@ POWER LEVELS:
 
 CASTING ROLL: d20 + WIS + Psy Rating vs DC
 
+Margin-based outcomes:
+Crit.Fail (≤-6): Perils — Major Peril + power fails
+Fail (-5 to -1): Fizzle — power fails, Warp echoes (GM describes)
+Partial (0 to +4): Strained — power works at reduced effect OR full effect + Minor Peril
+Success (+5 to +9): Controlled — power works as intended
+Crit.Success (+10+): Empowered — power at maximum effect, no Peril risk this cast
+
 POWER TIERS:
 Minor Powers (DC 10):
 - Sense emotions, minor telekinesis (1kg), spark flame, read surface thoughts
@@ -610,8 +617,13 @@ THE GOD-EMPEROR:
 
 FAITH MECHANICS:
 Prayer: CHA + Faith vs DC
-Success: Minor blessing (reroll, +1 to roll, resistance)
-Critical: Act of Faith (major miracle)
+
+Margin-based outcomes:
+Crit.Fail (≤-6): Silence — Emperor does not answer, -1 Faith
+Fail (-5 to -1): Doubt — no effect, shaken
+Partial (0 to +4): Heard — minor comfort, +1 to next morale save
+Success (+5 to +9): Blessed — reroll, +1 to roll, or resistance
+Crit.Success (+10+): Act of Faith — major miracle, wounds healed, daemon banished
 
 FAITH = FACTION REPUTATION WITH EMPEROR
 Track as faction reputation (0-6).
@@ -837,9 +849,14 @@ COMMISSAR ORDERS:
 - "No Retreat!" — Unit cannot retreat. Fail = Commissar executes deserter
 - "The Emperor Is Watching!" — Fear immunity, +1 to all saves
 
-ORDER FAILURE (CHA check failed):
-- Troops confused, lose action
-- Commissar may "motivate" with bolt pistol (execution = auto-success next Order)
+ORDER OUTCOMES (margin-based):
+Crit.Fail (≤-6): Disaster — troops break, -1 morale, Commissar must act
+Fail (-5 to -1): Confusion — troops hesitate, lose action
+Partial (0 to +4): Delayed — order executes next turn instead
+Success (+5 to +9): Obeyed — order executes as intended
+Crit.Success (+10+): Inspired — order + troops gain +1 to next roll
+
+Commissar may "motivate" with bolt pistol (execution = auto-success next Order)
 
 VOXCASTER BONUS:
 Officer with voxcaster can issue Orders to units within 30m instead of 10m.

@@ -86,15 +86,20 @@ When Generator fails, engineers must fix it.
 
 | Problem | INT Check DC | Time | Materials |
 |---------|--------------|------|-----------|
-| Minor malfunction | 10 | 4 hours | None |
+| Minor malfunction | 8 | 4 hours | None |
 | Efficiency drop | 12 | 8 hours | 5 steel |
-| Heat fluctuation | 14 | 2 hours | None |
+| Heat fluctuation | 12 | 2 hours | None |
 | Structural damage | 16 | 1 day | 20 steel |
-| Critical failure | 18 | 2 hours | 10 steel |
+| Critical failure | 20 | 2 hours | 10 steel |
 
-Failure on repair check: +2 hours, can retry.
-Critical failure (nat 1): Additional -5% integrity.
-Critical success (nat 20): Half time, no materials needed.
+```
+Margin-based outcomes:
+Crit.Fail (≤-6): Catastrophe — additional -10% integrity, +4 hours
+Fail (-5 to -1): Setback — +2 hours, can retry
+Partial (0 to +4): Fixed with cost — double materials OR +50% time
+Success (+5 to +9): Clean fix — standard time and materials
+Crit.Success (+10+): Masterwork — half time, no materials needed
+```
 
 ---
 
@@ -965,6 +970,9 @@ If yes → valid Frostpunk dilemma.
 - Seamless transition based on dramatic needs
 
 ### Individual Mode Mechanics
+
+Uses gm-skill.md margin-based system:
+≤-6 Crit.Fail | -5..-1 Fail | 0..+4 Partial | +5..+9 Success | +10+ Crit
 
 **Personal Stats (from gm-skill.md)**
 - STR: Physical labor, combat, carrying

@@ -59,7 +59,7 @@ INTELLIGENCE: information, assessment, foresight
 - Contacts and spies
 - Reading hidden contract terms
 - LIMIT: Each use per mission costs 500 C-bills (informants)
-- Partial success (DC-5): vague hints, not full picture
+- Uses margin-based outcomes (Partial = vague hints, Success = clear picture)
 
 LEADERSHIP: Now also adds to pilot skill rolls in combat.
 - LEADERSHIP 3+: All pilots +1 to morale saves
@@ -174,14 +174,21 @@ LOYALTY (like ally clock):
 1: On the edge — looking for other work
 0: Left or betrayed
 
-LOYALTY CHECK: After each mission, roll d20 + LEADERSHIP:
+LOYALTY CHECK: After each mission, roll d20 + LEADERSHIP vs DC:
 - Morale 5: auto-pass
-- Morale 4: DC 8
-- Morale 3: DC 10
-- Morale 2: DC 12
-- Morale 1: DC 15
-Fail = -1 loyalty. Personal grievance = additional -1.
-Note: LEADERSHIP investment directly affects pilot retention.
+- Morale 4: DC 8 (Easy)
+- Morale 3: DC 12 (Medium)
+- Morale 2: DC 16 (Hard)
+- Morale 1: DC 20 (Very Hard)
+
+Outcomes by margin:
+- Crit.Fail (≤-6): -2 loyalty, pilot considers leaving
+- Fail (-5 to -1): -1 loyalty
+- Partial (0 to +4): loyalty unchanged, but grumbling
+- Success (+5 to +9): loyalty stable
+- Crit.Success (+10+): +1 loyalty (inspired)
+
+Personal grievance = additional -1 loyalty regardless of roll.
 
 LOYALTY TRIGGERS:
 +1: Victory, bonus pay, saved their life, promotion
@@ -248,12 +255,14 @@ Assault: 3M-6M C-bills
 
 Note: Salvage is THE way to grow. Purchase = desperation or luxury.
 
-AVAILABILITY ROLL (d20 + DIPLOMACY):
-DC 15: Light mechs available
-DC 18: Medium mechs available
-DC 22: Heavy mechs available
-DC 25: Assault mechs available (rare)
-Black market: -3 to DC but risk of defects/stolen
+AVAILABILITY ROLL (d20 + DIPLOMACY vs DC):
+DC 12: Light mechs available
+DC 16: Medium mechs available
+DC 20: Heavy mechs available
+DC 24: Assault mechs available (rare)
+Black market: -4 to DC but risk of defects/stolen
+
+Partial success: mech available but condition 3/5 or +30% price.
 
 FACTION REWARD CONDITIONS:
 - Relations 8+
@@ -326,7 +335,7 @@ EMERGENCY LOAN (Rep 3+):
 - Borrow up to 50K × Rep grade (Rep 5 = 250K max)
 - 10% interest per month (manageable but painful)
 - Default = Rep drops 2 grades, creditors seize 1 mech as collateral
-- Second loan within 6 months: DIPLOMACY DC 15 to obtain
+- Second loan within 6 months: DIPLOMACY vs DC 16, Partial = half amount
 
 FACTION AID (Relations 7+):
 - Request once per campaign from loyal faction
@@ -395,10 +404,12 @@ COMPLICATION TABLE (d20):
 20: CLEAN — exactly as described (rare)
 
 INTEL MITIGATION:
-INTELLIGENCE roll before contract:
-DC 15: Learn if complication exists (yes/no)
-DC 20: Learn complication category
-DC 25: Learn exact complication
+INTELLIGENCE roll before contract vs DC 16:
+- Crit.Fail: False intel (GM lies about complication)
+- Fail: No useful intel
+- Partial: Learn if complication exists (yes/no)
+- Success: Learn complication category
+- Crit.Success: Learn exact complication
 ```
 
 ---
@@ -422,11 +433,12 @@ SABOTAGE — no direct combat, INTELLIGENCE (1 week, 100K)
 HUNT — destroy specific target (variable, 150-250K)
 RECON — gather intel, avoid combat (1-2 weeks, 75K)
 
-NEGOTIATION (DIPLOMACY vs DC):
-- Base terms → can improve
-- Success: +10% pay or +10% salvage
-- Crit: special terms (transport, support)
-- Fail: base terms, refusal offends
+NEGOTIATION (DIPLOMACY vs DC 12):
+- Crit.Fail (≤-6): Offended employer, -1 relations, base terms only
+- Fail (-5 to -1): Base terms, no improvement
+- Partial (0 to +4): +5% pay OR +5% salvage
+- Success (+5 to +9): +10% pay OR +10% salvage
+- Crit.Success (+10+): +15% pay AND special terms (transport, support, intel)
 
 HIDDEN TERMS:
 GM rolls when contract accepted:
@@ -457,31 +469,32 @@ COMBAT PHASES:
 
    RETREAT RULES:
    Roll TACTICS vs DC 12 (+ enemy strength modifiers)
-   - Success: Escape, 1 condition damage total (rearguard)
-   - Partial: Escape, 2-3 condition damage
-   - Fail: Escape, 4-5 damage, may lose straggler mech
+   - Crit.Fail (≤-6): Rout — 6+ damage, lose slowest mech, Rep -2
+   - Fail (-5 to -1): Escape, 4-5 damage, may lose straggler
+   - Partial (0 to +4): Escape, 2-3 condition damage
+   - Success (+5 to +9): Escape, 1 condition damage (rearguard only)
+   - Crit.Success (+10+): Clean escape, no damage
    Contract result: Partial completion (-50% pay, no salvage, Rep -1)
 
 3. CLASH
    - Roll TACTICS + modifiers vs DC
 
    COMBAT DC:
-   Base: 10
+   Base: 12 (Medium)
    +2: Enemy numerical advantage (per extra mech)
    +2: Enemy skill advantage (higher avg pilot tier)
    +2: Poor terrain for your approach
-   +3: Fortified enemy position
+   +4: Fortified enemy position
    -2: Your numerical advantage (per extra mech)
    -2: Ambush/surprise (you have it)
    -2: Superior intel (INTELLIGENCE success)
 
-   Partial success: Beat DC by 0-4
-   Full success: Beat DC by 5+
-
-   Success: objective achieved, minimal losses — 100% pay
-   Partial: objective achieved with losses — 75% pay
-   Fail: losses without result — 25% pay, Rep -1
-   Crit.fail: rout — 0% pay, Rep -1, employer angry
+   OUTCOMES (margin = result - DC):
+   - Crit.Fail (≤-6): Rout — 0% pay, Rep -2, employer furious, heavy losses
+   - Fail (-5 to -1): Defeat — 25% pay, Rep -1, losses without result
+   - Partial (0 to +4): Pyrrhic — objective achieved with losses, 75% pay
+   - Success (+5 to +9): Victory — objective achieved, minimal losses, 100% pay
+   - Crit.Success (+10+): Decisive — 100% pay + bonus salvage, Rep +1
 
 4. CASUALTIES
    DAMAGE POOL by result:
@@ -541,7 +554,7 @@ Weapons: 20K-100K (upgrades or sale)
 
 BUYING SALVAGE:
 - Can buy from employer at 150% market value
-- DIPLOMACY DC 15: buy at 120% value
+- DIPLOMACY vs DC 16: Partial = 135%, Success = 120%, Crit = 100%
 ```
 
 ---
@@ -561,9 +574,11 @@ Requires:
 - Technicians (company has 1 per 2 mechs)
 
 LOGISTICS vs DC 12:
-- Success: repair on time, standard cost
-- Fail: +50% time OR +50% cost (choose)
-- Crit.fail: need rare part (quest or 3× cost)
+- Crit.Fail (≤-6): Part destroyed — need rare component (quest or 3× cost)
+- Fail (-5 to -1): Complications — +50% time OR +50% cost (choose)
+- Partial (0 to +4): Repair done but +25% cost or +1 day
+- Success (+5 to +9): Repair on time, standard cost
+- Crit.Success (+10+): Ahead of schedule, -1 day or -10% cost
 
 BETWEEN CONTRACTS:
 - Repair
@@ -978,7 +993,7 @@ PAY MODIFIER (d6):
 === BETWEEN-CONTRACT EVENTS (d20) ===
 1: Assassination attempt on commander
 2: Pilot arrested — bail 10K or break out
-3: Mech sabotaged — LOGISTICS DC 15 to catch before damage
+3: Mech sabotaged — LOGISTICS vs DC 16 to catch before damage
 4: Rival poaches pilot — contested loyalty check
 5-6: Debt collector appears — pay 20K or reputation hit
 7-8: Old enemy resurfaces — grudge clock +1
@@ -1020,12 +1035,15 @@ Focus on:
 
 ```
 === COMBAT ===
-Roll: d20 + TACTICS vs DC (base 10)
+Roll: d20 + TACTICS vs DC (base 12)
 DC mods: +2 per enemy advantage, -2 per your advantage
-Partial: beat by 0-4 | Full: beat by 5+
+Margin: result - DC → outcome
+
+=== MARGIN OUTCOMES ===
+≤-6 Crit.Fail | -5..-1 Fail | 0..+4 Partial | +5..+9 Success | +10+ Crit
 
 === DAMAGE ===
-Success: 1-2 total | Partial: 3-5 | Fail: 4-6 | Crit fail: 6-10
+Crit.Success: 0-1 | Success: 1-2 | Partial: 3-5 | Fail: 4-6 | Crit.Fail: 6-10
 Cap: 3 damage per mech per battle
 
 === REPAIR COSTS (Light/Med/Heavy/Assault) ===
@@ -1039,8 +1057,8 @@ Mech upkeep: 5K each
 Pilot salary: Green 1K | Regular 2K | Veteran 4K | Elite 8K
 Dropship: Leopard 10K | Union 30K | Overlord 100K
 
-=== KEY DCs ===
-Easy: 8 | Standard: 10 | Hard: 15 | Very Hard: 18 | Extreme: 22
+=== DC SCALE ===
+Easy: 8 | Medium: 12 | Hard: 16 | Very Hard: 20 | Extreme: 24
 
 === REPUTATION ===
 1-2: F | 3-4: D | 5-6: C | 7-8: B | 9: A | 10: A+
@@ -1049,10 +1067,10 @@ Easy: 8 | Standard: 10 | Hard: 15 | Very Hard: 18 | Extreme: 22
 Green: -1 | Regular: 0 | Veteran: +1 | Elite: +2
 
 === QUICK ROLLS ===
-Loyalty check: d20 + LEADERSHIP vs DC (by morale)
+Loyalty check: d20 + LEADERSHIP vs DC (8/12/16/20 by morale)
 Contract negotiation: DIPLOMACY vs DC 12
-Intel gathering: INTELLIGENCE vs DC 15 (costs 500)
-Mech availability: d20 + DIPLOMACY vs DC (15/18/22/25 by class)
+Intel gathering: INTELLIGENCE vs DC 16 (costs 500)
+Mech availability: d20 + DIPLOMACY vs DC (12/16/20/24 by class)
 ```
 
 ---

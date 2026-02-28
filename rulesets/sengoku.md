@@ -362,10 +362,13 @@ WAKI:     +0     +0       DC 16       any         Hasso
 
 ### Phase 1: Reading the Enemy
 ```
-Roll: WIS vs enemy stance Visibility DC
+Roll: WIS vs enemy stance Visibility DC (margin-based)
 
-Success → know enemy's stance, choose consciously
-Fail → choose blind (GM doesn't reveal)
+Crit.Fail (≤-6): Misread — GM gives false stance info
+Fail (-5 to -1): Blind — choose without knowing
+Partial (0 to +4): Glimpse — know stance but not pattern
+Success (+5 to +9): Read — know stance, choose consciously
+Crit.Success (+10+): Predict — know stance AND next intended move
 ```
 
 ### Phase 2: Choosing Stance
@@ -404,7 +407,13 @@ PROGRESSION: First hit = 1 wound. Second hit same zone = 2 wounds (crippled).
 Track: HEAD ○○ | TORSO ○○ | LEGS ○○
 WOUND LIMIT: 6 total wounds = defeated.
 
-RECOVERY (combat): Spend action + DC 12 CON save → remove 1 wound (once/zone/fight)
+RECOVERY (combat): Spend action + CON vs DC 12
+- Crit.Fail: Wound worsens (+1 wound same zone)
+- Fail: No recovery, action wasted
+- Partial: Stabilize (no removal, but bleeding stops)
+- Success: Remove 1 wound
+- Crit.Success: Remove 1 wound + ignore wound penalties this round
+(Once per zone per fight)
 
 DEFEAT: 0 HP OR 6 wounds = defeated (whichever first). Finishers require target standing (HP>0).
 HP + ZONES: Damage reduces HP. Zone wounds are additional penalties. Both tracked separately.
@@ -477,7 +486,7 @@ Trigger: [when they change]
 At Crippled in any zone → finisher available (instant kill/incapacitation). Requires successful attack to same zone.
 
 ### Disarming
-From Gedan: on crit.success can disarm instead of damage. Unarmed = surrender or huge disadvantage.
+From Gedan: on Crit.Success (margin +10) can disarm instead of damage. Unarmed = surrender or huge disadvantage.
 
 ---
 
@@ -926,10 +935,12 @@ Hidden problems. GM rolls secretly or picks.
 18-19: SECONDARY OBJECTIVE — Hidden goal revealed mid-mission
 20: CLEAN — Exactly as described (rare)
 
-DETECTION (INTELLIGENCE or WIS):
-DC 12: Learn if complication exists
-DC 16: Learn category
-DC 20: Learn exact complication
+DETECTION (INT or WIS vs DC 16):
+- Crit.Fail: False intel (GM misleads)
+- Fail: No useful info
+- Partial: Learn if complication exists (yes/no)
+- Success: Learn complication category
+- Crit.Success: Learn exact complication
 ```
 
 ---
