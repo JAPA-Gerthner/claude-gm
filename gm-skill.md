@@ -222,7 +222,8 @@ Decay: 3 significant events ignoring them → −1
 ```
 
 **Crisis loyalty:** d20+CHA vs DC (8 mild / 12 danger / 16 death / 20 certain death)
-- Clock 5-6: advantage | Clock 1-2: disadvantage | Fail: flees or betrays
+- Clock 5-6: advantage | Clock 1-2: disadvantage
+- Crit.Fail: betrays | Fail: flees | Partial: hesitates (acts next turn) | Success+: stands firm
 
 ### Faction
 
@@ -371,12 +372,37 @@ Ask the player:
 2. Tone: Dark / Medium / Light OR author name
    (default: Clavell's Shogun. Player can specify: "Sapkowski", "Brian Jacques", etc.)
 3. Difficulty: Casual / Standard / Hardcore
-   (typical DCs: 8-12 / 12-16 / 16-20)
+   (see DIFFICULTY section for margin thresholds)
 4. Custom mechanics: Yes / No
    (GM can create additional mechanics for character/setting)
 ```
 
 Always with stats.
+
+---
+
+## DIFFICULTY
+
+All thresholds in this ruleset are written for **Standard** difficulty.
+Adjust margin interpretation based on chosen difficulty:
+
+### Margin Thresholds
+
+| Outcome | Casual | Standard | Hardcore |
+|---------|--------|----------|----------|
+| Crit.Fail | ≤ −8 | ≤ −6 | ≤ −4 |
+| Fail | −7 to −1 | −5 to −1 | −3 to −1 |
+| Partial | 0 to +2 | 0 to +4 | 0 to +6 |
+| Success | +3 to +7 | +5 to +9 | +7 to +11 |
+| Crit | ≥ +8 | ≥ +10 | ≥ +12 |
+
+### What Changes
+
+- **Casual:** wider success, narrower failure. Forgiving — good for story-focused play.
+- **Standard:** balanced. Default for most campaigns.
+- **Hardcore:** narrow success, wide partial. Every roll tense — for gritty survival.
+
+DC values stay the same across difficulties — the world doesn't get easier, interpretation does.
 
 ---
 
@@ -406,15 +432,16 @@ High stats unlock powerful abilities. Level 5 = human peak. Level 8 = legendary/
 STR 5+: BRUTAL FORCE — +2 to margin on melee attacks
 
 STR 8+: TITAN'S BLOW — Once per combat, declare before rolling.
-        On hit: maximum damage (no roll) + target CON save DC 10+STR or stunned 1 turn.
-        On miss: deal half damage anyway (raw force).
-        Witnesses: enemies who see this must WIS DC 15 or become demoralized (-2 to attacks).
+        Partial+: maximum damage (no roll) + target CON save or stunned 1 turn.
+        Fail: deal half damage anyway (raw force).
+        Crit.Fail: half damage, but you're off-balance (enemy ADV next attack).
+        Witnesses: enemies must WIS save or become demoralized (-2 to attacks).
 ```
 
 ### DEX (Dexterity)
 ```
 DEX 5+: UNTOUCHABLE — Once per combat, completely negate one attack you can see.
-        Plus passive EVASION: AoE/traps — success = 0 damage, failure = half damage.
+        Plus passive EVASION on AoE/traps: Partial+ = 0 damage, Fail = half, Crit.Fail = full.
 
 DEX 8+: FLURRY — two attacks per turn (each with separate roll). Supernatural speed.
 ```
@@ -496,13 +523,15 @@ Opening: [first scene with choice/problem]
 
 ## ROLLS
 
+> **Note:** Thresholds below are for **Standard** difficulty. See DIFFICULTY section for Casual/Hardcore adjustments.
+
 ```
 MARGIN-BASED RESOLUTION:
 
 Roll: d20 + modifier
 Margin: Result − DC
 
-FIVE OUTCOMES:
+FIVE OUTCOMES (Standard):
   ≤ −6     Critical Failure — fail + serious consequence + escalation
   −5 to −1 Failure — objective blocked, situation worsens
   0 to +4  Partial Success — progress + complication (fail-forward)
@@ -563,16 +592,25 @@ Examples:
 
 ```
 Initiative: d20 + DEX
-Attack: d20 + STR/DEX >= AC → damage
 Action + Bonus (if available) + Movement 30ft + Reaction
 
 Opportunity attack: leaving melee = enemy attacks with reaction
 (avoidable if exit via ability or spell)
 ```
 
-**Damage:** d4 fist | d6 light | d8 medium | d10 heavy | d12 special
+### Attack Resolution
 
-**Crit Success (margin ≥+10):** double damage dice (2d8 instead of d8) + extra effect at GM discretion
+Attack uses margin system: d20 + STR/DEX vs AC (AC = DC)
+
+| Outcome | Effect |
+|---------|--------|
+| Crit.Fail | Miss + consequence (disarmed, off-balance, opening) |
+| Fail | Miss |
+| Partial | Glancing blow — half damage |
+| Success | Hit — full damage |
+| Crit | Hit — double damage dice + bonus effect |
+
+**Damage dice:** d4 fist | d6 light | d8 medium | d10 heavy | d12 special
 
 **Flanking:** 2+ allies in melee with same target = +2 to attack each
 
@@ -590,7 +628,16 @@ Opportunity attack: leaving melee = enemy attacks with reaction
 
 **AC:** Unarmored 10+DEX | Light 11-12+DEX | Medium 13-15+DEX(max+2) | Heavy 16-18 | Shield +2
 
-**Saving throws (d20 + stat vs DC):**
+**Saving throws** use margin (d20 + stat vs DC):
+
+| Outcome | Effect |
+|---------|--------|
+| Crit.Fail | Full effect + extra consequence |
+| Fail | Full effect |
+| Partial | Reduced effect (half damage/duration) |
+| Success | Resist completely |
+| Crit | Resist + advantage on next action vs source |
+
 ```
 CON save: poisons, diseases, stun
 DEX save: AoE, traps, explosions
@@ -755,8 +802,17 @@ Passive WIS >= DC → player notices automatically
 ## DEATH
 
 ```
-HP 0: unconscious, saving throws d20 each turn (10+ success, 3 failures = death)
-Nat.1: two failures | Nat.20: get up with 1 HP
+HP 0: unconscious, death saves each turn (d20 vs DC 10)
+
+| Outcome | Effect |
+|---------|--------|
+| Crit.Fail | 2 failures |
+| Fail | 1 failure |
+| Partial | no change (clinging to life) |
+| Success | 1 success |
+| Crit | get up with 1 HP |
+
+3 failures = death | 3 successes = stable (unconscious)
 Massive damage (>= max HP): instant death
 NPCs are mortal — fair rolls, don't save for plot
 ```
