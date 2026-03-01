@@ -17,7 +17,6 @@ gm-skill/
 │   ├── vtm.md               # Vampire: The Masquerade
 │   ├── warhammer-fantasy.md # Old World (corruption, Chaos, factions)
 │   ├── warhammer-40k.md     # Grimdark far future (Imperium, Chaos, Xenos)
-│   ├── china-1900-1952.md   # Warlords, Revolution, Survival
 │   ├── pirates.md           # Golden Age of Piracy (fantasy)
 │   ├── witcher.md           # Monster Hunters (Sapkowski + CDPR)
 │   ├── cyberpunk-red.md     # Dark Future (R. Talsorian 2020/RED/2077)
@@ -131,13 +130,6 @@ Complete setting packs — pick one at session start.
 - Xenos (Eldar with Spirit Stones, Orks, Tau, Necrons)
 - Psychic powers with Perils, weapon stats
 - For: military campaigns, Inquisitorial investigations, heresy
-
-**china-1900-1952.md** — Warlords, Revolution, Survival:
-- 52 years: Boxer Rebellion → Warlord Era → Japanese Invasion → Civil War
-- All factions grey (Qing, Warlords, KMT, CCP, Japan)
-- Loyalty, Ideology, Survival, Reputation mechanics
-- Hyperinflation economics, HOI4 approach to atrocities
-- For: soldiers, spies, refugees, revolutionaries
 
 **pirates.md** — Golden Age of Piracy (Fantasy):
 - Era 1650-1730, high magic, world travel
