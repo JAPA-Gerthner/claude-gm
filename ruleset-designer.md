@@ -144,7 +144,7 @@ Before marking ruleset complete:
 | vtm.md | 1099 | **COMPLETE** | Full coverage |
 | warhammer-fantasy.md | 1133 | **COMPLETE** | Full pipeline: combat, NPCs, Fate/Fear/Insanity |
 | warhammer-40k.md | 1064 | **COMPLETE** | Full coverage |
-| pirates.md | 1012 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
+| cursed-seas.md | 1012 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
 | witcher.md | 1125 | **COMPLETE** | Full pipeline: Sapkowski+CDPR, merged NPC templates |
 | cyberpunk-red.md | 1064 | **COMPLETE** | Full pipeline: R. Talsorian 2020/RED/2077, 10 roles, netrunning, humanity |
 | shadowrun-lite.md | 1023 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
@@ -217,7 +217,7 @@ Verdict: Ready / Needs work
 | 2026-02-27 | shadowrun-lite.md | Full pipeline: NEW 1023 lines, Magic+Cyber+Corps, Quick-Jack Matrix, Technomancers, Contacts, Vehicles |
 | 2026-02-27 | cyberpunk-red.md | Full pipeline: NEW 1064 lines, R. Talsorian 2020/RED/2077, 10 roles, Quick-Jack netrunning, humanity/cyberpsychosis |
 | 2026-02-27 | witcher.md | Full pipeline: 1044→1125, merged witcher-npcs.md, detailed school templates, canon witchers, contract givers |
-| 2026-02-26 | pirates.md | Full pipeline: NEW 1012 lines, Golden Age of Piracy fantasy, ships, naval combat, bestiary, voodoo |
+| 2026-02-26 | cursed-seas.md | Full pipeline: NEW 1012 lines, Golden Age of Piracy fantasy, ships, naval combat, bestiary, voodoo |
 | 2025-02-26 | warhammer-fantasy.md | Full pipeline: 707→1133, added combat/weapons/armor, Fate/Fortune/Fear/Insanity, NPCs, Halflings |
 | 2025-02-26 | sengoku.md | Full pipeline: 708→1103, fixed stats (1-5 scale), added Date/Mori clans, balanced stances, fixed exploits |
 | 2024-XX-XX | vtm.md | Expanded 418→1099, added mythology, sects, mechanics |
