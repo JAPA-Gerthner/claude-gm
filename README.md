@@ -22,7 +22,8 @@ gm-skill/
 │   ├── witcher.md           # Monster Hunters (Sapkowski + CDPR)
 │   ├── cyberpunk-red.md     # Dark Future (R. Talsorian 2020/RED/2077)
 │   ├── shadowrun-lite.md    # Magic + Cyber + Corps (Simplified Shadowrun)
-│   └── frostpunk.md         # Frozen Steampunk Survival (City as Entity)
+│   ├── frostpunk.md         # Frozen Steampunk Survival (City as Entity)
+│   └── blades-lite.md       # Haunted Industrial Heists (Doskvol)
 ├── commands/
 │   ├── rp.md                # Main /rp command
 │   └── rp/                  # Subcommands
@@ -180,6 +181,15 @@ Complete setting packs — pick one at session start.
 - Laws system: Order vs Faith paths
 - Two-mode play: Zoom out (city) or zoom in (scout teams)
 - For: survival management, moral dilemmas, desperate choices
+
+**blades-lite.md** — Haunted Industrial Heists:
+- Doskvol: eternal night, ghosts, lightning barriers
+- Score Cycle: Freeplay → Score → Downtime
+- Crew/Heat/Wanted mechanics, Stress/Trauma
+- 7 Playbooks (Cutter, Hound, Leech, Lurk, Slide, Spider, Whisper)
+- 6 Crew types (Assassins, Bravos, Cult, Hawkers, Shadows, Smugglers)
+- Occult system: ghosts, demons, electroplasm, binding
+- For: heists, gang warfare, occult mysteries, urban survival
 
 ## Saves
 
