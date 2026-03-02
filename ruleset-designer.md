@@ -150,6 +150,7 @@ Before marking ruleset complete:
 | shadowrun-lite.md | 1023 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
 | frostpunk.md | 1134 | **COMPLETE** | Full pipeline: City as Entity, Temperature Clock, Hope/Discontent, Laws (Order/Faith), Two play modes |
 | blades-lite.md | 1115 | **COMPLETE** | Full pipeline: Crew/Score/Heat, Stress/Trauma, Doskvol, Factions, Occult |
+| deus-ex.md | 1075 | **COMPLETE** | Full pipeline: Paranoia System (Trust Clocks, Suspicion, Chaos Principle), Integration, Neuropozyne |
 
 ---
 
@@ -159,7 +160,6 @@ Before marking ruleset complete:
 
 | Сеттинг | Уникальные механики | Описание / Контекст |
 |---------|---------------------|---------------------|
-| **deus-ex.md** | Augmentation vs Humanity, ВСЕ conspiracy theories как лор (Illuminati, MJ-12, Area 51), Near-future realism | Near-future (2020-2050). Ключевое: ВСЕ реальные conspiracy theories — правда. Illuminati, MJ-12, Bilderberg, Area 51, JFK, chemtrails, deep state — всё существует. Игроки — агенты или беглецы. Augmentation с Humanity cost как в cyberpunk-red. Стелс/социалка важнее combat. |
 | **dark-souls.md** | Bonfire/death loop, Stamina management, Boss phases, Souls = XP + валюта, Humanity/Hollowing | УНИКАЛЬНАЯ механика. Смерть = откат к bonfire, но мир помнит (двери открыты, NPC сдвинулись). Souls теряются при смерти, можно вернуть. Stamina pool на ВСЕ действия (атака, блок, ролл). Боссы: 2-3 фазы, telegraphed attacks, паттерны. Hollow/Human статус влияет на мир. Estus = ограниченное лечение. Covenants = фракции. Grim, lonely, cryptic lore. |
 | **scp.md** | Containment procedures, [REDACTED] механика, Clearance levels, GOIs (Chaos Insurgency, Church of Broken God), Anomaly classification | Современный процедурный хоррор. Игроки — Foundation personnel (D-class, researchers, MTF). Clearance level = что знаешь. [REDACTED] механика: GM скрывает инфу буквально. Anomalies с классами (Safe/Euclid/Keter). GOIs как фракции. Бюрократия защищает от ужаса — нарушил протокол = последствия. |
 | **cthulhu.md** | Sanity system (ключевая!), Investigation phases, Forbidden knowledge cost, Helplessness | Классический cosmic horror. Sanity вместо/параллельно HP — знание = потеря рассудка. Investigation loop: clues → research → confrontation → cost. Helplessness — combat НЕ решение, монстры непобедимы. Много реализаций существует — сделать компактно, без bloat. 1920s или modern. |
@@ -213,6 +213,7 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-03-02 | deus-ex.md | Full pipeline: NEW 1075 lines, Paranoia System (Trust Clocks, Suspicion, Chaos Principle), Integration/Neuropozyne, 8 NPC templates |
 | 2026-02-27 | frostpunk.md | Full pipeline: NEW 1134 lines, City as Entity, Temperature Clock, Hope/Discontent, Laws (Order/Faith), Two play modes, Individual Mode HP/AC |
 | 2026-02-27 | shadowrun-lite.md | Full pipeline: NEW 1023 lines, Magic+Cyber+Corps, Quick-Jack Matrix, Technomancers, Contacts, Vehicles |
 | 2026-02-27 | cyberpunk-red.md | Full pipeline: NEW 1064 lines, R. Talsorian 2020/RED/2077, 10 roles, Quick-Jack netrunning, humanity/cyberpsychosis |
