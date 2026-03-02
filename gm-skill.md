@@ -429,7 +429,9 @@ High stats unlock powerful abilities. Level 5 = human peak. Level 8 = legendary/
 
 ### STR (Strength)
 ```
-STR 5+: BRUTAL FORCE — +2 to margin on melee attacks
+STR 5+: CRUSHING BLOW — On Partial or Success melee hit, roll d20.
+        On 15+: upgrade damage one tier.
+        (Partial → full damage, Success → Crit damage + effect)
 
 STR 8+: TITAN'S BLOW — Once per combat, declare before rolling.
         Partial+: maximum damage (no roll) + target CON save or stunned 1 turn.
@@ -608,7 +610,7 @@ Attack uses margin system: d20 + STR/DEX vs AC (AC = DC)
 | Fail | Miss |
 | Partial | Glancing blow — half damage |
 | Success | Hit — full damage |
-| Crit | Hit — double damage dice + bonus effect |
+| Crit | Hit — double damage dice + bonus effect (stun, knockback, disarm, bleed, cripple) |
 
 **Damage dice:** d4 fist | d6 light | d8 medium | d10 heavy | d12 special
 
