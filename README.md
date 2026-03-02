@@ -22,7 +22,9 @@ gm-skill/
 │   ├── cyberpunk-red.md     # Dark Future (R. Talsorian 2020/RED/2077)
 │   ├── shadowrun-lite.md    # Magic + Cyber + Corps (Simplified Shadowrun)
 │   ├── frostpunk.md         # Frozen Steampunk Survival (City as Entity)
-│   └── blades-lite.md       # Haunted Industrial Heists (Doskvol)
+│   ├── blades-lite.md       # Haunted Industrial Heists (Doskvol)
+│   ├── deus-ex.md           # Conspiracy Thriller (Paranoia, Augmentation)
+│   └── scp.md               # Bureaucratic Horror (Foundation, Containment)
 ├── commands/
 │   ├── rp.md                # Main /rp command
 │   └── rp/                  # Subcommands
@@ -182,6 +184,23 @@ Complete setting packs — pick one at session start.
 - 6 Crew types (Assassins, Bravos, Cult, Hawkers, Shadows, Smugglers)
 - Occult system: ghosts, demons, electroplasm, binding
 - For: heists, gang warfare, occult mysteries, urban survival
+
+**deus-ex.md** — Conspiracy Thriller:
+- Era 2027-2052, nano-augmentation revolution
+- Paranoia System: Trust Clocks, Suspicion, Chaos Principle
+- Augmentation with Integration/Rejection mechanics
+- Neuropozyne dependency, corporate factions
+- 6 Roles (Agent, Hacker, Smuggler, Exec, Journalist, Mercenary)
+- For: conspiracies, transhumanism, corporate espionage
+
+**scp.md** — Bureaucratic Horror:
+- Modern era, SCP Foundation personnel
+- Usefulness vs Liability core system (corporate survival)
+- Clearance levels, [REDACTED] mechanic
+- Anomaly classification (Safe/Euclid/Keter), Hume levels
+- Processing Clock, internal politics, O5 Council
+- 6 Roles (D-Class, Researcher, Security, MTF, Site Staff, Ethics)
+- For: containment operations, internal investigations, procedural horror
 
 ## Saves
 
