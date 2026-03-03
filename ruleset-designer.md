@@ -152,6 +152,7 @@ Before marking ruleset complete:
 | blades-lite.md | 1115 | **COMPLETE** | Full pipeline: Crew/Score/Heat, Stress/Trauma, Doskvol, Factions, Occult |
 | deus-ex.md | 1075 | **COMPLETE** | Full pipeline: Paranoia System (Trust Clocks, Suspicion, Chaos Principle), Integration, Neuropozyne |
 | scp.md | 1187 | **COMPLETE** | Full pipeline: Usefulness/Liability, Processing Clock, O5 Council (13), Hume Levels, Anomaly Engagement |
+| cascade.md | 1502 | **COMPLETE** | Full pipeline: Cinematic Dieselpunk, Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles |
 
 ---
 
@@ -165,7 +166,7 @@ Before marking ruleset complete:
 | **cthulhu.md** | Sanity system (ключевая!), Investigation phases, Forbidden knowledge cost, Helplessness | Классический cosmic horror. Sanity вместо/параллельно HP — знание = потеря рассудка. Investigation loop: clues → research → confrontation → cost. Helplessness — combat НЕ решение, монстры непобедимы. Много реализаций существует — сделать компактно, без bloat. 1920s или modern. |
 | **star-wars.md** | Light/Dark points, Force powers, Era selection (Old Republic/Empire/Sequels) | Force как спектр Light↔Dark с механическими последствиями. Era selection в session zero (Old Republic, Clone Wars, Empire, New Republic, Sequels). Джедаи/Ситхи vs обычные персонажи — баланс нужен. Много существующих систем — взять лучшее, не изобретать. Фракции зависят от эры. |
 | **stalker.md** | Аномалии, Артефакты, Выбросы, Радиация, Фракции Зоны | Чернобыльская Зона отчуждения. Идеально для Claude-GM: ограниченное пространство, одиночки/малые группы, не надо симулировать армии. Фракции: Долг, Свобода, Одиночки, Бандиты, Военные, Монолит, Учёные, Наёмники. Аномалии как физические головоломки. Артефакты = loot с выбором (носить vs продать). Выбросы = periodic tension. Серьёзный пост-апок без grimderp. |
-| **road-warrior.md** | Vehicle as Character, Fuel Economy, Tribal Factions, Brutal Car Combat | Mad Max style пост-апок. **КЛЮЧЕВОЕ: машина = прокачиваемый персонаж** (броня, оружие, двигатель, экипаж). Лор генерируется на ходу — НЕ привязываться к фильмам/каноничным фракциям. Локации разнообразные: пустыни, вымершие города-руины, радиоактивные леса, замёрзшие пустоши. География вдохновлена США/Канадой. Брутальный экшен: бои на движущихся машинах, обрезы в притык, карлики с взрывчаткой. Fuel/Water/Ammo как ресурсы. |
+| ~~road-warrior.md~~ | ~~Vehicle as Character, Fuel Economy~~ | **РЕАЛИЗОВАН как cascade.md** — Cinematic Dieselpunk: Era 2024, 35 years after The Signal killed electronics. Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles (Driver, Stalker, Wrench, Gunhand, Face, Sawbones). |
 | **disco-elysium.md** | SKILLS AS INNER VOICES, Thought Cabinet, Ideology system, Dialogue-heavy | Уникальнейшая механика: 24 Skills = внутренние голоса/личности (Electrochemistry хочет наркотики, Authority хочет доминировать, Inland Empire видит мистику). Thought Cabinet = мысли которые "устанавливаешь" и они дают бонусы/штрафы. 4 идеологии (Communism, Fascism, Moralism, Ultraliberalism) влияют на диалоги. МИНИМУМ БОЁВКИ — всё через диалоги и внутренние чеки. Детектив-амнезиак в разрушенном городе. Референс: оригинальная игра, никаких аналогов. |
 
 ---
@@ -213,6 +214,7 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-03-03 | cascade.md | Full pipeline: NEW 1502 lines, Cinematic Dieselpunk (replaces road-warrior concept), Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles |
 | 2026-03-02 | scp.md | Full pipeline: NEW 1187 lines, Bureaucratic Horror, Usefulness/Liability, Processing Clock, O5 Council (13), Hume Levels, Anomaly Engagement, Starter Scenario |
 | 2026-03-02 | deus-ex.md | Full pipeline: NEW 1075 lines, Paranoia System (Trust Clocks, Suspicion, Chaos Principle), Integration/Neuropozyne, 8 NPC templates |
 | 2026-02-27 | frostpunk.md | Full pipeline: NEW 1134 lines, City as Entity, Temperature Clock, Hope/Discontent, Laws (Order/Faith), Two play modes, Individual Mode HP/AC |
