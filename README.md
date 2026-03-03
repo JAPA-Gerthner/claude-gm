@@ -10,21 +10,25 @@ Rules and commands for playing text-based RPG with Claude as Game Master.
 ```
 gm-skill/
 ├── gm-skill.md              # Core GM rules
+├── feedback-reviewer.md     # Feedback analysis with 5-agent panel
+├── ruleset-designer.md      # Ruleset development pipeline
 ├── rulesets/
+│   ├── drafts/              # Work-in-progress rulesets
 │   ├── sengoku.md           # Warring States Japan (honor, stance combat)
 │   ├── sanguo.md            # Three Kingdoms China (virtue, strategy)
 │   ├── battletech-commander.md  # Mech mercenary company
 │   ├── vtm.md               # Vampire: The Masquerade
 │   ├── warhammer-fantasy.md # Old World (corruption, Chaos, factions)
 │   ├── warhammer-40k.md     # Grimdark far future (Imperium, Chaos, Xenos)
-│   ├── cursed-seas.md           # Golden Age of Piracy (fantasy)
+│   ├── cursed-seas.md       # Golden Age of Piracy (fantasy)
 │   ├── witcher.md           # Monster Hunters (Sapkowski + CDPR)
 │   ├── cyberpunk-red.md     # Dark Future (R. Talsorian 2020/RED/2077)
 │   ├── shadowrun-lite.md    # Magic + Cyber + Corps (Simplified Shadowrun)
 │   ├── frostpunk.md         # Frozen Steampunk Survival (City as Entity)
 │   ├── blades-lite.md       # Haunted Industrial Heists (Doskvol)
 │   ├── deus-ex.md           # Conspiracy Thriller (Paranoia, Augmentation)
-│   └── scp.md               # Bureaucratic Horror (Foundation, Containment)
+│   ├── scp.md               # Bureaucratic Horror (Foundation, Containment)
+│   └── cascade.md           # Cinematic Dieselpunk (Post-Signal, Adrenaline)
 ├── commands/
 │   ├── rp.md                # Main /rp command
 │   └── rp/                  # Subcommands
@@ -39,7 +43,9 @@ gm-skill/
 │       ├── saves.md
 │       ├── save-delete.md
 │       ├── gm.md
+│       ├── feedback.md
 │       └── help.md
+├── feedback/                # Player feedback storage
 ├── saves/                   # Session saves
 ├── setup.sh                 # Installation
 └── README.md
@@ -77,6 +83,7 @@ Clone repo anywhere — setup will pick up correct path.
 | `/rp:saves` | List saves |
 | `/rp:save-delete [name]` | Delete save |
 | `/rp:gm [topic]` | Talk to GM outside roleplay |
+| `/rp:feedback` | Save feedback about session |
 | `/rp:help` | Command reference |
 
 ## Mechanics
@@ -202,6 +209,15 @@ Complete setting packs — pick one at session start.
 - 6 Roles (D-Class, Researcher, Security, MTF, Site Staff, Ethics)
 - For: containment operations, internal investigations, procedural horror
 
+**cascade.md** — Cinematic Dieselpunk Action:
+- Era 2024, 35 years after The Signal killed electronics
+- Adrenaline system (action rewards momentum)
+- 4 crystal colors, zone mechanics, chimera transformations
+- 12 named corporations, stalker guilds, black markets
+- 7 regions (Americas, Japan, Africa, Europe, Russia, Arabia, Pacific)
+- 6 Roles (Driver, Stalker, Wrench, Gunhand, Face, Sawbones)
+- For: road warriors, artifact hunters, dieselpunk action cinema
+
 ## Saves
 
 Saves stored in `saves/[name].md` inside repo.
@@ -222,6 +238,26 @@ Save format includes:
 - Custom mechanics (full rules)
 
 No hard size limit — save as much as needed for full restore.
+
+## Feedback
+
+Collect and analyze player feedback systematically.
+
+**Saving feedback:**
+- Use `/rp:feedback` during or after session
+- Feedback saved to `feedback/[date]-[topic].md`
+- Auto-captures context (scene, ruleset, recent rolls)
+
+**Reviewing feedback:**
+- Run `feedback-reviewer.md` when you have 5-10 items
+- Launches 5 expert agents in parallel:
+  - Mechanics Expert
+  - Pacing Expert
+  - Narrative Expert
+  - UX Expert
+  - Devil's Advocate
+- Produces consensus verdict: Fix / Don't Fix / Investigate / Subjective
+- Outputs specific action items with file paths
 
 ## Token Efficiency
 
