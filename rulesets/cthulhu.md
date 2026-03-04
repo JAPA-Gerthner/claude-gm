@@ -192,21 +192,6 @@ SELF ←――――――――――――――――→ OTHER
 - Violent actions during slip: possible murder, betrayal, revelation
 - Each slip: roll d6, on 1 = Identity +1 (it's getting stronger)
 
-### Axis Cascade
-
-When any axis changes, GM checks for cascade (d6, on 5-6 triggers):
-
-| Trigger | Cascade |
-|---------|---------|
-| Reality reaches 3 | Identity +1 |
-| Reality reaches 4 | Time +1 |
-| Time reaches 2 | Identity +1 |
-| Time reaches 3 | Reality +1 |
-| Identity reaches 3 | Reality +1 |
-| Identity reaches 4 | Time +1 |
-
-**Cascade Cap:** Maximum 1 cascade per scene. If multiple would trigger, GM picks most narratively appropriate and defers others to next scene. This prevents runaway acceleration.
-
 ### Axis Narrative Effects (MANDATORY)
 
 GM MUST alter descriptions based on current axis positions. These are not optional flavor — they are how the system manifests.
@@ -877,15 +862,6 @@ Combat should feel like a mistake already happening. Panic, noise, blood, police
 - Who hears the gunshots?
 - What does winning cost?
 
-### Noise Clock
-
-```
-NOISE CLOCK: ○○○○○○ (0/6)
-Tick +1: each gunshot, shouts/screams, breaking glass
-3/6: Neighbors hear. Someone called police.
-6/6: Police arrive in d6 turns. (Police are bought.)
-```
-
 ### Weapons (1920s)
 
 | Weapon | Damage | Range | Notes |
@@ -899,7 +875,7 @@ Tick +1: each gunshot, shouts/screams, breaking glass
 | Club/Blackjack | d6 | Melee | Non-lethal option |
 | Fists | d4 | Melee | Silent, always available |
 
-**Silent weapons** do NOT tick Noise Clock.
+**Silent weapons** attract less attention.
 
 ### Human Combatants
 
@@ -948,17 +924,6 @@ After completing tome: gain Forbidden Knowledge AND Reality shifts up.
 | The King in Yellow | English | 1 session | +1 | Identity +1, will see Yellow Sign on objects |
 | Pnakotic Manuscripts | Unknown | 4 sessions | +2 | Time +1 |
 | Necronomicon | Arabic | 4 sessions | +3 | Identity +1, Time +1, WIS save DC 18 or End State |
-
-### Tome Clock
-
-Each tome in possession is passive clock:
-
-```
-TOME CLOCK: ○○○○○○ (0/6)
-Tick +1: each session tome is in possession
-3/6: Cult or university becomes aware you have it
-6/6: Someone comes for it. Not subtle.
-```
 
 ---
 
@@ -1187,15 +1152,13 @@ Clues don't just get found — they ATTRACT.
 ### Axis Tracking (secret)
 
 ```
-REALITY:  ○○○○○○○ (0-6)    | Cascade at 3: Identity +1 | at 4: Time +1
-TIME:     ○○○○○○○ (0-6)     | Cascade at 2: Identity +1 | at 3: Reality +1
-IDENTITY: ○○○○○○○ (0-6)     | Cascade at 3: Reality +1 | at 4: Time +1
+REALITY:  ○○○○○○○ (0-6)
+TIME:     ○○○○○○○ (0-6)
+IDENTITY: ○○○○○○○ (0-6)
 MADNESS:  ○○○○○○ (0-6)      | 3+: all stats -1 | 5+: all stats -2 total
 ADDICTION: ○○○○○○ (0/6)
 MK: 0-20 (Reality +1 every 3 MK)
 ```
-
-**Cascade Rule:** Max 1 cascade per scene. If multiple trigger, GM picks most narratively appropriate.
 
 **Madness Triggers:** Axis 3 (+1), Axis 5 (+1), Primordial (+1), Horror crit fail (+1), Addiction 4+ use (+1), Ally death by your hand (+1), Ritual (+1), Necronomicon (+2)
 
@@ -1277,7 +1240,7 @@ MK: 0-20 (Reality +1 every 3 MK)
 
 - d20 rolls for investigation, combat, social
 - Margin system (Crit.Fail / Fail / Partial / Success / Crit)
-- Clocks for Addiction, Pressure, Tome, Noise
+- Clocks for Addiction
 - Stats: STR, DEX, CON, INT, WIS, CHA (standard 1-5)
 - HP/AC for human combat only
 - Primordial = no stats, no combat
