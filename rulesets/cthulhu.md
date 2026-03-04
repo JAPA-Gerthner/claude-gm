@@ -1148,6 +1148,142 @@ Clues don't just get found — they ATTRACT.
 
 ---
 
+## ACTION FLOWCHARTS
+
+Step-by-step for common actions. Follow in order.
+
+### Investigation (search, examine, investigate)
+
+```
+1. AXIS CHECK
+   └─ Reality 2+? → Perception Bleed roll (DC: R2=16, R3=12, R4=8, R5=auto)
+   └─ Success? → Player sees "extra" (shadow, symbol, wrong angle)
+   └─ Reality 3+? → Layer Slip possible (WIS DC 14 to return)
+
+2. DECEPTION BUDGET
+   └─ Reality 0: all true
+   └─ Reality 1: 1 detail can be false
+   └─ Reality 2: 1 NPC/object can be false
+   └─ Reality 3: 50% can be false
+   └─ Reality 4+: entire scene can be hallucination
+
+3. MADNESS OPTIONS
+   └─ Madness 0-2: normal options
+   └─ Madness 3-4: add 1-2 irrational options
+   └─ Madness 5: majority irrational, sane options get DIS
+
+4. NARRATIVE STYLE
+   └─ Apply Axis Narrative Effects (see table)
+   └─ Add intrusions based on highest axis level
+
+5. RESULT
+   └─ Present options to player
+```
+
+### Social (talk, persuade, interrogate)
+
+```
+1. NPC CHECK (in GM thinking)
+   └─ Roll NPC honesty, courage, loyalty if not set
+   └─ What does NPC want? What do they hide?
+
+2. AXIS CHECK
+   └─ Identity 2+? → Control Slip possible at stress moments
+   └─ Time 2+? → Time Vision if asking about past/future
+
+3. DECEPTION BUDGET
+   └─ Can GM lie about what NPC says/does?
+   └─ Apply based on Reality level
+
+4. MADNESS OPTIONS
+   └─ Add paranoid interpretations as valid choices
+   └─ "They're lying" / "They're one of them" / "Check their shadow"
+
+5. DIALOGUE CHAIN
+   └─ Significant dialogue = 2-3 rolls minimum
+   └─ CHA → WIS → INT or similar
+   └─ Failure at any stage = branch closes
+
+6. RESULT
+   └─ Present options to player
+```
+
+### Combat
+
+```
+1. IDENTITY CHECK
+   └─ Identity 2+? → Control Slip roll at combat start
+   └─ Failed? → GM narrates 1+ rounds
+
+2. MADNESS CHECK
+   └─ Madness 3+? → Combat options include irrational choices
+   └─ "Attack the shadow" / "The gun is lying to you"
+
+3. STANDARD COMBAT
+   └─ Initiative: d20 + DEX
+   └─ Attack vs AC (margin system)
+   └─ Apply wounds, conditions
+
+4. WITNESS HORROR?
+   └─ Primordial appears? → Madness +1
+   └─ Ally dies? → Madness +1 if your fault
+
+5. AFTERMATH
+   └─ Update axes if triggered
+   └─ Narrative effects next scene
+```
+
+### Reading Tome
+
+```
+1. COMMITMENT
+   └─ Full reading: d4 sessions
+   └─ Skimming: 1 scene (GM withholds d4 entries)
+
+2. AXIS COST (paid on completion)
+   └─ Apply Reality cost from tome table
+   └─ Apply secondary effects (Time, Identity, saves)
+
+3. MK GAIN
+   └─ Add Mythos Knowledge
+   └─ Every 3 MK → Reality +1 automatic
+
+4. MADNESS CHECK
+   └─ Axis reached 3 or 5? → Madness +1
+
+5. KNOWLEDGE GAINED
+   └─ Roll on Forbidden Book Contents if needed
+   └─ Or GM determines specific knowledge
+```
+
+### Ritual Attempt
+
+```
+1. COMPONENTS CHECK
+   └─ Knowledge + Material + Place + Intention
+   └─ 4/4: works as intended
+   └─ 3/4: partial + side effect
+   └─ 2/4: fails, but something hears
+   └─ 1/4: nothing visible (GM notes)
+
+2. ROLL
+   └─ d20 + INT vs DC
+   └─ Occultist: normal | Others: disadvantage
+
+3. COST (always paid)
+   └─ Apply Reality/Time/Identity shifts
+   └─ Madness +1
+
+4. RESULT
+   └─ Crit Fail: turns against you, price ×2
+   └─ Fail: doesn't work, full price
+   └─ Partial: works with side effect
+   └─ Success: works, standard price
+   └─ Crit: works, price -1 tier
+```
+
+---
+
 ## GM QUICK REFERENCE (1-Page Screen)
 
 ### Axis Tracking (secret)
