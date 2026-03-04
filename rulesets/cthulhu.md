@@ -757,6 +757,158 @@ Roll d6:
 
 **Rule:** Primordial appears → character can only flee. Combat = death.
 
+### Creature Behavior (beyond stat effects)
+
+Not just "appears, you take effect." How do they ACT?
+
+| Creature | Behavior | Warning Signs | What They Want |
+|----------|----------|---------------|----------------|
+| Shoggoth | Flows, absorbs, mimics voices of absorbed | Smell of ammonia, echoing words | Nothing. Follows ancient commands. |
+| Deep One | Watches, waits, offers bargains | Fish smell, wet footprints, gold jewelry | Hybrid children. Return to the sea. |
+| Mi-Go | Studies, collects, communicates through buzzing | Missing time, surgical scars, static in ears | Brains. Knowledge. Specimens. |
+| Hound of Tindalos | Hunts through angles, never curves | Corners feel wrong, time stutters | To feed on those who traveled time |
+| Colour | Drains slowly, corrupts land, spreads | Grey plants, listless animals, strange light at night | To grow. To spread. To return home. |
+| Byakhee | Carries riders through void, serves summoners | Stars wrong, wind from nowhere | Serve. They are slaves. |
+| Ghoul | Lurks in tunnels, trades information for meat | Scratching below, missing corpses | Fresh dead. Knowledge of burial sites. |
+| Nightgaunt | Silent, carries victims to unknown places | No sound at all, total darkness | Unknown. They do not speak. |
+
+### Non-Cult Horror Sources
+
+Not everything is conspiracy. Sometimes horror is personal, environmental, existential.
+
+**PLACE AS THREAT**
+
+The location itself is wrong. No cult needed.
+
+| Place Type | Horror Source | Example |
+|------------|---------------|---------|
+| Ancestral home | Your bloodline did terrible things | "Rats in the Walls" — cannibalism in your blood |
+| Isolated farm | Something fell here long ago | "Colour Out of Space" — the land is poison |
+| Old church | What was worshipped before Christianity? | "The Lurking Fear" — degenerate worship |
+| Deep woods | Older than human memory | "The Dunwich Horror" — thin places |
+| Coastal cave | Opens only at certain tides | Something lives there, always has |
+| Abandoned hospital | Experiments. Records destroyed. | What were they treating? Who survived? |
+
+**PERSONAL HORROR**
+
+The threat comes from within or from your past.
+
+| Source | Horror | Trigger |
+|--------|--------|---------|
+| Inheritance | You are becoming what your ancestor was | Bloodline activation (Identity shifts) |
+| Dreams | Something speaks through your sleep | Dreams become prophecies, then instructions |
+| Art/Music | You created something that shouldn't exist | "Music of Erich Zann" — the piece plays itself |
+| Memory gaps | You did something. You don't remember what. | Finding evidence of your own actions |
+| Doppelganger | Someone who looks like you. Doing things. | "The Outsider" — you are the monster |
+| Guilt | You survived. Others didn't. They remember. | "Cool Air" — the dead don't stay dead |
+
+**ENVIRONMENTAL HORROR**
+
+The world itself turns hostile. No agent, no will — just wrongness.
+
+| Environment | Horror | Effect |
+|-------------|--------|--------|
+| Silence | Complete absence of sound | WIS saves to act, voices in the gap |
+| Darkness | Not just dark — darkness that moves | Cannot map space, distances lie |
+| Cold | Cold that thinks | CON drain, whispers in the wind |
+| Geometry | Angles don't add up | Navigation impossible, Reality shifts |
+| Time | Clocks disagree, sun wrong position | Time shifts, scenes repeat |
+| Decay | Everything rots faster here | Items degrade, wounds don't heal |
+
+---
+
+## ATMOSPHERE
+
+Horror lives in details. Not "scary room" — WHAT makes it scary.
+
+### Sensory Table (d10 each)
+
+Roll or pick to make any location unsettling.
+
+**SOUNDS**
+
+| d10 | Sound |
+|-----|-------|
+| 1 | Breathing that isn't yours |
+| 2 | Music from nowhere — old, distorted |
+| 3 | Scratching inside the walls |
+| 4 | Your name, whispered once |
+| 5 | Wet footsteps that stop when you listen |
+| 6 | Clock ticking — there is no clock |
+| 7 | Baby crying, far away, then closer |
+| 8 | Your own voice, from another room |
+| 9 | Complete silence — even your heartbeat gone |
+| 10 | Static, like radio between stations |
+
+**LIGHT**
+
+| d10 | Light |
+|-----|-------|
+| 1 | Shadows move against the light source |
+| 2 | Candles dim when you look at them |
+| 3 | Colors wrong — skin too yellow, blood too black |
+| 4 | Light bends around one corner |
+| 5 | Your shadow is late |
+| 6 | Light from nowhere — no source visible |
+| 7 | Darkness has edges, shapes |
+| 8 | Stars visible through ceiling |
+| 9 | Everything slightly overexposed, dreamlike |
+| 10 | Light hurts, as if you've been in darkness for years |
+
+**SMELLS**
+
+| d10 | Smell |
+|-----|-------|
+| 1 | Salt and rot — ocean decay |
+| 2 | Copper — fresh blood, but no wound |
+| 3 | Flowers at a funeral — sweet, too sweet |
+| 4 | Ammonia and meat |
+| 5 | Old books and formaldehyde |
+| 6 | Smoke from a fire that isn't burning |
+| 7 | Your childhood home |
+| 8 | Nothing — complete absence of smell |
+| 9 | Ozone, like before lightning |
+| 10 | Something dead, but you can't find it |
+
+**TOUCH/TEMPERATURE**
+
+| d10 | Sensation |
+|-----|-----------|
+| 1 | Cold spot that moves with you |
+| 2 | Air too thick, hard to breathe |
+| 3 | Vibration in the floor, rhythmic |
+| 4 | Static electricity, hair rises |
+| 5 | Wet surfaces that look dry |
+| 6 | Walls warm, like body temperature |
+| 7 | Pressure, like deep underwater |
+| 8 | Something brushed your hand — nothing there |
+| 9 | Temperature drops when you speak |
+| 10 | Your skin feels wrong, like it doesn't fit |
+
+### Wrongness Progression
+
+How to escalate atmospheric horror through a scene:
+
+```
+STAGE 1 — UNEASE
+One sense is slightly wrong. Player might dismiss it.
+"The floorboards creak. Not under your feet — somewhere else."
+
+STAGE 2 — CONFIRMATION
+Second sense confirms something is wrong. Can't dismiss.
+"The creak again. And now — the smell. Copper. Fresh."
+
+STAGE 3 — PRESENCE
+Something is here. Not seen, but PRESENT.
+"The shadows in the corner are darker than they should be.
+Darker than the light allows. They're watching."
+
+STAGE 4 — MANIFESTATION
+It reveals itself. Or what it wants you to see.
+"The darkness has eyes. No — one eye. Your eye.
+Looking back at you from your own face."
+```
+
 ---
 
 ## NPC TEMPLATES
