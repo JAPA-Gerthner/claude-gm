@@ -358,7 +358,7 @@ Madness is not "seeing things." It's your mind breaking under weight of what you
 
 At high Madness, character IS the horror. Not victim of monsters — monster to self and others.
 
-### Scale
+### Scale (GM tracks secretly)
 
 ```
 MADNESS: ○○○○○○ (0-6)
@@ -507,16 +507,17 @@ Madness 5:
 
 ### Interaction with Axes
 
-Axes and Madness are separate but linked:
+All systems hidden from player:
 
 | System | Question | Player Knowledge |
 |--------|----------|------------------|
-| Axes | What is real? | Hidden (GM tracks secretly) |
-| Madness | Are you functional? | Visible (player sees level) |
+| Axes | What is real? | Hidden |
+| Madness | Am I functional? | Hidden |
 
-**Key difference:** Player KNOWS their Madness level. They don't know axis positions.
+Player sees: irrational options appearing, stats dropping, GM refusing /rp:gm requests.
+Player doesn't know: why. Is it madness? Is it real? Both?
 
-This creates horror: "I'm at Madness 4. Are my paranoid thoughts correct? Or am I just broken?"
+This creates horror: "The options look insane. But am I insane, or is the world?"
 
 ---
 
@@ -1211,7 +1212,7 @@ MK: 0-20 (Reality +1 every 3 MK)
 
 - Reality 6 | Time 6 | Identity 6 | Madness 6 | HP 0 | Addiction 6 | MK 20 | Player choice
 
-### Madness Quick
+### Madness Quick (hidden from player)
 
 | Level | Effect |
 |-------|--------|
@@ -1220,12 +1221,12 @@ MK: 0-20 (Reality +1 every 3 MK)
 | 5 | ALL stats -2 total, majority irrational, /rp:gm restricted |
 | 6 | Finale (Institutionalized) |
 
-**Player sees Madness level. Cannot decrease.**
+**Player sees effects, not the number. Cannot decrease.**
 
 ### Per-Session Checklist
 
 - [ ] Current axis positions?
-- [ ] Current Madness level? (player visible)
+- [ ] Current Madness level?
 - [ ] Narrative effects applied? (intrusions per scene)
 - [ ] Madness behavioral effects? (irrational options)
 - [ ] Deception budget for this Reality?
