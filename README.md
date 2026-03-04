@@ -28,7 +28,8 @@ gm-skill/
 │   ├── blades-lite.md       # Haunted Industrial Heists (Doskvol)
 │   ├── deus-ex.md           # Conspiracy Thriller (Paranoia, Augmentation)
 │   ├── scp.md               # Bureaucratic Horror (Foundation, Containment)
-│   └── cascade.md           # Cinematic Dieselpunk (Post-Signal, Adrenaline)
+│   ├── cascade.md           # Cinematic Dieselpunk (Post-Signal, Adrenaline)
+│   └── cthulhu.md           # Cosmic Horror (Three Axes, Deception Budget)
 ├── commands/
 │   ├── rp.md                # Main /rp command
 │   └── rp/                  # Subcommands
@@ -217,6 +218,15 @@ Complete setting packs — pick one at session start.
 - 7 regions (Americas, Japan, Africa, Europe, Russia, Arabia, Pacific)
 - 6 Roles (Driver, Stalker, Wrench, Gunhand, Face, Sawbones)
 - For: road warriors, artifact hunters, dieselpunk action cinema
+
+**cthulhu.md** — Cosmic Horror (Lovecraft):
+- Era 1920s, New England (Arkham, Innsmouth, Dunwich, Kingsport)
+- Three Axes system (Reality/Time/Identity) instead of Sanity
+- GM Deception Budget, Mythos Knowledge anti-XP
+- Tomes, Rituals, Cults (Dagon, Silver Twilight, Starry Wisdom)
+- 9 End States (Devoured, Possessed, Institutionalized, etc.)
+- 6 Roles (Investigator, Academic, Artist, Veteran, Occultist, Heir)
+- For: epistemological horror, tragedy simulator, solo investigation
 
 ## Saves
 
