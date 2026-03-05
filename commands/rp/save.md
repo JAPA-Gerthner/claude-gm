@@ -190,6 +190,61 @@ NPC history — goes in "NPC HISTORY" section.
 
 ---
 
+## WRITING STYLE DECISIONS
+
+DO NOT SHORTEN. Without this section, character voices will be lost on reload.
+
+### Character voices (REQUIRED for recurring speakers)
+
+For every NPC/creature with distinct voice — human or not:
+- **Name/type:** [who]
+- **Speech pattern:** [grammar, quirks, vocabulary, accent]
+- **Example line:** "[exact quote from this session]"
+
+```
+### Non-humans
+Skaven — Third person, yes-yes/no-no, paranoid
+  "Grishnak sees-smells man-thing, yes-yes! Not trust, no-no!"
+
+Ork — Loud, simple, WAAAGH, 'z instead of 's
+  "DIS GIT NEEDZ A KRUMPIN'! WAAAGH!"
+
+Beastmen — Minimal. Gestures + growls. Action, then *meaning*.
+  Garkh points at ruins with horns. *Here. Ours.*
+
+### Humans
+Lord Harken — Formal, archaic, never contractions, condescending
+  "I do not believe you comprehend the gravity of your... situation."
+
+Marta the innkeeper — Warm, motherly, local dialect, shortens words
+  "C'mon in, dearie, get yerself warm by the fire."
+
+Drunk Johan — Slurred, tangents, repeats himself, emotional
+  "Y'know what... y'know what I think? I THINK... wait, what was I..."
+
+Child NPCs — Simple words, questions, interrupts, honest
+  "Why's your face like that? Are you sick? My dog died."
+```
+
+### Other style rules
+
+- Formatting (italics for thoughts, etc.)
+- Tone nuances beyond SESSION SETTINGS
+- POV decisions, description density
+- Any "house rules" for prose
+
+### Protagonist voice (if non-standard)
+
+```
+### Low INT protagonist
+- No complex thoughts. Images, impulses, not sentences.
+- Example: Blood. Run. *Bad place.*
+```
+
+If ALL speakers are standard humans — write "Default (gm-skill.md style)".
+
+---
+
 ## CUSTOM MECHANICS (if any)
 
 DO NOT SHORTEN. Without this section, session cannot be properly restored.
