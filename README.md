@@ -228,6 +228,16 @@ Complete setting packs — pick one at session start.
 - 6 Roles (Investigator, Academic, Artist, Veteran, Occultist, Heir)
 - For: epistemological horror, tragedy simulator, solo investigation
 
+**stalker.md** — Chernobyl Exclusion Zone (S.T.A.L.K.E.R. + Roadside Picnic):
+- Era 2006-2026, Zone around Chernobyl NPP
+- Emission Clock, Zombification Clock, Radiation tracking
+- Anomalies (5 types) with artifact spawning system
+- 10 Factions with reputation system (-3 to +5)
+- Job Cycle (Acquisition → Travel → Execution → Extraction → Settlement)
+- 4 Backgrounds (Ex-Military, Scientist, Criminal, Rookie)
+- "Reach the Center" 20-session campaign
+- For: artifact hunting, faction warfare, Zone survival, post-apocalyptic horror
+
 ### Ruleset Tier List
 
 Quality rating based on: unique mechanics, atmosphere tools, playability, depth vs complexity.
@@ -254,6 +264,7 @@ Quality rating based on: unique mechanics, atmosphere tools, playability, depth 
 | deus-ex | Trust Clocks, Integration/Neuropozyne. Too many weapon tables. |
 | cascade | GRIT + ADRENALINE cycle. Bloated auxiliary systems. |
 | cthulhu | Three hidden axes, Deception Budget, flowcharts. High GM load. |
+| stalker | Emission/Zombification Clocks, Radiation tracking. Thorough but not innovative. |
 
 **B-Tier (Needs Work)**
 | Ruleset | Why |
