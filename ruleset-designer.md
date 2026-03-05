@@ -175,6 +175,7 @@ Before marking ruleset complete:
 | scp.md | 1187 | **COMPLETE** | Full pipeline: Usefulness/Liability, Processing Clock, O5 Council (13), Hume Levels, Anomaly Engagement |
 | cascade.md | 1502 | **COMPLETE** | Full pipeline: Cinematic Dieselpunk, Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles |
 | cthulhu.md | 1008 | **COMPLETE** | Full pipeline: Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge anti-XP, 9 End States, 6 Roles |
+| stalker.md | 1092 | **COMPLETE** | Full pipeline: Emission/Zombification Clocks, Radiation tracking, 10 factions, Job Cycle, "Reach the Center" campaign |
 
 ---
 
@@ -186,7 +187,6 @@ Before marking ruleset complete:
 |---------|---------------------|---------------------|
 | **dark-souls.md** | Bonfire/death loop, Stamina management, Boss phases, Souls = XP + валюта, Humanity/Hollowing | УНИКАЛЬНАЯ механика. Смерть = откат к bonfire, но мир помнит (двери открыты, NPC сдвинулись). Souls теряются при смерти, можно вернуть. Stamina pool на ВСЕ действия (атака, блок, ролл). Боссы: 2-3 фазы, telegraphed attacks, паттерны. Hollow/Human статус влияет на мир. Estus = ограниченное лечение. Covenants = фракции. Grim, lonely, cryptic lore. |
 | **star-wars.md** | Light/Dark points, Force powers, Era selection (Old Republic/Empire/Sequels) | Force как спектр Light↔Dark с механическими последствиями. Era selection в session zero (Old Republic, Clone Wars, Empire, New Republic, Sequels). Джедаи/Ситхи vs обычные персонажи — баланс нужен. Много существующих систем — взять лучшее, не изобретать. Фракции зависят от эры. |
-| **stalker.md** | Аномалии, Артефакты, Выбросы, Радиация, Фракции Зоны | Чернобыльская Зона отчуждения. Идеально для Claude-GM: ограниченное пространство, одиночки/малые группы, не надо симулировать армии. Фракции: Долг, Свобода, Одиночки, Бандиты, Военные, Монолит, Учёные, Наёмники. Аномалии как физические головоломки. Артефакты = loot с выбором (носить vs продать). Выбросы = periodic tension. Серьёзный пост-апок без grimderp. |
 | **disco-elysium.md** | SKILLS AS INNER VOICES, Thought Cabinet, Ideology system, Dialogue-heavy | Уникальнейшая механика: 24 Skills = внутренние голоса/личности (Electrochemistry хочет наркотики, Authority хочет доминировать, Inland Empire видит мистику). Thought Cabinet = мысли которые "устанавливаешь" и они дают бонусы/штрафы. 4 идеологии (Communism, Fascism, Moralism, Ultraliberalism) влияют на диалоги. МИНИМУМ БОЁВКИ — всё через диалоги и внутренние чеки. Детектив-амнезиак в разрушенном городе. Референс: оригинальная игра, никаких аналогов. |
 
 ---
@@ -234,6 +234,7 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-03-05 | stalker.md | Full pipeline: NEW 1092 lines, Emission/Zombification Clocks, Radiation tracking, 10 factions, 11 NPC templates, Job Cycle, "Reach the Center" 20-session campaign |
 | 2026-03-03 | cthulhu.md | Full pipeline: NEW 1008 lines, Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge, 9 End States, 6 Roles with stat arrays |
 | 2026-03-03 | cascade.md | Full pipeline: NEW 1502 lines, Cinematic Dieselpunk (replaces road-warrior concept), Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles |
 | 2026-03-02 | scp.md | Full pipeline: NEW 1187 lines, Bureaucratic Horror, Usefulness/Liability, Processing Clock, O5 Council (13), Hume Levels, Anomaly Engagement, Starter Scenario |
