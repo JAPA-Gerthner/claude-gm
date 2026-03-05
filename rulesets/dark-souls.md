@@ -22,9 +22,124 @@ The Lords waged war on dragons. Won. Built kingdoms. But fire fades.
 
 **The Cycle:** Link the Fire (sacrifice yourself to extend the age) or let it fade (Age of Dark — humanity's birthright or catastrophe). Neither ending resolves anything. The cycle is the point.
 
-**DS2 Truth:** The cycle happens everywhere, repeatedly. Kingdoms rise, flames kindle, flames fade.
+**The Cycle:** Every kingdom repeats the pattern. Fire fades, Undead rise, someone links or doesn't. Names change. The structure doesn't. Lordran, Drangleic, Lothric — all the same story, different actors.
 
-**DS3 Convergence:** Time fractures. All ages overlap. The Unkindled (failed kindlers) rise as last resort.
+**Your World:** This ruleset supports ANY cycle. Generate your own kingdom, your own Lords, your own path. The fire always fades. What you do about it is the game.
+
+---
+
+## KINGDOM GENERATOR
+
+Every cycle has a kingdom. Roll or choose.
+
+### Kingdom Name (d12 + d12)
+
+**First part (d12):**
+| d12 | Prefix |
+|-----|--------|
+| 1 | Ash- |
+| 2 | Iron- |
+| 3 | Frost- |
+| 4 | Deep- |
+| 5 | Pale- |
+| 6 | Ember- |
+| 7 | Stone- |
+| 8 | Hollow- |
+| 9 | Sun- |
+| 10 | Dark- |
+| 11 | Blood- |
+| 12 | Silent- |
+
+**Second part (d12):**
+| d12 | Suffix |
+|-----|--------|
+| 1 | -heim |
+| 2 | -vale |
+| 3 | -reach |
+| 4 | -haven |
+| 5 | -fall |
+| 6 | -keep |
+| 7 | -mire |
+| 8 | -throne |
+| 9 | -gate |
+| 10 | -hollow |
+| 11 | -watch |
+| 12 | -rest |
+
+### Cycle State (d6)
+
+| d6 | State | Description |
+|----|-------|-------------|
+| 1 | **Kindled** | Fire recently linked. World bright, enemies weak, time short before fade. |
+| 2 | **Fading** | Fire weakening. Undead appear. Lords grow desperate. |
+| 3 | **Twilight** | Fire nearly dead. Hollows everywhere. Last attempts to link. |
+| 4 | **Dark** | Fire out. Age of Dark begun. Humanity ascendant or monstrous. |
+| 5 | **Convergence** | Time broken. Multiple ages overlap. Anachronisms everywhere. |
+| 6 | **Rekindling** | New fire found. Race to claim it. Old powers stir. |
+
+### The Lords (roll 4)
+
+Every cycle has those who claimed fragments of the First Flame.
+
+| d10 | Lord Archetype | Domain |
+|-----|----------------|--------|
+| 1 | **The Conqueror** | War, conquest, lightning |
+| 2 | **The Gravewarden** | Death, disease, tombs |
+| 3 | **The Witch** | Fire, chaos, transformation |
+| 4 | **The Pygmy** | Dark, humanity, the abyss |
+| 5 | **The Scholar** | Sorcery, crystals, knowledge |
+| 6 | **The Beast** | Dragons, scales, immortality |
+| 7 | **The Saint** | Miracles, healing, deception |
+| 8 | **The Blacksmith** | Weapons, titanite, creation |
+| 9 | **The Silent** | Shadows, assassination, forgotten |
+| 10 | **The Mad** | Chaos, mutation, no pattern |
+
+### Kingdom Feature (d8)
+
+| d8 | Feature |
+|----|---------|
+| 1 | Built on ruins of previous cycle — old architecture visible |
+| 2 | Single massive structure (castle, cathedral, tower) |
+| 3 | Scattered settlements connected by dangerous roads |
+| 4 | Underground — surface is ash/poison/frozen |
+| 5 | Vertical — built up cliffs, elevators, ladders |
+| 6 | Flooded — swamps, sunken cities, boats |
+| 7 | Frozen — endless winter, fire precious |
+| 8 | Burning — lava flows, ash storms, heat kills |
+
+---
+
+## REGION GENERATOR
+
+### Region Type (d10)
+
+| d10 | Type | Enemies | Hazard |
+|-----|------|---------|--------|
+| 1 | **Ruined City** | Hollows, dogs, thieves | Ambushes, collapsing floors |
+| 2 | **Fortress** | Knights, archers, sentinels | Murder holes, patrols |
+| 3 | **Crypt** | Skeletons, necromancers, wraiths | Darkness, curse, narrow |
+| 4 | **Swamp** | Slugs, leeches, bloated | Poison, slow movement |
+| 5 | **Cathedral** | Clerics (hostile), gargoyles | Elevation, chandeliers |
+| 6 | **Forest** | Hunters, beasts, mushrooms | Ambush, fog, getting lost |
+| 7 | **Volcano** | Demons, chaos creatures | Lava, heat damage |
+| 8 | **Frozen Waste** | Frost knights, wolves | Cold damage, ice floors |
+| 9 | **Abyss-touched** | Darkwraiths, humanity sprites | Corruption, madness |
+| 10 | **Archives** | Crystal golems, scholars | Traps, curses, puzzles |
+
+### Region Boss (roll separately)
+
+See BOSS GENERATOR below.
+
+### Shortcut Pattern (d6)
+
+| d6 | Shortcut |
+|----|----------|
+| 1 | Elevator from end to start |
+| 2 | Unlockable door near bonfire |
+| 3 | Ladder down from midpoint |
+| 4 | Breakable wall revealing path |
+| 5 | Key from mini-boss opens gate |
+| 6 | Illusory wall (WIS DC 14 to find) |
 
 ---
 
@@ -51,7 +166,7 @@ SPENDING SOULS:
 
 Track as single integer: `[SOULS: 4,250]`
 
-**Session Example:** Clearing Undead Burg (first area) typically yields 3,000–5,000 Souls. Enough to level twice at low level, OR buy basic gear, but not both. The tension is intentional.
+**Session Example:** Clearing a starting region typically yields 3,000–5,000 Souls. Enough to level twice at low level, OR buy basic gear, but not both. The tension is intentional.
 
 ### Death Loop
 
@@ -231,7 +346,7 @@ Each level: +1 to any stat.
 
 ## WEAPON UPGRADES
 
-Weapons improve through Titanite reinforcement at Andre the Blacksmith.
+Weapons improve through Titanite reinforcement at any Blacksmith.
 
 ### Reinforcement Table
 
@@ -344,6 +459,97 @@ PHASE 2 — [state]
 ===
 ```
 
+---
+
+## BOSS GENERATOR
+
+### Boss Archetype (d12)
+
+| d12 | Archetype | Size | Style |
+|-----|-----------|------|-------|
+| 1 | **Fallen Knight** | Human | Sword/shield, honorable, parryable |
+| 2 | **Beast** | Large | Claws, charges, no weapon |
+| 3 | **Demon** | Huge | Hammer/axe, fire, tanky |
+| 4 | **Dragon** | Massive | Breath, flight, tail sweep |
+| 5 | **Sorcerer** | Human | Spells, teleport, glass cannon |
+| 6 | **Abomination** | Large | Multiple limbs, erratic, grotesque |
+| 7 | **Undead Lord** | Human | Former king/knight, tragic |
+| 8 | **Gank Squad** | Multiple | 2-4 enemies, teamwork |
+| 9 | **Giant** | Huge | Slow, crushing, environmental |
+| 10 | **Corrupted** | Varies | Abyss-touched, second phase transforms |
+| 11 | **Mechanical** | Large | Golem, construct, no flinch |
+| 12 | **Eldritch** | Varies | Tentacles, eyes, madness |
+
+### Boss Scale (by region difficulty)
+
+| Tier | HP | AC | Souls | Damage |
+|------|----|----|-------|--------|
+| Early | 80-120 | 13-14 | 2,000-5,000 | d10 |
+| Mid | 150-250 | 15-16 | 8,000-15,000 | 2d8 |
+| Late | 300-500 | 17-18 | 20,000-40,000 | 2d10 |
+| Lord | 500-800 | 18-20 | 50,000-100,000 | 2d12 |
+
+### Phase 1 Attacks (roll 3)
+
+| d10 | Attack | Tell | Damage | Note |
+|-----|--------|------|--------|------|
+| 1 | **Overhead Slam** | Raises weapon high, 2 sec | 2d10 + prone | Dodge window |
+| 2 | **Horizontal Sweep** | Steps back, winds left | d10 to all melee | Jump or duck |
+| 3 | **Thrust** | Pulls weapon back, aims | d8+4, reach | Sidestep |
+| 4 | **Charge** | Scrapes ground, roars | 2d8 + knockback | Run perpendicular |
+| 5 | **Grab** | Arms wide, lurches | d12 + restrained | STR DC 15 escape |
+| 6 | **AOE Slam** | Jumps/raises | d8 all within 15ft | Run away |
+| 7 | **Projectile** | Glows/charges | d8, 60ft | Dodge roll |
+| 8 | **Combo (2 hits)** | Quick steps forward | d6 + d6 | Must dodge both |
+| 9 | **Tail/Back Attack** | Repositions suddenly | d6, hits behind | Don't hug back |
+| 10 | **Delayed Strike** | Holds pose 3 sec | 2d12 | Punishes early dodge |
+
+### Phase 2 Trigger (d6)
+
+| d6 | Trigger | Change |
+|----|---------|--------|
+| 1 | 60% HP | Speed increase, shorter tells |
+| 2 | 50% HP | New element (fire/lightning/dark) |
+| 3 | 40% HP | Weapon breaks, fights unarmed/claws |
+| 4 | 30% HP | Transformation (larger, different moveset) |
+| 5 | 50% HP | Summons adds (2-3 minions) |
+| 6 | 60% HP | Arena changes (fire floor, collapse) |
+
+### Phase 2 Additions (roll 2)
+
+| d8 | New Move |
+|----|----------|
+| 1 | AOE explosion on all attacks |
+| 2 | Teleport behind player |
+| 3 | Buff self (+2 damage, +2 AC for 3 rounds) |
+| 4 | Environmental hazard activates |
+| 5 | Heal once (20% HP) |
+| 6 | Clone/illusion (decoy with 1 HP) |
+| 7 | Rage mode (attacks twice per exchange) |
+| 8 | Desperation attack (all-in, vulnerable after) |
+
+### Boss Soul Trade (d6)
+
+| d6 | Trade Option A | Trade Option B |
+|----|---------------|----------------|
+| 1 | Unique weapon (boss's weapon, +special) | Powerful spell (Circle 4) |
+| 2 | Ring (boss-themed effect) | Armor piece (boss-themed) |
+| 3 | Shield (high stability) | Pyromancy (unique) |
+| 4 | Miracle (boss-aligned) | Weapon with boss element |
+| 5 | Sorcery (unique) | Talisman/Catalyst (strong) |
+| 6 | Transform item (become like boss) | Souls ×2 instead |
+
+### Boss Weakness (d6)
+
+| d6 | Weakness |
+|----|----------|
+| 1 | Back legs — safe zone, backstab opportunity |
+| 2 | After big attack — 2-3 sec recovery |
+| 3 | Elemental — takes ×1.5 from opposite element |
+| 4 | Head — extra damage but risky positioning |
+| 5 | Specific phase — Phase 2 has more openings |
+| 6 | Environmental — pillars block attacks, lure to hazard |
+
 ### Boss Fight Pacing
 
 Bosses have MOMENTUM, not turn initiative:
@@ -355,13 +561,16 @@ Bosses have MOMENTUM, not turn initiative:
 
 ### Boss Soul Trades
 
-| Boss Soul | Option A | Option B |
+Use BOSS GENERATOR Soul Trade table, or create based on boss archetype:
+
+| Boss Type | Option A | Option B |
 |-----------|----------|----------|
-| Demon Soul | Great Combustion | Demon's Greataxe (d12) |
-| Soul of Sif | Greatsword of Artorias | Pursuers Spell |
-| Moonlight Soul | Crystal Soul Spear | Moonlight Greatsword |
-| Dragon Soul | Dragon Bone Fist | Dragonslayer Spear |
-| Old Witch Soul | Quelaag's Furysword | Power Within |
+| Knight | Boss's weapon (d10+2) | Knight's Ring (+2 Poise) |
+| Beast | Claw weapon (d8, bleed) | Beast Roar spell |
+| Demon | Demon Greataxe (d12) | Chaos pyromancy |
+| Dragon | Dragonslayer weapon | Dragon breath miracle |
+| Sorcerer | Boss's spell (Circle 4) | Crystal catalyst |
+| Abomination | Twisted weapon | Transformation item |
 
 ---
 
@@ -377,7 +586,7 @@ Bonfires are respawn points, save files, and the last warm thing.
 
 **Kindling:** 1 Humanity → +5 Estus (permanent per bonfire)
 
-**Warping:** Unlocked mid-game (Lordvessel). Teleport between lit bonfires.
+**Warping:** Unlocked mid-game (requires Lord Soul or special item). Teleport between lit bonfires.
 
 **Estus Flask:**
 - Base: 5 charges per session
@@ -418,7 +627,7 @@ Requirement: INT 3+. Equipment: Catalyst.
 
 ### Pyromancies (No requirement)
 
-Equipment: Pyromancy Flame. Upgrades at Quelana or Laurentius.
+Equipment: Pyromancy Flame. Upgrades at Pyromancy trainers (rare NPCs).
 
 **Flame Upgrade:** 1,000 Souls + Titanite per level. Levels 1-15. Each level = +1 damage to all Pyromancy.
 
@@ -444,32 +653,49 @@ Requirement: WIS 3+. Equipment: Talisman.
 
 ---
 
-## COVENANTS
+## COVENANT ARCHETYPES
 
-Sworn allegiances. One active at a time. Joining requires CHA roll vs covenant DC.
+Every cycle has sworn allegiances. Roll or choose which exist in your kingdom.
 
-| Covenant | Leader | Join DC | Benefit |
-|----------|--------|---------|---------|
-| Way of White | Petrus | CHA 8 | Anti-undead protection, healing items |
-| Warriors of Sunlight | Solaire | CHA 10 | Gold phantom summons, co-op bonus |
-| Darkwraith | Kaathe | Auto (Abyss) | Invade, steal Humanity, Dark Hand |
-| Forest Hunters | Alvina | CHA 12 | Forest NPCs friendly, auto-summon defense |
-| Chaos Servant | Fair Lady | CHA 8 | Shortcut, Chaos pyromancies |
-| Blade of Darkmoon | Gwyndolin | CHA 14 | Hunt sinners, Darkmoon Blade miracle |
-| Path of Dragon | Dragon | Auto (Eye) | Dragon form transformation |
+### Covenant Types (choose 4-6 for your world)
 
-### Rank Rewards
+| Type | Purpose | Join Condition | Benefit |
+|------|---------|----------------|---------|
+| **Sunbringers** | Co-op, jolly cooperation | CHA DC 10 | Gold phantom summons, +1 to ally rolls |
+| **Gravekeepers** | Protect the dead, oppose undead | Find their tomb | Anti-undead weapons, death miracles |
+| **Abysswatchers** | Hunt the dark, contain corruption | Defeat Abyss boss | Resist dark, sense corruption |
+| **Hunters** | Defend territory, kill trespassers | CHA DC 12 | Territory NPCs friendly, ambush bonuses |
+| **Chaos Sworn** | Serve chaos flame, burn everything | Offer Humanity | Chaos pyromancies, demon allies |
+| **Invaders** | Hunt the living, steal humanity | Enter the Abyss | Invade worlds, Dark Hand, steal Humanity |
+| **Dragonkin** | Become dragon, transcend cycle | Find Dragon Eye | Dragon form, dragon weapons |
+| **Moon Hunters** | Punish sinners, enforce law | CHA DC 14 | Hunt sinners, moonlight miracles |
+| **Faithful** | Serve a Lord, zealotry | Pledge to specific Lord | Lord's blessing, special weapon |
+| **Hollows** | Embrace the curse | Reach Hollow tier 3+ | No Hollowing penalties, but can't reverse |
 
-| Covenant | Item | Rank 1 (10 items) | Rank 2 (30 items) |
-|----------|------|-------------------|-------------------|
-| Warriors of Sunlight | Sunlight Medal | Lightning Spear | Sunlight Spear |
-| Darkwraith | Humanity | Dark Hand | Lifedrain (steal HP) |
-| Forest Hunters | Wolf Ring fragment | Cat Covenant Ring | Stone Greatsword |
-| Chaos Servant | Humanity | Great Chaos Fireball | Shortcut unlocked |
-| Blade of Darkmoon | Souvenir of Reprisal | Darkmoon Blade | Brass Armor set |
-| Path of Dragon | Dragon Scale | Dragon Head Stone | Dragon Torso Stone |
+### Covenant Rank System
 
-**Betrayal:** Switching covenants = +1 Sin. Darkmoon invades at Sin 3+. Absolution at Oswald: 500 Souls × character level.
+All covenants use same structure:
+
+| Rank | Offerings | Reward |
+|------|-----------|--------|
+| 0 | Join | Basic benefit, covenant item |
+| 1 | 10 items | Covenant spell/miracle |
+| 2 | 30 items | Unique weapon or transformation |
+
+**Offering Types:**
+- Sunbringers: Sunlight Medals (from co-op boss kills)
+- Invaders: Humanity (from player kills)
+- Hunters: Tokens (from territory defense)
+- Chaos: Humanity (feed to flame)
+- Dragons: Dragon Scales (from dragon kills or PvP)
+
+### Sin & Betrayal
+
+- Switch covenant: +1 Sin
+- Kill covenant NPC: +3 Sin
+- Sin 3+: Moon Hunters can invade you
+
+**Absolution:** Find a Pardoner NPC. Cost: 500 Souls × level.
 
 ---
 
@@ -497,9 +723,9 @@ Condition: Human form, outside safe zones.
 **GM triggers invasion when:**
 - Player Human for 3+ sessions (too safe)
 - Dramatic timing (before boss)
-- Contested area (Darkroot, Anor Londo)
+- Contested area (covenant territory, Lord's domain)
 
-**Safe zones:** Firelink Shrine, covenant leaders, shops.
+**Safe zones:** Hub bonfire, covenant leaders, shops.
 **Hollow = no invasion, no summons.**
 
 ---
@@ -610,98 +836,150 @@ Condition: Human form, outside safe zones.
 
 ---
 
-## NPC TEMPLATES
+## NPC GENERATOR
 
-### Crestfallen Warrior
+### NPC Role (d12)
+
+| d12 | Role | Purpose |
+|-----|------|---------|
+| 1 | **Crestfallen** | Warns about danger, knows too much, will Hollow |
+| 2 | **Merchant** | Sells items, has secrets, may relocate |
+| 3 | **Blacksmith** | Upgrades weapons, teaches infusions |
+| 4 | **Fire Keeper** | Bound to bonfire, can level player, vulnerable |
+| 5 | **Covenant Leader** | Recruits, gives missions, rewards loyalty |
+| 6 | **Invader** | Hunts player, steals Humanity |
+| 7 | **White Phantom** | Summonable ally, helps with boss |
+| 8 | **Former Hero** | Gave up, has unique weapon/spell to trade |
+| 9 | **Scholar** | Knows lore, teaches sorceries, may be mad |
+| 10 | **Pilgrim** | Traveling same path, can be saved or lost |
+| 11 | **Trap** | Seems friendly, will betray (CHA DC 14 to sense) |
+| 12 | **Lord's Servant** | Works for a Lord, offers quests against rivals |
+
+### NPC Personality (d8)
+
+| d8 | Personality |
+|----|-------------|
+| 1 | Sardonic, world-weary, expects failure |
+| 2 | Cheerful (wrong for this world) |
+| 3 | Silent, communicates through gestures |
+| 4 | Mad, speaks truth wrapped in nonsense |
+| 5 | Honorable, keeps word, expects same |
+| 6 | Desperate, will do anything to survive |
+| 7 | Serene, accepted fate, at peace |
+| 8 | Hungry, wants something from player |
+
+### NPC Hollow Clock
+
+All NPCs have a Hollow Clock. Track secretly.
 
 ```
-=== NPC: CRESTFALLEN ===
-Appearance: Hollow-worn armor, sits by bonfire
-Personality: Sardonic, world-weary
-Secret: Has kindled this fire twelve times
+HOLLOW CLOCK: ○○○○○○ (0-6)
+
+Starts at: 2/6 (most NPCs) or 4/6 (already struggling)
+
+Tick ↑:
+- Time passes (1 per session in same area)
+- Player dies repeatedly nearby
+- Player ignores their quest
+- World state worsens
+
+Tick ↓:
+- Give Humanity
+- Complete their quest
+- CHA DC 14 meaningful conversation
+
+At 6/6: Hollows. Either attacks or vanishes.
+At 0/6: Fully Human. Reveals secret, gives reward.
+```
+
+### NPC Templates
+
+```
+=== CRESTFALLEN ===
 Stats: STR 4 | DEX 3 | CON 3 | INT 3 | WIS 4 | CHA 2
 HP: 45 | AC: 14
+Hollow Clock: 4/6
+Secret: Knows shortcut to Lord
+6/6: Attacks at bonfire | 0/6: Reveals path
 
-HOLLOW CLOCK: ●●●●○○ (4/6)
-Tick ↑: player dies repeatedly, time passes
-Tick ↓: give Humanity, CHA DC 14 success
-6/6: Hollows, attacks on sight
-0/6: Opens up, reveals hidden path
-===
-```
-
-### Traveling Merchant
-
-```
-=== NPC: MERCHANT ===
-Appearance: Tattered robes, oversized bag
-Personality: Cheerful (wrong for this world)
-Secret: Former court scholar
+=== MERCHANT ===
 Stats: STR 1 | DEX 2 | CON 2 | INT 4 | WIS 3 | CHA 4
 HP: 20 | AC: 11
+Hollow Clock: 2/6 (hidden)
+Secret: Former court member
+6/6: Vanishes with item | 0/6: Unlocks rare stock
 
-SUSPICION CLOCK: ●○○○○○ (hidden)
-Tick ↑: steal, pry about past
-Tick ↓: buy generously
-6/6: Vanishes with one rare item
-0/6: Unlocks questline
-===
-```
-
-### Invader (Red Phantom)
-
-```
-=== NPC: INVADER ===
-Appearance: Red aura, purposeful stride
-Stats: STR 4 | DEX 4 | CON 3 | INT 3 | WIS 3 | CHA 2
-HP: 60 | AC: 15
-Weapon: Chaos Blade (d10, bleed 2/round)
-
-ABILITIES:
-- Escape Roll [1/combat]: reposition behind player
-- Read Deaths: references player's previous deaths
-- If escapes: leaves Black Eye Orb (revenge invasion)
-===
-```
-
-### Summonable Ally
-
-```
-=== NPC: WHITE PHANTOM ===
-Appearance: White glow, mirrored gear quality
-Stats: STR 3 | DEX 3 | CON 3 | INT 3 | WIS 3 | CHA 1
-HP: 40 | AC: 13
-
-BEHAVIOR:
-- Attacks boss independently
-- Will not follow past fog gate
-- If dies: player loses +1 Estus morale
-- At 50% boss HP: burns Humanity, +2 attacks for 3 rounds
-===
-```
-
-### Fire Keeper
-
-```
-=== NPC: FIRE KEEPER ===
-Appearance: Eyes removed, bound to bonfire
-Personality: Serene, knows more than says
+=== FIRE KEEPER ===
 Stats: STR 1 | DEX 1 | CON 2 | INT 3 | WIS 5 | CHA 3
 HP: 15 | AC: 10
+Cannot Hollow (bound to fire)
+Killing: extinguishes bonfire permanently, drops Keeper Soul
 
-BEHAVIOR:
-- Cannot leave bonfire
-- Will not lie
-- Killing her extinguishes bonfire permanently
-- Can level up player (Souls cost)
-===
+=== INVADER ===
+Stats: STR 4 | DEX 4 | CON 3 | INT 3 | WIS 3 | CHA 2
+HP: 60 | AC: 15
+Weapon: d10 + bleed or element
+Abilities: Escape Roll, reads player deaths
+Defeat: drops Humanity + covenant item
+
+=== WHITE PHANTOM ===
+Stats: STR 3 | DEX 3 | CON 3 | INT 3 | WIS 3 | CHA 1
+HP: 40 | AC: 13
+Attacks boss independently
+At 50% boss HP: burns bright, +2 attacks 3 rounds
+If dies: player Morale -1
 ```
+
+---
+
+## ENEMY GENERATOR
+
+### Enemy Type (d12)
+
+| d12 | Type | Behavior | Drops |
+|-----|------|----------|-------|
+| 1 | **Hollow** | Mindless, patrols, weak | 100-300 Souls |
+| 2 | **Soldier** | Trained, blocks, retreats | 200-500 Souls, weapon |
+| 3 | **Knight** | Elite, parries, pursues | 800-1500 Souls, armor |
+| 4 | **Skeleton** | Rises again unless fire/divine | 150 Souls, Titanite |
+| 5 | **Beast** | Charges, fast, no block | 300-600 Souls |
+| 6 | **Caster** | Keeps distance, spells | 400-800 Souls, spell scroll |
+| 7 | **Giant** | Slow, huge damage, can't enter buildings | 1000+ Souls |
+| 8 | **Swarm** | Weak alone, 3-5 together | 50 each, nothing |
+| 9 | **Ambusher** | Hidden, backstabs, flees | 200-400 Souls |
+| 10 | **Demon** | Fire immune, heavy hits | 1500+ Souls, Demon Titanite |
+| 11 | **Mimic** | Pretends chest, grapples | 2000 Souls, rare item |
+| 12 | **Mini-boss** | Unique, guards area, doesn't respawn | 3000+ Souls, unique drop |
+
+### Enemy Weapon (d8)
+
+| d8 | Weapon | Damage |
+|----|--------|--------|
+| 1 | Broken sword | d4 |
+| 2 | Spear | d6, reach |
+| 3 | Sword + shield | d6, blocks |
+| 4 | Greataxe | d10, slow |
+| 5 | Claws | d6, bleed |
+| 6 | Magic staff | d8 ranged |
+| 7 | Whip | d4, reach, grabs |
+| 8 | Unarmed | d4+STR, grapple |
+
+### Enemy Special (d6)
+
+| d6 | Special |
+|----|---------|
+| 1 | None — standard enemy |
+| 2 | Poison (attacks inflict +3 buildup) |
+| 3 | Fire (attacks deal +d4 fire) |
+| 4 | Resurrects once (half HP) |
+| 5 | Calls reinforcements if not killed fast |
+| 6 | Drops rare item (roll Rings table) |
 
 ---
 
 ## ENEMY STAT BLOCKS
 
-### Common Enemies
+### Common Enemies (Templates)
 
 ```
 === HOLLOW SOLDIER ===
@@ -765,10 +1043,10 @@ Special: Drops Demon Titanite (used for boss weapons)
 ### Boss Template Example
 
 ```
-=== BOSS: ASYLUM DEMON ===
-Lore: Warden of the Undead Asylum, first true test
+=== BOSS: [TUTORIAL DEMON] ===
+Lore: Warden of starting prison, first true test
 HP: 120 | AC: 14 | Phase: 60%
-Souls: 2,000 | Soul Trade: Demon's Great Hammer
+Souls: 2,000 | Soul Trade: Demon's Great Hammer (d12)
 
 PHASE 1 — Grounded
 - Hammer Slam: raises overhead 2 sec → 2d10 + prone (DEX DC 12)
@@ -781,6 +1059,8 @@ PHASE 2 — Enraged (below 60%)
 - All attacks +2 damage
 - Adds Flying Slam: leaps to player location → 3d8 (DEX DC 15)
 - Pattern: more erratic, shorter pauses
+
+NOTE: This is a template. Use Boss Generator for custom bosses.
 ===
 ```
 
@@ -822,29 +1102,54 @@ PHASE 2 — Enraged (below 60%)
 - Defeat: recap lessons, advance Hollowing if applicable
 - Close with new mystery for next session
 
-### Endings
+### Campaign Frameworks
 
-**DS1:**
-- Link the Fire — sacrifice yourself, age extended, forgotten by history
-- Dark Lord — walk away, Age of Dark begins, Kaathe's prophecy fulfilled
+**The Link (classic)**
+- Goal: Collect Lord Souls, reach the Flame, choose
+- Structure: Hub → 4 Lord regions → Final area
+- Ending: Link Fire / Let it Fade / Usurp
 
-**DS2:**
-- Take the Throne — bear the curse, become the next vessel, cycle continues
-- Leave the Throne — walk away, neither kindling nor claiming, world uncertain
+**The Escape**
+- Goal: Find way out of the cycle entirely
+- Structure: Linear progression through increasingly hostile zones
+- Ending: Escape (rare) / Die trying / Become part of the world
 
-**DS3:**
-- Link the Fire — duty, exhaustion, one last extension
-- End of Fire — give flame to Firekeeper, world fades gently into dark
-- Usurp the Flame — steal the fire for humanity, Lord of Hollows rises
+**The Hunt**
+- Goal: Kill specific boss or NPC (revenge, contract, covenant)
+- Structure: Track target through regions, gather info
+- Ending: Success / Failure / Become worse than target
 
-### Starter Scenario
+**The Hollow**
+- Goal: Survive as long as possible before going Hollow
+- Structure: Sandbox, Hollowing is the clock
+- Ending: Hollow out / Find cure / Accept and transcend
 
-**Undead Asylum Escape:**
-1. Cell opens. Oscar of Astora gives Estus and dying words.
-2. Courtyard: teach roll-dodge and backstab vs hollows.
-3. Asylum Demon: run, find plunge attack setup.
-4. Reward: Estus upgraded, gate to Lordran.
-5. Let them die to Asylum Demon once — prologue death, no penalty.
+**The Builder**
+- Goal: Restore something (bonfire network, covenant, kingdom)
+- Structure: Collect resources, clear regions, defend
+- Ending: Success / Abandoned / Corrupted
+
+### Endings (Universal)
+
+| Ending | What Happens |
+|--------|--------------|
+| **Link the Fire** | Sacrifice self, extend age, be forgotten |
+| **Let it Fade** | Walk away, Age of Dark begins |
+| **Usurp the Flame** | Steal fire for yourself/humanity |
+| **Become Lord** | Take a Lord's place, rule the ruin |
+| **Escape** | Leave the cycle entirely (requires special conditions) |
+| **Hollow** | Lose self, become enemy for next cycle |
+
+### Starter Scenario (Generic)
+
+**The Awakening:**
+1. Player wakes in prison/tomb/ruin. Cell opens (why?).
+2. Dying NPC gives Estus Flask and cryptic direction.
+3. First zone: teach roll-dodge, backstab, bonfire.
+4. Tutorial boss: overwhelming, meant to kill once. Return path allows plunge attack or bypass.
+5. Victory: first bonfire lights, kingdom opens.
+
+**First Death:** Let it happen. No penalty for tutorial death. Teach the loop.
 
 ---
 
