@@ -248,6 +248,17 @@ Complete setting packs — pick one at session start.
 - 12 species, factions with reputation, Imperial Heat clock
 - For: rebellion, smuggling, Force drama, galactic adventure
 
+**dark-souls.md** — Undead Curse and Pattern Mastery (DS1/DS2/DS3):
+- Souls as dual currency (XP + money in one pool)
+- Death Loop with Soul Echo retrieval mechanic
+- Hollowing Track (CHA/WIS degradation → character loss)
+- Telegraph System for boss fights (GM describes tell before resolution)
+- Stamina system (every action costs, depletion = stagger)
+- Phase-based bosses with momentum combat
+- Weapon upgrades, infusion paths, status buildup (Bleed, Poison, Curse)
+- 7 Covenants with rank rewards, Sin tracking
+- For: brutal boss fights, earned victories, cryptic lore exploration
+
 ### Ruleset Tier List
 
 Quality rating based on: unique mechanics, atmosphere tools, playability, depth vs complexity.
@@ -261,6 +272,7 @@ Quality rating based on: unique mechanics, atmosphere tools, playability, depth 
 | frostpunk | "City as character". Hope/Discontent, Laws, two play modes. Design philosophy. |
 | scp | Usefulness vs Liability — bureaucracy as horror. Processing Clock. Genius. |
 | star-wars | Force Alignment + Temptation + Strain. Era selection. GRIT for non-Force balance. |
+| dark-souls | Telegraph System + Hollowing Track. Death as mechanic, not failure. Pattern mastery. |
 
 **A-Tier (Strong)**
 | Ruleset | Why |
