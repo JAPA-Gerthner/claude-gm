@@ -58,7 +58,28 @@ Entry point for developing and maintaining rulesets in gm-skill.
 
 - Fix issues from reviewers
 - Final line count check
-- Update README if needed
+- Update README with ruleset description
+
+### PHASE 5: Tier Evaluation
+
+Launch evaluation agent to rate the ruleset:
+
+```
+Criteria:
+- Unique mechanics that fit the setting
+- Atmosphere and tone tools
+- Playability and clarity
+- Depth vs complexity balance
+
+Rating: S/A/B/C/D/F
+- S = exemplary ruleset design
+- A = strong, minor issues
+- B = needs work
+- C/D = significant problems
+- F = full rework needed
+```
+
+**Output:** Add to README.md Tier List with 1-sentence reasoning.
 
 ---
 
