@@ -1,0 +1,22 @@
+# Rulesets Index
+
+battletech-commander — Mech mercenary company
+blades-lite — Haunted Industrial Heists (Doskvol)
+cascade — Cinematic Dieselpunk (Post-Signal, Adrenaline)
+cthulhu — Cosmic Horror (Three Axes, Deception Budget)
+cursed-seas — Golden Age of Piracy (fantasy)
+cyberpunk-red — Dark Future (R. Talsorian 2020/RED/2077)
+dark-souls — Undead Curse and Pattern Mastery (DS1/DS2/DS3)
+deus-ex — Conspiracy Thriller (Paranoia, Augmentation)
+disco-elysium — Skills as Inner Voices (Thought Cabinet, Ideology)
+frostpunk — Frozen Steampunk Survival (City as Entity)
+sanguo — Three Kingdoms China (virtue, strategy)
+scp — Bureaucratic Horror (Foundation, Containment)
+sengoku — Warring States Japan (honor, stance combat)
+shadowrun-lite — Magic + Cyber + Corps (Simplified Shadowrun)
+stalker — Chernobyl Exclusion Zone (S.T.A.L.K.E.R. + Roadside Picnic)
+star-wars — Galaxy Far Far Away (All Eras)
+vtm — Vampire: The Masquerade
+warhammer-40k — Grimdark far future (Imperium, Chaos, Xenos)
+warhammer-fantasy — Old World (corruption, Chaos, factions)
+witcher — Monster Hunters (Sapkowski + CDPR)
