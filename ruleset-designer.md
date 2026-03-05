@@ -177,6 +177,7 @@ Before marking ruleset complete:
 | cthulhu.md | 1008 | **COMPLETE** | Full pipeline: Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge anti-XP, 9 End States, 6 Roles |
 | stalker.md | 1092 | **COMPLETE** | Full pipeline: Emission/Zombification Clocks, Radiation tracking, 10 factions, Job Cycle, "Reach the Center" campaign |
 | star-wars.md | 1086 | **COMPLETE** | Full pipeline: Era selection, Force Alignment/Strain/Temptation, 5 Campaign Frameworks, GRIT system, Vehicle combat |
+| dark-souls.md | 898 | **COMPLETE** | Full pipeline: Telegraph System, Hollowing Track, Death Loop, Stamina, Phase bosses, S-Tier |
 
 ---
 
@@ -186,7 +187,6 @@ Before marking ruleset complete:
 
 | Сеттинг | Уникальные механики | Описание / Контекст |
 |---------|---------------------|---------------------|
-| **dark-souls.md** | Bonfire/death loop, Stamina management, Boss phases, Souls = XP + валюта, Humanity/Hollowing | УНИКАЛЬНАЯ механика. Смерть = откат к bonfire, но мир помнит (двери открыты, NPC сдвинулись). Souls теряются при смерти, можно вернуть. Stamina pool на ВСЕ действия (атака, блок, ролл). Боссы: 2-3 фазы, telegraphed attacks, паттерны. Hollow/Human статус влияет на мир. Estus = ограниченное лечение. Covenants = фракции. Grim, lonely, cryptic lore. |
 | **disco-elysium.md** | SKILLS AS INNER VOICES, Thought Cabinet, Ideology system, Dialogue-heavy | Уникальнейшая механика: 24 Skills = внутренние голоса/личности (Electrochemistry хочет наркотики, Authority хочет доминировать, Inland Empire видит мистику). Thought Cabinet = мысли которые "устанавливаешь" и они дают бонусы/штрафы. 4 идеологии (Communism, Fascism, Moralism, Ultraliberalism) влияют на диалоги. МИНИМУМ БОЁВКИ — всё через диалоги и внутренние чеки. Детектив-амнезиак в разрушенном городе. Референс: оригинальная игра, никаких аналогов. |
 
 ---
@@ -234,6 +234,7 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-03-05 | dark-souls.md | Full pipeline: NEW 898 lines, Telegraph System (GM describes tell before attack), Hollowing Track, Death Loop with Soul Echo, Stamina system, Phase bosses, Weapon upgrades/infusions, Status buildup, 7 Covenants, S-Tier |
 | 2026-03-05 | star-wars.md | Full pipeline: NEW 1086 lines, Era selection, Force Alignment/Strain/Temptation, 5 Campaign Frameworks (Rebel/Smuggler/Bounty/Jedi/Mandalorian), GRIT system, 8 Roles, Vehicle combat with shields/boarding, S-Tier |
 | 2026-03-05 | stalker.md | Full pipeline: NEW 1092 lines, Emission/Zombification Clocks, Radiation tracking, 10 factions, 11 NPC templates, Job Cycle, "Reach the Center" 20-session campaign |
 | 2026-03-03 | cthulhu.md | Full pipeline: NEW 1008 lines, Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge, 9 End States, 6 Roles with stat arrays |
