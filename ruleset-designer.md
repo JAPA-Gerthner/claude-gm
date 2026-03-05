@@ -177,17 +177,14 @@ Before marking ruleset complete:
 | cthulhu.md | 1008 | **COMPLETE** | Full pipeline: Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge anti-XP, 9 End States, 6 Roles |
 | stalker.md | 1092 | **COMPLETE** | Full pipeline: Emission/Zombification Clocks, Radiation tracking, 10 factions, Job Cycle, "Reach the Center" campaign |
 | star-wars.md | 1086 | **COMPLETE** | Full pipeline: Era selection, Force Alignment/Strain/Temptation, 5 Campaign Frameworks, GRIT system, Vehicle combat |
-| dark-souls.md | 898 | **COMPLETE** | Full pipeline: Telegraph System, Hollowing Track, Death Loop, Stamina, Phase bosses, S-Tier |
+| dark-souls.md | 1203 | **COMPLETE** | Full pipeline: Telegraph System, Hollowing Track, Kingdom/Boss/Enemy generators, Covenant archetypes, Campaign Frameworks, S-Tier |
+| disco-elysium.md | 1149 | **COMPLETE** | Full pipeline: 24 skills-as-voices, 10 districts, Case/NPC/Evidence generators, Contacts, Campaign Frameworks, S-Tier |
 
 ---
 
 ## Planned Rulesets (Roadmap)
 
-Порядок разработки. Описание — контекст для будущих сессий.
-
-| Сеттинг | Уникальные механики | Описание / Контекст |
-|---------|---------------------|---------------------|
-| **disco-elysium.md** | SKILLS AS INNER VOICES, Thought Cabinet, Ideology system, Dialogue-heavy | Уникальнейшая механика: 24 Skills = внутренние голоса/личности (Electrochemistry хочет наркотики, Authority хочет доминировать, Inland Empire видит мистику). Thought Cabinet = мысли которые "устанавливаешь" и они дают бонусы/штрафы. 4 идеологии (Communism, Fascism, Moralism, Ultraliberalism) влияют на диалоги. МИНИМУМ БОЁВКИ — всё через диалоги и внутренние чеки. Детектив-амнезиак в разрушенном городе. Референс: оригинальная игра, никаких аналогов. |
+**All planned rulesets complete.** Roadmap empty. Accepting new ideas.
 
 ---
 
@@ -234,6 +231,7 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-03-05 | disco-elysium.md | Full pipeline: NEW 698 lines, 24 skills-as-inner-voices, Thought Cabinet / Ideology / Copotype interlock, Health/Morale dual tracks, Session Zero template, five-layer case structure, S-Tier |
 | 2026-03-05 | dark-souls.md | Full pipeline: NEW 898 lines, Telegraph System (GM describes tell before attack), Hollowing Track, Death Loop with Soul Echo, Stamina system, Phase bosses, Weapon upgrades/infusions, Status buildup, 7 Covenants, S-Tier |
 | 2026-03-05 | star-wars.md | Full pipeline: NEW 1086 lines, Era selection, Force Alignment/Strain/Temptation, 5 Campaign Frameworks (Rebel/Smuggler/Bounty/Jedi/Mandalorian), GRIT system, 8 Roles, Vehicle combat with shields/boarding, S-Tier |
 | 2026-03-05 | stalker.md | Full pipeline: NEW 1092 lines, Emission/Zombification Clocks, Radiation tracking, 10 factions, 11 NPC templates, Job Cycle, "Reach the Center" 20-session campaign |

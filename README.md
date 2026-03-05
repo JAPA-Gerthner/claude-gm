@@ -29,7 +29,8 @@ gm-skill/
 │   ├── deus-ex.md           # Conspiracy Thriller (Paranoia, Augmentation)
 │   ├── scp.md               # Bureaucratic Horror (Foundation, Containment)
 │   ├── cascade.md           # Cinematic Dieselpunk (Post-Signal, Adrenaline)
-│   └── cthulhu.md           # Cosmic Horror (Three Axes, Deception Budget)
+│   ├── cthulhu.md           # Cosmic Horror (Three Axes, Deception Budget)
+│   └── disco-elysium.md     # Skills as Inner Voices (Thought Cabinet, Ideology)
 ├── commands/
 │   ├── rp.md                # Main /rp command
 │   └── rp/                  # Subcommands
@@ -228,6 +229,15 @@ Complete setting packs — pick one at session start.
 - 6 Roles (Investigator, Academic, Artist, Veteran, Occultist, Heir)
 - For: epistemological horror, tragedy simulator, solo investigation
 
+**disco-elysium.md** — Skills as Inner Voices (ZA/UM):
+- Era post-revolution Revachol, Martinaise district
+- 24 skills as arguing personalities in the detective's head
+- Thought Cabinet internalization, 4-track Ideology system
+- Copotype emerges from playstyle, Health/Morale dual death tracks
+- No combat focus — investigation through dialogue and failure
+- Session Zero awakening template, five-layer case structure
+- For: political tragedy, internal conflict, amnesiac detective noir
+
 **stalker.md** — Chernobyl Exclusion Zone (S.T.A.L.K.E.R. + Roadside Picnic):
 - Era 2006-2026, Zone around Chernobyl NPP
 - Emission Clock, Zombification Clock, Radiation tracking
@@ -272,7 +282,8 @@ Quality rating based on: unique mechanics, atmosphere tools, playability, depth 
 | frostpunk | "City as character". Hope/Discontent, Laws, two play modes. Design philosophy. |
 | scp | Usefulness vs Liability — bureaucracy as horror. Processing Clock. Genius. |
 | star-wars | Force Alignment + Temptation + Strain. Era selection. GRIT for non-Force balance. |
-| dark-souls | Telegraph System + Hollowing Track. Death as mechanic, not failure. Pattern mastery. |
+| dark-souls | Telegraph System + Hollowing Track. Kingdom/Boss/Enemy generators. Five campaign frameworks. Every cycle unique. |
+| disco-elysium | 24 skills-as-inner-voices. Thought Cabinet / Ideology / Copotype interlock. 10 districts, case generators, replayable detective noir. |
 
 **A-Tier (Strong)**
 | Ruleset | Why |
