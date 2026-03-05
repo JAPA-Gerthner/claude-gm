@@ -164,7 +164,7 @@ Before marking ruleset complete:
 | sengoku.md | 1103 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
 | sanguo.md | 1047 | **COMPLETE** | Full coverage |
 | battletech-commander.md | 1060 | **COMPLETE** | Full coverage |
-| vtm.md | 1099 | **COMPLETE** | Full coverage |
+| vtm.md | 1410 | **COMPLETE** | Beast Voice (always active), Social Telegraph, Arcade Disciplines, Night Cycle, Core + Regional clans, 8 generators |
 | warhammer-fantasy.md | 1133 | **COMPLETE** | Full pipeline: combat, NPCs, Fate/Fear/Insanity |
 | warhammer-40k.md | 1064 | **COMPLETE** | Full coverage |
 | cursed-seas.md | 1012 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
@@ -233,6 +233,7 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-03-05 | vtm.md | Full rewrite: Beast Voice, Masquerade Heat, Arcade Disciplines, Night Cycle, Blood Memory, 6 global clans (Americas + Asia), 7 generators (Prince/Primogen Conflict/City Domain/NPC Kindred/Political Situation/Coterie), B-Tier → S-Tier |
 | 2026-03-05 | disco-elysium.md | Full pipeline: NEW 698 lines, 24 skills-as-inner-voices, Thought Cabinet / Ideology / Copotype interlock, Health/Morale dual tracks, Session Zero template, five-layer case structure, S-Tier |
 | 2026-03-05 | dark-souls.md | Full pipeline: NEW 898 lines, Telegraph System (GM describes tell before attack), Hollowing Track, Death Loop with Soul Echo, Stamina system, Phase bosses, Weapon upgrades/infusions, Status buildup, 7 Covenants, S-Tier |
 | 2026-03-05 | star-wars.md | Full pipeline: NEW 1086 lines, Era selection, Force Alignment/Strain/Temptation, 5 Campaign Frameworks (Rebel/Smuggler/Bounty/Jedi/Mandalorian), GRIT system, 8 Roles, Vehicle combat with shields/boarding, S-Tier |
