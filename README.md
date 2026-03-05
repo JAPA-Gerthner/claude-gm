@@ -228,6 +228,38 @@ Complete setting packs — pick one at session start.
 - 6 Roles (Investigator, Academic, Artist, Veteran, Occultist, Heir)
 - For: epistemological horror, tragedy simulator, solo investigation
 
+### Ruleset Tier List
+
+Quality rating based on: unique mechanics, atmosphere tools, playability, depth vs complexity.
+
+**S-Tier (Exemplary)**
+| Ruleset | Why |
+|---------|-----|
+| sengoku | Perfect honor/stance/giri integration. Duel system is benchmark. |
+| witcher | Hunt Cycle, Toxicity, bestiary with tactics. Preparation gameplay. |
+| cursed-seas | Infamy, Curses, Ship Traits. Perfect atmosphere/mechanics balance. |
+| frostpunk | "City as character". Hope/Discontent, Laws, two play modes. Design philosophy. |
+| scp | Usefulness vs Liability — bureaucracy as horror. Processing Clock. Genius. |
+
+**A-Tier (Strong)**
+| Ruleset | Why |
+|---------|-----|
+| sanguo | 36 stratagems, brotherhood oaths. Duels slightly simpler than could be. |
+| battletech | Company management, politics, contracts. Combat deliberately abstract. |
+| warhammer-fantasy | Corruption, Winds of Magic, factions. Could be shorter. |
+| warhammer-40k | Psychic Perils, Guard Orders. Too similar to Fantasy. |
+| cyberpunk-red | Humanity/cyberpsychosis, Heat/Cred. Overloaded with reference data. |
+| shadowrun-lite | Magic+Matrix+cyber in parallel. Trace Clock. |
+| blades-lite | Stress/Trauma, Heat/Wanted, occult. Close to original. |
+| deus-ex | Trust Clocks, Integration/Neuropozyne. Too many weapon tables. |
+| cascade | GRIT + ADRENALINE cycle. Bloated auxiliary systems. |
+| cthulhu | Three hidden axes, Deception Budget, flowcharts. High GM load. |
+
+**B-Tier (Needs Work)**
+| Ruleset | Why |
+|---------|-----|
+| vtm | Solid V5 adaptation, but too close to original. No reimagining. |
+
 ## Saves
 
 Saves stored in `saves/[name].md` inside repo.

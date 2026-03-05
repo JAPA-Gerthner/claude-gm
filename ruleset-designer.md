@@ -153,6 +153,7 @@ Before marking ruleset complete:
 | deus-ex.md | 1075 | **COMPLETE** | Full pipeline: Paranoia System (Trust Clocks, Suspicion, Chaos Principle), Integration, Neuropozyne |
 | scp.md | 1187 | **COMPLETE** | Full pipeline: Usefulness/Liability, Processing Clock, O5 Council (13), Hume Levels, Anomaly Engagement |
 | cascade.md | 1502 | **COMPLETE** | Full pipeline: Cinematic Dieselpunk, Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles |
+| cthulhu.md | 1008 | **COMPLETE** | Full pipeline: Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge anti-XP, 9 End States, 6 Roles |
 
 ---
 
@@ -163,7 +164,7 @@ Before marking ruleset complete:
 | Сеттинг | Уникальные механики | Описание / Контекст |
 |---------|---------------------|---------------------|
 | **dark-souls.md** | Bonfire/death loop, Stamina management, Boss phases, Souls = XP + валюта, Humanity/Hollowing | УНИКАЛЬНАЯ механика. Смерть = откат к bonfire, но мир помнит (двери открыты, NPC сдвинулись). Souls теряются при смерти, можно вернуть. Stamina pool на ВСЕ действия (атака, блок, ролл). Боссы: 2-3 фазы, telegraphed attacks, паттерны. Hollow/Human статус влияет на мир. Estus = ограниченное лечение. Covenants = фракции. Grim, lonely, cryptic lore. |
-| **cthulhu.md** | Sanity system (ключевая!), Investigation phases, Forbidden knowledge cost, Helplessness | Классический cosmic horror. Sanity вместо/параллельно HP — знание = потеря рассудка. Investigation loop: clues → research → confrontation → cost. Helplessness — combat НЕ решение, монстры непобедимы. Много реализаций существует — сделать компактно, без bloat. 1920s или modern. |
+| ~~cthulhu.md~~ | ~~Sanity system~~ | **РЕАЛИЗОВАН** — Three Axes system (Reality/Time/Identity) вместо Sanity. Deception Budget, Mythos Knowledge anti-XP, 9 End States, полный 1920s setting. |
 | **star-wars.md** | Light/Dark points, Force powers, Era selection (Old Republic/Empire/Sequels) | Force как спектр Light↔Dark с механическими последствиями. Era selection в session zero (Old Republic, Clone Wars, Empire, New Republic, Sequels). Джедаи/Ситхи vs обычные персонажи — баланс нужен. Много существующих систем — взять лучшее, не изобретать. Фракции зависят от эры. |
 | **stalker.md** | Аномалии, Артефакты, Выбросы, Радиация, Фракции Зоны | Чернобыльская Зона отчуждения. Идеально для Claude-GM: ограниченное пространство, одиночки/малые группы, не надо симулировать армии. Фракции: Долг, Свобода, Одиночки, Бандиты, Военные, Монолит, Учёные, Наёмники. Аномалии как физические головоломки. Артефакты = loot с выбором (носить vs продать). Выбросы = periodic tension. Серьёзный пост-апок без grimderp. |
 | ~~road-warrior.md~~ | ~~Vehicle as Character, Fuel Economy~~ | **РЕАЛИЗОВАН как cascade.md** — Cinematic Dieselpunk: Era 2024, 35 years after The Signal killed electronics. Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles (Driver, Stalker, Wrench, Gunhand, Face, Sawbones). |
@@ -214,6 +215,7 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-03-03 | cthulhu.md | Full pipeline: NEW 1008 lines, Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge, 9 End States, 6 Roles with stat arrays |
 | 2026-03-03 | cascade.md | Full pipeline: NEW 1502 lines, Cinematic Dieselpunk (replaces road-warrior concept), Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles |
 | 2026-03-02 | scp.md | Full pipeline: NEW 1187 lines, Bureaucratic Horror, Usefulness/Liability, Processing Clock, O5 Council (13), Hume Levels, Anomaly Engagement, Starter Scenario |
 | 2026-03-02 | deus-ex.md | Full pipeline: NEW 1075 lines, Paranoia System (Trust Clocks, Suspicion, Chaos Principle), Integration/Neuropozyne, 8 NPC templates |
