@@ -1304,6 +1304,37 @@ Clues don't just get found — they ATTRACT.
 
 Step-by-step for common actions. Follow in order.
 
+### Scene Start (before ANY player action)
+
+Run this at the start of every new scene.
+
+```
+1. AXES CHECK
+   └─ Note current Reality, Time, Identity levels
+   └─ Which Narrative Effects apply? (see table)
+
+2. MADNESS CHECK
+   └─ 0-2: normal options
+   └─ 3-4: prepare 1-2 irrational options
+   └─ 5: majority irrational, sane options get DIS
+
+3. DECEPTION BUDGET
+   └─ Reality 0: all true
+   └─ Reality 1: 1 detail can be false
+   └─ Reality 2: 1 NPC/object can be false
+   └─ Reality 3: 50% can be false
+   └─ Reality 4+: entire scene can be hallucination
+
+4. SET THE SCENE
+   └─ Describe with mandatory Narrative Effects
+   └─ Add sensory details (use Atmosphere tables if needed)
+   └─ Minimum intrusions: Lvl 3 = 1-2, Lvl 4 = 2-3, Lvl 5 = constant
+
+5. PRESENT OPTIONS
+   └─ Apply Madness behavioral effects
+   └─ Player acts → go to specific flowchart below
+```
+
 ### Investigation (search, examine, investigate)
 
 ```
