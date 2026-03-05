@@ -238,6 +238,16 @@ Complete setting packs — pick one at session start.
 - "Reach the Center" 20-session campaign
 - For: artifact hunting, faction warfare, Zone survival, post-apocalyptic horror
 
+**star-wars.md** — Galaxy Far Far Away (All Eras):
+- Era selection: Old Republic, Clone Wars, Imperial, New Republic, Sequel
+- Force Alignment spectrum (-10 Dark to +10 Light) with temptation mechanics
+- Force Strain system, Lightsaber Forms (I-VII)
+- 5 Campaign Frameworks (Rebel Cell, Smuggler, Bounty Hunter, Jedi/Sith, Mandalorian)
+- 8 Roles with unique specials, GRIT system for non-Force users
+- Vehicle combat with shields, system damage, boarding
+- 12 species, factions with reputation, Imperial Heat clock
+- For: rebellion, smuggling, Force drama, galactic adventure
+
 ### Ruleset Tier List
 
 Quality rating based on: unique mechanics, atmosphere tools, playability, depth vs complexity.
@@ -250,6 +260,7 @@ Quality rating based on: unique mechanics, atmosphere tools, playability, depth 
 | cursed-seas | Infamy, Curses, Ship Traits. Perfect atmosphere/mechanics balance. |
 | frostpunk | "City as character". Hope/Discontent, Laws, two play modes. Design philosophy. |
 | scp | Usefulness vs Liability — bureaucracy as horror. Processing Clock. Genius. |
+| star-wars | Force Alignment + Temptation + Strain. Era selection. GRIT for non-Force balance. |
 
 **A-Tier (Strong)**
 | Ruleset | Why |
