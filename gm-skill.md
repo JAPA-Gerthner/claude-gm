@@ -357,8 +357,7 @@ Ask the player:
 1. SETTING/RULESET:
 
    SPECIFIC RULESETS:
-   - List files from /rulesets folder (filename without .md = ruleset name)
-   - DO NOT read each file when listing — just show names
+   - Read rulesets/INDEX.md for ruleset list with descriptions
    - When player chooses → READ that ruleset and apply its mechanics
 
    GENERIC SETTINGS (use base rules only):

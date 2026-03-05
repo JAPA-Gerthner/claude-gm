@@ -59,6 +59,7 @@ Entry point for developing and maintaining rulesets in gm-skill.
 - Fix issues from reviewers
 - Final line count check
 - Update README with ruleset description
+- Add one-liner to rulesets/INDEX.md
 
 ### PHASE 5: Tier Evaluation
 
@@ -152,6 +153,7 @@ Before marking ruleset complete:
 - [ ] No lore errors (verified by expert)
 - [ ] Balanced mechanics (no death spirals)
 - [ ] GM-usable at table without prep
+- [ ] Added to rulesets/INDEX.md
 
 ---
 
