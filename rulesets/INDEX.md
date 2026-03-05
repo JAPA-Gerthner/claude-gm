@@ -16,7 +16,7 @@ sengoku — Warring States Japan (honor, stance combat)
 shadowrun-lite — Magic + Cyber + Corps (Simplified Shadowrun)
 stalker — Chernobyl Exclusion Zone (S.T.A.L.K.E.R. + Roadside Picnic)
 star-wars — Galaxy Far Far Away (All Eras)
-vtm — Vampire: The Masquerade
+vtm — Vampire: The Masquerade (Beast Voice, Night Cycle, Arcade Disciplines, Generators)
 warhammer-40k — Grimdark far future (Imperium, Chaos, Xenos)
 warhammer-fantasy — Old World (corruption, Chaos, factions)
 witcher — Monster Hunters (Sapkowski + CDPR)

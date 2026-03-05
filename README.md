@@ -284,6 +284,7 @@ Quality rating based on: unique mechanics, atmosphere tools, playability, depth 
 | star-wars | Force Alignment + Temptation + Strain. Era selection. GRIT for non-Force balance. |
 | dark-souls | Telegraph System + Hollowing Track. Kingdom/Boss/Enemy generators. Five campaign frameworks. Every cycle unique. |
 | disco-elysium | 24 skills-as-inner-voices. Thought Cabinet / Ideology / Copotype interlock. 10 districts, case generators, replayable detective noir. |
+| vtm | Beast Voice, Night Cycle, Arcade Disciplines (3 lvl), Masquerade Heat, global clans, 8 generators. |
 
 **A-Tier (Strong)**
 | Ruleset | Why |
@@ -299,11 +300,6 @@ Quality rating based on: unique mechanics, atmosphere tools, playability, depth 
 | cascade | GRIT + ADRENALINE cycle. Bloated auxiliary systems. |
 | cthulhu | Three hidden axes, Deception Budget, flowcharts. High GM load. |
 | stalker | Emission/Zombification Clocks, Radiation tracking. Thorough but not innovative. |
-
-**B-Tier (Needs Work)**
-| Ruleset | Why |
-|---------|-----|
-| vtm | Solid V5 adaptation, but too close to original. No reimagining. |
 
 ## Saves
 
