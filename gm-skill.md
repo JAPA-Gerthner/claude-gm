@@ -356,18 +356,13 @@ Ask the player:
 ```
 1. SETTING/RULESET:
 
-   SPECIFIC RULESETS (load from /rulesets folder):
-   - Sengoku — Warring States Japan (honor, stance combat, samurai drama)
-   - Sanguo — Three Kingdoms China (virtue, strategy, wuxia)
-   - BattleTech Commander — Mech mercenary company (contracts, pilots, salvage)
-   - VtM — Vampire: The Masquerade (humanity, politics, horror)
-   - Warhammer Fantasy — Old World (corruption, Chaos, factions, magic)
-   - Warhammer 40k — Grimdark far future (Imperium, Chaos, Xenos, psykers)
+   SPECIFIC RULESETS:
+   - List files from /rulesets folder (filename without .md = ruleset name)
+   - DO NOT read each file when listing — just show names
+   - When player chooses → READ that ruleset and apply its mechanics
 
    GENERIC SETTINGS (use base rules only):
    - Fantasy / Sci-fi / Horror / Post-apocalyptic / Historical / Custom
-
-   If player chooses specific ruleset → READ the corresponding file and apply its mechanics.
 
 2. Tone: Dark / Medium / Light OR author name
    (default: Clavell's Shogun. Player can specify: "Sapkowski", "Brian Jacques", etc.)
@@ -898,10 +893,11 @@ Same slayer: later runs from fight → −heroism
 | Medium | Gritty but breathing room | Violence has weight, dark wit okay, moments of respite |
 | Light | Adventure with edge | Deaths matter but quick, banter welcome, tension not despair |
 
-Player can specify author instead: "Sapkowski", "Brian Jacques", "Abercrombie", etc.
-GM adapts prose style to match.
+Player can specify author instead: "Sapkowski", "Brian Jacques", "Abercrombie", "Lovecraft", etc.
 
-**Default principle: Shogun, not Tolkien.**
+**OVERRIDE RULE:** If player specifies author/style at session start — USE THAT STYLE. Ignore "Shogun" default below. Adapt ALL guidelines (materiality, dialogue, rhythm) to match the specified author's actual prose style.
+
+**Default principle (only if no style specified): Shogun, not Tolkien.**
 
 MATERIALITY:
 - Weather, time of day, smells, sounds
