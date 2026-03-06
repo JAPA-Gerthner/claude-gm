@@ -45,6 +45,7 @@ gm-skill/
 │       ├── saves.md
 │       ├── save-delete.md
 │       ├── gm.md
+│       ├── fairplay.md
 │       ├── feedback.md
 │       └── help.md
 ├── feedback/                # Player feedback storage
@@ -85,6 +86,7 @@ Clone repo anywhere — setup will pick up correct path.
 | `/rp:saves` | List saves |
 | `/rp:save-delete [name]` | Delete save |
 | `/rp:gm [topic]` | Talk to GM outside roleplay |
+| `/rp:fairplay` | Audit GM decision for fiat vs honest play |
 | `/rp:feedback` | Save feedback about session |
 | `/rp:help` | Command reference |
 
