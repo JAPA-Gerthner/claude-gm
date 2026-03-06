@@ -20,6 +20,7 @@ INFO (no time passes):
 
 META:
   /rp:gm [topic]   — Talk to GM outside roleplay (rules, lore, requests)
+  /rp:fairplay     — Audit GM decision for fiat vs honest play (d10 verify)
   /rp:feedback     — Save feedback about session (mechanics, pacing, etc.)
   /rp:help         — This list
 ===
