@@ -435,13 +435,185 @@ NODE_ENV=development
 | Layer | Technology |
 |-------|------------|
 | Frontend | TypeScript, Vite, marked.js |
-| Backend | Node.js, Express, TypeScript |
+| Backend | NestJS, TypeScript |
 | Database | PostgreSQL 16 |
-| ORM | Prisma or raw SQL |
+| ORM | Sequelize + sequelize-typescript |
 | Claude | CLI in container |
 | Proxy | Nginx |
 | Tunnel | Cloudflare |
 | Container | Docker Compose |
+
+---
+
+## Backend Structure (NestJS)
+
+```
+backend/src/
+├── main.ts
+├── app.module.ts
+│
+├── session/
+│   ├── session.module.ts
+│   ├── session.controller.ts
+│   ├── session.service.ts
+│   └── session.model.ts
+│
+├── message/
+│   ├── message.module.ts
+│   ├── message.controller.ts
+│   ├── message.service.ts
+│   └── message.model.ts
+│
+├── command/
+│   ├── command.module.ts
+│   ├── command.controller.ts
+│   └── command.service.ts
+│
+├── claude/
+│   ├── claude.module.ts
+│   └── claude.service.ts
+│
+├── compaction/
+│   ├── compaction.module.ts
+│   └── compaction.service.ts
+│
+└── database/
+    ├── database.module.ts
+    └── database.providers.ts
+```
+
+---
+
+## Sequelize Models
+
+```typescript
+// session.model.ts
+import { Table, Column, Model, DataType, HasMany } from 'sequelize-typescript';
+import { Message } from '../message/message.model';
+
+@Table({ tableName: 'sessions', timestamps: true })
+export class Session extends Model {
+  @Column({
+    type: DataType.UUID,
+    defaultValue: DataType.UUIDV4,
+    primaryKey: true,
+  })
+  id: string;
+
+  @Column({ type: DataType.BIGINT, allowNull: false })
+  telegramUserId: number;
+
+  @Column({ type: DataType.STRING })
+  claudeSessionId: string;
+
+  @Column({ type: DataType.STRING(100) })
+  ruleset: string;
+
+  @Column({ type: DataType.DECIMAL(5, 4), defaultValue: 0 })
+  contextPct: number;
+
+  @Column({ type: DataType.INTEGER, defaultValue: 0 })
+  compactions: number;
+
+  @HasMany(() => Message)
+  messages: Message[];
+}
+
+// message.model.ts
+import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import { Session } from '../session/session.model';
+
+@Table({ tableName: 'messages', timestamps: true })
+export class Message extends Model {
+  @Column({
+    type: DataType.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  })
+  id: number;
+
+  @ForeignKey(() => Session)
+  @Column({ type: DataType.UUID })
+  sessionId: string;
+
+  @Column({ type: DataType.STRING(20), allowNull: false })
+  role: 'user' | 'assistant';
+
+  @Column({ type: DataType.TEXT, allowNull: false })
+  content: string;
+
+  @BelongsTo(() => Session)
+  session: Session;
+}
+```
+
+---
+
+## NestJS Controllers
+
+```typescript
+// session.controller.ts
+@Controller('api/session')
+export class SessionController {
+  constructor(private sessionService: SessionService) {}
+
+  @Post('start')
+  async start(@Body() dto: StartSessionDto) {
+    return this.sessionService.create(dto.telegramUserId);
+  }
+
+  @Get(':id')
+  async get(@Param('id') id: string) {
+    return this.sessionService.findOne(id);
+  }
+}
+
+// message.controller.ts
+@Controller('api/message')
+export class MessageController {
+  constructor(private messageService: MessageService) {}
+
+  @Post()
+  async send(@Body() dto: SendMessageDto) {
+    return this.messageService.send(dto.sessionId, dto.text);
+  }
+}
+
+// command.controller.ts
+@Controller('api/command')
+export class CommandController {
+  constructor(private commandService: CommandService) {}
+
+  @Get(':cmd')
+  async execute(
+    @Param('cmd') cmd: string,
+    @Query('sessionId') sessionId: string,
+  ) {
+    return this.commandService.execute(sessionId, cmd);
+  }
+}
+```
+
+---
+
+## Claude Service
+
+```typescript
+// claude.service.ts
+@Injectable()
+export class ClaudeService {
+  private readonly claudeUrl = process.env.CLAUDE_SERVICE_URL;
+
+  async send(message: string, sessionId?: string): Promise<ClaudeResponse> {
+    const response = await fetch(`${this.claudeUrl}/send`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message, sessionId }),
+    });
+    return response.json();
+  }
+}
+```
 
 ---
 
