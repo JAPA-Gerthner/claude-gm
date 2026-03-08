@@ -181,6 +181,8 @@ Before marking ruleset complete:
 | star-wars.md | 1086 | **COMPLETE** | Full pipeline: Era selection, Force Alignment/Strain/Temptation, 5 Campaign Frameworks, GRIT system, Vehicle combat |
 | dark-souls.md | 1203 | **COMPLETE** | Full pipeline: Telegraph System, Hollowing Track, Kingdom/Boss/Enemy generators, Covenant archetypes, Campaign Frameworks, S-Tier |
 | disco-elysium.md | 1149 | **COMPLETE** | Full pipeline: 24 skills-as-voices, 10 districts, Case/NPC/Evidence generators, Contacts, Campaign Frameworks, S-Tier |
+| persona.md | 1710 | **COMPLETE** | Arcana Loyalty System, 5 Clusters, Action Format [ARCANA, STAT], Ally Permadeath, Time Pressure, Shadow World Exploration, Velvet Room Hub, A-Tier |
+| runeterra.md | 1760 | **COMPLETE** | Full pipeline: Power Tier (Human/Hero/Legend), 15 Magic Traditions, Champion Encounters (Legendary Actions), Corruption Clocks, 13 Regions, A-Tier |
 
 ---
 
