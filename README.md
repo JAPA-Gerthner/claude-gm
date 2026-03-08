@@ -30,7 +30,9 @@ gm-skill/
 │   ├── scp.md               # Bureaucratic Horror (Foundation, Containment)
 │   ├── cascade.md           # Cinematic Dieselpunk (Post-Signal, Adrenaline)
 │   ├── cthulhu.md           # Cosmic Horror (Three Axes, Deception Budget)
-│   └── disco-elysium.md     # Skills as Inner Voices (Thought Cabinet, Ideology)
+│   ├── disco-elysium.md     # Skills as Inner Voices (Thought Cabinet, Ideology)
+│   ├── persona.md           # School Life meets Shadow World (Arcana Loyalty, Ally Death)
+│   └── runeterra.md         # League of Legends (Power Tier, 15 Magic Traditions)
 ├── commands/
 │   ├── rp.md                # Main /rp command
 │   └── rp/                  # Subcommands
@@ -240,6 +242,25 @@ Complete setting packs — pick one at session start.
 - Session Zero awakening template, five-layer case structure
 - For: political tragedy, internal conflict, amnesiac detective noir
 
+**persona.md** — School Life meets Shadow World (Atlus Persona series):
+- Modern Japan, high school setting with hidden supernatural layer
+- Arcana Loyalty system with 5 Clusters (SPARK/BOND/ORDER/SHADOW/VOID)
+- All actions use [ARCANA, STAT] format — combat, social, exploration
+- Allies with permadeath, relationship maintenance required
+- Time Pressure: 16 actions/week, Exam failures = Game Over
+- Soul weapon with Arcana-based visuals, Essences (4 tattoo slots)
+- Velvet Room as quest hub (Igor + generated Attendants)
+- Shadow World procedural exploration with layer difficulty scaling
+- For: JRPG drama, school life + dungeon crawling, identity themes
+
+**runeterra.md** — League of Legends (All Regions):
+- Power Tier system (Human/Hero/Legend), stat caps, ability unlocks
+- 15 magic traditions with unique mechanics (Hextech, Void, Black Mist, etc.)
+- Champion encounter rules (Legendary Actions, Resistance, Lair Actions)
+- 4 Corruption clocks with staged effects and defined reduction
+- 13 regions, 6 campaign frameworks, Timeline
+- For: champion encounters, cross-regional adventure, rise to legend
+
 **stalker.md** — Chernobyl Exclusion Zone (S.T.A.L.K.E.R. + Roadside Picnic):
 - Era 2006-2026, Zone around Chernobyl NPP
 - Emission Clock, Zombification Clock, Radiation tracking
@@ -302,6 +323,8 @@ Quality rating based on: unique mechanics, atmosphere tools, playability, depth 
 | cascade | GRIT + ADRENALINE cycle. Bloated auxiliary systems. |
 | cthulhu | Three hidden axes, Deception Budget, flowcharts. High GM load. |
 | stalker | Emission/Zombification Clocks, Radiation tracking. Thorough but not innovative. |
+| persona | Arcana Loyalty + Clusters, Time Pressure, Ally permadeath. 1710 lines (overlong). |
+| runeterra | Power Tier + 15 Magic Traditions + Champion Encounters. Comprehensive but no signature mechanic. 1760 lines. |
 
 ## Saves
 
