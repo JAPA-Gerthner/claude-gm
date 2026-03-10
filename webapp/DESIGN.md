@@ -2,13 +2,41 @@
 
 ## Overview
 
-Telegram Mini App для текстовой RPG с Claude как Game Master.
+Web-приложение для текстовой RPG с Claude как Game Master.
 
-**Ключевые фичи:**
-- MD рендеринг игрового контента
+## Roadmap
+
+| Version | Scope |
+|---------|-------|
+| **v0.5** | Bare minimum: чат с Claude, /rp команды вручную |
+| **v1.0** | Табы, Main Menu, сохранения |
+| **v1.5** | RPG стилизация: тема, шрифты, иконки |
+| **v2.0** | Мультиплеер: 2-4 игрока в одной сессии |
+
+**v0.5 Фичи (MVP):** ✅
+- Web app с одним экраном: чат
+- Ввод → Claude → ответ (MD rendered)
+- /rp, /rp:sheet, /rp:save и т.п. — руками как в терминале
+- Casdoor OIDC auth
+- Одна сессия на юзера (auto-resume)
+- Sidebar со списком сессий
+
+**v1.0 Фичи:** ✅
+- Main Menu: New / Continue / Load
 - Табы: Игра / Шит / NPC / Карта / Фракции
-- Авто-компакт при достижении лимита контекста
-- Multi-user support
+- UI для сохранений
+- Выбор рульсета при старте
+
+**v1.5 Фичи:** ✅
+- RPG тема (цвета, шрифты, иконки)
+- HP-style context bar
+- Анимации
+
+**v2.0 Фичи:**
+- WebSocket для real-time синхронизации
+- Shared session между игроками
+- Индикация кто сейчас действует
+- Invite system
 
 ---
 
@@ -16,29 +44,29 @@ Telegram Mini App для текстовой RPG с Claude как Game Master.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                      DOCKER COMPOSE                           │
-│                                                               │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐  │
-│  │ frontend │  │ backend  │  │ postgres │  │  claude-cli  │  │
-│  │  :5173   │  │  :3000   │──│  :5432   │  │    :3001     │  │
-│  └──────────┘  └────┬─────┘  └──────────┘  └───────┬──────┘  │
-│                     │                              │          │
-│                     └────────── HTTP ──────────────┘          │
-│                                                               │
-│  ┌──────────┐  ┌──────────┐                                  │
-│  │  nginx   │  │ pgadmin  │                                  │
-│  │   :80    │  │  :5050   │                                  │
-│  └──────────┘  └──────────┘                                  │
-│       │                                                       │
-│       ▼                                                       │
-│  ┌──────────────┐                                            │
-│  │ cloudflared  │ ──▶ HTTPS tunnel                           │
-│  └──────────────┘                                            │
-│                                                               │
-│  Volumes:                                                     │
-│  - ~/.claude:/root/.claude (auth)                            │
+│                      DOCKER COMPOSE                          │
+│                                                              │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌─────────────┐  │
+│  │ frontend │  │ backend  │  │ postgres │  │ claude-cli  │  │
+│  │  :5173   │  │  :3000   │──│  :5432   │  │   :3001     │  │
+│  └──────────┘  └────┬─────┘  └──────────┘  └──────┬──────┘  │
+│                     │                             │         │
+│                     └──────── Connect RPC ────────┘         │
+│                                                              │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐                   │
+│  │  nginx   │  │ casdoor  │  │ pgadmin  │                   │
+│  │   :80    │  │  :8000   │  │  :5050   │                   │
+│  └──────────┘  └──────────┘  └──────────┘                   │
+│       │                                                      │
+│       ▼                                                      │
+│  ┌──────────────┐                                           │
+│  │ cloudflared  │ ──▶ HTTPS tunnel                          │
+│  └──────────────┘                                           │
+│                                                              │
+│  Volumes:                                                    │
+│  - ~/.claude:/home/node/.claude (auth)                       │
 │  - ./gm-skill:/app/gm-skill (project)                        │
-│  - ./volumes/postgres (data)                                  │
+│  - postgres_data (data)                                      │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -59,147 +87,73 @@ webapp/
 │   ├── index.html
 │   └── src/
 │       ├── main.ts
-│       ├── api.ts
+│       ├── App.vue
 │       ├── components/
-│       │   ├── Tabs.ts
-│       │   ├── Chat.ts
-│       │   └── Loader.ts
-│       ├── styles/
-│       │   └── main.css
-│       └── lib/
-│           └── markdown.ts
+│       │   ├── AuthScreen.vue
+│       │   ├── ChatScreen.vue
+│       │   ├── Sidebar.vue
+│       │   ├── Header.vue
+│       │   └── NewGameModal.vue
+│       ├── socket/
+│       │   └── client.ts
+│       ├── api/
+│       │   └── client.ts
+│       └── gen/              # Generated from proto
 │
 ├── backend/
 │   ├── Dockerfile
 │   ├── package.json
 │   ├── tsconfig.json
 │   └── src/
-│       ├── index.ts
-│       ├── routes/
-│       │   ├── session.ts
-│       │   ├── message.ts
-│       │   └── command.ts
-│       ├── services/
-│       │   ├── claude.ts
-│       │   ├── session.ts
-│       │   └── compaction.ts
-│       ├── db/
-│       │   ├── client.ts
-│       │   └── migrations/
-│       └── types/
+│       ├── main.ts
+│       ├── app.module.ts
+│       ├── auth/
+│       │   ├── auth.module.ts
+│       │   ├── auth.controller.ts
+│       │   ├── auth.service.ts
+│       │   └── auth.guard.ts
+│       ├── chat/
+│       │   ├── chat.module.ts
+│       │   ├── chat.controller.ts
+│       │   └── chat.service.ts
+│       ├── game-session/
+│       │   ├── game-session.module.ts
+│       │   ├── game-session.controller.ts
+│       │   ├── game-session.service.ts
+│       │   └── session-events.service.ts
+│       ├── claude/
+│       │   ├── claude.module.ts
+│       │   ├── claude.service.ts
+│       │   └── session-compactor.ts
+│       ├── socket/
+│       │   ├── socket.module.ts
+│       │   └── game.gateway.ts
+│       ├── database/
+│       │   ├── database.module.ts
+│       │   ├── game-session.model.ts
+│       │   └── message.model.ts
+│       └── gen/              # Generated from proto
 │
 ├── claude-cli/
 │   ├── Dockerfile
-│   └── server.js
+│   ├── go.mod
+│   ├── main.go
+│   └── gen/                  # Generated from proto
+│
+├── proto/
+│   ├── buf.yaml
+│   ├── buf.gen.yaml
+│   └── questkeeper/v1/
+│       └── questkeeper.proto
 │
 ├── nginx/
 │   └── nginx.conf
 │
-└── volumes/
-    └── postgres/
-```
-
----
-
-## Docker Services
-
-### postgres
-```yaml
-postgres:
-  image: postgres:16-alpine
-  environment:
-    POSTGRES_DB: questkeeper
-    POSTGRES_USER: ${PG_USER}
-    POSTGRES_PASSWORD: ${PG_PASS}
-  volumes:
-    - ./volumes/postgres:/var/lib/postgresql/data
-  ports:
-    - "5432:5432"
-  healthcheck:
-    test: ["CMD-SHELL", "pg_isready -U ${PG_USER}"]
-    interval: 5s
-    timeout: 5s
-    retries: 5
-```
-
-### pgadmin
-```yaml
-pgadmin:
-  image: dpage/pgadmin4
-  environment:
-    PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
-    PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASS}
-  ports:
-    - "5050:80"
-  depends_on:
-    - postgres
-```
-
-### backend
-```yaml
-backend:
-  build: ./backend
-  environment:
-    DATABASE_URL: postgres://${PG_USER}:${PG_PASS}@postgres:5432/questkeeper
-    CLAUDE_SERVICE_URL: http://claude-cli:3001
-  volumes:
-    - ./backend/src:/app/src
-  ports:
-    - "3000:3000"
-  depends_on:
-    postgres:
-      condition: service_healthy
-    claude-cli:
-      condition: service_started
-```
-
-### frontend
-```yaml
-frontend:
-  build: ./frontend
-  volumes:
-    - ./frontend/src:/app/src
-  ports:
-    - "5173:5173"
-  depends_on:
-    - backend
-```
-
-### claude-cli
-```yaml
-claude-cli:
-  build: ./claude-cli
-  volumes:
-    - ~/.claude:/root/.claude
-    - ../:/app/gm-skill:ro
-  environment:
-    PROJECT_DIR: /app/gm-skill
-  ports:
-    - "3001:3001"
-```
-
-### nginx
-```yaml
-nginx:
-  image: nginx:alpine
-  volumes:
-    - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-  ports:
-    - "80:80"
-  depends_on:
-    - frontend
-    - backend
-```
-
-### tunnel
-```yaml
-tunnel:
-  image: cloudflare/cloudflared:latest
-  command: tunnel --no-autoupdate run
-  environment:
-    TUNNEL_TOKEN: ${CF_TUNNEL_TOKEN}
-  depends_on:
-    - nginx
+├── casdoor/
+│   └── app.conf
+│
+└── postgres/
+    └── init-multi-db.sh
 ```
 
 ---
@@ -207,37 +161,47 @@ tunnel:
 ## Database Schema
 
 ```sql
--- sessions
-CREATE TABLE sessions (
+-- game_sessions
+CREATE TABLE game_sessions (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  telegram_user_id BIGINT NOT NULL,
+  user_id VARCHAR(255) NOT NULL,           -- OIDC sub
+  name VARCHAR(255),                        -- Session/chapter name
+
+  -- Game settings
+  ruleset VARCHAR(100) NOT NULL,
+  ruleset_display VARCHAR(255),
+  tone VARCHAR(50) DEFAULT 'medium',
+  difficulty VARCHAR(50) DEFAULT 'standard',
+  custom_mechanics BOOLEAN DEFAULT FALSE,
+
+  -- Character
+  character_name VARCHAR(255),
+  character_class VARCHAR(255),
+
+  -- Claude session
   claude_session_id VARCHAR(255),
-  ruleset VARCHAR(100),
-  context_pct DECIMAL(5,4) DEFAULT 0,
-  compactions INT DEFAULT 0,
+  save_file_path VARCHAR(500),
+
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 -- messages
 CREATE TABLE messages (
-  id SERIAL PRIMARY KEY,
-  session_id UUID REFERENCES sessions(id) ON DELETE CASCADE,
-  role VARCHAR(20) NOT NULL,  -- 'user' | 'assistant'
-  content TEXT NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- saves (для компакта)
-CREATE TABLE saves (
-  id SERIAL PRIMARY KEY,
-  session_id UUID REFERENCES sessions(id) ON DELETE CASCADE,
-  content TEXT NOT NULL,
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  session_id UUID REFERENCES game_sessions(id) ON DELETE CASCADE,
+  role VARCHAR(20) NOT NULL,               -- 'user' | 'assistant'
+  sender_id VARCHAR(255),                  -- NULL for assistant
+  sender_name VARCHAR(255),
+  sender_avatar VARCHAR(500),
+  content_sent TEXT NOT NULL,              -- What was sent to Claude
+  content_display TEXT,                    -- Pretty version for UI (if different)
+  is_compacted BOOLEAN DEFAULT FALSE,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 -- indexes
-CREATE INDEX idx_sessions_user ON sessions(telegram_user_id);
+CREATE INDEX idx_sessions_user ON game_sessions(user_id);
 CREATE INDEX idx_messages_session ON messages(session_id);
 ```
 
@@ -245,167 +209,187 @@ CREATE INDEX idx_messages_session ON messages(session_id);
 
 ## API Endpoints
 
-### Session
-```
-POST /api/session/start
-  Body: { telegramUserId: number }
-  Response: { sessionId: string, welcome: string }
+### Auth (Casdoor OIDC)
 
-GET /api/session/:id
-  Response: { session, messages[] }
 ```
+GET /api/auth/login
+  → Redirect to Casdoor login page
 
-### Message
-```
-POST /api/message
-  Body: { sessionId: string, text: string }
-  Response: {
-    content: string,
-    contextPct: number,
-    compacted: boolean
-  }
+GET /api/auth/callback?code=xxx&state=xxx
+  → Exchange code for tokens, redirect to frontend with JWT
+
+GET /api/auth/me
+  Headers: Authorization: Bearer <token>
+  Response: { sub, name, email, avatar }
+
+GET /api/auth/logout
+  → Redirect to frontend
 ```
 
-### Commands
+### Game Sessions
+
 ```
-GET /api/command/:cmd?sessionId=xxx
-  cmd: sheet | npc | map | factions | chapter | recap
-  Response: { content: string }
-```
+GET /api/game-sessions
+  Response: { sessions[] }
 
-### Context
-```
-GET /api/context?sessionId=xxx
-  Response: { pct: number, tokens: number }
-```
+POST /api/game-sessions
+  Body: { ruleset, tone, difficulty, customMechanics }
+  Response: { session }
 
----
+GET /api/game-sessions/:id
+  Response: { session }
 
-## Claude CLI Service
+PATCH /api/game-sessions/:id
+  Body: { name?, characterName?, ruleset? }
+  Response: { session }
 
-**Dockerfile:**
-```dockerfile
-FROM node:20-slim
-
-RUN npm install -g @anthropic-ai/claude-code
-
-WORKDIR /app
-COPY server.js .
-
-EXPOSE 3001
-CMD ["node", "server.js"]
+DELETE /api/game-sessions/:id
+  Response: { success }
 ```
 
-**server.js:**
-```javascript
-const http = require('http');
-const { spawn } = require('child_process');
+### Chat
 
-const server = http.createServer(async (req, res) => {
-  if (req.method === 'POST' && req.url === '/send') {
-    let body = '';
-    req.on('data', chunk => body += chunk);
-    req.on('end', () => {
-      const { message, sessionId } = JSON.parse(body);
+```
+GET /api/chat/history/:gameSessionId
+  Response: { messages[] }
 
-      const args = ['-p', message, '--print', '--dangerously-skip-permissions'];
-      if (sessionId) args.push('--resume', sessionId);
+POST /api/chat/send
+  Body: { gameSessionId, message, displayContent? }
+  Response: { content, sessionId }
+```
 
-      const proc = spawn('claude', args, {
-        cwd: process.env.PROJECT_DIR,
-        shell: true
-      });
+### Socket.IO Events
 
-      let stdout = '';
-      let stderr = '';
+```typescript
+// Client → Server
+'joinRoom': { gameSessionId } → { success, members[] }
+'leaveRoom': { gameSessionId }
+'sendMessage': { gameSessionId, content, displayContent? }
 
-      proc.stdout.on('data', d => stdout += d);
-      proc.stderr.on('data', d => stderr += d);
-
-      proc.on('close', code => {
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        res.end(JSON.stringify({
-          response: stdout.trim(),
-          error: code !== 0 ? stderr : null
-        }));
-      });
-    });
-  } else {
-    res.writeHead(404);
-    res.end();
-  }
-});
-
-server.listen(3001, () => {
-  console.log('Claude CLI service running on :3001');
-});
+// Server → Client
+'chatMessage': { messageId, role, content, senderId, senderName, senderAvatar, timestamp }
+'playerJoined': { gameSessionId, player }
+'playerLeft': { gameSessionId, userId }
+'sessionUpdated': { sessionId, data }
 ```
 
 ---
 
-## Auto-Compaction Flow
+## Auth Flow (Casdoor OIDC)
 
 ```
-1. После каждого ответа Claude:
-   - Читаем usage из ~/.claude/projects/.../session.jsonl
-   - Считаем contextPct = cache_tokens / 200000
-
-2. Если contextPct >= 0.80:
-   a. POST /send { message: "/rp:save" }
-   b. Сохраняем save content в БД
-   c. POST /send { message: "/rp:load" } (новая сессия)
-   d. Обновляем claude_session_id в БД
-
-3. Возвращаем клиенту:
-   - compacted: true
-   - Новый contextPct
+┌─────────────┐     ┌─────────────┐     ┌──────────┐
+│   Frontend  │     │   Backend   │     │ Casdoor  │
+└──────┬──────┘     └──────┬──────┘     └────┬─────┘
+       │                   │                  │
+       │ Click Login       │                  │
+       │──────────────────▶│                  │
+       │                   │                  │
+       │ Redirect to       │                  │
+       │◀──────────────────│                  │
+       │ Casdoor           │                  │
+       │                   │                  │
+       │───────────────────│─────────────────▶│
+       │                   │    Login Page    │
+       │                   │                  │
+       │◀──────────────────│──────────────────│
+       │  Callback with    │   code + state   │
+       │  ?code=&state=    │                  │
+       │──────────────────▶│                  │
+       │                   │  Exchange code   │
+       │                   │─────────────────▶│
+       │                   │                  │
+       │                   │◀─────────────────│
+       │                   │  tokens + user   │
+       │                   │                  │
+       │ Redirect with JWT │                  │
+       │◀──────────────────│                  │
+       │ ?token=xxx        │                  │
+       │                   │                  │
+       │ Store token       │                  │
+       │ in localStorage   │                  │
+       └───────────────────┴──────────────────┘
 ```
+
+---
+
+## Claude CLI Service (Go + Connect RPC)
+
+Прокси между NestJS и Claude CLI. Использует Connect RPC для типизированной коммуникации.
+
+**Endpoints:**
+- `ClaudeService.Send` — отправка сообщения, streaming ответ
+- `ClaudeService.GetSessionStats` — статистика сессии (tokens, messages)
+- `ClaudeService.GetSessionHistory` — история из .jsonl файла
+- `ClaudeService.DeleteSession` — удаление файла сессии
+
+**Особенности:**
+- `sync.Mutex` — один запрос к Claude за раз (CLI не потокобезопасен)
+- Session ID extraction — сравнение файлов до/после запуска
+- h2c для HTTP/2 без TLS (Connect RPC streaming)
 
 ---
 
 ## Frontend Components
 
-### Tabs
-- game: Чат с игрой
-- sheet: /rp:sheet
-- npc: /rp:npc
-- map: /rp:map
-- factions: /rp:factions
+### App.vue
+- Роутинг между AuthScreen и основным приложением
+- Хранение токена в localStorage
+- Верификация токена через /api/auth/me
 
-При клике на таб (кроме game):
-1. Показать loader
-2. GET /api/command/:tab
-3. Рендерить MD
+### AuthScreen.vue
+- Login кнопка → redirect to /api/auth/login
 
-### Chat
-- Список сообщений (user/assistant)
-- Input field + Send button
-- Loader при ожидании ответа
+### Header.vue
+- User info (name, avatar)
+- Logout button
 
-### Context Indicator
-- Прогресс-бар % контекста
-- Цвета: green <50%, yellow 50-80%, red >80%
-- Toast при компакте
+### Sidebar.vue
+- Список сессий
+- New Game кнопка
+- Удаление сессий
+
+### ChatScreen.vue
+- WebSocket подключение
+- История сообщений
+- Markdown rendering (marked + DOMPurify)
+- Clickable options (`#select:tag:value` links)
+- Selection chips
 
 ---
 
-## Telegram Mini App
+## UI Style (RPG Theme)
 
-```javascript
-// Инициализация
-const tg = window.Telegram.WebApp;
-tg.ready();
-tg.expand();
+### Палитра
+```css
+:root {
+  /* Backgrounds */
+  --bg-dark: #1a1410;
+  --bg-panel: #2a1f1a;
+  --bg-chat: #352a22;
 
-// Тема
-const root = document.documentElement;
-root.style.setProperty('--tg-bg', tg.themeParams.bg_color);
-root.style.setProperty('--tg-text', tg.themeParams.text_color);
-root.style.setProperty('--tg-hint', tg.themeParams.hint_color);
-root.style.setProperty('--tg-button', tg.themeParams.button_color);
+  /* Text */
+  --text-primary: #e8dcc4;
+  --text-secondary: #a89880;
+  --text-gm: #d4af37;
 
-// User
-const userId = tg.initDataUnsafe?.user?.id;
+  /* Accents */
+  --accent-gold: #c9a227;
+  --accent-red: #8b2020;
+  --accent-green: #2d5a27;
+
+  /* Borders */
+  --border-frame: #5a4a3a;
+}
+```
+
+### Типографика
+```css
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+h1, h2, .tab-label { font-family: 'Cinzel', serif; }
+body, .chat { font-family: 'Crimson+Text', serif; }
 ```
 
 ---
@@ -414,18 +398,23 @@ const userId = tg.initDataUnsafe?.user?.id;
 
 ```env
 # Postgres
-PG_USER=questkeeper
+PG_USER=postgres
 PG_PASS=secretpassword
+
+# Casdoor OIDC
+CASDOOR_ISSUER=http://casdoor:8000
+CASDOOR_CLIENT_ID=questkeeper-client
+CASDOOR_CLIENT_SECRET=questkeeper-secret-2024
+CASDOOR_REDIRECT_URI=http://localhost:8080/api/auth/callback
+
+# App
+JWT_SECRET=your-secret-key
+FRONTEND_URL=http://localhost:8080
+CLAUDE_SERVICE_URL=http://claude-cli:3001
 
 # PgAdmin
 PGADMIN_EMAIL=admin@local.dev
 PGADMIN_PASS=admin
-
-# Cloudflare Tunnel
-CF_TUNNEL_TOKEN=xxx
-
-# App
-NODE_ENV=development
 ```
 
 ---
@@ -434,190 +423,20 @@ NODE_ENV=development
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | TypeScript, Vite, marked.js |
-| Backend | NestJS, TypeScript |
+| Frontend | Vue 3, TypeScript, Vite, Socket.IO, marked.js, DOMPurify |
+| Backend | NestJS, TypeScript, Socket.IO |
+| Auth | Casdoor (OIDC), JWT |
 | Database | PostgreSQL 16 |
 | ORM | Sequelize + sequelize-typescript |
-| Claude | CLI in container |
-| Proxy | Nginx |
+| RPC | Connect RPC (protobuf) |
+| Claude Proxy | Go + Connect RPC |
+| Reverse Proxy | Nginx |
 | Tunnel | Cloudflare |
 | Container | Docker Compose |
 
 ---
 
-## Backend Structure (NestJS)
-
-```
-backend/src/
-├── main.ts
-├── app.module.ts
-│
-├── session/
-│   ├── session.module.ts
-│   ├── session.controller.ts
-│   ├── session.service.ts
-│   └── session.model.ts
-│
-├── message/
-│   ├── message.module.ts
-│   ├── message.controller.ts
-│   ├── message.service.ts
-│   └── message.model.ts
-│
-├── command/
-│   ├── command.module.ts
-│   ├── command.controller.ts
-│   └── command.service.ts
-│
-├── claude/
-│   ├── claude.module.ts
-│   └── claude.service.ts
-│
-├── compaction/
-│   ├── compaction.module.ts
-│   └── compaction.service.ts
-│
-└── database/
-    ├── database.module.ts
-    └── database.providers.ts
-```
-
----
-
-## Sequelize Models
-
-```typescript
-// session.model.ts
-import { Table, Column, Model, DataType, HasMany } from 'sequelize-typescript';
-import { Message } from '../message/message.model';
-
-@Table({ tableName: 'sessions', timestamps: true })
-export class Session extends Model {
-  @Column({
-    type: DataType.UUID,
-    defaultValue: DataType.UUIDV4,
-    primaryKey: true,
-  })
-  id: string;
-
-  @Column({ type: DataType.BIGINT, allowNull: false })
-  telegramUserId: number;
-
-  @Column({ type: DataType.STRING })
-  claudeSessionId: string;
-
-  @Column({ type: DataType.STRING(100) })
-  ruleset: string;
-
-  @Column({ type: DataType.DECIMAL(5, 4), defaultValue: 0 })
-  contextPct: number;
-
-  @Column({ type: DataType.INTEGER, defaultValue: 0 })
-  compactions: number;
-
-  @HasMany(() => Message)
-  messages: Message[];
-}
-
-// message.model.ts
-import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
-import { Session } from '../session/session.model';
-
-@Table({ tableName: 'messages', timestamps: true })
-export class Message extends Model {
-  @Column({
-    type: DataType.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  })
-  id: number;
-
-  @ForeignKey(() => Session)
-  @Column({ type: DataType.UUID })
-  sessionId: string;
-
-  @Column({ type: DataType.STRING(20), allowNull: false })
-  role: 'user' | 'assistant';
-
-  @Column({ type: DataType.TEXT, allowNull: false })
-  content: string;
-
-  @BelongsTo(() => Session)
-  session: Session;
-}
-```
-
----
-
-## NestJS Controllers
-
-```typescript
-// session.controller.ts
-@Controller('api/session')
-export class SessionController {
-  constructor(private sessionService: SessionService) {}
-
-  @Post('start')
-  async start(@Body() dto: StartSessionDto) {
-    return this.sessionService.create(dto.telegramUserId);
-  }
-
-  @Get(':id')
-  async get(@Param('id') id: string) {
-    return this.sessionService.findOne(id);
-  }
-}
-
-// message.controller.ts
-@Controller('api/message')
-export class MessageController {
-  constructor(private messageService: MessageService) {}
-
-  @Post()
-  async send(@Body() dto: SendMessageDto) {
-    return this.messageService.send(dto.sessionId, dto.text);
-  }
-}
-
-// command.controller.ts
-@Controller('api/command')
-export class CommandController {
-  constructor(private commandService: CommandService) {}
-
-  @Get(':cmd')
-  async execute(
-    @Param('cmd') cmd: string,
-    @Query('sessionId') sessionId: string,
-  ) {
-    return this.commandService.execute(sessionId, cmd);
-  }
-}
-```
-
----
-
-## Claude Service
-
-```typescript
-// claude.service.ts
-@Injectable()
-export class ClaudeService {
-  private readonly claudeUrl = process.env.CLAUDE_SERVICE_URL;
-
-  async send(message: string, sessionId?: string): Promise<ClaudeResponse> {
-    const response = await fetch(`${this.claudeUrl}/send`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message, sessionId }),
-    });
-    return response.json();
-  }
-}
-```
-
----
-
-## Development Workflow
+## Development
 
 ```bash
 # Start all services
@@ -638,13 +457,69 @@ docker-compose logs tunnel | grep "https://"
 
 ---
 
+## v2.0 — Multiplayer Architecture
+
+### Концепт
+Claude как полноценный GM для группы 2-4 игроков. Каждый игрок видит общий чат, но управляет своим персонажем.
+
+### Database Changes
+```sql
+-- Игроки в сессии
+CREATE TABLE session_players (
+  session_id UUID REFERENCES game_sessions(id),
+  user_id VARCHAR(255) NOT NULL,
+  character_name VARCHAR(100),
+  is_host BOOLEAN DEFAULT FALSE,
+  joined_at TIMESTAMPTZ DEFAULT NOW(),
+  PRIMARY KEY (session_id, user_id)
+);
+```
+
+### WebSocket Events
+```typescript
+// Server → Client
+'playerJoined': { gameSessionId, player }
+'playerLeft': { gameSessionId, userId }
+'turnChanged': { activePlayerId }
+
+// Client → Server
+'joinRoom': { gameSessionId }
+```
+
+### Invite System
+```
+POST /api/game-sessions/:id/invite → { code: "ABC123" }
+GET  /api/game-sessions/join/:code → { sessionId }
+```
+
+---
+
 ## TODO
 
-- [ ] Создать docker-compose.yml
-- [ ] Настроить Cloudflare Tunnel
-- [ ] Frontend: базовый UI с табами
-- [ ] Backend: API endpoints
-- [ ] Claude CLI service
-- [ ] Database migrations
-- [ ] Auto-compaction logic
-- [ ] Telegram Mini App integration
+### v0.5 — Bare Minimum ✅
+- [x] docker-compose.yml
+- [x] Claude CLI service (Go + Connect RPC)
+- [x] Backend: NestJS + Sequelize
+- [x] Frontend: Vue 3 + Socket.IO
+- [x] Casdoor OIDC auth
+- [x] Chat with WebSocket
+- [x] MD rendering
+
+### v1.0 — Full MVP
+- [ ] Main Menu screen
+- [ ] Session/Save management UI
+- [ ] Tabs (sheet, npc, map, factions)
+- [ ] Ruleset selection modal
+- [ ] Context indicator
+
+### v1.5 — Styling
+- [ ] RPG тема refinement
+- [ ] Иконки табов
+- [ ] HP-style context bar
+- [ ] Анимации
+
+### v2.0 — Multiplayer
+- [ ] Session players table
+- [ ] Invite system
+- [ ] Real-time sync
+- [ ] Turn indicators

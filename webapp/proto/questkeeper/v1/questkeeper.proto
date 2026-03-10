@@ -1,0 +1,263 @@
+syntax = "proto3";
+
+package questkeeper.v1;
+
+option go_package = "claude-cli/gen/questkeeper/v1;questkeeperv1";
+
+// ============================================================================
+// Chat Service - streaming responses from Claude
+// ============================================================================
+
+service ChatService {
+  // Send a message and receive streaming response
+  rpc SendMessage(SendMessageRequest) returns (stream SendMessageResponse);
+}
+
+message SendMessageRequest {
+  string game_session_id = 1;
+  string message = 2;
+}
+
+message SendMessageResponse {
+  oneof event {
+    string chunk = 1;           // Text chunk (streaming)
+    MessageComplete complete = 2; // Final message with metadata
+    string error = 3;           // Error occurred
+  }
+}
+
+message MessageComplete {
+  string full_text = 1;
+  string session_id = 2;        // Claude session ID
+  int32 tokens_used = 3;
+}
+
+// ============================================================================
+// Session Service - CRUD + real-time updates
+// ============================================================================
+
+service SessionService {
+  // CRUD
+  rpc ListSessions(ListSessionsRequest) returns (ListSessionsResponse);
+  rpc GetSession(GetSessionRequest) returns (Session);
+  rpc CreateSession(CreateSessionRequest) returns (Session);
+  rpc UpdateSession(UpdateSessionRequest) returns (Session);
+  rpc DeleteSession(DeleteSessionRequest) returns (DeleteSessionResponse);
+
+  // Real-time updates
+  rpc Subscribe(SubscribeRequest) returns (stream SessionEvent);
+}
+
+message Session {
+  string id = 1;
+  string user_id = 2;
+  string name = 3;
+
+  // Game settings
+  string ruleset = 4;
+  string tone = 5;
+  string difficulty = 6;
+  bool custom_mechanics = 7;
+
+  // Character
+  string character_name = 8;
+  string character_class = 9;
+
+  // Claude session
+  string claude_session_id = 10;
+  int32 token_count = 11;
+  int32 message_count = 12;
+
+  // Timestamps
+  int64 created_at = 13;
+  int64 updated_at = 14;
+}
+
+message ListSessionsRequest {}
+
+message ListSessionsResponse {
+  repeated Session sessions = 1;
+}
+
+message GetSessionRequest {
+  string id = 1;
+}
+
+message CreateSessionRequest {
+  string ruleset = 1;
+  string tone = 2;
+  string difficulty = 3;
+  bool custom_mechanics = 4;
+}
+
+message UpdateSessionRequest {
+  string id = 1;
+  optional string name = 2;
+  optional string character_name = 3;
+  optional string character_class = 4;
+  optional string ruleset = 5;
+}
+
+message DeleteSessionRequest {
+  string id = 1;
+}
+
+message DeleteSessionResponse {}
+
+message SubscribeRequest {}
+
+message SessionEvent {
+  string session_id = 1;
+  oneof event {
+    Session updated = 2;
+    string deleted = 3;
+  }
+}
+
+// ============================================================================
+// Claude Service - internal, between NestJS and Go
+// ============================================================================
+
+service ClaudeService {
+  rpc Send(ClaudeSendRequest) returns (stream ClaudeSendResponse);
+  rpc GetSessionStats(GetSessionStatsRequest) returns (SessionStats);
+  rpc GetSessionHistory(GetSessionHistoryRequest) returns (SessionHistory);
+  rpc DeleteSession(DeleteClaudeSessionRequest) returns (DeleteClaudeSessionResponse);
+}
+
+message ClaudeSendRequest {
+  string message = 1;
+  optional string session_id = 2;  // Resume existing session
+}
+
+message ClaudeSendResponse {
+  oneof event {
+    string chunk = 1;
+    ClaudeComplete complete = 2;
+    string error = 3;
+  }
+}
+
+message ClaudeComplete {
+  string full_text = 1;
+  string session_id = 2;
+}
+
+message GetSessionStatsRequest {
+  string session_id = 1;
+}
+
+message SessionStats {
+  string session_id = 1;
+  int32 token_count = 2;
+  int32 message_count = 3;
+  int32 file_size_kb = 4;
+}
+
+message GetSessionHistoryRequest {
+  string session_id = 1;
+}
+
+message SessionHistory {
+  repeated HistoryMessage messages = 1;
+}
+
+message HistoryMessage {
+  string role = 1;      // "user" or "assistant"
+  string content = 2;
+}
+
+message DeleteClaudeSessionRequest {
+  string session_id = 1;
+}
+
+message DeleteClaudeSessionResponse {}
+
+// ============================================================================
+// Socket.IO Events - real-time game communication
+// ============================================================================
+
+// Wrapper for all Socket.IO messages
+message SocketMessage {
+  string event = 1;           // Event name
+  bytes payload = 2;          // Serialized event-specific message
+  optional string ack_id = 3; // For request/response pattern
+}
+
+// --- Client → Server Events ---
+
+message JoinRoomRequest {
+  string game_session_id = 1;
+  string token = 2;
+}
+
+message LeaveRoomRequest {
+  string game_session_id = 1;
+}
+
+message ChatMessageRequest {
+  string game_session_id = 1;
+  string content = 2;
+  optional string display_content = 3; // Pretty version for UI
+}
+
+// --- Server → Client Events ---
+
+message JoinRoomResponse {
+  bool success = 1;
+  optional string error = 2;
+  repeated RoomMember members = 3; // Current players in room
+}
+
+message RoomMember {
+  string user_id = 1;
+  string name = 2;
+  string avatar = 3;
+  bool is_online = 4;
+}
+
+message PlayerJoined {
+  string game_session_id = 1;
+  RoomMember player = 2;
+}
+
+message PlayerLeft {
+  string game_session_id = 1;
+  string user_id = 2;
+}
+
+message ChatMessageResponse {
+  string message_id = 1;
+  string role = 2;            // "user" | "assistant"
+  string content = 3;
+  string sender_id = 4;
+  string sender_name = 5;
+  string sender_avatar = 6;
+  int64 timestamp = 7;
+}
+
+message ChatStreamChunk {
+  string message_id = 1;      // Temporary ID for streaming, or final ID when complete
+  int32 chunk_index = 2;      // Chunk sequence number
+  string content = 3;         // Text chunk
+  bool is_complete = 4;       // Last chunk?
+  optional string final_message_id = 5; // Real message ID after saving to DB
+}
+
+// --- Compaction Events ---
+
+message CompactionStatus {
+  string game_session_id = 1;
+  string step = 2;            // "checking" | "saving" | "creating" | "loading" | "complete" | "error"
+  string message = 3;
+  int32 progress = 4;         // 0-100
+  optional string error = 5;
+}
+
+// --- Typing Indicators (multiplayer) ---
+
+message TypingIndicator {
+  string game_session_id = 1;
+  string user_id = 2;
+  bool is_typing = 3;
+}
