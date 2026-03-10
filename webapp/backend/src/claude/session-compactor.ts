@@ -2,7 +2,7 @@
  * Session Compactor
  *
  * Handles compaction of Claude sessions when they approach context limits.
- * Uses /rp:save to create a summary, then starts a fresh session with that save.
+ * Uses /rp:web-save to create structured save, then /rp:web-load to restore in new session.
  */
 
 import { Injectable, Logger } from '@nestjs/common';
@@ -11,7 +11,7 @@ import { EventEmitter2 } from '@nestjs/event-emitter';
 
 export interface CompactionStatus {
   gameSessionId: string;
-  step: 'checking' | 'saving' | 'creating' | 'loading' | 'complete' | 'error';
+  step: 'checking' | 'saving' | 'loading' | 'complete' | 'error';
   message: string;
   progress: number; // 0-100
   error?: string;
@@ -59,10 +59,9 @@ export class SessionCompactor {
    * Perform compaction on a session
    *
    * Process:
-   * 1. Run /rp:save on current session to get summary
-   * 2. Create new Claude session
-   * 3. Load the save into new session with /rp:load
-   * 4. Return new session ID
+   * 1. Run /rp:web-save on current session to get structured save
+   * 2. Create new Claude session with /rp:web-load (includes save content)
+   * 3. Return new session ID
    */
   async compact(gameSessionId: string, claudeSessionId: string): Promise<CompactionResult> {
     this.emitStatus(gameSessionId, {
@@ -72,52 +71,39 @@ export class SessionCompactor {
     });
 
     try {
-      // Step 1: Generate save
+      // Step 1: Generate save with /rp:web-save
       this.emitStatus(gameSessionId, {
         step: 'saving',
         message: 'Сохраняем прогресс игры...',
         progress: 30,
       });
 
-      const saveResponse = await this.claudeService.send('/rp:save', claudeSessionId);
+      const saveResponse = await this.claudeService.send('/rp:web-save', claudeSessionId);
       if (saveResponse.error) {
         throw new Error(`Failed to save: ${saveResponse.error}`);
       }
 
-      // Extract save content from response
-      // The save is typically formatted as a code block or structured text
+      // Extract save content from JSON response
       const saveContent = this.extractSaveContent(saveResponse.response);
 
-      // Step 2: Create new session
-      this.emitStatus(gameSessionId, {
-        step: 'creating',
-        message: 'Создаём новую сессию...',
-        progress: 50,
-      });
-
-      // Start fresh session with /rp:start
-      const startResponse = await this.claudeService.send('/rp:start');
-      if (startResponse.error) {
-        throw new Error(`Failed to start new session: ${startResponse.error}`);
-      }
-
-      const newSessionId = startResponse.sessionId;
-
-      // Step 3: Load save into new session
+      // Step 2: Load save into new session with /rp:web-load
+      // This creates a new session and restores state in one step
       this.emitStatus(gameSessionId, {
         step: 'loading',
         message: 'Загружаем сохранение в новую сессию...',
-        progress: 70,
+        progress: 60,
       });
 
-      // Send the save content to load
-      const loadMessage = `/rp:load\n\n${saveContent}`;
-      const loadResponse = await this.claudeService.send(loadMessage, newSessionId);
+      // /rp:web-load accepts inline save content
+      const loadMessage = `/rp:web-load\n\n${saveContent}`;
+      const loadResponse = await this.claudeService.send(loadMessage);
       if (loadResponse.error) {
         throw new Error(`Failed to load save: ${loadResponse.error}`);
       }
 
-      // Step 4: Complete
+      const newSessionId = loadResponse.sessionId;
+
+      // Step 3: Complete
       this.emitStatus(gameSessionId, {
         step: 'complete',
         message: 'Компакция завершена!',
@@ -153,25 +139,40 @@ export class SessionCompactor {
   }
 
   /**
-   * Extract save content from /rp:save response
-   * Looks for structured save data in the response
+   * Extract save content from /rp:web-save response
+   * The response is JSON with a "save" field containing YAML
    */
   private extractSaveContent(response: string): string {
+    // Try to parse as JSON first (expected format from /rp:web-save)
+    try {
+      const parsed = JSON.parse(response);
+      if (parsed.save) {
+        return parsed.save;
+      }
+      // If content field contains the save markers
+      if (parsed.content && parsed.content.includes('---SAVE---')) {
+        const match = parsed.content.match(/---SAVE---([\s\S]*?)---END---/);
+        if (match) {
+          return `---SAVE---${match[1]}---END---`;
+        }
+      }
+    } catch {
+      // Not JSON, try other patterns
+    }
+
+    // Try to find YAML save block directly
+    const yamlMatch = response.match(/---SAVE---([\s\S]*?)---END---/);
+    if (yamlMatch) {
+      return `---SAVE---${yamlMatch[1]}---END---`;
+    }
+
     // Try to find content between code blocks
     const codeBlockMatch = response.match(/```(?:json|yaml|save)?\n([\s\S]*?)\n```/);
     if (codeBlockMatch) {
       return codeBlockMatch[1];
     }
 
-    // Try to find YAML-like structured content
-    const structuredMatch = response.match(
-      /(?:GAME STATE|CHARACTER|SESSION SAVE|---)([\s\S]*?)(?:---|$)/i,
-    );
-    if (structuredMatch) {
-      return structuredMatch[0];
-    }
-
-    // Fallback: return full response (it might be the save itself)
+    // Fallback: return full response
     return response;
   }
 

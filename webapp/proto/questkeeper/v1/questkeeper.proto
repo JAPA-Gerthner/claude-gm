@@ -248,7 +248,7 @@ message ChatStreamChunk {
 
 message CompactionStatus {
   string game_session_id = 1;
-  string step = 2;            // "checking" | "saving" | "creating" | "loading" | "complete" | "error"
+  string step = 2;            // "checking" | "saving" | "loading" | "complete" | "error"
   string message = 3;
   int32 progress = 4;         // 0-100
   optional string error = 5;
