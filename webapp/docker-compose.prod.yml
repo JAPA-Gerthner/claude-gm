@@ -1,0 +1,149 @@
+# Production compose - uses Caddy for automatic HTTPS
+# Usage: docker compose -f docker-compose.prod.yml up -d
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${PG_USER:-postgres}
+      POSTGRES_PASSWORD: ${PG_PASS}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init-multi-db.sh:/docker-entrypoint-initdb.d/init-multi-db.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER:-postgres}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  redis:
+    image: valkey/valkey:8-alpine
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+  claude-cli:
+    build: ./claude-cli
+    environment:
+      - PROJECT_DIR=/app/gm-skill
+      - SESSIONS_DIR=/home/node/.claude/projects/-app-gm-skill
+      - HOME=/home/node
+      - SHELL=/bin/bash
+    volumes:
+      - claude_data:/home/node/.claude
+      - claude_config:/home/node/.claude.json
+      - ../:/app/gm-skill:ro
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgres://${PG_USER:-postgres}:${PG_PASS}@postgres:5432/questkeeper
+      - CLAUDE_SERVICE_URL=http://claude-cli:3001
+      - JWT_SECRET=${JWT_SECRET}
+      - CASDOOR_ISSUER=https://${AUTH_DOMAIN}
+      - CASDOOR_CLIENT_ID=${CASDOOR_CLIENT_ID:-questkeeper-client}
+      - CASDOOR_CLIENT_SECRET=${CASDOOR_CLIENT_SECRET}
+      - CASDOOR_REDIRECT_URI=https://${APP_DOMAIN}/api/auth/callback
+      - FRONTEND_URL=https://${APP_DOMAIN}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      claude-cli:
+        condition: service_started
+      casdoor:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    environment:
+      - VITE_SENTRY_DSN=${VITE_SENTRY_DSN:-}
+    restart: unless-stopped
+
+  casdoor:
+    image: casbin/casdoor:latest
+    environment:
+      RUNNING_IN_DOCKER: "true"
+    volumes:
+      - ./casdoor/app.prod.conf:/conf/app.conf:ro
+      - ./casdoor/init_data.prod.json:/conf/init_data.json:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8000/.well-known/openid-configuration"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - APP_DOMAIN=${APP_DOMAIN}
+      - AUTH_DOMAIN=${AUTH_DOMAIN}
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - backend
+      - frontend
+      - casdoor
+    restart: unless-stopped
+
+  glitchtip:
+    image: glitchtip/glitchtip:latest
+    environment:
+      DATABASE_URL: postgres://${PG_USER:-postgres}:${PG_PASS}@postgres:5432/glitchtip
+      SECRET_KEY: ${GLITCHTIP_SECRET}
+      REDIS_URL: redis://redis:6379/0
+      GLITCHTIP_DOMAIN: https://${APP_DOMAIN}:8090
+      DEFAULT_FROM_EMAIL: noreply@${APP_DOMAIN}
+      EMAIL_URL: consolemail://
+      ENABLE_ORGANIZATION_CREATION: "false"
+      CELERY_WORKER_CONCURRENCY: 1
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8090:8000"
+    restart: unless-stopped
+
+  glitchtip-worker:
+    image: glitchtip/glitchtip:latest
+    command: ./bin/run-celery-with-beat.sh
+    environment:
+      DATABASE_URL: postgres://${PG_USER:-postgres}:${PG_PASS}@postgres:5432/glitchtip
+      SECRET_KEY: ${GLITCHTIP_SECRET}
+      REDIS_URL: redis://redis:6379/0
+      CELERY_WORKER_CONCURRENCY: 1
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  caddy_data:
+  caddy_config:
+  claude_data:
+  claude_config:

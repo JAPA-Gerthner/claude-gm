@@ -1,0 +1,63 @@
+{
+  "organizations": [
+    {
+      "owner": "admin",
+      "name": "questkeeper",
+      "displayName": "QuestKeeper",
+      "websiteUrl": "https://APP_DOMAIN",
+      "favicon": "",
+      "passwordType": "argon2id",
+      "passwordOptions": ["AtLeast6"],
+      "countryCodes": ["US", "RU"],
+      "tags": [],
+      "languages": ["en", "ru"],
+      "masterPassword": "",
+      "initScore": 2000,
+      "enableSoftDeletion": false,
+      "isProfilePublic": false
+    }
+  ],
+  "applications": [
+    {
+      "owner": "admin",
+      "name": "questkeeper-app",
+      "displayName": "QuestKeeper",
+      "organization": "questkeeper",
+      "clientId": "questkeeper-client",
+      "clientSecret": "CASDOOR_CLIENT_SECRET",
+      "redirectUris": [
+        "https://APP_DOMAIN/api/auth/callback"
+      ],
+      "tokenFormat": "JWT",
+      "expireInHours": 168,
+      "refreshExpireInHours": 336,
+      "enablePassword": true,
+      "enableSignUp": true,
+      "enableCodeSignin": false,
+      "enableSamlCompress": false,
+      "providers": [],
+      "signupItems": [
+        {"name": "ID", "visible": false, "required": true, "rule": "Random"},
+        {"name": "Username", "visible": true, "required": true, "rule": "None"},
+        {"name": "Display name", "visible": true, "required": true, "rule": "None"},
+        {"name": "Password", "visible": true, "required": true, "rule": "None"},
+        {"name": "Confirm password", "visible": true, "required": true, "rule": "None"},
+        {"name": "Email", "visible": true, "required": true, "rule": "None"}
+      ],
+      "grantTypes": ["authorization_code", "refresh_token"],
+      "cert": "cert-built-in"
+    }
+  ],
+  "users": [
+    {
+      "owner": "questkeeper",
+      "name": "admin",
+      "displayName": "Admin",
+      "email": "admin@APP_DOMAIN",
+      "password": "ADMIN_PASSWORD",
+      "isAdmin": true,
+      "type": "normal-user",
+      "signupApplication": "questkeeper-app"
+    }
+  ]
+}
