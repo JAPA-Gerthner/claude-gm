@@ -51,6 +51,8 @@ services:
 
   frontend:
     build: ./frontend
+    environment:
+      - VITE_SENTRY_DSN=${VITE_SENTRY_DSN:-}
     volumes:
       - ./frontend/src:/app/src
       - ./frontend/index.html:/app/index.html
@@ -109,6 +111,16 @@ services:
       timeout: 5s
       retries: 10
 
+  casdoor-setup:
+    image: curlimages/curl:latest
+    entrypoint: ["/bin/sh", "/setup/setup.sh"]
+    volumes:
+      - ./casdoor/setup.sh:/setup/setup.sh:ro
+    depends_on:
+      casdoor:
+        condition: service_healthy
+    restart: "no"
+
   pgadmin:
     image: dpage/pgadmin4:latest
     environment:
@@ -121,6 +133,59 @@ services:
     depends_on:
       - postgres
 
+  # GlitchTip - Error tracking (Sentry-compatible)
+  glitchtip:
+    image: glitchtip/glitchtip:latest
+    environment:
+      DATABASE_URL: postgres://${PG_USER:-postgres}:${PG_PASS:-secretpassword}@postgres:5432/glitchtip
+      SECRET_KEY: ${GLITCHTIP_SECRET:-change-me-in-production}
+      REDIS_URL: redis://redis:6379/0
+      GLITCHTIP_DOMAIN: http://localhost:8090
+      DEFAULT_FROM_EMAIL: noreply@localhost
+      EMAIL_URL: consolemail://
+      ENABLE_ORGANIZATION_CREATION: "true"
+      CELERY_WORKER_CONCURRENCY: 2
+      # Casdoor OIDC (for setup script)
+      CASDOOR_CLIENT_ID: glitchtip-client
+      CASDOOR_CLIENT_SECRET: glitchtip-secret-2024
+      CASDOOR_URL: http://casdoor:8000
+    volumes:
+      - ./glitchtip/setup_oidc.py:/setup/setup_oidc.py:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      casdoor:
+        condition: service_healthy
+    ports:
+      - "8090:8000"
+
+  glitchtip-worker:
+    image: glitchtip/glitchtip:latest
+    command: ./bin/run-celery-with-beat.sh
+    environment:
+      DATABASE_URL: postgres://${PG_USER:-postgres}:${PG_PASS:-secretpassword}@postgres:5432/glitchtip
+      SECRET_KEY: ${GLITCHTIP_SECRET:-change-me-in-production}
+      REDIS_URL: redis://redis:6379/0
+      GLITCHTIP_DOMAIN: http://localhost:8090
+      CELERY_WORKER_CONCURRENCY: 2
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  redis:
+    image: valkey/valkey:8-alpine
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - redis_data:/data
+
   tunnel:
     image: cloudflare/cloudflared:latest
     command: tunnel --url http://nginx:80
@@ -130,3 +195,4 @@ services:
 volumes:
   postgres_data:
   minio_data:
+  redis_data:
