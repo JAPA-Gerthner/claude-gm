@@ -1,7 +1,7 @@
 Save current RPG session to file.
 
 Ask player for campaign name (if unknown).
-Save to file: `{{SKILL_PATH}}/saves/[campaign-name].md`
+Save to file: `saves/[campaign-name].md`
 
 **NO HARD LIMIT.** Save as much as needed for full session restore. Don't shorten important sections — CHRONICLE, NPC HISTORY, CUSTOM MECHANICS must be complete. Context efficiency is already optimized (English storage).
 
@@ -259,7 +259,7 @@ If mechanic was loaded from file — save full content, not just reference.]
 
 After saving output:
 ```
-✓ Session saved: {{SKILL_PATH}}/saves/[name].md
+✓ Session saved: saves/[name].md
   Lines: [X]
   Context: [save + gm-skill.md tokens]k / [model context limit]k
 ```
