@@ -4,7 +4,7 @@ Ask player:
 1. **Topic** — what is this feedback about? (mechanics, pacing, narrative, NPC, difficulty, other)
 2. **Feedback** — the actual feedback text
 
-Save to file: `{{SKILL_PATH}}/feedback/[YYYY-MM-DD]-[topic-slug].md`
+Save to file: `feedback/[YYYY-MM-DD]-[topic-slug].md`
 
 If file with same date+topic exists, append with `---` separator.
 
@@ -35,7 +35,7 @@ Ruleset: [ruleset used, or "core only"]
 
 After saving output:
 ```
-Feedback saved: {{SKILL_PATH}}/feedback/[filename].md
+Feedback saved: feedback/[filename].md
 
 To analyze all feedback later, use: feedback-reviewer.md
 ```

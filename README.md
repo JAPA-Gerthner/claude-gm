@@ -33,26 +33,26 @@ gm-skill/
 │   ├── disco-elysium.md     # Skills as Inner Voices (Thought Cabinet, Ideology)
 │   ├── persona.md           # School Life meets Shadow World (Arcana Loyalty, Ally Death)
 │   └── runeterra.md         # League of Legends (Power Tier, 15 Magic Traditions)
-├── commands/
-│   ├── rp.md                # Main /rp command
-│   └── rp/                  # Subcommands
-│       ├── sheet.md
-│       ├── npc.md
-│       ├── factions.md
-│       ├── chapter.md
-│       ├── recap.md
-│       ├── map.md
-│       ├── save.md
-│       ├── load.md
-│       ├── saves.md
-│       ├── save-delete.md
-│       ├── gm.md
-│       ├── fairplay.md
-│       ├── feedback.md
-│       └── help.md
+├── .claude/
+│   └── commands/
+│       ├── rp.md            # Main /rp command
+│       └── rp/              # Subcommands
+│           ├── sheet.md
+│           ├── npc.md
+│           ├── factions.md
+│           ├── chapter.md
+│           ├── recap.md
+│           ├── map.md
+│           ├── save.md
+│           ├── load.md
+│           ├── saves.md
+│           ├── save-delete.md
+│           ├── gm.md
+│           ├── fairplay.md
+│           ├── feedback.md
+│           └── help.md
 ├── feedback/                # Player feedback storage
 ├── saves/                   # Session saves
-├── setup.sh                 # Installation
 └── README.md
 ```
 
@@ -60,17 +60,9 @@ gm-skill/
 
 ```bash
 git clone git@github.com:JAPA-Gerthner/claude-gm.git
-cd claude-gm
-./setup.sh
 ```
 
-### What setup does
-
-1. Copies commands to `~/.claude/commands/`
-2. Auto-substitutes repository path in commands
-3. Creates `saves/` folder
-
-Clone repo anywhere — setup will pick up correct path.
+Commands live in `.claude/commands/` — Claude Code picks them up automatically when you open the repo.
 
 ## Commands
 
@@ -386,7 +378,7 @@ Typical context usage:
 ## Commit Conventions
 
 ```
-[core]    — Core GM system (gm-skill.md, commands/)
+[core]    — Core GM system (gm-skill.md, .claude/commands/)
 [ruleset] — Update existing ruleset
 [new]     — Add new ruleset
 [fix]     — Bug fixes

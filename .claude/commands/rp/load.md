@@ -2,13 +2,13 @@ Load a saved RPG session.
 
 **IMPORTANT: If context is polluted by previous session — tell player to run /clear and then /rp:load again**
 
-1. If player specified campaign name — load `{{SKILL_PATH}}/saves/[name].md`
-2. If not specified — show list of available saves from `{{SKILL_PATH}}/saves/`
+1. If player specified campaign name — load `saves/[name].md`
+2. If not specified — show list of available saves from `saves/`
 3. If folder is empty — report no saves found
 
 After loading:
 
-1. MUST read GM rules from `{{SKILL_PATH}}/gm-skill.md` (use Read tool)
+1. MUST read GM rules from `gm-skill.md` (use Read tool)
 2. Read save file completely
 3. Restore all state in memory (character, party, factions, world, custom mechanics)
 4. Output brief summary:

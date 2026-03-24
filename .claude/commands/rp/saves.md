@@ -2,7 +2,7 @@ List all saved RPG sessions.
 
 ## Without arguments — show list
 
-Read contents of folder `{{SKILL_PATH}}/saves/`
+Read contents of folder `saves/`
 
 For each file — read it and output brief summary.
 

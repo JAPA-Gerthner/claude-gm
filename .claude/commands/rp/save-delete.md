@@ -3,7 +3,7 @@ Delete a saved RPG session.
 Argument $ARGUMENTS — session name to delete.
 
 1. If argument provided:
-   - Find file `{{SKILL_PATH}}/saves/$ARGUMENTS.md`
+   - Find file `saves/$ARGUMENTS.md`
    - If exists — delete and output:
      ```
      ✓ Session "$ARGUMENTS" deleted.
@@ -13,7 +13,7 @@ Argument $ARGUMENTS — session name to delete.
      ✗ Session "$ARGUMENTS" not found.
 
      Available sessions:
-     [list files from {{SKILL_PATH}}/saves/]
+     [list files from saves/]
      ```
 
 2. If argument NOT provided:
