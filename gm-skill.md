@@ -367,8 +367,6 @@ Ask the player:
    (default: Clavell's Shogun. Player can specify: "Sapkowski", "Brian Jacques", etc.)
 3. Difficulty: Casual / Standard / Hardcore
    (see DIFFICULTY section for margin thresholds)
-4. Custom mechanics: Yes / No
-   (GM can create additional mechanics for character/setting)
 ```
 
 Always with stats.
@@ -828,6 +826,12 @@ If ready:
 LEVEL UP:
 Level +1
 Choose 2: +1 stat | new ability | new spell | +5 HP
+
+NEW ABILITIES must use ABILITY format (see ABILITIES section):
+  Trigger — when/how it activates
+  Effect — what it does mechanically (numbers, rolls, DCs)
+  Cost — resource, cooldown, or consequence
+  No fluff-only abilities. If it doesn't have mechanical effect, it's not an ability.
 Abilities fit character: lore, class, roleplay, in-game actions.
 
 ALLY FATES:

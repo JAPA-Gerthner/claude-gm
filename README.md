@@ -18,7 +18,7 @@ gm-skill/
 │   ├── sanguo.md            # Three Kingdoms China (virtue, strategy)
 │   ├── battletech-commander.md  # Mech mercenary company
 │   ├── vtm.md               # Vampire: The Masquerade
-│   ├── warhammer-fantasy.md # Old World (corruption, Chaos, factions)
+│   ├── warhammer-fantasy.md # IRON LAW: Old World (Three Forces, Push, Drift)
 │   ├── warhammer-40k.md     # Grimdark far future (Imperium, Chaos, Xenos)
 │   ├── cursed-seas.md       # Golden Age of Piracy (fantasy)
 │   ├── witcher.md           # Monster Hunters (Sapkowski + CDPR)
@@ -124,12 +124,13 @@ Complete setting packs — pick one at session start.
 - Disciplines by clan
 - For: urban horror, intrigue
 
-**warhammer-fantasy.md** — The Old World:
-- Corruption and Chaos system
-- All factions (Empire to Cathay)
-- Winds of Magic, miscasts
-- Faction relations
-- For: grim dark fantasy, Chaos incursions
+**warhammer-fantasy.md** — IRON LAW (The Old World):
+- Three Forces system (Order / Corruption / Decay)
+- Condition derived from HP, Push (Force/Body) mechanic
+- Faction Drift, Suspicion clocks
+- Winds of Magic with Force cost, Miscast tables
+- Fate (permanent) + Fortune (session), Marks & Disorders
+- For: grim dark fantasy, moral dilemmas, transformation drama
 
 **warhammer-40k.md** — Grim Darkness of the Far Future:
 - All Imperial factions (Guard, Marines, Sisters, Mechanicus, Inquisition)
@@ -286,37 +287,37 @@ Complete setting packs — pick one at session start.
 
 ### Ruleset Tier List
 
-Quality rating based on: unique mechanics, atmosphere tools, playability, depth vs complexity.
+Quality rating based on: unique mechanics, central pressure, internal coherence, atmosphere tools, playability, depth vs complexity.
 
 **S-Tier (Exemplary)**
 | Ruleset | Why |
 |---------|-----|
 | sengoku | Perfect honor/stance/giri integration. Duel system is benchmark. |
-| witcher | Hunt Cycle, Toxicity, bestiary with tactics. Preparation gameplay. |
-| cursed-seas | Infamy, Curses, Ship Traits. Perfect atmosphere/mechanics balance. |
 | frostpunk | "City as character". Hope/Discontent, Laws, two play modes. Design philosophy. |
 | scp | Usefulness vs Liability — bureaucracy as horror. Processing Clock. Genius. |
 | star-wars | Force Alignment + Temptation + Strain. Era selection. GRIT for non-Force balance. |
 | dark-souls | Telegraph System + Hollowing Track. Kingdom/Boss/Enemy generators. Five campaign frameworks. Every cycle unique. |
 | disco-elysium | 24 skills-as-inner-voices. Thought Cabinet / Ideology / Copotype interlock. 10 districts, case generators, replayable detective noir. |
-| vtm | Beast Voice, Night Cycle, Arcade Disciplines (3 lvl), Masquerade Heat, global clans, 8 generators. |
+| vtm | Three Currencies (Hunger/Humanity/Willpower), Push, Beast Voice × Humanity matrix, Night Cycle, 8 generators. |
+| warhammer-fantasy | IRON LAW. Three Forces (Order/Corruption/Decay), Push, Condition/HP bridge, Drift, Path of Blood/Hunger. |
+| warhammer-40k | IRON WILL. Control/Warp/Entropy (all hostile), Scar System, Mission Cycle, Rank, 8-15 session lifespan. |
 
 **A-Tier (Strong)**
 | Ruleset | Why |
 |---------|-----|
+| witcher | The Path + Lesser Evil as structural mechanic. Hunt Cycle, Toxicity, bestiary. S-tier core, Factions need mechanization. |
+| cursed-seas | The Debt (sea keeps score), Voyage Cycle, Ship Traits. S-tier core, tone presets need mechanical teeth. |
+| stalker | The Call (Zone addiction 0-10), Withdrawal, Emission/Zombification Clocks. S-tier core, tracking overhead. |
 | sanguo | 36 stratagems, brotherhood oaths. Duels slightly simpler than could be. |
 | battletech | Company management, politics, contracts. Combat deliberately abstract. |
-| warhammer-fantasy | Corruption, Winds of Magic, factions. Could be shorter. |
-| warhammer-40k | Psychic Perils, Guard Orders. Too similar to Fantasy. |
 | cyberpunk-red | Humanity/cyberpsychosis, Heat/Cred. Overloaded with reference data. |
 | shadowrun-lite | Magic+Matrix+cyber in parallel. Trace Clock. |
 | blades-lite | Stress/Trauma, Heat/Wanted, occult. Close to original. |
 | deus-ex | Trust Clocks, Integration/Neuropozyne. Too many weapon tables. |
 | cascade | GRIT + ADRENALINE cycle. Bloated auxiliary systems. |
 | cthulhu | Three hidden axes, Deception Budget, flowcharts. High GM load. |
-| stalker | Emission/Zombification Clocks, Radiation tracking. Thorough but not innovative. |
-| persona | Arcana Loyalty + Clusters, Time Pressure, Ally permadeath. 1710 lines (overlong). |
-| runeterra | Power Tier + 15 Magic Traditions + Champion Encounters. Comprehensive but no signature mechanic. 1760 lines. |
+| persona | Arcana Loyalty + Clusters, Time Pressure, Ally permadeath. |
+| runeterra | Power Tier + 15 Magic Traditions + Champion Encounters. Comprehensive but no signature mechanic. |
 
 ## Saves
 
@@ -364,16 +365,16 @@ Collect and analyze player feedback systematically.
 All rulesets stored in English (~30-50% fewer tokens than Russian).
 Session plays in Russian — language note in each file.
 
-**Optimal ruleset size:** ~1000 lines (~6-8k tokens)
-- Enough for complete mechanics, all factions, weapons, events
+**Optimal ruleset size:** 1500-2000 lines (~10-14k tokens)
+- Full depth: complete mechanics, factions, generators, signature systems
 - Small rulesets (~500 lines) lack depth
-- Large rulesets (1500+) waste context without benefit
+- Over 2000 lines: diminishing returns, look for cuts
 
-Typical context usage:
+Typical context usage (1M context):
 - gm-skill.md: ~6k tokens
-- Full ruleset (1000 lines): ~6-8k tokens
+- Full ruleset (1500-2000 lines): ~10-14k tokens
 - Long campaign save (30h): ~15-20k tokens
-- Total: ~15-17% of 200k context
+- Total: ~3-4% of 1M context
 
 ## Commit Conventions
 
@@ -389,7 +390,7 @@ Typical context usage:
 Examples:
 ```
 [core] Add new mechanic to gm-skill.md
-[ruleset] Expand warhammer-fantasy (combat, NPCs, fate system)
+[ruleset] warhammer-fantasy: IRON LAW full rewrite (Forces, Condition, Push)
 [new] China 1900-1952: Warlords, Revolution, Survival
 [fix] Correct faction clock math in sengoku.md
 [docs] Update README with new commands
