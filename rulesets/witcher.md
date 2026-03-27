@@ -8,6 +8,8 @@ Monster hunters in a dying age. Based on Andrzej Sapkowski's books + CDPR games 
 **Focus:** 70% monster hunting, 30% politics
 **System:** Uses gm-skill.md base rules (d20, attributes, DCs)
 
+**Core question:** Are you still human?
+
 > **Book vs Game Content:** Wolf and Cat schools are book-canon. Griffin, Bear, Viper, Manticore are CDPR game additions. Some monsters (nekkers, foglets, rotfiends) and the decoction system are game-derived. All content is playable — this note is for lore purists.
 
 ---
@@ -118,6 +120,147 @@ All schools use same Trial of Grasses but emphasize different training.
 **Medallion:** Manticore head
 **Status:** Distant, mysterious. Rarely seen in North.
 **Reputation:** Alchemists first, fighters second. Strange concoctions.
+
+---
+
+## THE PATH
+
+The witcher's central axis. Not good vs evil — human vs instrument.
+
+```
+0 ←————————— 5 ———————————→ 10
+MONSTER      WITCHER        HUMAN
+
+Start: 5 (the balance point)
+```
+
+The Path moves ONLY through Lesser Evil decisions. Not through every action. Not through combat. Through choices that cost something.
+
+### Path Thresholds
+
+```
+0:  MONSTER — You are what they always said you were.
+    NPCs flee or attack on sight. Children scream.
+    +3 combat, +2 Intimidation. Cannot negotiate peacefully.
+    Witcher contracts refused — they'll hire someone else to kill you.
+
+1:  COLD MACHINE — Efficiency without restraint.
+    +2 combat, +1 Intimidation. −3 CHA with common folk.
+    Only professional contacts remain. No one shares a drink with you.
+
+2:  FERAL — The mutations won. Emotions are noise.
+    +1 combat. −2 CHA. Animals fear you.
+    Allies keep distance. Companions leave at clock 2 instead of 0.
+
+3:  DETACHED — Professional to a fault.
+    −1 CHA with civilians. Advantage on resisting manipulation.
+    "Just a job." People sense the coldness.
+
+4-6: WITCHER — The balance. Where most walk The Path.
+     No mechanical effects. This is baseline.
+     You feel enough to care. Not enough to break.
+     GM NOTE: This is where the tension lives. When making Lesser Evil
+     choices, describe the internal cost — the pull in both directions.
+     Path 4-6 should feel like standing on a knife's edge, not comfort.
+
+7:  SYMPATHETIC — You're starting to care too much.
+    +1 CHA with civilians. −1 to "necessary evil" decisions.
+    WIS DC 12 to walk away from someone in need.
+
+8:  COMPASSIONATE — The armor cracks.
+    +2 CHA. −1 Initiative in moral ambiguity (you hesitate).
+    Cannot kill non-hostile intelligent creatures without WIS DC 14.
+
+9:  SOFT — They'll use your heart against you.
+    +3 CHA. −2 to first combat round (always try to talk first).
+    Enemies who know you exploit this. Hostage situations = nightmare.
+
+10: HUMAN — You forgot what you are.
+    Toxicity 50+ causes double penalties (body fights the mutations).
+    NPCs trust you completely — and you'll die protecting them.
+    +4 CHA, −2 combat. Witcher schools would disown you.
+```
+
+### Path Direction
+
+```
+Path moves toward MONSTER (0) when you:
+- Choose efficiency over mercy
+- Kill where you could have spared
+- Treat people as obstacles
+- Act as an instrument, not a person
+
+Path moves toward HUMAN (10) when you:
+- Choose mercy over efficiency
+- Spare where killing is easier
+- Risk yourself for others without payment
+- Act on emotion, not contract
+
+Path DOES NOT MOVE from:
+- Killing monsters (that's the job)
+- Normal combat (defending yourself)
+- Following a contract as agreed
+- Routine actions
+
+Path moves ONLY through Lesser Evil decisions.
+One shift per contract. Maximum.
+```
+
+---
+
+## LESSER EVIL
+
+The engine that drives The Path. Not a suggestion — a structural requirement.
+
+```
+EVERY CONTRACT must contain at least one moral dilemma.
+
+There is no clean solution.
+Every outcome has a cost.
+The player must choose.
+```
+
+### Structure
+
+```
+GM presents: 2-3 possible resolutions to the contract.
+Each resolution has a PRICE — someone suffers, something is lost.
+
+Examples:
+- Kill the werewolf (he was a father) OR let him live (he'll kill again)
+- Lift the curse (the cursed one is a tyrant) OR leave it (innocents suffer)
+- Take the striga contract (killing a princess) OR refuse (more die nightly)
+- Expose the doppler (it loses its family) OR ignore (it replaces someone)
+- Burn the leshen's totems (village safe, forest dies) OR negotiate (village relocates)
+
+After resolution:
+1. Shift The Path (one step, direction based on choice)
+2. Apply consequences (reputation, narrative, world state)
+3. The choice echoes — NPCs remember, factions react, the world shifts
+```
+
+### The Non-Choice
+
+```
+"If I'm to choose between one evil and another,
+ I'd rather not choose at all." — Geralt
+
+REFUSING TO CHOOSE is itself a choice.
+Walking away = Path does not move.
+But consequences still happen — usually the worst outcome for everyone.
+Neutrality has a price. Inaction has a body count.
+```
+
+### Lesser Evil and Reputation
+
+```
+Choices ripple through Reputation:
+- Mercy in one village = +1 Rep there, but monster may return
+- Killing the "innocent monster" = contract complete, but witnesses talk
+- Walking away = −1 Rep (unreliable), but hands stay clean
+
+Lesser Evil IS the reputation engine. Not a separate system.
+```
 
 ---
 
@@ -536,49 +679,23 @@ Critical hits and certain monsters cause lasting injuries.
 
 ---
 
-## ALCHEMY AND INGREDIENTS
+## ALCHEMY AND ECONOMY
 
-### Ingredient Sources
+### Crafting
 
-| Ingredient | Source | Used For |
-|------------|--------|----------|
-| **Celandine** | Fields, roadsides | Swallow, healing potions |
-| **Drowner Brain** | Drowners | Cat, enhancement potions |
-| **Ghoul Blood** | Ghouls, alghouls | Necrophage-based potions |
-| **Specter Dust** | Any specter | Specter Oil, Moon Dust |
-| **Monster Mutagen (Red)** | Strong monsters | Decoctions, permanent upgrades |
-| **Monster Mutagen (Green)** | Any monster | Decoctions |
-| **Monster Mutagen (Blue)** | Magic monsters | Sign-enhancing decoctions |
-| **Alcohest** | Purchased, distilled | Base for all potions |
-| **Dwarven Spirit** | Purchased | Premium base, better quality |
-| **White Myrtle** | Forests | Golden Oriole, cleansing |
-| **Wolfsbane** | Mountains | Cursed Oil, anti-lycan |
-| **Quicksilver Solution** | Alchemists | Specter-affecting items |
-
-### Crafting DCs
-
-| Item | DC | Time | Ingredients |
-|------|----|----|-------------|
-| Standard Potion | 10 | 30 min | 2-3 common |
-| Advanced Potion | 15 | 1 hour | 3-4 mixed |
-| Decoction | 18 | 2 hours | Mutagen + 3-4 rare |
-| Blade Oil | 12 | 20 min | 2 specific |
-| Bomb | 14 | 30 min | 2-3 volatile |
+```
+Crafting DC: Standard potion DC 10, Advanced DC 15, Decoction DC 18, Oil DC 12, Bomb DC 14.
+Ingredients: GM generates from monster kills, foraging, and traders. No fixed list — setting determines availability.
+Time: 30 min (potion/oil/bomb), 2 hours (decoction). Meditation halves prep time.
+```
 
 ### Contract Pricing
 
-| Threat Level | Standard Price | Negotiated Up | Desperate Client |
-|--------------|----------------|---------------|------------------|
-| Low | 50-100 gold | +50% | +100% |
-| Medium | 150-300 gold | +50% | +100% |
-| High | 400-600 gold | +50% | +100% |
-| Extreme | 800-1500 gold | +50% | +100% |
-
-**Modifiers:**
-- Poor village: ÷2 or payment in goods
-- Wealthy merchant: ×1.5
-- Noble: ×2 but political strings
-- Urgent (people dying daily): +100%
+```
+Base: Low 50-100g | Medium 150-300g | High 400-600g | Extreme 800-1500g
+Negotiate up (CHA): +50%. Desperate client: +100%.
+Poor village: ÷2. Noble: ×2 (but political strings). Urgent: +100%.
+```
 
 ---
 
@@ -663,34 +780,15 @@ Personality: Alchemy-obsessed, trades recipes, reclusive
 
 ### Canon Witchers (NPCs)
 
-**Geralt of Rivia (Wolf, ~100)**
-STR 4 | DEX 5 | CON 5 | INT 4 | WIS 5 | CHA 3 | HP 30 | AC 15
-Known: "White Wolf," Butcher of Blaviken, Ciri's guardian, extra mutations
-Abilities: All Signs proficient, +1 attacks, monster knowledge advantage
-Personality: Outwardly cynical, secretly principled, "lesser evil" philosophy
+```
+Use School Templates above for stats. These are personality/role references only.
 
-**Vesemir (Wolf, ~350)**
-STR 3 | DEX 3 | CON 4 | INT 5 | WIS 6 | CHA 3 | HP 20 | AC 13
-Known: Oldest witcher, trained generations, pre-pogrom memory
-Abilities: Master trainer, tactical wisdom advantage, -1 physical (age)
-Personality: Grandfatherly, stubborn about tradition, melancholic, practical
-
-**Eskel (Wolf, ~100)**
-STR 4 | DEX 4 | CON 5 | INT 3 | WIS 4 | CHA 2 | HP 25 | AC 14
-Known: Geralt's equal, facial scars, calm demeanor, Igni specialist
-Abilities: Sign Master (Igni +2), unshakeable, disadvantage first CHA (scars)
-Personality: Humble, thoughtful, reliable, bitter about scars
-
-**Lambert (Wolf, ~80)**
-STR 3 | DEX 4 | CON 3 | INT 3 | WIS 3 | CHA 3 | HP 18 | AC 14
-Known: Youngest Wolf, abrasive, excellent bomb-maker
-Abilities: Bomb expert +2/+1, advantage on insults, disadvantage with authority
-Personality: Angry, bitter about witcher life, cruel humor, loyal despite it
-
-**Letho of Gulet (Viper)**
-STR 5 | DEX 3 | CON 5 | INT 4 | WIS 3 | CHA 2 | HP 30 | AC 14
-Known: Kingslayer. Massive, pragmatic. Works for Nilfgaard.
-Abilities: Grapple master, Axii specialist, political knowledge
+Geralt (Wolf): Extra mutations, all Signs, "lesser evil" philosophy. The benchmark.
+Vesemir (Wolf, ~350): Oldest, master trainer, pre-pogrom memory. Grandfatherly, stubborn.
+Eskel (Wolf): Geralt's equal. Igni specialist. Scarred, humble, reliable.
+Lambert (Wolf): Youngest. Bomb expert. Angry, bitter, loyal despite it.
+Letho (Viper): Kingslayer. Massive. Grapple/Axii. Works for Nilfgaard.
+```
 
 ### Contract Givers (Detailed)
 
@@ -864,18 +962,19 @@ Hidden (d6): 1-Testing defenses 2-Ingredient has rights 3-Wants tissue samples 4
 9. Scoia'tael saw what happened
 10. Clean resolution, move on
 
-### Moral Dilemmas
+### Moral Dilemmas (Lesser Evil Seeds)
 
-Every contract should offer at least one moral choice:
+Every contract MUST offer at least one moral choice (see LESSER EVIL system).
+These are seeds — GM expands based on contract context:
 
-- **Kill or spare?** — Monster intelligent, begging for life
-- **Lesser evil** — Save villagers by killing transformed child?
-- **Collateral** — Burning the nest destroys family's farm
-- **Payment ethics** — Poor village gave last coin, do you take it?
-- **Neutrality test** — Both sides in conflict hired you
-- **Monster sympathy** — Creature only kills bandits/bad people
-- **Curse vs. death** — Lifting curse frees someone worse
-- **Information cost** — Mage wants forbidden knowledge in trade
+- **Kill or spare?** — Monster intelligent, begging for life → Path shift
+- **Lesser evil** — Save villagers by killing transformed child? → Path shift
+- **Collateral** — Burning the nest destroys family's farm → Path shift
+- **Payment ethics** — Poor village gave last coin, do you take it? → Path shift
+- **Neutrality test** — Both sides in conflict hired you → refuse = consequences
+- **Monster sympathy** — Creature only kills bandits/bad people → Path shift
+- **Curse vs. death** — Lifting curse frees someone worse → Path shift
+- **Information cost** — Mage wants forbidden knowledge in trade → Path shift
 
 ---
 
@@ -1058,20 +1157,6 @@ Play the final generation. Every witcher death matters. Theme of endings and leg
 
 ---
 
-## APPENDIX: SIGN COMBINATIONS
-
-Advanced witchers (Level 7+) can combine Signs for greater effect.
-
-| Combination | Cost | Effect |
-|-------------|------|--------|
-| **Aard + Igni** | 5 | Knock down then immolate. +2d6 fire to prone |
-| **Quen + Yrden** | 5 | Shield yourself, trap enemies. Defensive position |
-| **Axii + Igni** | 7 | Confuse then burn. Target doesn't dodge |
-| **Yrden + Aard** | 4 | Trap then blast out. AoE control |
-| **Igni + Yrden** | 5 | Fire trap. Enemies in Yrden take fire damage |
-
----
-
 ## APPENDIX: QUICK HUNT REFERENCE
 
 ### Signs by Monster Type
@@ -1103,20 +1188,24 @@ Advanced witchers (Level 7+) can combine Signs for greater effect.
 
 ---
 
-## APPENDIX: WITCHER SAYINGS
+## QUICK REFERENCE
 
-Use these for roleplay flavor:
+```
+THE PATH: 0 Monster ←— 5 Witcher —→ 10 Human
+  Moves ONLY through Lesser Evil decisions (1 shift per contract max)
+  0-2: combat bonuses, social penalties, feared/hated
+  4-6: baseline witcher, balanced
+  8-10: social bonuses, combat hesitation, exploitable
 
-- "Witchers don't work for free."
-- "Steel for humans, silver for monsters."
-- "If I'm to choose between one evil and another, I'd rather not choose at all."
-- "People call things they don't understand evil."
-- "The Path is lonely, but it's mine."
-- "Preparation is half the hunt."
-- "A witcher without his swords is still a witcher."
-- "Monsters come in all forms. Some wear crowns."
-- "We hunt so others don't have to."
-- "The Trial took everything. The Path gives purpose."
+LESSER EVIL: Every contract = moral dilemma. No clean solutions.
+  Choose → Path shifts → consequences echo.
+  Refuse to choose → Path stays, but worst outcome happens.
+
+HUNT CYCLE: Contract → Research → Track → Prepare → Hunt → Collect
+TOXICITY: 0-25 clear | 26-50 elevated | 51-75 high | 76-99 critical | 100+ death
+REPUTATION: -5 hated → 0 unknown → +5 legendary (per region)
+SIGNS: Aard / Igni / Yrden / Quen / Axii (Stamina cost)
+```
 
 ---
 
