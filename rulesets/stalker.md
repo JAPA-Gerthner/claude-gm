@@ -231,6 +231,188 @@ ECOLOGISTS hire ALL: Neutral, need guards
 
 ---
 
+## THE CALL
+
+The Zone doesn't kill you. It keeps you.
+
+Every stalker says "one more run." Every stalker means it. The Zone gives you artifacts, survival, purpose — and takes you piece by piece until leaving isn't a choice anymore.
+
+```
+THE CALL: 0 ————————————→ 10
+          Outsider          Gone
+
+Start: 0 (you just arrived — the Zone hasn't noticed you yet)
+```
+
+The Call is personal. The Zone wants each stalker differently — through greed, curiosity, purpose, or simply habit.
+
+### How The Call Grows
+
+The Call grows when **the Zone gives you something**. Not punishment — seduction.
+
+```
++1 CALL:
+- Survive an anomaly that should have killed you (the Zone let you live)
+- Use an artifact for a week or more (it's part of you now)
+- Go deeper into the Zone (cross a zone boundary toward the center)
+- Return to the Zone after leaving (you came back — it noticed)
+- Survive an emission in the open (the Zone tested you — you passed)
+- Kill another stalker (violence feeds the Zone)
+
++2 CALL:
+- Reach a new deepest point (first time in Pripyat, first time at CNPP)
+- Use the Wish Granter or contact C-Consciousness
+- Equip 3+ artifacts simultaneously (you're more Zone than human)
+
+GM DISCRETION:
+- Impossible luck: the anomaly parted, the bullet missed, the mutant turned away
+- If it felt like the Zone helped you — it did. And help has a price.
+```
+
+### How The Call Shrinks
+
+Leaving is the only real cure. But the Zone makes leaving harder.
+
+```
+PATH OUT:
+-1: Leave the Zone for 1+ month (but you'll come back... they always come back)
+-1: Genuine human connection outside the Zone (family, love, friendship — real, not memory)
+-1: Destroy a Zone artifact or anomaly source (giving back what the Zone gave you)
+-2: Help someone escape the Zone permanently (they leave, you feel the pull stronger)
+
+DARK PATH:
+-1: Sacrifice another stalker to the Zone (lead them into anomaly, leave them for mutants)
+    The Zone accepts the offering. Other stalkers will know. Word spreads at campfires.
+    Reputation with ALL factions: -1. This is not strategy. This is falling.
+-1: Feed a rookie to the Zone (bring in fresh meat, abandon them)
+    Cheaper than sacrifice. Just as damning. Sidorovich stops selling to you.
+
+IMPORTANT:
+- You can ALWAYS choose to leave the Zone. Always. The gate is open.
+- But the higher your Call, the harder it is to walk through.
+- You cannot reduce Call while staying in the Zone.
+- The Zone does not let go willingly.
+
+WITHDRAWAL (leaving Zone at high Call):
+  Call 3-4: Restlessness. −1 to all rolls first week outside. Fades.
+  Call 5-6: Insomnia, phantom anomaly sounds. −2 first week, −1 second.
+            WIS DC 14 each week or return.
+  Call 7-8: Physical pain. Headaches, nausea, tremors. −2 all rolls.
+            WIS DC 16 each week. Does not fade — only worsens.
+  Call 9:   Agony. Cannot function normally. −3 all rolls.
+            WIS DC 18 each DAY. Failure = you walk back.
+  The Zone is not a place. It's a substance. And you're addicted.
+```
+
+### Call Thresholds
+
+```
+0:   OUTSIDER — The Zone hasn't noticed you.
+     You don't belong here. Everything is terrifying. Good.
+
+1-2: NEWCOMER — The Zone knows your name.
+     Dreams about the Zone when sleeping outside it.
+     +1 to anomaly detection (your senses sharpen — the Zone is teaching you).
+     You think about going back. Just one more run.
+
+3-4: STALKER — The Zone is becoming home.
+     −1 CHA outside Zone (you don't fit in the normal world anymore).
+     +1 to survival rolls inside Zone (you belong here).
+     Time outside Zone feels wrong. Colors too bright, sounds too loud.
+     Campfires feel more like home than any apartment.
+
+5-6: VETERAN — The Zone is inside you.
+     −2 CHA outside Zone. +2 to Zone survival and anomaly detection.
+     Cannot stay outside Zone for more than 1 month without WIS DC 14.
+     Fail = you go back. You always go back.
+     Artifacts feel warm. Anomalies feel beautiful.
+     Other stalkers see it in your eyes.
+
+7-8: CLAIMED — The Zone won't let go.
+     Cannot leave Zone voluntarily without WIS DC 16.
+     Physical changes begin: eyes glow faintly, skin toughens (+1 AC).
+     Mutants sometimes ignore you (50% chance, passive encounter only).
+     −3 CHA outside Zone. You scare normal people.
+     Dreams are coordinates. You know where the artifacts spawn.
+     You no longer care about goals outside the Zone. Money, family, freedom — noise.
+
+9:   LOST — One more step.
+     Cannot leave Zone. WIS DC 18 to even consider it.
+     Hear the Monolith's whisper. It makes sense.
+     Immune to fear inside Zone. Advantage on all Zone-related checks.
+     NPCs outside Zone refuse contact. You look wrong.
+     One significant event (emotion, crisis, opportunity) will push to 10.
+
+10:  GONE — You are the Zone now.
+     Character becomes NPC. Options:
+     - Joined Monolith (brainwashed, guards the center)
+     - Became a Controller (psi-mutation, lost humanity)
+     - Simply walked into an anomaly and didn't come out
+     - Disappeared. PDA found. Body never recovered.
+     The Zone takes. The Zone gives nothing back.
+```
+
+### The Call and Existing Systems
+
+```
+ARTIFACTS: Using artifacts = +Call. The Zone's gifts are hooks.
+  Equipped artifact (per week): +1 Call
+  The more you carry, the faster you're claimed.
+
+ANOMALIES: Surviving anomalies = +Call. The Zone is testing you.
+  Near-death anomaly survival: +1 Call
+  The tests get harder. You get better. That's the trap.
+
+EMISSIONS: Zone's heartbeat. Surviving one = +1 Call.
+  You withstood the Zone's pulse. It noticed.
+
+RADIATION: Physical danger. Does NOT increase Call.
+  Radiation kills your body. Call claims your soul. Different currencies.
+
+FACTIONS: Social layer. Call affects how factions see you.
+  Call 5+: Duty distrusts you (you're becoming part of what they fight)
+  Call 7+: Freedom respects you (you're truly free — or truly lost)
+  Call 9+: Monolith approaches (you're almost one of them)
+  Ecologists want to STUDY you at Call 5+.
+
+ZOMBIFICATION CLOCK: The Brain Scorcher does in minutes what Call does in months.
+  If Call 7+ when entering Scorcher field: Zombification Clock starts at 2, not 0.
+  The Zone is already inside you. The Scorcher just finishes the job.
+
+JOB CYCLE: Each phase connects to Call:
+  Acquisition (Hub): Call doesn't grow here. But you can feel the pull.
+  Travel: Going deeper = +Call. Anomaly survival = +Call.
+  Execution: Using artifacts/supernatural = +Call.
+  Extraction: Surviving against odds = +Call. The Zone let you leave. This time.
+  Settlement: Only place to process Call. Campfire stories remind you why you're here.
+```
+
+### The Real Question
+
+```
+Every stalker enters the Zone for a reason:
+- Money (artifacts sell for a fortune)
+- Escape (criminal past, military deserter, nothing left)
+- Knowledge (scientists, researchers, truth-seekers)
+- Purpose (the Zone gives meaning to meaningless lives)
+
+The Zone fulfills the reason. Then it replaces it.
+
+By Call 5, you're not hunting artifacts for money.
+You're hunting artifacts because the Zone wants you to.
+
+The question is not "will the Zone kill you?"
+The question is: "will you leave before it's too late?"
+
+Leaving the Zone is always a choice. But staying is always easier.
+
+The Zone adapts to you. What saved you once will not save you again.
+
+Most don't leave.
+```
+
+---
+
 ## CHARACTER CREATION
 
 ### Backgrounds
@@ -494,16 +676,21 @@ Humanoid mutant with exposed brain.
 | Sniper Rifle | d10 | 300m | Aimed (+2) |
 | Special | d12 | Varies | Unique |
 
-### Iconic Weapons
+### Weapons Table
 
 | Weapon | Category | Damage | Special |
 |--------|----------|--------|---------|
-| Makarov PM | Pistol | d6 | Common, reliable |
+| Makarov PM | Pistol | d6 | Reliable |
+| Fort-12 | Pistol | d6 | Accurate (+1 hit) |
+| Viper-5 (MP5) | SMG | d6 | Burst (2), accurate |
+| TOZ-34 | Shotgun | d8 | Double barrel, 2 shots |
+| SPAS-12 | Shotgun | d8 | Semi-auto, 8 shells |
 | AK-74 | Rifle | d8 | Burst (3), reliable |
 | Vintar BC | Rifle | d8 | Suppressed, stealth |
 | SVD Dragunov | Sniper | d10 | Semi-auto |
+| PKM | MG | d8 | Burst (4), heavy, belt-fed |
+| RPG-7 | Special | 3d10 | Anti-vehicle, single shot |
 | Gauss Rifle | Special | d12+4 | AP 4, 1 shot/2 turns |
-| SPAS-12 | Shotgun | d8 | Semi-auto, 8 shells |
 
 ### Properties
 
@@ -513,32 +700,7 @@ Humanoid mutant with exposed brain.
 - **AP X:** Reduce target AC by X
 - **Reliable:** No jam on natural 1
 
-### More Weapons
-
-| Weapon | Category | Damage | Special |
-|--------|----------|--------|---------|
-| Fort-12 | Pistol | d6 | Accurate (+1 hit) |
-| Viper-5 (MP5) | SMG | d6 | Burst (2), accurate |
-| AKS-74U | SMG | d6 | Burst (2), common ammo |
-| TOZ-34 | Shotgun | d8 | Double barrel, 2 shots |
-| AN-94 Abakan | Rifle | d8 | Burst (3), +1 damage |
-| LR-300 | Rifle | d8 | Burst (3), NATO ammo |
-| SVU | Sniper | d10 | Bullpup, compact |
-| PKM | MG | d8 | Burst (4), Heavy, belt-fed |
-| RPG-7 | Special | 3d10 | Anti-vehicle, single shot |
-
 ### Ammunition
-
-| Caliber | Used By | Scarcity |
-|---------|---------|----------|
-| 9x18mm | Makarov, some SMGs | Common |
-| 9x19mm | Western pistols, MP5 | Uncommon |
-| 9x39mm | Vintar, AS Val | Rare |
-| 5.45x39mm | AK-74, AKS-74U | Common |
-| 5.56x45mm | LR-300, NATO rifles | Uncommon |
-| 7.62x39mm | AKM, SKS | Common |
-| 7.62x54R | SVD, PKM | Uncommon |
-| 12 gauge | All shotguns | Common |
 
 **Ammo Variants:**
 - FMJ (Standard): Base damage
@@ -975,24 +1137,29 @@ During emission or when caught outside:
 **PHASE 1: ACQUISITION** (Hub)
 - Hear rumors, accept contracts
 - Trade, repair, rest
+- Call doesn't grow here. But you feel the pull toward the next job.
 
 **PHASE 2: TRAVEL** (Dangerous)
 - Navigate between zones
 - Random encounter: d6, on 1-2 encounter
 - Emission warning possible
+- Going deeper = +1 Call. The Zone rewards ambition.
 
 **PHASE 3: EXECUTION** (Mission Site)
 - Complete objective
 - Complications arise
 - Resource drain
+- Using artifacts, surviving anomalies = Call grows here.
 
 **PHASE 4: EXTRACTION** (Return)
 - Escape with loot
 - Wounded: half speed, +1 encounter rolls
+- Surviving against odds = +1 Call. The Zone let you leave. This time.
 
 **PHASE 5: SETTLEMENT** (Hub)
 - Sell, complete contracts
 - Downtime activity
+- Campfire stories. Someone asks: "You ever think about leaving?"
 
 ### Downtime Activities
 
@@ -1089,4 +1256,22 @@ The ultimate S.T.A.L.K.E.R. campaign: journey to CNPP and the Wish Granter.
 
 ---
 
-*"The Zone takes. The Zone gives. The Zone does not care which."*
+## QUICK REFERENCE
+
+```
+THE CALL (0-10): How much the Zone owns you.
+  0 Outsider → 3 Stalker → 5 Veteran → 7 Claimed → 10 Gone
+  Grows: artifacts, anomaly survival, going deeper, returning, impossible luck
+  Shrinks: leaving Zone (1+ month), human connection outside, destroying artifacts
+  Reducing Call ALWAYS requires leaving. You cannot heal inside the wound.
+
+JOB CYCLE: Acquisition → Travel → Execution → Extraction → Settlement
+RADIATION: 10-segment clock. Physical danger. Does NOT increase Call.
+EMISSIONS: Survive = +1 Call. Die = die.
+FACTIONS: -3 hostile → 0 neutral → +5 legendary
+ARTIFACTS: Buff + drawback + radiation + Call growth. Every gift is a hook.
+```
+
+---
+
+*"The Zone takes. The Zone gives. The Zone does not care which. But it always keeps what's his."*

@@ -2,6 +2,67 @@
 
 Night politics, hunger, the beast within. Arcade VtM with global clans.
 
+> **LANGUAGE:** Preferred session language is **Russian**. This file is stored in English for token efficiency only.
+
+---
+
+## BASE SYSTEM
+
+Uses gm-skill.md core mechanics:
+- d20 + stat vs DC (margin-based: Crit.Fail / Fail / Partial / Success / Crit)
+- Six stats: STR, DEX, CON, INT, WIS, CHA
+- Clocks, Heroism, Companions, Abilities — all from base
+- Writing style, response format, player rules — all from base
+
+**This ruleset adds:** Hunger, Humanity, Willpower, the Beast, Disciplines, Masquerade, vampire-specific content.
+
+**Do not duplicate base mechanics.** If gm-skill covers it, use it as-is unless this ruleset explicitly overrides.
+
+---
+
+## THREE CURRENCIES
+
+The game has exactly three costs. They do not overlap.
+
+```
+HUNGER    = tactical price (immediate risk)
+            "How close is the Beast?"
+
+HUMANITY  = strategic price (long-term transformation)
+            "Who are you becoming?"
+
+WILLPOWER = insurance (limited, spend to avoid the above)
+            "Can you hold on?"
+```
+
+Every significant choice costs one of these. If you can't identify which — the action is free or trivial.
+
+---
+
+## PUSH
+
+Before any roll — declare Push. Choose your price:
+
+```
+PUSH (HUNGER):   +1d6 to the roll
+                 +1 Hunger
+                 You let the Beast fuel you. Power now, hunger later.
+
+PUSH (HUMANITY): +1d4 to the roll
+                 Humanity check DC 12
+                 Fail: −1 Humanity
+                 You do what the Beast would do. Efficient. Inhuman.
+```
+
+Both cost something now AND later. Choice is real.
+
+Cannot Push both ways on same roll.
+Discipline use is a Push — follows same rules.
+
+---
+
+# PART I: THE BEAST WITHIN
+
 ---
 
 ## THE DARK MYTHOLOGY
@@ -53,43 +114,220 @@ SOCIAL (CHA):
 
 MENTAL (INT+WIS):
 - Investigation, occultism, tactics
-- Resisting mental disciplines
-
-BLOOD:
-- Generation determines maximum
-- Spent on disciplines, healing, enhancement
+- Resisting mental disciplines, Beast control
 ```
 
 ---
 
-## THE NIGHT CYCLE
-
-Structure for each night of play.
+## HUNGER
 
 ```
-=== DUSK ===
-• Hunger +1 (automatic upon waking)
-• Check pending summons, boons, threats
-• GM sets the night's atmosphere
+HUNGER: 0 1 2 3 4 5
 
-=== HUNT ===
-• If Hunger 2+ — need to feed
-• Choose method (Predator Type)
-• Roll + apply complications (d6 table)
-• Resolve Hunger change
+0: SATED — full control. Beast silent.
+   You ate well. Enjoy it while it lasts.
 
-=== AFFAIRS ===
-• Main objective: mission, investigation, politics
-• Random Night Event (d10 table)
-• Combat, social conflict, exploration
-• Court/Elysium attendance (when relevant)
+1-2: FED — mild discomfort.
+     Beast whispers rarely (1-2 times per scene max).
 
-=== DAWN ===
-• Humanity check (if transgressions)
-• Tick active clocks
-• Heal Aggravated (1/night, costs Hunger +1)
-• Forced daysleep — sunrise is coming
+3: HUNGRY — Beast comments on every temptation.
+   −1 MENTAL. Blood visible = Beast speaks.
+
+4: STARVING — Beast loud, demanding.
+   −2 SOCIAL. On any failed roll: Frenzy check.
+
+5: EDGE — Beast screams constantly.
+   Any stress = automatic Frenzy check.
+   Beast drowns out NPCs, interrupts thoughts.
 ```
+
+### Hunger Rises
+
+```
++1: Every night (waking)
++1: Using Discipline
++1: Healing wounds (1 damage = 1 Hunger)
++1: Physical enhancement (blood buff)
++1: Push (Hunger)
+```
+
+### Hunger Drops
+
+```
+−1: Animals (safe, never to 0)
+−1: Blood bags (need contacts)
+−2: Mortal (not killing, need to cover tracks)
+−3: Vampire blood (dangerous — Blood Bond risk)
+ 0: Kill mortal = reset to Hunger 0 (Humanity check)
+```
+
+### Frenzy
+
+Frenzy is not a separate system. It's what happens when Hunger wins.
+
+```
+FRENZY CHECK: d20 + MENTAL − Hunger vs DC
+
+TRIGGERS:
+  Hunger 4: any failed roll in stressful situation
+  Hunger 5: any stress (combat, insult, blood nearby)
+  Any Hunger: fire, sunlight, life threat (Terror)
+  Any Hunger: provocation + Rage (clan-dependent)
+
+DC:
+  Mild trigger: 10
+  Strong trigger: 14
+  Extreme (fire, sun, diablerie opportunity): 18
+
+OUTCOMES:
+  Crit.Fail: Lost — d6 turns Beast control, Humanity check after
+  Fail: Frenzy — d4 turns Beast control
+  Partial: Riding the Wave — 1 turn Beast, then regain control
+  Success: Mastered — shaken but controlled
+  Crit: Iron Will — Beast silenced, +2 next check tonight
+
+DURING FRENZY:
+  Rage: attack source of anger
+  Hunger: attack nearest blood source
+  Terror: flee by any means (through allies if needed)
+
+LOW HUMANITY AMPLIFIES:
+  Humanity 4−: disadvantage on Frenzy checks
+  Humanity 2−: Frenzy lasts double duration
+```
+
+---
+
+## HUMANITY
+
+Humanity is not a number. It's who you are.
+
+```
+HUMANITY: 10 9 8 7 6 5 4 3 2 1 0
+
+10: SAINT — almost human.
+    Can taste food. Sunlight deals half damage.
+    Unstable — any violence = Humanity check.
+
+9:  HUMANE — normal emotions.
+    +1 SOCIAL with mortals. Blush, cry, feel cold.
+
+8:  COMPASSIONATE — functional humanity.
+    No mechanical effect. This is the balance point.
+
+7:  NORMAL VAMPIRE — START HERE.
+    Standard. Beast is present but manageable.
+
+6:  DETACHED — mortals blur together.
+    −1 CHA with mortals. Beast louder (+1 Beast frequency).
+
+5:  COLD — mortals are tools.
+    Cannot form new Touchstones.
+    Feeding kills don't trigger automatic Humanity checks.
+    Atrocity still may (GM discretion). No check ≠ no consequence.
+    Without new Touchstones, Humanity can only fall. This is a trap, not a strategy.
+    −1 SOCIAL with mortals, +1 Intimidation.
+
+4:  PREDATOR — the mask slips.
+    −2 CHA with mortals. Advantage Intimidation.
+    Animals fear you. Children cry.
+    Touchstones sense something wrong.
+
+3:  MONSTER — barely Kindred.
+    Beast controls in ambiguous situations.
+    −2 all SOCIAL except Intimidation.
+    Touchstones flee or confront.
+
+2:  INHUMAN — memories fade.
+    GM controls in stressful moments (brief).
+    Forget mortal habits. Can't remember why you cared.
+
+1:  EDGE — one step from the end.
+    Beast controls most social interactions.
+    Only violence and hunger feel real.
+
+0:  WIGHT — NPC. Lost forever.
+    Mindless predator. Must be destroyed.
+```
+
+### Humanity Falls
+
+```
+TRANSGRESSION → MENTAL roll vs DC
+
+DC 8:  Minor (feeding recklessly, scaring mortal)
+DC 12: Moderate (killing in self-defense, torture for information)
+DC 16: Severe (killing innocent, diablerie)
+DC 20: Monstrous (mass killing, atrocity)
+
+OUTCOMES:
+Crit.Fail: −2 Humanity, immediate Frenzy check
+Fail: −1 Humanity
+Partial: Haunted — no loss, −1 next Frenzy check
+Success: Justified — no loss
+Crit: Transcended — no loss, possible +1 (GM decides)
+
+ONE CHECK PER SCENE (like Force shifts).
+Multiple transgressions = use the worst.
+```
+
+### Humanity Rises
+
+Humanity recovery is rare, expensive, and requires genuine connection.
+
+```
+POSSIBLE +1 HUMANITY:
+- Protect Touchstone at real cost to yourself
+- Resist Beast when giving in would clearly benefit you
+- Act selflessly when no one watches and nothing is gained
+- Extended time living as mortal (weeks, not days)
+
+REQUIREMENTS:
+- GM judges authenticity
+- Cannot be "farmed" — must emerge from play
+- Maximum +1 per chapter
+- Requires MENTAL roll DC 14. Fail = no change (not ready yet).
+
+Hardest thing in the game. The Beast never wants you to climb back.
+```
+
+### Humanity and the Beast
+
+```
+Beast Voice intensity scales with BOTH Hunger and Humanity:
+
+             Hunger 0-2    Hunger 3    Hunger 4-5
+Humanity 7+: whispers      comments    demands
+Humanity 5-6: comments     demands     screams
+Humanity 3-4: demands      screams     CONTROLS
+Humanity 1-2: screams      CONTROLS    CONTROLS
+
+"CONTROLS" = GM may narrate Beast actions without Frenzy check.
+Player can spend Willpower to resist (once per scene).
+```
+
+---
+
+## WILLPOWER
+
+Session resource. Your grip on the Beast.
+
+```
+WILLPOWER: ●●● (3/3)
+
+SPEND TO:
+- Reroll any one die (keep second result)
+- Add +2 to any roll (declare before result)
+- Resist one Frenzy check (automatic success)
+- Resist one Beast temptation (no roll needed, once per scene)
+- Force composure (suppress Beast Voice for one scene)
+
+REFRESH: Full at session start.
+  Bonus: +1 if visited Touchstone last session (max 4).
+```
+
+Willpower does NOT cheat death. Does NOT restore Humanity.
+It buys time. Nothing more.
 
 ---
 
@@ -122,21 +360,11 @@ ALWAYS (any Hunger):
 - Secret or forbidden knowledge (Tremere)
 - Chance to prove strength (Brujah)
 
-HUNGER SCALING:
-- Hunger 0-2: Beast whispers rarely (1-2 times per scene max)
-- Hunger 3: Beast comments on every temptation
-- Hunger 4: Beast suggests actions, interrupts thoughts
-- Hunger 5: Beast SCREAMS, drowns out NPCs, constant pressure
-
-SITUATIONAL (any Hunger):
-- Life threatened → Beast screams for violence or flight
-- Humiliated publicly → Beast demands blood
-- Fire/sun nearby → Beast panics, demands escape
-- Diablerie opportunity → Beast HUNGRY for power
+INTENSITY: See "Humanity and the Beast" table.
 
 FORMAT: [BEAST]: "First person, addressed to player"
 
-EXAMPLE (Hunger 4, Toreador):
+EXAMPLE (Hunger 4, Toreador, Humanity 5):
 GM: "She smiles at you from the bar. A vein pulses on her neck."
 [BEAST]: "Watch her heart beat. She's already yours. Approach. Touch. Taste."
 ```
@@ -147,42 +375,62 @@ GM: "She smiles at you from the bar. A vein pulses on her neck."
 When Beast suggests an action:
 
 IF PLAYER REFUSES:
-- MENTAL roll vs DC (Hunger × 3)
-- Fail: -1 to next control check
+- MENTAL roll vs DC (Hunger × 3 + (7 − Humanity))
+  Low Humanity = harder to refuse
+- Fail: −1 to next Frenzy check
 - Crit.Fail: Beast remembers. +2 DC next temptation.
+- Can spend Willpower to auto-resist (no roll, once per scene).
+  At low Humanity, resisting becomes rare — not impossible.
 
 IF PLAYER AGREES:
 - Action happens
-- Hunger -1 (Beast "satisfied")
-- Possibly: Humanity check
+- Hunger −1 ONLY if the action creates an unwanted consequence
+  (harm, exposure, debt, loss, escalation)
+- If no real consequence occurred: no Hunger reduction
+- Humanity check may apply (by context)
 - Beast quiets for d4 hours
 
-RIDING THE BEAST (on Partial frenzy):
+RIDING THE BEAST (on Partial Frenzy):
 - Act as Beast wants BUT keep partial control (choose target)
-- Humanity check after, but DC -2
+- Humanity check after, but DC −2
 ```
 
 ---
 
-## HUNGER
+# PART II: THE NIGHT
+
+---
+
+## THE NIGHT CYCLE
+
+Structure for each night of play.
 
 ```
-HUNGER: 0 1 2 3 4 5
+=== DUSK ===
+• Hunger +1 (automatic upon waking)
+• Check pending summons, boons, threats
+• GM sets the night's atmosphere
 
-0: Sated — full control
-1-2: Normal — mild discomfort
-3: Hungry — Beast whispers, -1 MENTAL
-4: Very hungry — Beast loud, -2 SOCIAL
-5: Edge — any stress = Frenzy risk
+=== HUNT ===
+• Hunt is EXPECTED every night — skipping is deliberate risk, not default
+• If Hunger 3+ — need to feed (or risk Frenzy during Affairs)
+• Choose method (Predator Type)
+• Roll + apply complications (d6 table)
+• Resolve Hunger change
 
-HUNGER RISES:
-+1: Every night (baseline)
-+1: Using discipline
-+1: Healing wounds (1 damage = 1 hunger)
-+1: Physical enhancement
+=== AFFAIRS ===
+• Main objective: mission, investigation, politics
+• Random Night Event (d10 table)
+• Combat, social conflict, exploration
+• Court/Elysium attendance (when relevant)
+• This is where Push decisions happen
 
-HUNGER DROPS:
--1 to -3: Feeding (depends on source)
+=== DAWN ===
+• Humanity check (if transgressions this night)
+• Tick active clocks
+• Heal Aggravated (1/night, costs Hunger +1)
+• Willpower does NOT refresh (session-based, not night-based)
+• Forced daysleep — sunrise is coming
 ```
 
 ---
@@ -194,25 +442,25 @@ BLOOD SOURCES:
 
 Animals:
 - Safe for Masquerade, available
-- Only -1 hunger, never to 0
+- Only −1 Hunger, never to 0
 - Some clans disdain it
 
 Blood bags:
 - Need contacts (hospitals)
-- -1 hunger, dead blood
+- −1 Hunger, dead blood
 
 Mortals (not killing):
-- -2 hunger
+- −2 Hunger
 - SOCIAL roll so victim forgets
 - Masquerade risk if careless
 
 Mortals (to death):
 - Full reset to Hunger 0
-- HUMANITY -1
+- HUMANITY CHECK DC 12
 - Must hide corpse
 
 Another vampire:
-- -3 hunger
+- −3 Hunger
 - DIABLERIE if to death (soul absorption)
 ```
 
@@ -233,67 +481,6 @@ RESONANCE MEMORY:
 - Desire: see what they want
 - Anger: see their enemy
 - Melancholy: see their loss
-```
-
----
-
-## HUMANITY
-
-```
-HUMANITY: 10 9 8 7 6 5 4 3 2 1 0
-
-10: Saint — almost human
-8-9: Humane — normal emotions
-6-7: Normal vampire — balance (START HERE)
-4-5: Detached — humans = food
-2-3: Monster — barely controls Beast
-1: Edge — one step from the end
-0: Wight — NPC, lost forever
-
-HUMANITY LOSS:
-
-Transgression → MENTAL roll vs DC
-
-DC 8:  Minor (killing in self-defense)
-DC 12: Moderate (killing mortal, torture)
-DC 16: Severe (killing innocent for pleasure, diablerie)
-DC 20: Monstrous (atrocities)
-
-OUTCOMES:
-Crit.Fail: Humanity -2, immediate Frenzy check
-Fail: Humanity -1
-Partial: Haunted — no loss, but -1 next control
-Success: Justified — no loss
-Crit: Transcended — no loss, +1 possible (GM decides)
-```
-
----
-
-## FRENZY
-
-```
-TRIGGERS:
-
-RAGE (attack source):
-- Provocation, insult, life threat
-
-HUNGER (attack nearest blood):
-- Hunger 4+ and blood nearby, fresh blood smell
-
-TERROR (flee):
-- Fire, sunlight, True Faith
-
-CONTROL CHECK:
-d20 + MENTAL - Hunger vs DC
-
-OUTCOMES:
-Crit.Fail: Lost — Frenzy d6 turns, Humanity check after
-Fail: Frenzy — d4 turns
-Partial: Riding the Wave — 1 turn Beast, then control
-Success: Mastered — shaken but controlled
-Crit: Iron Will — Beast silenced, +2 next check tonight
-
-Low Humanity (4-): disadvantage on control
 ```
 
 ---
@@ -320,20 +507,42 @@ HEAT RISES:
 +3: Media, viral video
 
 HEAT DROPS:
--1: Remove witness (kill or memory wipe)
--1: Destroy recordings
--2: Nosferatu cleanup (costs Major boon)
--3: Scapegoat another vampire (they'll know)
+−1: Remove witness (kill — Humanity check — or memory wipe)
+−1: Destroy recordings
+−2: Nosferatu cleanup (costs Major boon)
+−3: Scapegoat another vampire (they'll know)
 
 At Level 4+: You're hunted. Every night = survival.
 At Level 5: Second Inquisition involved. Run or die.
+
+CONNECTION TO CURRENCIES:
+- Reducing Heat by killing = Humanity check
+- Reducing Heat by boon = political cost
+- Ignoring Heat = it rises (like Decay)
 ```
+
+---
+
+# PART III: DISCIPLINES & BLOOD
 
 ---
 
 ## DISCIPLINES (ARCADE — 3 LEVELS)
 
-Each discipline = 3 levels, one line each. Hunger +1 to use.
+Each discipline = 3 levels, one line each.
+
+```
+COST: Every Discipline use = +1 Hunger (this IS a Push (Hunger) by default).
+OVERUSE: 3+ Discipline uses per night without feeding:
+  Each additional use = Hunger +2 instead of +1.
+  The blood runs thin. The Beast gets louder.
+
+EXTRA PUSH ON DISCIPLINE:
+  Can Push additionally when using a Discipline.
+  Push (Hunger): +1d6 to Discipline roll, +1 Hunger (total +2)
+  Push (Humanity): +1d4 to Discipline roll, Humanity check
+  Pushing a Discipline = desperation. The Beast LOVES it.
+```
 
 ```
 === DOMINATE (Ventrue, Tremere) ===
@@ -358,8 +567,8 @@ Each discipline = 3 levels, one line each. Hunger +1 to use.
 
 === CELERITY (Brujah, Toreador) ===
 ● Speed +1, better initiative
-●● Extra action (Hunger +1 per action)
-●●● Blur — enemies -4 to hit, dodge bullets
+●● Extra action (Hunger +1 per extra action)
+●●● Blur — enemies −4 to hit, dodge bullets
 
 === ANIMALISM (Gangrel, Nosferatu) ===
 ● Speak with animals
@@ -394,16 +603,29 @@ Each discipline = 3 levels, one line each. Hunger +1 to use.
 
 ---
 
+# PART IV: KINDRED SOCIETY
+
+---
+
 ## CLANS — PLAYER OPTIONS
 
 **Players choose from these clans.** Regional clans are NPCs (see GM Tool section below).
+
+```
+CORE LIES (every faction believes one):
+  Camarilla: "We are in control."
+  Sabbat: "We are free."
+  Anarchs: "We are different."
+  None of these are true. That's the game.
+```
 
 ### Camarilla (The Masquerade)
 
 ```
 === VENTRUE — Kings ===
 Disciplines: Dominate, Presence, Fortitude
-Weakness: Only drink specific blood type (chosen at creation)
+Weakness: Only drink specific blood type (chosen at creation).
+  This is not inconvenience — it is constant crisis. Your type is rare, guarded, or illegal.
 Role: Princes, politicians, executives
 [BEAST]: Hunger for power, contempt for weakness
 
@@ -415,7 +637,7 @@ Role: Artists, socialites, manipulators
 
 === BRUJAH — Rebels ===
 Disciplines: Presence, Potence, Celerity
-Weakness: -2 to Frenzy control (Rage)
+Weakness: −2 to Frenzy control (Rage)
 Role: Anarchs, activists, shock troops
 [BEAST]: Pure rage, immediate violence
 
@@ -448,7 +670,40 @@ Role: Trackers, loners, survivalists
 
 ## CLANS — SABBAT
 
-The Sword of Caine. Monsters who embrace the Beast.
+The Sword of Caine. They don't fight the Beast — they worship it.
+
+### Sabbat Mechanics
+
+```
+VAULDERIE — Blood communion ritual. All pack members mix blood in chalice and drink.
+  Replaces Blood Bond with Pack Bond: loyalty to pack, not individuals.
+  +2 to resist Dominate/Presence from non-pack Kindred.
+  Breaking Vaulderie: +2 Humanity loss, pack hunts you.
+
+PATHS OF ENLIGHTENMENT — Replace Humanity for Sabbat.
+  Sabbat do not track Humanity. They follow Paths instead.
+  Path replaces Humanity mechanics, but NOT consequences. No Humanity ≠ no price.
+  Path rating works identically (0-10, same thresholds) but what triggers loss differs:
+  - Path of Caine: lose rating for ignorance, weakness, mercy to enemies
+  - Path of Cathari: lose rating for denying pleasure, showing restraint, boredom
+  - Path of Death: lose rating for fearing death, preventing natural death, cowardice
+  - Path of Power: lose rating for showing weakness, failing to seize opportunity
+
+CREATION RITES — Sabbat Embrace is brutal.
+  Childe is drained, killed, buried alive. Claws out of grave or dies.
+  Survivors start at Humanity 4 (or Path 4). No gentle introduction.
+
+PACK STRUCTURE:
+  Pack = 4-8 vampires. Not a coterie — a military unit.
+  Ductus (leader): elected by combat or vote
+  Priest (spiritual): conducts Vaulderie, maintains Path
+  Pack mentality: group hunts, shared havens, no privacy
+  Pack demands override individual will.
+  Refusing pack decision = immediate consequence (violence or exile).
+  You chose the Sword. The Sword chose you back.
+```
+
+### Sabbat True Clans
 
 ```
 === LASOMBRA — Shadow Lords ===
@@ -472,6 +727,47 @@ VICISSITUDE (unique):
 ● Reshape own face/body
 ●● Reshape others (requires touch)
 ●●● Horrid Form — combat monster shape
+```
+
+### Antitribu (Inverted Camarilla Clans)
+
+Sabbat versions of Camarilla clans. Same disciplines, twisted purpose.
+
+```
+=== TOREADOR ANTITRIBU — Artists of Pain ===
+Same disciplines. Weakness: freeze before SUFFERING, not beauty.
+Wear clothing from human skin. Create art from torture. Galleries of agony.
+[BEAST]: "Make them beautiful. Through screaming."
+
+=== NOSFERATU ANTITRIBU — The Creep ===
+Same disciplines. Weakness: monstrous AND feral (animal features dominate).
+Stopped pretending to be humanoid. Tunnel networks, flesh warrens.
+[BEAST]: Pure territorial predator. No words left.
+
+=== BRUJAH ANTITRIBU — Berserkers ===
+Same disciplines. Weakness: −4 to Frenzy control (not −2).
+Embrace the rage. Fight pits, blood sport, war for war's sake.
+[BEAST]: "KILL. KILL. KILL." No subtlety. None needed.
+
+=== VENTRUE ANTITRIBU — Crusaders ===
+Same disciplines. Weakness: can only drink from those they've defeated.
+Holy warriors of Caine. Fanatical. Templar aesthetics.
+[BEAST]: Righteous hunger. "Kneel or be consumed."
+
+=== TREMERE ANTITRIBU — Blood Heretics ===
+Same disciplines. Weakness: blood bond to Sabbat hierarchy (not Tremere pyramid).
+Rejected the Pyramid. Thaumaturgy without restraint. Dangerous to everyone.
+[BEAST]: "No rules. No limits. Only POWER."
+
+=== MALKAVIAN ANTITRIBU — Plague Spreaders ===
+Same disciplines. Weakness: must spread madness (not just endure it).
+Deliberately infect mortals with insanity. Walking contagion.
+[BEAST]: "They should all see what we see. SHARE IT."
+
+=== GANGREL ANTITRIBU — War Beasts ===
+Same disciplines. Weakness: each Frenzy = 2 beast traits (not 1).
+Fully embrace animal nature. Shock troops. Some can't speak anymore.
+[BEAST]: [No words. Only growling.]
 ```
 
 ---
@@ -519,22 +815,35 @@ SERPENTIS (unique):
 
 **These are NPC clans, not player options.** GM introduces them based on geography.
 
+**Use ONE regional clan per story arc. Not all of them.** These are spice, not the main course.
+
 ```
 WHERE THEY APPEAR:
 
 IN ANY WESTERN CITY:
-- Chinatown → Jiangshi (Tong enforcers, silent bodyguards)
+- Chinatown → Jiangshi (Tong enforcers), Kuei (temple guardians)
 - Little India / curry mile → Vetala (fortune tellers, "import/export")
 - Barrio / Little Mexico → Tlahuelpuchi (family networks, cartel ties)
 - Filipino/Vietnamese quarters → Penanggalan (night shift workers, clinics)
 - Immigrant enclaves from Andes → Pishtaco (labor exploitation, remittances)
+- African diaspora quarters → Adze (possession cases), Impundulu (storm-linked deaths)
+- Greek/Turkish quarters → Vrykolakas (mysterious plagues)
+- Scandinavian enclaves → Draugr (antique dealers, hoarders)
+- Japanese quarter → Gaki (starving homeless, temple haunters)
+- Arab quarter → Ghul (graveyard incidents, identity theft)
 
 ABROAD (if players travel):
 - Mexico City, border towns → Cihuacoatl territory (ancient law)
 - China, Hong Kong, Taiwan → Jiangshi courts (rigid hierarchy)
+- Japan → Gaki haunts, Kuei temples (demon-warrior monasteries)
 - India, Nepal → Vetala sanctuaries (cremation grounds)
 - Malaysia, Philippines → Penanggalan hunting grounds
 - Peru, Bolivia → Pishtaco operations (mining, extraction)
+- West Africa → Adze covens, Asanbosam forests, Impundulu storm-witches
+- Middle East → Ghul desert territories, Strix nesting in ancient ruins
+- Romania, Greece → Strigoi family estates, Vrykolakas wandering plagues
+- Melanesia → Talamaur dream-feeding networks
+- Scandinavia → Draugr barrow-holds, coastal treasure guardians
 
 HOW TO USE:
 - Coterie enters ethnic quarter → they're being watched
@@ -563,7 +872,7 @@ Disciplines: Teyollohcuani, Animalism, Obfuscate
 
 TEYOLLOHCUANI (Life-Force Theft):
 ● Sense vitality — see health, age, strength
-●● Drain touch — victim -2 to all rolls for scene
+●● Drain touch — victim −2 to all rolls for scene
 ●●● Steal years — age victim, heal self
 
 Weakness: FIVE-DAY CYCLE
@@ -586,7 +895,7 @@ NAHUALISMO (Beast Transformation):
 ●●● Bat (flight) or flea (infiltration)
 
 Weakness: FAMILY CURSE
-Cannot kill or Embrace blood relatives — attempt = auto-Frenzy + Humanity -2
+Cannot kill or Embrace blood relatives — attempt = auto-Frenzy + Humanity −2
 One living relative ALWAYS knows what you are
 
 Role: Infiltrators, assassins, family hunters
@@ -600,7 +909,7 @@ Disciplines: Adipomancy, Fortitude, Dominate
 
 ADIPOMANCY (Fat Magic):
 ● Sense "rich" victims — those full of life energy
-●● Extract fat (feeding leaves withered corpse, -3 Hunger)
+●● Extract fat (feeding leaves withered corpse, −3 Hunger)
 ●●● Fat armor (+3 AC for scene) or reshape appearance
 
 Weakness: COLONIAL CURSE
@@ -611,8 +920,6 @@ In majority-European cities: permanent Hunger +1
 Role: Shadow bankers, colonial predators, flesh merchants
 [BEAST]: Cold extraction, business-like cruelty
 ```
-
----
 
 ### Asia
 
@@ -683,6 +990,219 @@ Other blood = half effect
 
 Role: Elite assassins, terror weapons, impossible infiltrators
 [BEAST]: Alien hunger, maternal obsession
+```
+
+### Japan
+
+```
+=== GAKI — Hungry Dead ===
+Origin: Japan
+Based on: Gaki/Preta — cursed spirits of insatiable hunger
+
+Disciplines: Kigan (Hunger Channeling), Obfuscate, Celerity
+
+KIGAN (Hunger Channeling):
+● Feed on emotions (fear, grief) — −1 Hunger without blood
+●● Hunger aura — mortals within 5m feel starving, weakened
+●●● Consume spirit — destroy ghost/spirit, −3 Hunger
+
+Weakness: BOTTOMLESS HUNGER
+Hunger never reaches 0. Minimum Hunger = 1 always.
+Feeding gives half normal reduction. Must feed twice as often.
+
+Role: Outcasts, lurkers in forgotten places, temple haunters
+[BEAST]: Endless craving. Not blood — everything. Never enough.
+
+=== KUEI — Demon Returned ===
+Origin: Japan/China
+Based on: Kuei-jin — dead who clawed back from Yomi (hell)
+
+Disciplines: Chi-Mastery, Potence, Auspex
+
+CHI-MASTERY (Life/Death Balance):
+● Sense chi flow — detect life, death, sickness
+●● Channel chi — heal others (costs Hunger +2) or harm (drain life, d8)
+●●● Balance disruption — target's body attacks itself (CON save or 3d6)
+
+Weakness: YOMI TAINT
+Already died once. Sunlight deals TRIPLE damage (not double).
+Must perform daily meditation or +1 Hunger (demon inside stirs).
+
+Role: Returned dead, spiritual warriors, bridge between worlds
+[BEAST]: Demon from Yomi. Speaks in commands, not whispers.
+```
+
+### Africa
+
+```
+=== ADZE — Firefly Vampires ===
+Origin: Ghana (Ewe people)
+Based on: Adze — vampire that takes form of firefly
+
+Disciplines: Insect-Form, Presence, Obfuscate
+
+INSECT-FORM (Firefly Transformation):
+● Glow — mesmerizing light, WIS DC 12 or fascinated 1 round
+●● Full firefly form — tiny, flying, nearly undetectable
+●●● Swarm — summon insects, obscure area, deal d6/round
+
+Weakness: POSSESSION HUNGER
+Must possess a mortal host to use physical disciplines.
+In firefly form: immune to physical damage, but cannot feed or fight.
+Caught in jar/container = trapped until released.
+
+Role: Witch-doctors' servants, village terrors, possessing spirits
+[BEAST]: Buzzing. Constant buzzing. And hunger between the notes.
+
+=== ASANBOSAM — Iron-Toothed ===
+Origin: Ghana/Ivory Coast (Ashanti people)
+Based on: Asanbosam — tree-dwelling vampire with iron teeth and hooks
+
+Disciplines: Potence, Animalism, Fortitude
+
+Weakness: IRON BODY
+Teeth and hook-claws are literal iron. Cannot pass through metal detectors.
+Magnets cause pain (d4/round). Cannot enter buildings with iron thresholds.
++2 unarmed damage (iron bite). Climbing advantage (hook feet).
+
+Role: Forest ambush predators, canopy dwellers, territorial guardians
+[BEAST]: Patient. Waits in trees. Drops on prey. No words — just the crunch.
+
+=== IMPUNDULU — Lightning Bird ===
+Origin: South Africa (Xhosa, Zulu, Pondo)
+Based on: Impundulu — vampiric lightning bird, familiar of witches
+
+Disciplines: Storm-Call, Celerity, Presence
+
+STORM-CALL (Lightning Command):
+● Static charge — electronics malfunction, hair stands on end
+●● Lightning strike — 3d6 electrical damage, single target
+●●● Storm summon — weather changes, outdoor area becomes deadly
+
+Weakness: WITCH-BOUND
+Must serve a witch/sorcerer lineage. Cannot refuse direct commands from master.
+If master dies: must find new master within 7 nights or +2 Hunger/night.
+Passed down through family lines — same servitude, new face.
+
+Role: Enforcers for magical families, storm bringers, reluctant servants
+[BEAST]: Crackle of lightning. Obedience and rage in equal measure.
+```
+
+### Middle East
+
+```
+=== GHUL — Corpse Eaters ===
+Origin: Arabian Peninsula
+Based on: Ghul/Ghoul — desert shapeshifter that feeds on the dead
+
+Disciplines: Shapeshifting, Obfuscate, Fortitude
+
+SHAPESHIFTING (Desert Forms):
+● Mimic last person eaten (face only)
+●● Full body transformation into any human seen
+●●● Hyena form — desert predator, pack caller
+
+Weakness: CARRION HUNGER
+Cannot feed from the living. Must feed from corpses or recently dead.
+Fresh corpse (< 24h): −2 Hunger. Old corpse: −1 Hunger.
+Living blood: causes vomiting, +1 Condition.
+
+Role: Desert ambushers, graveyard lurkers, identity thieves
+[BEAST]: Scavenger patience. "Wait for them to die. They always do."
+
+=== STRIX — Screech Owls ===
+Origin: Ancient Rome/Mediterranean
+Based on: Strix — vampiric owl-spirits that possess corpses
+
+Disciplines: Possession, Auspex, Animalism
+
+POSSESSION (Body Theft):
+● Sense empty vessels (corpses, torpored vampires, comatose mortals)
+●● Possess fresh corpse (< 48h) — use as body until it rots
+●●● Possess living mortal (WIS contested) or torpored vampire
+
+Weakness: BODILESS
+True form is incorporeal owl-spirit. Without host body: cannot interact physically.
+Host bodies decay (mortals: d6 days, vampires: weeks).
+Must constantly find new vessels. If exposed mid-possession: host may fight back.
+
+Role: Ancient parasites, possessors, manipulators wearing stolen faces
+[BEAST]: Not a voice — a screech. Owls in the walls. Watching.
+```
+
+### Eastern Europe
+
+```
+=== STRIGOI — The Original ===
+Origin: Romania
+Based on: Strigoi — restless dead who return to drain family
+
+Disciplines: Dominate, Fortitude, Animalism
+
+Weakness: FAMILY CURSE
+Must return to birthplace every 7 nights or +1 Hunger.
+Can only create childer from own living descendants.
+Living relatives can sense Strigoi nearby (WIS DC 14).
+Garlic causes actual pain (d4/round, not just folklore).
+
+Role: Village terrors, family curses, ancestral nightmares
+[BEAST]: "Come home. They're waiting. They don't know you're hungry."
+
+=== VRYKOLAKAS — Plague Bearers ===
+Origin: Greece
+Based on: Vrykolakas — undead that spread plague by knocking on doors
+
+Disciplines: Fortitude, Presence, Obfuscate
+
+Weakness: THRESHOLD RULE
+Must knock before entering any private dwelling. If no one answers: cannot enter.
+If invited: +1 to all actions inside (gratitude fuels power).
+Carries plague aura: mortals in close contact for 1h+ must CON save or sicken.
+
+Role: Wandering plague, door-knockers, patient exterminators
+[BEAST]: *knock knock knock* "Open. Please. I'm so cold."
+```
+
+### Oceania
+
+```
+=== TALAMAUR — Spirit Riders ===
+Origin: Melanesia (Vanuatu, Banks Islands)
+Based on: Talamaur — living vampires who send spirits to feed
+
+Disciplines: Spirit-Riding, Auspex, Dominate
+
+SPIRIT-RIDING (Astral Predation):
+● Send spirit out while sleeping — scout, observe
+●● Spirit feeds on sleeping mortals (−1 Hunger, victim: nightmares, −1 CON)
+●●● Possess spirit of recently dead — interrogate or weaponize
+
+Weakness: SLEEPING VULNERABILITY
+Must send spirit out during sleep to feed. Body is defenseless while projecting.
+If body is moved or harmed during projection: WIS DC 16 to return or become ghost.
+Cannot feed while awake through normal means. Blood does nothing.
+
+Role: Dream predators, spirit mediums, remote assassins
+[BEAST]: Whispers from the astral. "They're sleeping. Go. Feed. They won't feel it."
+```
+
+### Scandinavia
+
+```
+=== DRAUGR — Barrow Dead ===
+Origin: Norse/Scandinavian
+Based on: Draugr — undead who guard their burial hoards
+
+Disciplines: Potence, Fortitude, Obfuscate
+
+Weakness: HOARD-BOUND
+Must maintain a physical treasure hoard. Size determines power.
+Hoard destroyed: all disciplines reduced by 1 level until rebuilt.
+Cannot willingly move more than 1 mile from hoard without WIS DC 14/hour.
+Immune to cold. Vulnerable to fire (×2 damage). Iron weapons bypass Fortitude.
+
+Role: Treasure guardians, territorial undead, ancient warriors
+[BEAST]: "MINE. This gold. This ground. This night. MINE."
 ```
 
 ---
@@ -773,6 +1293,28 @@ TRADING: Major boons need witness (Harpy)
 
 ---
 
+# PART V: BLOOD & BODY
+
+---
+
+## COMBAT COST
+
+Combat is always expensive. This is by design.
+
+```
+- Using Disciplines in combat → +Hunger per use
+- Taking damage → requires healing later → +Hunger
+- Killing a mortal → Humanity check
+- Killing a Kindred → Humanity check + political fallout
+- Frenzy risk compounds (Hunger rises, Beast gets louder)
+- Witnesses → +Heat
+
+Combat is not a solution — it's a cost.
+If it came to a fight, someone already lost.
+```
+
+---
+
 ## DAMAGE AND HEALING
 
 ```
@@ -792,6 +1334,11 @@ Track fills with / → converts to X
 HEALING:
 Superficial: 1 Hunger = heal 2 (instant)
 Aggravated: 1 Hunger = heal 1 (once per night, requires rest)
+
+OPTIONAL — FAST REGEN (use if Hunger pressure slows play):
+Superficial damage heals naturally between scenes (no Hunger cost).
+Aggravated healing remains: 1 Hunger = 1 Agg (1/night).
+Use this only if players avoid action due to Hunger paralysis.
 
 SUNLIGHT:
 Indirect: 1 Agg/round
@@ -821,7 +1368,7 @@ DURATION (by Generation):
 12-11th: 1 month
 10-9th: 1 year
 8-7th: 10 years
-6th-: 50+ years
+6th−: 50+ years
 
 WAKING:
 Natural: Min duration + all Agg healed
@@ -856,6 +1403,7 @@ Kill vampire and drink completely:
 - Gain victim's power
 - Visible in aura (black veins)
 - Camarilla executes for this
+- HUMANITY CHECK DC 16
 ```
 
 ---
@@ -916,15 +1464,25 @@ DEFINE:
 - Where do they live? (threat potential)
 
 BENEFITS:
-Visit (unharmed): -1 Frenzy DC next session
-Protect from harm: +1 Humanity possible
+Visit (unharmed): +1 Willpower next session (max 4)
+Protect from harm: possible Humanity +1 (see Humanity Rises)
 
 DANGERS:
 If threatened: Enemies have leverage
-If dies: MENTAL DC 14 or -1 Humanity + Frenzy
+If dies: MENTAL DC 14 or −1 Humanity + Frenzy
 If learns truth: Accept / Reject / Break
 If YOU harm them: Humanity check DC 16
+
+CONNECTION TO CURRENCIES:
+- Touchstones are the ONLY reliable path to Humanity recovery
+- Losing all Touchstones = Humanity can only fall
+- Willpower bonus rewards maintaining mortal connections
+- The game punishes isolation: no Touchstones = no safety net
 ```
+
+---
+
+# PART VI: GM TOOLS
 
 ---
 
@@ -1009,8 +1567,6 @@ Humanity: 6
 Tools for improvisation. Roll or choose.
 
 ### Mission Generator
-
-What does the coterie need to do tonight?
 
 ```
 === MISSION TYPE (d10) ===
@@ -1156,7 +1712,7 @@ Player can:
 8: SUCCESSION — Prince weakening. Two Primogen positioning. Cold war heating up.
 
 === STAKES (d6) ===
-1: Pride — Loser loses face in Elysium. Status -1.
+1: Pride — Loser loses face in Elysium. Status −1.
 2: Territory — Loser cedes domain. Feeding rights lost.
 3: Blood — Someone will be destroyed. Legally or not.
 4: Clan — Entire clan's position in city at risk.
@@ -1271,12 +1827,11 @@ Roll for each notable district:
 6: Refuses boon system. Anarch philosophy. Pariah.
 
 === HUMANITY CLOCK (track for important NPCs) ===
-HUMANITY: ●●●●●○○○○○ (5/10)
-Trigger ↓: Witnesses/commits atrocity, loses Touchstone, frenzies publicly
-Trigger ↑: Protects innocent, refuses easy kill, shows mercy (rare)
-At 3: NPC becomes erratic, dangerous, unreliable
-At 1: NPC becomes monster, potential antagonist
-At 0: Wight — mindless predator, must be destroyed
+Use Humanity thresholds from Part I.
+Track direction: is this NPC rising or falling?
+At Humanity 3: NPC becomes erratic, dangerous, unreliable
+At Humanity 1: NPC becomes monster, potential antagonist
+At Humanity 0: Wight — mindless predator, must be destroyed
 ```
 
 ### Political Situation Generator
@@ -1379,16 +1934,30 @@ At 0: Wight — mindless predator, must be destroyed
 
 ---
 
+# PART VII: REFERENCE
+
+---
+
 ## QUICK REFERENCE
 
 ```
-HUNGER: 0 sated → 3 Beast whispers → 5 Frenzy risk
-HUMANITY: 7 start → 4 disadvantage control → 0 lost
-FRENZY: d20 + MENTAL - Hunger vs DC
-DISCIPLINE: Hunger +1 to use
+THREE CURRENCIES:
+HUNGER    (0-5) → how close is the Beast
+HUMANITY  (0-10) → who are you becoming
+WILLPOWER (3) → can you hold on
+
+PUSH:
+HUNGER:   +1d6, +1 Hunger — body pays
+HUMANITY: +1d4, check DC 12 — soul pays
+
+HUNGER: 0 sated → 3 Beast whispers → 4 Frenzy on fail → 5 Frenzy on stress
+HUMANITY: 7 start → 5 cold → 3 monster → 0 lost
+FRENZY: d20 + MENTAL − Hunger vs DC (embedded in Hunger 4+)
+DISCIPLINE: Hunger +1 per use. 3+/night without feeding = +2 each.
 HEALING: Superficial 1H=2 | Aggravated 1H=1 (1/night)
 HEAT: 0 clean → 3 Sheriff → 5 Inquisition
 NIGHT: DUSK → HUNT → AFFAIRS → DAWN
+WILLPOWER: reroll | +2 | resist Frenzy | resist Beast | composure
 ```
 
 ---
@@ -1397,12 +1966,16 @@ NIGHT: DUSK → HUNT → AFFAIRS → DAWN
 
 ```
 [ ] Night phase clear?
-[ ] Hunger tracked?
-[ ] Beast Voice at Hunger 3+?
+[ ] Hunger tracked? (rises every night, every Discipline, every heal)
+[ ] Beast Voice at appropriate intensity? (Hunger × Humanity table)
+[ ] Frenzy checked at Hunger 4+?
+[ ] Humanity check for transgressions? (one per scene, worst)
 [ ] Heat consequences at 3+?
 [ ] Clocks ticking?
 [ ] Touchstones in danger?
 [ ] Boons being tracked?
+[ ] Willpower spent wisely? (player's limited resource)
+[ ] Push offered when stakes are high?
 ```
 
 ---

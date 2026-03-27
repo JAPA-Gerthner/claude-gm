@@ -51,74 +51,48 @@ a wound in reality. Something old woke beneath the oceans.
 
 ## REGIONS & GEOGRAPHY
 
-### THE CARIBBEAN — Heart of Piracy
+### KEY PORTS BY REGION
 
-**KEY PORTS:**
+**CARIBBEAN** — Heart of Piracy
 - **Port Royal, Jamaica**: "Wickedest City" — drowned quarter visible at low tide
 - **Tortuga**: French-held, pirate-governed, vodou mambos sell wind-knots
 - **Havana**: Spanish treasure fleet assembly, ghost galleons in harbor fog
 - **Nassau**: Pirate Republic (1706-1718), merfolk trading post in hidden cove
 
-**SUPERNATURAL DANGERS:**
-- DROWNED ONES: Sailors who died owing debts, rise to collect
-- HURRICANE SPIRITS: Taino storm gods, can be appeased with sacrifice
-- ZOMBIE CREWS: Bocors raise tireless, soulless sailors
-
-**TRADE GOODS:** Sugar, rum, Spanish silver, slaves, voodoo fetishes, bottled storms
-
-### THE ATLANTIC — Triangle Trade
-
-**KEY LOCATIONS:**
+**ATLANTIC**
 - **Bermuda**: Devil's Isle — ships vanish, time distorts
 - **Sargasso Sea**: Windless hell, kraken sleep below, lost ships form floating cities
-- **Treasure Fleet Route**: Ghost fleets follow, echoes of lost convoys
 
-**SUPERNATURAL DANGERS:**
-- LEVIATHANS: Whale-sized, ancient, territorial
-- TIME RIFTS: Ships arrive before they left, or never arrive
-
-### EUROPEAN COASTS — Old World Waters
-
-**KEY PORTS:**
+**EUROPEAN COASTS**
 - **Salé, Morocco**: Barbary corsairs, djinn bound into figureheads
 - **Malta**: Knights of St. John hunt sea-demons with blessed cannons
 - **Lisbon**: Inquisition headquarters, they KNOW magic is real
 
-**SUPERNATURAL DANGERS:**
-- DJINN: Bound fire spirits traded by Barbary corsairs
-- SIRENS: Mediterranean originals, song magic impossible to resist
-
-### AFRICAN COAST — The Dark Shore
-
-**KEY PORTS:**
-- **Ouidah, Dahomey**: Vodun's birthplace, spirits walk before crossing the ocean
+**AFRICAN COAST**
+- **Ouidah, Dahomey**: Vodun's birthplace, spirits walk openly
 - **Cape of Good Hope**: Adamastor the giant guards passage
 
-**SUPERNATURAL DANGERS:**
-- ANCESTOR SPIRITS: Protect descendants, curse slavers
-- THE HUNGRY: Ghosts of slaves thrown overboard, follow slave ships
-
-### ASIAN WATERS — The Rich East
-
-**KEY PORTS:**
+**ASIAN WATERS**
 - **Macao**: Only European port in China, strange magical hybrids
 - **South China Sea**: Chinese pirate fleets number THOUSANDS
 
-**SUPERNATURAL DANGERS:**
-- SEA DRAGONS: Serpentine, magical, VERY territorial — negotiate or die
-- JIANGSHI: Chinese hopping vampires on plague ships
-
-### THE AMERICAS — New World Coasts
-
-**KEY PORTS:**
+**THE AMERICAS**
 - **Veracruz**: Treasure fleet origin, Aztec spirits hate the Spanish
 - **Portobelo**: Silver road, pre-Columbian gods in the jungle
 
-**SUPERNATURAL DANGERS:**
-- AZTEC SPIRITS: Remember Spanish sins, might help pirates
-- WENDIGO: Northern woods, hunger incarnate
+### SUPERNATURAL DANGERS BY REGION
 
-**TRAVEL TIMES:**
+| Region | Threats |
+|--------|---------|
+| Caribbean | Drowned Ones (rise to collect debts), Hurricane Spirits (Taino storm gods), Zombie Crews |
+| Atlantic | Leviathans (whale-sized, territorial), Time Rifts (ships arrive before they left) |
+| Europe | Djinn (bound fire spirits), Sirens (song magic impossible to resist) |
+| Africa | Ancestor Spirits (curse slavers), The Hungry (ghosts of slaves thrown overboard) |
+| Asia | Sea Dragons (negotiate or die), Jiangshi (hopping vampires on plague ships) |
+| Americas | Aztec Spirits (remember Spanish sins), Wendigo (hunger incarnate) |
+
+### TRAVEL TIMES
+
 | Route | Time | Hazards |
 |-------|------|---------|
 | Caribbean internal | 1-3 days | Hurricanes (Aug-Oct), Spanish patrols |
@@ -201,11 +175,190 @@ a wound in reality. Something old woke beneath the oceans.
 
 ---
 
+## THE DEBT
+
+The sea gives. The sea takes. It always keeps score.
+
+```
+THE DEBT: 0 ————————————→ 10
+          Free              Taken
+
+Start: 0 (you owe nothing — yet)
+```
+
+The Debt is personal. Each crew member has their own. But a captain's Debt poisons the ship — the crew feels it in rotting ropes, wrong winds, and shapes beneath the hull.
+
+### How Debt Grows
+
+Debt grows when **the sea gives you something**. Not punishment — payment due.
+
+```
++1 DEBT:
+- Survive when you should have died (miraculous escape, freak wave saves you)
+- Take cursed treasure (even unknowingly — the sea doesn't care)
+- Use supernatural aid (sea witch ritual, loa bargain, ghost's guidance)
+- Break oath sworn on the sea
+- Kill under flag of truce
+
++2 DEBT:
+- Accept Davy Jones' bargain
+- Steal from a shrine or sacred site
+- Take Aztec / blood-cursed gold
+- Cheat death through supernatural means (resurrection, undeath)
+
+AUTOMATIC:
+- Crew killed through your orders: +1 per 10 crew lost in one battle
+- The sea counts bodies. Every one is a loan.
+
+GM DISCRETION:
+- If you gain significant advantage at sea through luck or miracle → +1 Debt
+- The wind changes just for you. The reef parts. The storm misses.
+- If it felt like a gift — it was. And gifts have prices.
+```
+
+### How Debt Shrinks
+
+Reducing Debt always costs more than gaining it. The sea charges interest.
+
+```
+PATH OF SACRIFICE:
+-1: Return cursed treasure to its source (lose the gold — all of it)
+-1: Keep a sworn oath at genuine personal cost (not convenient — costly)
+-1: Save a life at sea when it risks your own (not crew duty — personal risk)
+-1: Sacrifice something precious to the sea (item, memory, relationship)
+-2: Fulfill quest for a sea entity (Davy Jones, kraken-god, loa)
+-2: Willingly take another's Debt onto yourself
+
+DARK PATH:
+-1: Transfer Debt to another (they take your curse, they don't choose it)
+    Crew morale -2. Word spreads — you are cursed AND treacherous.
+    +2 Infamy (fear, not respect). No port will shelter you willingly.
+    This is not a strategy. This is a fall.
+-1: Sacrifice a crew member to the sea
+    Crew morale collapse. Mutiny check. The sea accepts, but the crew won't.
+    Reputation among pirates: -2 permanently. Even monsters have codes.
+```
+
+### Debt Thresholds
+
+The sea remembers HOW you took the Debt. Manifestations are personalized:
+- Stole → storms and bad luck
+- Betrayed → ghosts and apparitions
+- Broke oath → curses on body and ship
+- Killed under truce → the dead follow
+
+```
+0:   FREE — The sea hasn't noticed you.
+     Sail where you will. Owe nothing.
+
+1-2: MARKED — Something watches from below.
+     Albatross follows. Dreams of drowning. Superstitious crew uneasy.
+     Existing Curses manifest faster (Minor curses: immediate, no grace period).
+     Once per voyage: GM intrusion — minor supernatural event (no save, no warning).
+
+3-4: OWED — The sea sends reminders.
+     One supernatural event per voyage (GM picks from personal Debt source).
+     −1 to all navigation in unfamiliar waters. Compasses twitch.
+     Crew: "Captain's brought bad luck aboard."
+
+5-6: HUNTED — Collectors come.
+     Ghost ships visible on horizon. Sea creatures hostile.
+     One serious supernatural threat per voyage (tied to Debt source).
+     Crew morale −1 permanent while Debt stays here.
+     Ports with sea witches / vodou priests sense your Debt on sight.
+
+7-8: CLAIMED — The sea is taking you piece by piece.
+     Physical changes begin (barnacles, skin like wet leather, salt in blood).
+     −2 CHA on land (you don't belong there anymore).
+     +1 to all sea-related actions (the sea strengthens what it owns).
+     Cannot stay on land more than 3 days without +1 Condition (the sea pulls you back).
+     Crew: loyalty checks each port. Smart ones leave.
+
+9:   DAMNED — One last voyage.
+     The Flying Dutchman appears. Davy Jones offers: serve or be taken.
+     Every storm targets YOUR ship. Every calm hides something below.
+     Crew will mutiny at next port unless fanatically loyal.
+
+10:  TAKEN — Davy Jones' Locker.
+     The sea collects. Ship drags beneath waves, captain goes down with it.
+     Character becomes NPC — ghost captain, Dutchman crew, or sea entity.
+     The crew may survive. You don't.
+```
+
+### Debt and Existing Systems
+
+```
+CURSES = manifestations of Debt.
+  Gaining a Curse = Debt symptom, not separate system.
+  Curse severity scales with Debt level.
+  At Debt 0-2: Curses are Minor.
+  At Debt 3-5: Curses escalate to Major.
+  At Debt 6+: Curses become Damning.
+
+INFAMY = who hunts you among the living.
+DEBT = who hunts you among the dead.
+  High Infamy + High Debt = hunted by everyone, everywhere.
+
+CREW feels captain's Debt:
+  Debt 3+: −1 crew morale (permanent while at this level)
+  Debt 5+: −2 crew morale, officers question privately
+  Debt 7+: crew mutiny risk each port, supernatural events affect everyone
+
+SHIP suffers captain's Debt:
+  Debt 5+: Ship repairs cost double (wood rots faster, sails tear)
+  Debt 7+: Ship gains unwanted Ship Trait (Cursed Hull, Ghost Rigging — GM picks)
+```
+
+---
+
+## THE VOYAGE CYCLE
+
+Structure for each adventure at sea.
+
+```
+=== PORT ===
+• Recruit crew, repair ship, fence goods
+• Gather rumors (contract / treasure / quest)
+• Debt consequences manifest here (sea witches sense you, ghosts in harbor)
+• Crew shore leave (required after 3+ months or morale drops)
+• CHOICE: what job to take, who to trust, what to buy
+
+=== VOYAGE ===
+• Sea travel (roll Sea Voyage Events table)
+• Navigation challenges, weather, supernatural encounters
+• Debt pressure: supernatural events scale with captain's Debt
+• Crew management: morale, food, discipline
+• COST: time, supplies, Debt events
+
+=== HUNT / BATTLE ===
+• Naval combat, boarding, monster hunting, treasure diving
+• The core action of the adventure
+• Where Debt grows fastest (supernatural aid, desperate bargains)
+• RISK: crew lives, ship damage, Debt
+
+=== PRIZE ===
+• Loot, treasure, salvage, knowledge
+• Divide shares (Code enforcement)
+• Cursed items? Supernatural cargo? → Debt check
+• TEMPTATION: take the cursed gold or leave it?
+
+=== PORT (return) ===
+• Sell prize, spend coin, tell tales
+• Consequences of choices catch up
+• Debt shifts finalized
+• New rumors, new contracts, new debts
+• Crew who survived tell stories. Infamy adjusts.
+```
+
+Each phase has its own pressure. Port = social/political. Voyage = survival/supernatural. Hunt = combat/risk. Prize = temptation/greed. The cycle repeats, and the Debt grows.
+
+---
+
 ## CORE MECHANICS
 
 ### INFAMY (0-10)
 
-Track your reputation across the seas.
+Track your reputation across the seas. Infamy = who hunts you among the living. Debt = who hunts you among the dead.
 
 **RAISE (+1):**
 - Capture merchant vessel (+2 if treasure ship)
@@ -249,6 +402,8 @@ Every crew signs articles. Breaking them has consequences.
 - CORSAIR COMPACT: Legal in allied ports, 50% to crown
 
 ### CURSES
+
+Curses are how The Debt manifests. They are symptoms, not a separate system. Curse severity scales with Debt level (see The Debt thresholds).
 
 **HOW YOU GET CURSED:**
 - Break oath sworn on the sea (WIS DC 12)
@@ -528,7 +683,7 @@ Prevention: Double pay, execute ringleader (risky), maroon troublemakers
 - Appease: 500g+ overboard OR bound enemy captain
 
 **SIRENS** (groups of 3-7)
-- HP 8 each, Song forces SPIRIT save or move toward them
+- HP 8 each, Song forces WIS save or move toward them
 - Range: 500 yards, affects all who hear
 - Weakness: Wax in ears, women rarely affected
 
@@ -552,7 +707,7 @@ Bargains available:
 **FLYING DUTCHMAN**
 - Hull 25 (physical damage passes through), Speed 6 (ignores wind)
 - Forces ships to take ghost "passengers"
-- Survive: Sail through (SPIRIT DC 12+), offer willing host
+- Survive: Sail through (WIS DC 12+), offer willing host
 
 **ZOMBIES**
 - HP 12, Attack d6+2, mindless
@@ -625,7 +780,7 @@ Maximum 3 rituals known.
 **ZOMBIE RAISING** (Major)
 - Components: Fresh corpse, rare herbs, hours of ritual
 - Cost: Major sacrifice
-- Effect: One obedient zombie. Max = SPIRIT score
+- Effect: One obedient zombie. Max = WIS score
 
 **LOA SUMMONING** (Major)
 - Components: Specific to each Loa
@@ -871,25 +1026,12 @@ Maximum 3 rituals known.
 
 ## CAMPAIGN TYPES
 
-### TREASURE HUNT
-- Structure: Clue → Expedition → Rivals → Discovery → Escape
-- Hook: Map fragment, dying confession, ancient tome
-- Targets: Aztec gold, Atlantean vault, Kraken's cache
-
-### REVENGE
-- Structure: Wound → Investigation → Pursuit → Reckoning
-- Hook: Betrayal, murdered loved one, false accusation
-- Weight: Each step darkens the soul
-
-### EMPIRE BUILDING
-- Structure: Acquisition → Expansion → Consolidation → Legacy
-- Tiers: Raider (1 ship) → Captain (2-3) → Commodore (fleet) → Pirate Lord
-- Threats per tier scale with power
-
-### FREEDOM FIGHT
-- Structure: Oppression → Rebellion → Alliance → War → Liberation
-- Hook: Escaped slave, dispossessed colonist, revolutionary
-- Allies: Maroon communities, sympathetic merchants
+| Type | Structure | Hooks |
+|------|-----------|-------|
+| **Treasure Hunt** | Clue → Expedition → Rivals → Discovery → Escape | Map fragment, dying confession, ancient tome. Targets: Aztec gold, Atlantean vault, Kraken's cache |
+| **Revenge** | Wound → Investigation → Pursuit → Reckoning | Betrayal, murdered loved one, false accusation. Each step darkens the soul |
+| **Empire Building** | Acquisition → Expansion → Consolidation → Legacy | Raider (1 ship) → Captain (2-3) → Commodore (fleet) → Pirate Lord. Threats scale with power |
+| **Freedom Fight** | Oppression → Rebellion → Alliance → War → Liberation | Escaped slave, dispossessed colonist, revolutionary. Allies: Maroon communities, sympathetic merchants |
 
 ---
 
@@ -1009,4 +1151,23 @@ These historical pirates, governors, and figures may appear with supernatural tw
 
 ---
 
-*"Take what you can. Give nothing back."*
+## QUICK REFERENCE
+
+```
+THE DEBT (0-10): What you owe the sea. Personal.
+  0 Free → 3 Owed → 5 Hunted → 7 Claimed → 10 Taken
+  Grows: supernatural aid, cursed treasure, broken oaths, crew deaths
+  Shrinks: sacrifice, kept oaths, returned treasure (always costs more)
+  Crew suffers captain's Debt. Ship rots with captain's Debt.
+
+VOYAGE CYCLE: Port → Voyage → Hunt/Battle → Prize → Port
+INFAMY (0-10): Who hunts you among the living.
+DEBT (0-10): Who hunts you among the dead.
+CURSES: Manifestations of Debt. Severity scales with Debt level.
+CREW MORALE: Mutinous → Grumbling → Steady → Loyal → Fanatical
+PIRATE CODE: Articles signed. Break them = consequences.
+```
+
+---
+
+*"Take what you can. Give nothing back." — But the sea always takes back more.*
