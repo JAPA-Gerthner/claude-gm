@@ -12,7 +12,16 @@
       "Bash(grep:*)",
       "Bash(git checkout:*)",
       "Bash(mkdir:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(gh auth:*)",
+      "Bash(python3:*)",
+      "Bash(flatpak list:*)",
+      "Bash(snap list:*)",
+      "Bash(pacman -Qs whats)",
+      "Read(//usr/share/applications/**)",
+      "Read(//opt/**)",
+      "Read(//home/gerthner/.local/share/applications/**)",
+      "Bash(pgrep -af [Ww]hats)"
     ]
   }
 }

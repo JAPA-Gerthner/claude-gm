@@ -8,8 +8,8 @@ Entry point for developing and maintaining rulesets in gm-skill.
 
 | Metric | Target | Notes |
 |--------|--------|-------|
-| Lines | 1000-1100 | Optimal depth without bloat |
-| Tokens | ~6-8k | ~3-4% of 200k context |
+| Lines | 1500-2000 | Full depth, fits 1M context easily |
+| Tokens | ~10-14k | ~1-1.5% of 1M context |
 | Language | English | Storage only, play in Russian |
 
 ---
@@ -165,7 +165,7 @@ Before marking ruleset complete:
 | sanguo.md | 1047 | **COMPLETE** | Full coverage |
 | battletech-commander.md | 1060 | **COMPLETE** | Full coverage |
 | vtm.md | 1410 | **COMPLETE** | Beast Voice (always active), Social Telegraph, Arcade Disciplines, Night Cycle, Core + Regional clans, 8 generators |
-| warhammer-fantasy.md | 1133 | **COMPLETE** | Full pipeline: combat, NPCs, Fate/Fear/Insanity |
+| warhammer-fantasy.md | 1916 | **COMPLETE** | IRON LAW rewrite: Three Forces, Condition/HP, Push, Fate/Fortune, Drift |
 | warhammer-40k.md | 1064 | **COMPLETE** | Full coverage |
 | cursed-seas.md | 1012 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
 | witcher.md | 1125 | **COMPLETE** | Full pipeline: Sapkowski+CDPR, merged NPC templates |
@@ -249,7 +249,7 @@ Verdict: Ready / Needs work
 | 2026-02-27 | cyberpunk-red.md | Full pipeline: NEW 1064 lines, R. Talsorian 2020/RED/2077, 10 roles, Quick-Jack netrunning, humanity/cyberpsychosis |
 | 2026-02-27 | witcher.md | Full pipeline: 1044→1125, merged witcher-npcs.md, detailed school templates, canon witchers, contract givers |
 | 2026-02-26 | cursed-seas.md | Full pipeline: NEW 1012 lines, Golden Age of Piracy fantasy, ships, naval combat, bestiary, voodoo |
-| 2025-02-26 | warhammer-fantasy.md | Full pipeline: 707→1133, added combat/weapons/armor, Fate/Fortune/Fear/Insanity, NPCs, Halflings |
+| 2026-03-26 | warhammer-fantasy.md | IRON LAW full rewrite: 1133→1916, Three Forces (Order/Corruption/Decay), Condition/HP bridge, Push (Force/Body), Faction Drift, Fate/Fortune split, Marks/Disorders |
 | 2025-02-26 | sengoku.md | Full pipeline: 708→1103, fixed stats (1-5 scale), added Date/Mori clans, balanced stances, fixed exploits |
 | 2024-XX-XX | vtm.md | Expanded 418→1099, added mythology, sects, mechanics |
 | 2024-XX-XX | warhammer-40k.md | Created 1064 lines, full Imperial/Chaos/Xenos |
