@@ -138,6 +138,9 @@ python scripts/combat.py --attacks "Enemy:STR3:AC13" --target-htk
 # Initiative
 python scripts/combat.py --initiative "Kenji:DEX2, Bandit1:DEX2, Boss:DEX4"
 
+# Heroism / SILVER TONGUE: player attacks with adv, enemy attacks with dis
+python scripts/combat.py --attacks "Kenji:STR3:AC12:adv, Enemy:STR3:AC13:dis"
+
 # Secret combat (hidden from player)
 python scripts/combat.py --secret --attacks "..."
 ```
