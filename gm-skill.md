@@ -109,14 +109,60 @@ PACING:
 
 ## RANDOM GENERATION (MANDATORY)
 
-**Regular rolls (visible to player):**
+Use scripts in `scripts/` folder. Prefer scripts over inline python.
+
+**Dice roller** (`scripts/roll.py`):
 ```bash
-python -c "import random; print(random.randint(1, 20))"  # d20
-python -c "import random; print(random.randint(1, 6))"   # d6/d8/d10/d12
-python -c "import random; print([random.randint(1, 20) for _ in range(2)])"  # 2d20
+python scripts/roll.py d20                       # single d20
+python scripts/roll.py d20 --mod 3 --dc 12       # d20+3 vs DC 12 (auto margin + outcome)
+python scripts/roll.py d20 --adv --mod 4 --dc 14 # advantage
+python scripts/roll.py d20 --dis                  # disadvantage
+python scripts/roll.py 3d20                       # 3 separate d20s
+python scripts/roll.py 2d8                        # 2d8 summed
+python scripts/roll.py d30                        # d30 (Devil's Bargain)
+python scripts/roll.py --hard-to-kill             # CON 4 perk check (d20, 17+ = ignored)
+python scripts/roll.py d20 --secret               # hidden from player
 ```
 
-**Secret rolls (hidden from player):**
+**Combat resolver** (`scripts/combat.py`):
+```bash
+# Batch attacks — resolves rolls, margins, outcomes, damage in one call
+python scripts/combat.py --attacks "Kenji:STR3:AC12, Bandit:DEX2:AC13" --damage d8
+
+# Attack flags: adv, dis, atk+N (attack bonus), dmg+N (damage bonus)
+python scripts/combat.py --attacks "Kenji:STR3:AC12:atk+2:dmg+2, Ally:STR2:AC12:atk+2"
+
+# Target has HARD TO KILL perk — auto-rolls d20 per hit
+python scripts/combat.py --attacks "Enemy:STR3:AC13" --target-htk
+
+# Initiative
+python scripts/combat.py --initiative "Kenji:DEX2, Bandit1:DEX2, Boss:DEX4"
+
+# Secret combat (hidden from player)
+python scripts/combat.py --secret --attacks "..."
+```
+
+**NPC generator** (`scripts/npc.py`):
+```bash
+python scripts/npc.py                     # random NPC (name, honesty/courage/loyalty, motivation)
+python scripts/npc.py --samurai           # samurai clan surname
+python scripts/npc.py --ninja             # ninja code name
+python scripts/npc.py --gender female     # specify gender
+python scripts/npc.py --count 3           # batch generate
+python scripts/npc.py --secret            # hidden from player
+```
+
+**Item quality** (`scripts/roll.py --quality`):
+```bash
+python scripts/roll.py --quality          # d20 -> FLAWED/WORN/STANDARD/QUALITY/EXCEPTIONAL
+```
+
+**Inline python** — only for quick one-off rolls not covered by scripts:
+```bash
+python -c "import random; print(random.randint(1, 20))"
+```
+
+**Secret rolls** — use `--secret` flag on scripts, or inline:
 ```bash
 python -c "print('GM SECRETS - DO NOT EXPAND\n'*30); import random; print('Data:', random.randint(1,20))"
 ```
@@ -417,66 +463,105 @@ Scale: 1-5 (6+ supernatural)
 
 ## STAT THRESHOLDS
 
-High stats unlock powerful abilities. Level 5 = human peak. Level 8 = legendary/supernatural.
+High stats unlock abilities at 4/6/8/10. Fixed — no choices, reach threshold, get ability.
+All GM-offered abilities: GM proposes as option when narratively appropriate, player decides.
 
 ### STR (Strength)
 ```
-STR 5+: CRUSHING BLOW — On Partial or Success melee hit, roll d20.
-        On 15+: upgrade damage one tier.
-        (Partial → full damage, Success → Crit damage + effect)
+STR 4: BATTERING RAM — Charge into melee: +2 to attack and damage.
+       If target lighter than you, STR save or knocked down.
 
-STR 8+: TITAN'S BLOW — Once per combat, declare before rolling.
-        Partial+: maximum damage (no roll) + target CON save or stunned 1 turn.
-        Fail: deal half damage anyway (raw force).
-        Crit.Fail: half damage, but you're off-balance (enemy ADV next attack).
-        Witnesses: enemies must WIS save or become demoralized (-2 to attacks).
+STR 6: CRUSHING BLOW — On Partial/Success melee hit, roll d20. On 15+:
+       upgrade damage one tier. (Partial → full, Success → crit + effect)
+
+STR 8: CLEAVE — 1/combat. Attack all enemies in melee range
+       (one roll vs each AC).
+
+STR 10: EXECUTION — Bonus action. Target below 25% HP: instant kill,
+        no roll. No limit — if they're dying, they're dead.
 ```
 
 ### DEX (Dexterity)
 ```
-DEX 5+: UNTOUCHABLE — Once per combat, completely negate one attack you can see.
-        Plus passive EVASION on AoE/traps: Partial+ = 0 damage, Fail = half, Crit.Fail = full.
+DEX 4: STEADY HANDS — +1 accuracy on all attacks (passive).
 
-DEX 8+: FLURRY — two attacks per turn (each with separate roll). Supernatural speed.
+DEX 6: RIPOSTE — When enemy misses melee by 5+, free counter-attack
+       (reaction).
+
+DEX 8: PERFECT DODGE — 1/combat. For one round: all defensive rolls
+       made twice, take better result.
+
+DEX 10: DOUBLE TAKE — 1/combat. Activate as bonus action. This turn
+        and next turn happen back-to-back — two full turns, no enemy
+        turns between.
 ```
 
 ### CON (Constitution)
 ```
-CON 5+: IRON BODY — Auto-resist first poison/disease per day.
-        At 0 HP: auto-stabilize (no death saves needed unless hit again).
+CON 4: HARD TO KILL — Passive. When you take damage, roll d20.
+       On 17+: damage ignored completely.
 
-CON 8+: UNKILLABLE — Don't die until HP reaches -CON×5.
-        Keep fighting while bleeding out. Death saves only begin when combat ends.
+CON 6: RELENTLESS — 1/combat. First time dropping to 0 HP, stay at
+       1 HP instead.
+
+CON 8: UNKILLABLE — Don't die until HP reaches -CON×5. Fight while
+       bleeding out. Death saves only begin when combat ends.
+
+CON 10: LAST STAND — Passive. Below 25% HP: +2 to all rolls.
 ```
 
 ### INT (Intelligence)
 ```
-INT 5+: TACTICAL INSIGHT — Once per scene, ask GM one tactical detail
-        (enemy weakness, hidden path, true intentions, trap mechanism).
+INT 4: CUNNING INSIGHT — 1/scene. Bonus action. +4 to any single roll.
 
-INT 8+: MASTERMIND — Once per day, declare "I planned for this."
-        Retroactively establish one reasonable preparation (bribed guard, hidden weapon,
-        planted evidence). Must fit character's resources and access.
+INT 6: KEEN MIND — 1/scene. Learn hidden details about NPC, item, or
+       location. GM generates additional content (secret rooms, unique
+       properties, quest hooks, hidden motives). Generated content MUST
+       tie into existing clocks or create new ones.
+
+INT 8: GRAND STRATEGIST — Passive. When any clock ticks against you,
+       roll d20. On 11+: tick prevented. No stat modifiers — flat 50/50.
+
+INT 10: MASTERMIND — 1/chapter. Shift any one clock one tick in the
+        direction you choose.
 ```
 
 ### WIS (Wisdom)
 ```
-WIS 5+: DANGER SENSE — Cannot be surprised.
-        Advantage on saves vs traps, ambushes, illusions.
+WIS 4: TRICKSTER — 1/scene. GM may offer: reroll all response options
+       into impulsive, chaotic, gut-driven actions (flee, steal, kiss,
+       charge past enemies, demand money). Intuition over analysis.
 
-WIS 8+: PROPHECY — Once per session, ask GM "What happens if we [action]?"
-        Receive truthful answer (may be cryptic).
-        Plus TRUE SIGHT: auto-detect lies, illusions, disguises, shapeshifters.
+WIS 6: DEVIL'S LUCK — One response option always includes a Devil's
+       Bargain. When bargain triggers, roll d30 (no modifiers):
+       1-10: negative does not trigger. 11-30: negative as normal.
+
+WIS 8: FORTUNE'S TURN — Two options always include Devil's Bargains.
+       Roll d30 (no modifiers): 1-10: negative does not trigger.
+       11-20: negative becomes positive. 21-30: negative as normal.
+
+WIS 10: THREAD OF FATE — 1/chapter. Rewind time. Everything that
+        happened was a premonition, not reality. Return to last stable
+        moment. Character and GM retain full memory — prepare
+        differently, avoid dangers, exploit foreknowledge.
 ```
 
 ### CHA (Charisma)
 ```
-CHA 5+: COMMANDING PRESENCE — Once per scene, reroll failed social check.
-        Allies in earshot: +2 to loyalty/crisis rolls.
+CHA 4: SILVER TONGUE — 1/scene. Heroism for social — all social rolls
+       this prompt doubled (roll twice, take best). GM offers when fits.
 
-CHA 8+: CULT OF PERSONALITY — Once per day, turn hostile NPC to neutral
-        OR neutral NPC to devoted ally. Not mind control — they genuinely BELIEVE.
-        Betraying them later has severe narrative consequences.
+CHA 6: OLD FRIENDS — 1/chapter. An NPC turns out to be an old
+       acquaintance who reacts positively. +2 to all rolls for scene.
+       GM introduces when narratively appropriate.
+
+CHA 8: PARLEY — 1/combat. Negotiate mid-fight. Group: some may switch
+       sides or leave. Solo: cease combat and talk. Roll d20, no
+       modifiers — on 11+: works. GM offers when viable.
+
+CHA 10: LEGEND'S VOICE — 1/chapter. Recruit hostile/neutral/known NPC.
+        Interacts with OLD FRIENDS and PARLEY — someone met through
+        those abilities can be permanently recruited.
 ```
 
 ---
@@ -556,7 +641,7 @@ GM attaches ONE complication:
 - **Position:** lose advantage, enemy +1 next action, −1 next related roll
 - **Resource:** minor equipment issue, lose consumable, temporary penalty until rest
 - **Social:** NPC suspicious, attitude −1 step, price/difficulty +1
-- **Pressure:** scene tension +1, ally neglect +1, faction clock +1
+- **Pressure:** situation escalates, ally neglect +1, faction clock +1
 - **Exposure:** someone noticed, rumor starts, traceable footprint
 
 ### Modifiers
@@ -586,7 +671,12 @@ Examples:
 
 ```
 Initiative: d20 + DEX
-Action + Bonus (if available) + Movement 30ft + Reaction
+
+Turn structure:
+  Action: main action (attack, use ability, interact with object)
+  Bonus: one quick action (activate ability, draw/sheathe weapon, command ally)
+  Movement: 30ft (narrative, not grid — only track when distance matters)
+  Reaction: one response to enemy action (counter-attack, dodge, block)
 
 Opportunity attack: leaving melee = enemy attacks with reaction
 (avoidable if exit via ability or spell)
@@ -748,40 +838,6 @@ NPCs: [who where]
 ===
 ```
 
-### TENSION METER
-
-Hidden pressure accumulator. Player doesn't see the number.
-
-**After each roll — GM rolls secretly:**
-
-| Outcome | Tension Δ |
-|---------|-----------|
-| Crit.Fail | +d6 |
-| Fail | +d4 |
-| Partial | d4−2 |
-| Success | −d3 |
-| Crit.Success | −d4 |
-
-**Reset events:**
-
-| Event | Tension Δ |
-|-------|-----------|
-| Long rest | d4−2 |
-| Scene resolved | −10 |
-| Chapter end | = 0 |
-
-**Thresholds:**
-
-| Tension | Level | GM Response |
-|---------|-------|-------------|
-| 0-14 | Calm | — |
-| 15-29 | Tense | May add complication |
-| 30-44 | Dangerous | Complication, may apply temporary condition |
-| 45-59 | Critical | Random (enemy clock +1) OR (ally clock −1), DC +2 |
-| 60+ | Major Consequences | Ambush / betrayal / major loss |
-
-Rewards playing to strengths. Punishes spamming checks in weak stats.
-
 ### TRAPS
 
 ```
@@ -825,7 +881,7 @@ If ready:
 ```
 LEVEL UP:
 Level +1
-Choose 2: +1 stat | new ability | new spell | +5 HP
+Choose 2: +1 stat | new ability | new spell | +10 HP
 
 NEW ABILITIES must use ABILITY format (see ABILITIES section):
   Trigger — when/how it activates
