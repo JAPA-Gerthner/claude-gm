@@ -163,7 +163,7 @@ Before marking ruleset complete:
 |---------|-------|--------|-------|
 | sengoku.md | 1103 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
 | sanguo.md | 1047 | **COMPLETE** | Full coverage |
-| battletech-commander.md | 1060 | **COMPLETE** | Full coverage |
+| battletech.md | 1801 | **COMPLETE** | Full rewrite: The Sync (mech-pilot bond 0-10), Honor (faction-specific 0-10 with Paradoxes), Heat Clock, 5 Houses + Clans, Solaris, Intrigue, 4 Campaign Frameworks, S-Tier |
 | vtm.md | 1410 | **COMPLETE** | Beast Voice (always active), Social Telegraph, Arcade Disciplines, Night Cycle, Core + Regional clans, 8 generators |
 | warhammer-fantasy.md | 1916 | **COMPLETE** | IRON LAW rewrite: Three Forces, Condition/HP, Push, Fate/Fortune, Drift |
 | warhammer-40k.md | 1064 | **COMPLETE** | Full coverage |
@@ -171,11 +171,9 @@ Before marking ruleset complete:
 | witcher.md | 1125 | **COMPLETE** | Full pipeline: Sapkowski+CDPR, merged NPC templates |
 | cyberpunk-red.md | 1064 | **COMPLETE** | Full pipeline: R. Talsorian 2020/RED/2077, 10 roles, netrunning, humanity |
 | shadowrun-lite.md | 1023 | **COMPLETE** | Full pipeline: 9 research + 3 review + polish |
-| frostpunk.md | 1134 | **COMPLETE** | Full pipeline: City as Entity, Temperature Clock, Hope/Discontent, Laws (Order/Faith), Two play modes |
 | blades-lite.md | 1115 | **COMPLETE** | Full pipeline: Crew/Score/Heat, Stress/Trauma, Doskvol, Factions, Occult |
 | deus-ex.md | 1075 | **COMPLETE** | Full pipeline: Paranoia System (Trust Clocks, Suspicion, Chaos Principle), Integration, Neuropozyne |
 | scp.md | 1187 | **COMPLETE** | Full pipeline: Usefulness/Liability, Processing Clock, O5 Council (13), Hume Levels, Anomaly Engagement |
-| cascade.md | 1502 | **COMPLETE** | Full pipeline: Cinematic Dieselpunk, Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles |
 | cthulhu.md | 1008 | **COMPLETE** | Full pipeline: Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge anti-XP, 9 End States, 6 Roles |
 | stalker.md | 1092 | **COMPLETE** | Full pipeline: Emission/Zombification Clocks, Radiation tracking, 10 factions, Job Cycle, "Reach the Center" campaign |
 | star-wars.md | 1086 | **COMPLETE** | Full pipeline: Era selection, Force Alignment/Strain/Temptation, 5 Campaign Frameworks, GRIT system, Vehicle combat |
@@ -183,6 +181,7 @@ Before marking ruleset complete:
 | disco-elysium.md | 1149 | **COMPLETE** | Full pipeline: 24 skills-as-voices, 10 districts, Case/NPC/Evidence generators, Contacts, Campaign Frameworks, S-Tier |
 | persona.md | 1710 | **COMPLETE** | Arcana Loyalty System, 5 Clusters, Action Format [ARCANA, STAT], Ally Permadeath, Time Pressure, Shadow World Exploration, Velvet Room Hub, A-Tier |
 | runeterra.md | 1760 | **COMPLETE** | Full pipeline: Power Tier (Human/Hero/Legend), 15 Magic Traditions, Champion Encounters (Legendary Actions), Corruption Clocks, 13 Regions, A-Tier |
+| harry-potter.md | 1636 | **COMPLETE** | Full pipeline: The Descent (dark temptation 0-10), Bonds (love as mechanic), Unforgivable Stain, Houses, 4 Campaign Frameworks, S-Tier |
 
 ---
 
@@ -235,16 +234,17 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-07-27 | xianxia.md | Full pipeline: NEW 1903 lines, Cultivation (0-10 with tribulations at 3/6/9/10), Deviation (0-6 demonic corruption), Dao Heart (0-6 conviction), Karma, Five Elements cycles, 7 Paths, Sects, Jianghu Rules, Secret Realms, 4 Campaign Frameworks, S-Tier |
+| 2026-07-27 | battletech.md | Full rewrite: 1801 lines, The Sync (mech-pilot bond 0-10, shared HP, phantom pain, Ghost Sync), Honor (5 faction-specific codes with Paradoxes), Heat Clock, Weight Classes, Intrigue (Favor/Nemesis/Contracts/Marriage/HPG), 4 Campaign Frameworks, MRBC, Solaris VII, S-Tier |
+| 2026-07-27 | harry-potter.md | Full pipeline: NEW 1636 lines, The Descent (dark temptation 0-10, Stain mechanic), Bonds (love as power, rate-limited), 4 Houses (rebalanced), Unforgivable Curses, 7 Heritage options, 7 Roles, 4 Campaign Frameworks (School/Auror/Order/Beasts), 11 NPC templates, 11 random tables, 6 starter scenarios, S-Tier |
 | 2026-03-05 | vtm.md | Full rewrite: Beast Voice, Masquerade Heat, Arcade Disciplines, Night Cycle, Blood Memory, 6 global clans (Americas + Asia), 7 generators (Prince/Primogen Conflict/City Domain/NPC Kindred/Political Situation/Coterie), B-Tier → S-Tier |
 | 2026-03-05 | disco-elysium.md | Full pipeline: NEW 698 lines, 24 skills-as-inner-voices, Thought Cabinet / Ideology / Copotype interlock, Health/Morale dual tracks, Session Zero template, five-layer case structure, S-Tier |
 | 2026-03-05 | dark-souls.md | Full pipeline: NEW 898 lines, Telegraph System (GM describes tell before attack), Hollowing Track, Death Loop with Soul Echo, Stamina system, Phase bosses, Weapon upgrades/infusions, Status buildup, 7 Covenants, S-Tier |
 | 2026-03-05 | star-wars.md | Full pipeline: NEW 1086 lines, Era selection, Force Alignment/Strain/Temptation, 5 Campaign Frameworks (Rebel/Smuggler/Bounty/Jedi/Mandalorian), GRIT system, 8 Roles, Vehicle combat with shields/boarding, S-Tier |
 | 2026-03-05 | stalker.md | Full pipeline: NEW 1092 lines, Emission/Zombification Clocks, Radiation tracking, 10 factions, 11 NPC templates, Job Cycle, "Reach the Center" 20-session campaign |
 | 2026-03-03 | cthulhu.md | Full pipeline: NEW 1008 lines, Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge, 9 End States, 6 Roles with stat arrays |
-| 2026-03-03 | cascade.md | Full pipeline: NEW 1502 lines, Cinematic Dieselpunk (replaces road-warrior concept), Adrenaline system, 4 crystal colors, chimera transformations, 7 regions, 6 Roles |
 | 2026-03-02 | scp.md | Full pipeline: NEW 1187 lines, Bureaucratic Horror, Usefulness/Liability, Processing Clock, O5 Council (13), Hume Levels, Anomaly Engagement, Starter Scenario |
 | 2026-03-02 | deus-ex.md | Full pipeline: NEW 1075 lines, Paranoia System (Trust Clocks, Suspicion, Chaos Principle), Integration/Neuropozyne, 8 NPC templates |
-| 2026-02-27 | frostpunk.md | Full pipeline: NEW 1134 lines, City as Entity, Temperature Clock, Hope/Discontent, Laws (Order/Faith), Two play modes, Individual Mode HP/AC |
 | 2026-02-27 | shadowrun-lite.md | Full pipeline: NEW 1023 lines, Magic+Cyber+Corps, Quick-Jack Matrix, Technomancers, Contacts, Vehicles |
 | 2026-02-27 | cyberpunk-red.md | Full pipeline: NEW 1064 lines, R. Talsorian 2020/RED/2077, 10 roles, Quick-Jack netrunning, humanity/cyberpsychosis |
 | 2026-02-27 | witcher.md | Full pipeline: 1044→1125, merged witcher-npcs.md, detailed school templates, canon witchers, contract givers |

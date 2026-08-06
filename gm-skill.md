@@ -397,6 +397,10 @@ Cost: [resource/cooldown/consequence]
 
 Abilities complement CLOCKS: clock = passive change over time, ability = active effect when triggered.
 
+### Activation Cost Rule
+
+**Declared = spent.** When player declares an ability, it is consumed regardless of whether the roll succeeds, fails, or the situation makes it unnecessary. No free retries. This applies to all limited-use abilities (1/scene, 1/combat, 1/chapter, 1/session). Passive abilities are always on and unaffected.
+
 ---
 
 ## SESSION START
@@ -531,9 +535,11 @@ INT 10: MASTERMIND — 1/chapter. Shift any one clock one tick in the
 
 ### WIS (Wisdom)
 ```
-WIS 4: TRICKSTER — 1/scene. GM may offer: reroll all response options
-       into impulsive, chaotic, gut-driven actions (flee, steal, kiss,
-       charge past enemies, demand money). Intuition over analysis.
+WIS 4: TRICKSTER — 1/scene. GM replaces ALL response options with
+       impulsive, chaotic, unhinged, no-brakes actions. The kind of choices
+       that make the table laugh or gasp. Steal, charge, romance, betray, bluff,
+       punch, be clown or daredevil. No safe options. No sensible options.
+       High-risk high-reward chaos generator. Intuition over analysis.
 
 WIS 6: DEVIL'S LUCK — One response option always includes a Devil's
        Bargain. When bargain triggers, roll d30 (no modifiers):
@@ -551,8 +557,7 @@ WIS 10: THREAD OF FATE — 1/chapter. Rewind time. Everything that
 
 ### CHA (Charisma)
 ```
-CHA 4: SILVER TONGUE — 1/scene. Heroism for social — all social rolls
-       this prompt doubled (roll twice, take best). GM offers when fits.
+CHA 4: SILVER TONGUE — 1/scene. Advantage for social (2d20 take best).
 
 CHA 6: OLD FRIENDS — 1/chapter. An NPC turns out to be an old
        acquaintance who reacts positively. +2 to all rolls for scene.
@@ -992,6 +997,8 @@ DON'T DO:
 - Internal monologues about feelings
 - Explain what character feels — show through behavior
 - Youth slang, modern expressions
+- META IN DIALOGUE: NPCs NEVER reference stats, DCs, modifiers, ability names,
+  or any game mechanics. They live in the world, not on a character sheet.
 
 RHYTHM:
 - Short sentences. Specifics.
@@ -1022,6 +1029,9 @@ N. [option]
   - "Bargain: [action] (but [complication])" — if GM offers
 
 Periodically: `HP: X/Y | AC: X | Condition | Resources | Time`
+If abilities are on cooldown — show in status: `⚡ ABILITY_NAME — cooldown until [next scene / next chapter / etc.]`
+If abilities are available again — show: `⚡ ABILITY_NAME — available`
+Only show abilities the character ACTUALLY HAS. Never list abilities they don't qualify for.
 
 ---
 
@@ -1054,12 +1064,15 @@ Player controls which possibility to choose.
 ## CHECKLIST
 
 ```
+[ ] NUMBERED OPTIONS AT THE END? (MANDATORY — never end without 4-10 numbered options)
 [ ] Time passed? What changed?
 [ ] Enemies/NPCs acting?
 [ ] Hidden information?
 [ ] Roll fair?
 [ ] Passive WIS vs trap?
 [ ] Ally/faction clocks ticking?
+[ ] Heroism earned or lost? (dangerous/disadvantageous roleplay = +, against character nature = -)
+[ ] Ability cooldowns shown in status line?
 ```
 
 ---

@@ -1,15 +1,14 @@
 # Rulesets Index
 
-battletech-commander — Mech mercenary company
+battletech — MechWarrior Feudal Drama (The Sync, Honor Codes, Great Houses, Clans, Solaris)
 blades-lite — Haunted Industrial Heists (Doskvol)
-cascade — Cinematic Dieselpunk (Post-Signal, Adrenaline)
 cthulhu — Cosmic Horror (Three Axes, Deception Budget)
 cursed-seas — Golden Age of Piracy (fantasy)
 cyberpunk-red — Dark Future (R. Talsorian 2020/RED/2077)
 dark-souls — Undead Curse and Pattern Mastery (DS1/DS2/DS3)
 deus-ex — Conspiracy Thriller (Paranoia, Augmentation)
 disco-elysium — Skills as Inner Voices (Thought Cabinet, Ideology)
-frostpunk — Frozen Steampunk Survival (City as Entity)
+harry-potter — Wizarding World (The Descent, Bonds, Houses, Unforgivables, Love as Power)
 persona — School Life meets Shadow World (Arcana Loyalty, Time Pressure, Ally Death)
 runeterra — League of Legends (Power Tier, 15 Magic Traditions, Champion Encounters)
 sanguo — Three Kingdoms China (virtue, strategy)
@@ -22,3 +21,4 @@ vtm — Vampire: The Masquerade (Beast Voice, Night Cycle, Arcade Disciplines, G
 warhammer-40k — Grimdark far future (Imperium, Chaos, Xenos)
 warhammer-fantasy — IRON LAW: Old World (Three Forces, Condition, Push, Drift)
 witcher — Monster Hunters (Sapkowski + CDPR)
+xianxia — Path of Immortality (Cultivation 0-10, Deviation, Dao Heart, Tribulations, Five Elements)
