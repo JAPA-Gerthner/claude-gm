@@ -24,11 +24,9 @@ gm-skill/
 │   ├── witcher.md           # Monster Hunters (Sapkowski + CDPR)
 │   ├── cyberpunk-red.md     # Dark Future (R. Talsorian 2020/RED/2077)
 │   ├── shadowrun-lite.md    # Magic + Cyber + Corps (Simplified Shadowrun)
-│   ├── frostpunk.md         # Frozen Steampunk Survival (City as Entity)
 │   ├── blades-lite.md       # Haunted Industrial Heists (Doskvol)
 │   ├── deus-ex.md           # Conspiracy Thriller (Paranoia, Augmentation)
 │   ├── scp.md               # Bureaucratic Horror (Foundation, Containment)
-│   ├── cascade.md           # Cinematic Dieselpunk (Post-Signal, Adrenaline)
 │   ├── cthulhu.md           # Cosmic Horror (Three Axes, Deception Budget)
 │   ├── disco-elysium.md     # Skills as Inner Voices (Thought Cabinet, Ideology)
 │   ├── persona.md           # School Life meets Shadow World (Arcana Loyalty, Ally Death)
@@ -173,15 +171,6 @@ Complete setting packs — pick one at session start.
 - Run Cycle, Street Cred, Heat mechanics
 - For: shadowrunners, corporate espionage, magic + chrome
 
-**frostpunk.md** — Frozen Steampunk Survival:
-- Era 1886-1888, alternate volcanic winter
-- City as Entity (Population, Hope, Discontent, Resources)
-- Temperature Clock, Generator mechanics
-- Two play modes: City Management + Individual (Expeditions)
-- Laws system: Order vs Faith paths
-- Two-mode play: Zoom out (city) or zoom in (scout teams)
-- For: survival management, moral dilemmas, desperate choices
-
 **blades-lite.md** — Haunted Industrial Heists:
 - Doskvol: eternal night, ghosts, lightning barriers
 - Score Cycle: Freeplay → Score → Downtime
@@ -207,15 +196,6 @@ Complete setting packs — pick one at session start.
 - Processing Clock, internal politics, O5 Council
 - 6 Roles (D-Class, Researcher, Security, MTF, Site Staff, Ethics)
 - For: containment operations, internal investigations, procedural horror
-
-**cascade.md** — Cinematic Dieselpunk Action:
-- Era 2024, 35 years after The Signal killed electronics
-- Adrenaline system (action rewards momentum)
-- 4 crystal colors, zone mechanics, chimera transformations
-- 12 named corporations, stalker guilds, black markets
-- 7 regions (Americas, Japan, Africa, Europe, Russia, Arabia, Pacific)
-- 6 Roles (Driver, Stalker, Wrench, Gunhand, Face, Sawbones)
-- For: road warriors, artifact hunters, dieselpunk action cinema
 
 **cthulhu.md** — Cosmic Horror (Lovecraft):
 - Era 1920s, New England (Arkham, Innsmouth, Dunwich, Kingsport)
@@ -293,7 +273,9 @@ Quality rating based on: unique mechanics, central pressure, internal coherence,
 | Ruleset | Why |
 |---------|-----|
 | sengoku | Perfect honor/stance/giri integration. Duel system is benchmark. |
-| frostpunk | "City as character". Hope/Discontent, Laws, two play modes. Design philosophy. |
+| harry-potter | The Descent encodes "darkness seduces through efficacy, love redeems through sacrifice." Interlocking Bond/Patronus/Unforgivable systems. |
+| battletech | The Sync fuses pilot identity with mech combat while faction-specific honor codes deliver "Game of Thrones with giant robots" across political, martial, and personal dimensions. |
+| xianxia | Three-clock engine (Cultivation/Deviation/Dao Heart) transforms xianxia's core tensions into interlocking mechanical dials that generate emergent cultivation stories. |
 | scp | Usefulness vs Liability — bureaucracy as horror. Processing Clock. Genius. |
 | star-wars | Force Alignment + Temptation + Strain. Era selection. GRIT for non-Force balance. |
 | dark-souls | Telegraph System + Hollowing Track. Kingdom/Boss/Enemy generators. Five campaign frameworks. Every cycle unique. |
@@ -314,7 +296,6 @@ Quality rating based on: unique mechanics, central pressure, internal coherence,
 | shadowrun-lite | Magic+Matrix+cyber in parallel. Trace Clock. |
 | blades-lite | Stress/Trauma, Heat/Wanted, occult. Close to original. |
 | deus-ex | Trust Clocks, Integration/Neuropozyne. Too many weapon tables. |
-| cascade | GRIT + ADRENALINE cycle. Bloated auxiliary systems. |
 | cthulhu | Three hidden axes, Deception Budget, flowcharts. High GM load. |
 | persona | Arcana Loyalty + Clusters, Time Pressure, Ally permadeath. |
 | runeterra | Power Tier + 15 Magic Traditions + Champion Encounters. Comprehensive but no signature mechanic. |
