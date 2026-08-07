@@ -1723,13 +1723,6 @@ ESCALATION:
 1. Era? (Succession Wars recommended for first campaign)
 2. Campaign type? (House / Mercenary / Solaris / Clan)
 3. Faction? (determines honor code, enemies, culture)
-4. Solo warrior or lance command? (solo = this system. Lance = companions.)
-5. Tone? Dark (Jihad) / Standard (Succession Wars) / Heroic (Clan Invasion)
-6. Politics: Central / Background / Minimal?
-7. Romance/Marriage mechanics: Include / Exclude?
-8. Mech destruction: Frequent (hardcore) / Rare (dramatic) / Varies?
-9. Starting Sync: 0 (fresh pilot) / 3 (veteran) / 5+ (experienced, risky)
-10. Nemesis: Start with one or develop in play?
 ```
 
 ---
