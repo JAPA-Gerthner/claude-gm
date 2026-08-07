@@ -56,25 +56,29 @@ OPTION FORMAT:
 [MODIFIERS] Action text
 
 All modifiers in one bracket, comma-separated:
-- STAT (required if roll needed): STR, DEX, CON, INT, WIS, CHA
-- STAT/STAT: multi-stage roll (first then second)
+- STAT DC (required if roll needed): stat + difficulty number
+- STAT/STAT DC: multi-stage roll (first then second)
 - ADV / DIS: advantage / disadvantage
 - +effect: positive modifier (skill, ability, terrain, etc.)
 - -effect: negative modifier (wound, condition, etc.)
 - Heroism: uses heroism point
 - Bargain: X: devil's bargain with complication X
 
+DC is set by SITUATION, not by player's modifiers. Decide DC BEFORE
+considering what abilities the player might stack. Show DC in the option
+so it's locked — no retroactive adjustment.
+
 DON'T state base stats as modifiers (e.g. "-CHA 1") — player sees their sheet.
 
 EXAMPLES:
 1. [-] Approach, ask who they are
-2. [WIS] Examine the street — ambush signs?
-3. [WIS/INT] Look around, recall what you know
-4. [CHA, DIS, -wounded] Intimidate despite bleeding
-5. [DEX, ADV, +surprise] Strike from hiding
-6. [STR, +charge, +downhill] Rush them with momentum
-7. [CHA, Heroism] Rally the troops — all or nothing
-8. [DEX, Bargain: weapon damaged] Parry the blow
+2. [WIS 12] Examine the street — ambush signs?
+3. [WIS/INT 14] Look around, recall what you know
+4. [CHA 16, DIS, -wounded] Intimidate despite bleeding
+5. [DEX 12, ADV, +surprise] Strike from hiding
+6. [STR 10, +charge, +downhill] Rush them with momentum
+7. [CHA 16, Heroism] Rally the troops — all or nothing
+8. [DEX 14, Bargain: weapon damaged] Parry the blow
 
 NPCs AREN'T FRIENDS:
 - Everyone has their own agenda, don't help for free
@@ -897,12 +901,15 @@ LEVEL UP:
 Level +1
 Choose 2: +1 stat | new ability | new spell | +10 HP
 
-NEW ABILITIES must use ABILITY format (see ABILITIES section):
-  Trigger — when/how it activates
-  Effect — what it does mechanically (numbers, rolls, DCs)
-  Cost — resource, cooldown, or consequence
-  No fluff-only abilities. If it doesn't have mechanical effect, it's not an ability.
-Abilities fit character: lore, class, roleplay, in-game actions.
+NEW ABILITIES — GM generates 3 options based on chapter events:
+  - Derive from what the character DID, not what they wish they could do
+  - Tied to specific moments: a tactic that worked, a skill pushed to the limit,
+    a lesson learned the hard way, a bond forged under pressure
+  - No fluff-only abilities. If it doesn't have mechanical effect, it's not an ability.
+  - Player picks one (or none, choosing +1 stat or +10 HP instead)
+  - FORMAT: use stat threshold abilities as reference (see STAT THRESHOLDS).
+    Keep it simple: trigger + effect + cooldown (1/scene, 1/combat, 1/chapter).
+    Passive abilities are always on. No complex preconditions or multi-step costs.
 
 ALLY FATES:
 Check each ally's clock:
@@ -917,6 +924,9 @@ PLAYER DECIDES:
 4. Choose next mission / arc
 
 Those leaving on good terms — may meet later.
+
+AFTER LEVEL UP: show full character sheet (/rp:sheet format) with all
+changes applied — stats, abilities, HP, inventory, clocks, companions, position.
 ```
 
 ---
