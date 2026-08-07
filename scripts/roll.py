@@ -14,6 +14,9 @@ Usage:
   python roll.py d30                    # d30 for Devil's Bargain etc.
   python roll.py --hard-to-kill         # d20, 17+ = "IGNORED"
   python roll.py --quality              # item quality roll (d20 -> tier)
+  python roll.py d20 --volatility 2 --mod 3 --dc 14  # ★★: d20+3 + random(-2..+2) vs DC 14
+  python roll.py d20 --trickster --mod 3 --dc 12     # trickster: d20+3 + random(-2..+2) vs DC 12
+  python roll.py d20 --volatility 3 --trickster --mod 4 --dc 16  # stacked: random(-5..+5)!
 """
 
 import random
@@ -67,6 +70,8 @@ def main():
 
     mod = 0
     dc = None
+    volatility = 0
+    trickster = "--trickster" in args
 
     clean_args = []
     i = 0
@@ -77,14 +82,42 @@ def main():
         elif args[i] == "--dc" and i + 1 < len(args):
             dc = int(args[i + 1])
             i += 2
+        elif args[i] in ("--volatility", "--stunt") and i + 1 < len(args):
+            volatility = int(args[i + 1])
+            i += 2
         elif args[i].startswith("--"):
             i += 1
         else:
             clean_args.append(args[i])
             i += 1
 
+    chaos_range = volatility + (2 if trickster else 0)
+    vol_mod = 0
+    trick_mod = 0
+    if volatility:
+        vol_mod = random.randint(-volatility, volatility)
+    if trickster:
+        trick_mod = random.randint(-2, 2)
+    chaos_total = vol_mod + trick_mod
+    mod += chaos_total
+
     if secret:
         print("GM SECRETS - DO NOT EXPAND\n" * 5)
+
+    if volatility or trickster:
+        parts = []
+        if volatility:
+            stars = "★" * volatility
+            sign = f"+{vol_mod}" if vol_mod >= 0 else str(vol_mod)
+            parts.append(f"{stars} {sign}")
+        if trickster:
+            sign = f"+{trick_mod}" if trick_mod >= 0 else str(trick_mod)
+            parts.append(f"TRICKSTER {sign}")
+        total_sign = f"+{chaos_total}" if chaos_total >= 0 else str(chaos_total)
+        label = " + ".join(parts)
+        if volatility and trickster:
+            label += f" = {total_sign}"
+        print(f"VOLATILITY: {label}")
 
     if htk:
         roll = random.randint(1, 20)

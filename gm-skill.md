@@ -121,6 +121,9 @@ python scripts/roll.py 3d20                       # 3 separate d20s
 python scripts/roll.py 2d8                        # 2d8 summed
 python scripts/roll.py d30                        # d30 (Devil's Bargain)
 python scripts/roll.py --hard-to-kill             # CON 4 perk check (d20, 17+ = ignored)
+python scripts/roll.py d20 --trickster --mod 3 --dc 12  # WIS 4 perk: +random(-2..+2)
+python scripts/roll.py d20 --volatility 2 --mod 3 --dc 14  # ruleset volatility ★★: +random(-2..+2)
+python scripts/roll.py d20 --volatility 3 --trickster --mod 4 --dc 16  # stacked: ±5 chaos
 python scripts/roll.py d20 --secret               # hidden from player
 ```
 
@@ -473,6 +476,10 @@ Scale: 1-5 (6+ supernatural)
 High stats unlock abilities at 4/6/8/10. Fixed — no choices, reach threshold, get ability.
 All GM-offered abilities: GM proposes as option when narratively appropriate, player decides.
 
+**Ability chaining:** abilities can trigger other abilities within the same action.
+Examples: BATTERING RAM hit → CRUSHING BLOW check → kill → CLEAVE.
+EXECUTION kill → CLEAVE. Each ability resolves once per chain maximum.
+
 ### STR (Strength)
 ```
 STR 4: BATTERING RAM — Charge into melee: +2 to attack and damage.
@@ -481,8 +488,8 @@ STR 4: BATTERING RAM — Charge into melee: +2 to attack and damage.
 STR 6: CRUSHING BLOW — On Partial/Success melee hit, roll d20. On 15+:
        upgrade damage one tier. (Partial → full, Success → crit + effect)
 
-STR 8: CLEAVE — 1/combat. Attack all enemies in melee range
-       (one roll vs each AC).
+STR 8: CLEAVE — On kill, attack all other enemies in melee range
+       (one roll vs each AC). Max 1/action (cleave cannot chain cleave).
 
 STR 10: EXECUTION — Bonus action. Target below 25% HP: instant kill,
         no roll. No limit — if they're dying, they're dead.
@@ -498,9 +505,9 @@ DEX 6: RIPOSTE — When enemy misses melee by 5+, free counter-attack
 DEX 8: PERFECT DODGE — 1/combat. For one round: all defensive rolls
        made twice, take better result.
 
-DEX 10: DOUBLE TAKE — 1/combat. Activate as bonus action. This turn
-        and next turn happen back-to-back — two full turns, no enemy
-        turns between.
+DEX 10: DOUBLE TAKE — 1/combat. Bonus action. Take two full turns
+        back-to-back. Enemies CANNOT act, react, or use abilities
+        between them — time freezes for everyone else.
 ```
 
 ### CON (Constitution)
@@ -535,11 +542,10 @@ INT 10: MASTERMIND — 1/chapter. Shift any one clock one tick in the
 
 ### WIS (Wisdom)
 ```
-WIS 4: TRICKSTER — 1/scene. GM replaces ALL response options with
-       impulsive, chaotic, unhinged, no-brakes actions. The kind of choices
-       that make the table laugh or gasp. Steal, charge, romance, betray, bluff,
-       punch, be clown or daredevil. No safe options. No sensible options.
-       High-risk high-reward chaos generator. Intuition over analysis.
+WIS 4: TRICKSTER — Passive. GM adds 2 reckless options to every set —
+       impulsive, aggressive, no safe exit. Rolled with --trickster flag
+       (random -2..+2 chaos modifier). Following them in danger is an
+       extra path to Heroism.
 
 WIS 6: DEVIL'S LUCK — One response option always includes a Devil's
        Bargain. When bargain triggers, roll d30 (no modifiers):
