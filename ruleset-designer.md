@@ -182,6 +182,8 @@ Before marking ruleset complete:
 | persona.md | 1710 | **COMPLETE** | Arcana Loyalty System, 5 Clusters, Action Format [ARCANA, STAT], Ally Permadeath, Time Pressure, Shadow World Exploration, Velvet Room Hub, A-Tier |
 | runeterra.md | 1760 | **COMPLETE** | Full pipeline: Power Tier (Human/Hero/Legend), 15 Magic Traditions, Champion Encounters (Legendary Actions), Corruption Clocks, 13 Regions, A-Tier |
 | harry-potter.md | 1636 | **COMPLETE** | Full pipeline: The Descent (dark temptation 0-10), Bonds (love as mechanic), Unforgivable Stain, Houses, 4 Campaign Frameworks, S-Tier |
+| deadlands.md | 2073 | **COMPLETE** | Full pipeline: The Deal (Faustian tension), Fear Level (0-6 regional), Dominion (Harrowed), 5 Arcane Backgrounds (Huckster/Blessed/Harrowed/Mad Scientist/Shaman), Showdowns, Grit, 4 Campaign Frameworks, S-Tier |
+| exalted.md | 1952 | **COMPLETE** | Full pipeline: Stunt/Mote/Limit triangle, Essence (1-10), Great Curse (Limit 0-10 with Virtue Flaws), 6 Exalt Types (Solar/Lunar/DB/Sidereal/Abyssal/Infernal), Charms by stat, 3 Sorcery circles, Martial Arts styles, Anima Banner, 5 Campaign Frameworks, S-Tier |
 
 ---
 
@@ -234,6 +236,8 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-08-07 | exalted.md | Full pipeline: NEW 1952 lines, Stunt/Mote/Limit triangle (audacity->power->madness), Essence (1-10 with stat caps, power gaps, E10 capstone), Great Curse (Limit 0-10, Virtue Flaws, Limit Break), 6 Exalt Types (Solar/Lunar/Dragon-Blooded/Sidereal/Abyssal/Infernal), Charms by stat with Charm creation template, 3 Sorcery circles, Martial Arts styles, Anima Banner (visibility cost), Mote Depletion (variable pool 6-14), Manses & Hearthstones, 5 Campaign Frameworks, 4 Starter Scenarios, S-Tier |
+| 2026-08-07 | deadlands.md | Full pipeline: NEW 2073 lines, The Deal (every power feeds Reckoners), Fear Level (0-6 regional clock with 6 thresholds), Dominion (Harrowed demon struggle 0-6), 5 Arcane Backgrounds (Huckster poker-to-d20 with Backlash clock, Blessed Faith clock, Harrowed undead powers, Mad Scientist Reliability/Malfunction, Shaman Guardian Spirit), Grit system, Western Showdown (Staredown/Draw/Aftermath), Reckoner Tax, 7 random tables, 4 Campaign Frameworks (Lawman/Drifter/Posse/Reckoning), 4 Starter Scenarios, S-Tier |
 | 2026-07-27 | xianxia.md | Full pipeline: NEW 1903 lines, Cultivation (0-10 with tribulations at 3/6/9/10), Deviation (0-6 demonic corruption), Dao Heart (0-6 conviction), Karma, Five Elements cycles, 7 Paths, Sects, Jianghu Rules, Secret Realms, 4 Campaign Frameworks, S-Tier |
 | 2026-07-27 | battletech.md | Full rewrite: 1801 lines, The Sync (mech-pilot bond 0-10, shared HP, phantom pain, Ghost Sync), Honor (5 faction-specific codes with Paradoxes), Heat Clock, Weight Classes, Intrigue (Favor/Nemesis/Contracts/Marriage/HPG), 4 Campaign Frameworks, MRBC, Solaris VII, S-Tier |
 | 2026-07-27 | harry-potter.md | Full pipeline: NEW 1636 lines, The Descent (dark temptation 0-10, Stain mechanic), Bonds (love as power, rate-limited), 4 Houses (rebalanced), Unforgivable Curses, 7 Heritage options, 7 Roles, 4 Campaign Frameworks (School/Auror/Order/Beasts), 11 NPC templates, 11 random tables, 6 starter scenarios, S-Tier |
