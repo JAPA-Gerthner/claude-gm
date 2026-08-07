@@ -8,50 +8,60 @@ Rules and commands for playing text-based RPG with Claude as Game Master.
 ## Structure
 
 ```
-gm-skill/
+claude-gm/
 ├── gm-skill.md              # Core GM rules
 ├── feedback-reviewer.md     # Feedback analysis with 5-agent panel
 ├── ruleset-designer.md      # Ruleset development pipeline
+├── scripts/
+│   ├── roll.py              # Dice roller (d20, adv/dis, DC, margin, stunt, quality)
+│   ├── combat.py            # Batch attack resolver (initiative, damage, HTK)
+│   └── npc.py               # NPC generator (honesty/courage/loyalty, motivation)
 ├── rulesets/
-│   ├── drafts/              # Work-in-progress rulesets
-│   ├── sengoku.md           # Warring States Japan (honor, stance combat)
-│   ├── sanguo.md            # Three Kingdoms China (virtue, strategy)
-│   ├── battletech-commander.md  # Mech mercenary company
+│   ├── INDEX.md             # One-line index of all rulesets
+│   ├── battletech.md        # MechWarrior Feudal Drama
+│   ├── blades-lite.md       # Haunted Industrial Heists
+│   ├── cthulhu.md           # Cosmic Horror
+│   ├── cursed-seas.md       # Golden Age of Piracy
+│   ├── cyberpunk-red.md     # Dark Future
+│   ├── dark-souls.md        # Undead Curse and Pattern Mastery
+│   ├── deadlands.md         # Horror-Western
+│   ├── deus-ex.md           # Conspiracy Thriller
+│   ├── disco-elysium.md     # Skills as Inner Voices
+│   ├── exalted.md           # Demigods Reborn
+│   ├── harry-potter.md      # Wizarding World
+│   ├── persona.md           # School Life meets Shadow World
+│   ├── runeterra.md         # League of Legends
+│   ├── sanguo.md            # Three Kingdoms China
+│   ├── scp.md               # Bureaucratic Horror
+│   ├── sengoku.md           # Warring States Japan
+│   ├── shadowrun-lite.md    # Magic + Cyber + Corps
+│   ├── stalker.md           # Chernobyl Exclusion Zone
+│   ├── star-wars.md         # Galaxy Far Far Away
 │   ├── vtm.md               # Vampire: The Masquerade
-│   ├── warhammer-fantasy.md # IRON LAW: Old World (Three Forces, Push, Drift)
-│   ├── warhammer-40k.md     # Grimdark far future (Imperium, Chaos, Xenos)
-│   ├── cursed-seas.md       # Golden Age of Piracy (fantasy)
-│   ├── witcher.md           # Monster Hunters (Sapkowski + CDPR)
-│   ├── cyberpunk-red.md     # Dark Future (R. Talsorian 2020/RED/2077)
-│   ├── shadowrun-lite.md    # Magic + Cyber + Corps (Simplified Shadowrun)
-│   ├── blades-lite.md       # Haunted Industrial Heists (Doskvol)
-│   ├── deus-ex.md           # Conspiracy Thriller (Paranoia, Augmentation)
-│   ├── scp.md               # Bureaucratic Horror (Foundation, Containment)
-│   ├── cthulhu.md           # Cosmic Horror (Three Axes, Deception Budget)
-│   ├── disco-elysium.md     # Skills as Inner Voices (Thought Cabinet, Ideology)
-│   ├── persona.md           # School Life meets Shadow World (Arcana Loyalty, Ally Death)
-│   └── runeterra.md         # League of Legends (Power Tier, 15 Magic Traditions)
+│   ├── warhammer-40k.md     # Grimdark far future
+│   ├── warhammer-fantasy.md # IRON LAW: Old World
+│   ├── witcher.md           # Monster Hunters
+│   └── xianxia.md           # Path of Immortality
 ├── .claude/
 │   └── commands/
-│       ├── rp.md            # Main /rp command
-│       └── rp/              # Subcommands
-│           ├── sheet.md
-│           ├── npc.md
-│           ├── factions.md
-│           ├── chapter.md
-│           ├── recap.md
-│           ├── map.md
-│           ├── save.md
-│           ├── load.md
-│           ├── saves.md
-│           ├── save-delete.md
-│           ├── gm.md
-│           ├── fairplay.md
-│           ├── feedback.md
-│           └── help.md
-├── feedback/                # Player feedback storage
+│       └── rp/              # Slash commands
+│           ├── start.md     # /rp:start — begin session
+│           ├── sheet.md     # /rp:sheet
+│           ├── npc.md       # /rp:npc
+│           ├── factions.md  # /rp:factions
+│           ├── chapter.md   # /rp:chapter
+│           ├── recap.md     # /rp:recap
+│           ├── map.md       # /rp:map
+│           ├── save.md      # /rp:save
+│           ├── load.md      # /rp:load
+│           ├── saves.md     # /rp:saves
+│           ├── save-delete.md # /rp:save-delete
+│           ├── gm.md        # /rp:gm
+│           ├── fairplay.md  # /rp:fairplay
+│           ├── feedback.md  # /rp:feedback
+│           └── help.md      # /rp:help
 ├── saves/                   # Session saves
-└── README.md
+└── feedback/                # Player feedback storage
 ```
 
 ## Installation
@@ -66,7 +76,7 @@ Commands live in `.claude/commands/` — Claude Code picks them up automatically
 
 | Command | Description |
 |---------|-------------|
-| `/rp` | Start new session |
+| `/rp:start` | Start new session |
 | `/rp:sheet` | Character, inventory, party, position |
 | `/rp:npc` | All known NPCs |
 | `/rp:factions` | Factions and their clocks |
@@ -90,180 +100,172 @@ Commands live in `.claude/commands/` — Claude Code picks them up automatically
 - DC scale: 5 / 8 / 12 / 16 / 20 / 24 / 28+
 - Partial Success — fail-forward with complications
 - Unified CLOCKS (Companion, Faction, Item, Location, Threat)
-- TENSION METER — hidden pressure accumulator
+- Stat thresholds at 4/6/8/10 — fixed abilities per stat
+- Heroism — reward for consistent roleplay, doubles all rolls for one prompt
 - CUSTOM CONTENT — Buff+Debuff items, Quality Tiers
-- Combat, magic, social, heroism
+- Devil's Bargain — advantage + guaranteed complication
+- Combat, magic, social, death saves
+
+### Scripts (scripts/)
+
+Real randomness via Python:
+
+```bash
+python scripts/roll.py d20 --mod 3 --dc 12              # d20+3 vs DC 12
+python scripts/roll.py d20 --adv --mod 4 --dc 14         # advantage
+python scripts/roll.py d20 --trickster --mod 3 --dc 12   # WIS 4 perk: chaos ±2
+python scripts/roll.py d20 --volatility 2 --mod 3 --dc 14  # ruleset ★★: chaos ±2
+python scripts/roll.py d20 --volatility 3 --trickster --mod 4 --dc 16  # stacked: ±5!
+python scripts/roll.py --quality                          # item quality tier
+python scripts/combat.py --attacks "PC:STR3:AC12, NPC:DEX2:AC13" --damage d8
+python scripts/combat.py --initiative "PC:DEX2, NPC:DEX4"
+python scripts/npc.py --count 3                           # batch NPC generation
+```
 
 ### Rulesets (rulesets/)
 
-Complete setting packs — pick one at session start.
+26 complete setting packs — pick one at session start.
 
-**sengoku.md** — Warring States Japan:
-- Honor as social capital (0-10 scale)
-- 5-stance tactical combat system
-- Retainers, rivals, clans, giri obligations
-- For: samurai drama, ronin noir
-
-**sanguo.md** — Three Kingdoms China:
-- Virtue system (Ren, Yi, Zhi, Xin, Yong)
-- Wuxia martial arts
-- Officer relationships, faction wars
-- For: Romance of Three Kingdoms
-
-**battletech-commander.md** — Mercenary company:
-- Mech contracts and salvage
-- Pilot loyalty and death mechanics
-- Great House politics
-- For: narrative BattleTech, management + story
-
-**vtm.md** — Vampire: The Masquerade:
-- Hunger and feeding
-- Humanity and the Beast
-- Disciplines by clan
-- For: urban horror, intrigue
-
-**warhammer-fantasy.md** — IRON LAW (The Old World):
-- Three Forces system (Order / Corruption / Decay)
-- Condition derived from HP, Push (Force/Body) mechanic
-- Faction Drift, Suspicion clocks
-- Winds of Magic with Force cost, Miscast tables
-- Fate (permanent) + Fortune (session), Marks & Disorders
-- For: grim dark fantasy, moral dilemmas, transformation drama
-
-**warhammer-40k.md** — Grim Darkness of the Far Future:
-- All Imperial factions (Guard, Marines, Sisters, Mechanicus, Inquisition)
-- Chaos Gods, Favor system, corruption
-- Xenos (Eldar with Spirit Stones, Orks, Tau, Necrons)
-- Psychic powers with Perils, weapon stats
-- For: military campaigns, Inquisitorial investigations, heresy
-
-**cursed-seas.md** — Golden Age of Piracy (Fantasy):
-- Era 1650-1730, high magic, world travel
-- Ship mechanics, naval combat, boarding
-- Infamy, Pirate Code, Curses system
-- Bestiary (Kraken, Sirens, Davy Jones, Dragon Turtles)
-- Voodoo/sea magic rituals
-- For: treasure hunts, revenge, fleet building, freedom fights
-
-**witcher.md** — Monster Hunters (Sapkowski + CDPR):
-- Era 1200s-1268, before and during Northern Wars
-- 6 Witcher Schools (Wolf, Cat, Griffin, Bear, Viper, Manticore)
-- Signs magic system, Toxicity, alchemy
-- Full bestiary (50+ monsters with tactics)
-- Hunt cycle mechanics, moral dilemmas
-- For: monster contracts, grim moral choices, lesser evil
-
-**cyberpunk-red.md** — Dark Future (R. Talsorian):
-- Era 2045-2077, Time of the Red to Reunification
-- 10 Roles (Solo, Netrunner, Tech, Medtech, Media, Exec, Lawman, Fixer, Nomad, Rockerboy)
-- Humanity/Cyberpsychosis system, cyberware tables
-- Quick-Jack Netrunning (same initiative as meat combat)
-- Night City districts, Megacorps, Gangs
-- Gig cycle, Street Cred, Heat mechanics
-- For: edgerunner mercs, corporate espionage, gang wars
-
-**shadowrun-lite.md** — Magic + Cyber + Corps:
-- Era 2070-2080, Sixth World
-- 8 Archetypes (Street Sam, Decker, Mage, Shaman, Rigger, Face, Adept, Technomancer)
-- Essence/Magic system, 5 metatypes (Human, Elf, Dwarf, Ork, Troll)
-- Quick-Jack Matrix with Trace Clock
-- Seattle sprawl, Megacorps, Criminal Syndicates, Gangs
-- Run Cycle, Street Cred, Heat mechanics
-- For: shadowrunners, corporate espionage, magic + chrome
+**battletech.md** — MechWarrior Feudal Drama:
+- The Sync (mech-pilot bond 0-10), Ghost Sync, phantom pain
+- Honor (faction-specific codes with Paradoxes)
+- Heat Clock, 5 Great Houses + Clans, Solaris VII
+- Intrigue (Favor/Nemesis/Contracts/Marriage/HPG)
+- For: Game of Thrones with giant robots
 
 **blades-lite.md** — Haunted Industrial Heists:
 - Doskvol: eternal night, ghosts, lightning barriers
 - Score Cycle: Freeplay → Score → Downtime
 - Crew/Heat/Wanted mechanics, Stress/Trauma
-- 7 Playbooks (Cutter, Hound, Leech, Lurk, Slide, Spider, Whisper)
-- 6 Crew types (Assassins, Bravos, Cult, Hawkers, Shadows, Smugglers)
-- Occult system: ghosts, demons, electroplasm, binding
-- For: heists, gang warfare, occult mysteries, urban survival
-
-**deus-ex.md** — Conspiracy Thriller:
-- Era 2027-2052, nano-augmentation revolution
-- Paranoia System: Trust Clocks, Suspicion, Chaos Principle
-- Augmentation with Integration/Rejection mechanics
-- Neuropozyne dependency, corporate factions
-- 6 Roles (Agent, Hacker, Smuggler, Exec, Journalist, Mercenary)
-- For: conspiracies, transhumanism, corporate espionage
-
-**scp.md** — Bureaucratic Horror:
-- Modern era, SCP Foundation personnel
-- Usefulness vs Liability core system (corporate survival)
-- Clearance levels, [REDACTED] mechanic
-- Anomaly classification (Safe/Euclid/Keter), Hume levels
-- Processing Clock, internal politics, O5 Council
-- 6 Roles (D-Class, Researcher, Security, MTF, Site Staff, Ethics)
-- For: containment operations, internal investigations, procedural horror
+- 7 Playbooks, 6 Crew types, Occult system
+- For: heists, gang warfare, occult mysteries
 
 **cthulhu.md** — Cosmic Horror (Lovecraft):
-- Era 1920s, New England (Arkham, Innsmouth, Dunwich, Kingsport)
 - Three Axes system (Reality/Time/Identity) instead of Sanity
 - GM Deception Budget, Mythos Knowledge anti-XP
-- Tomes, Rituals, Cults (Dagon, Silver Twilight, Starry Wisdom)
-- 9 End States (Devoured, Possessed, Institutionalized, etc.)
-- 6 Roles (Investigator, Academic, Artist, Veteran, Occultist, Heir)
-- For: epistemological horror, tragedy simulator, solo investigation
+- 9 End States, 6 Roles
+- For: epistemological horror, tragedy simulator
+
+**cursed-seas.md** — Golden Age of Piracy (Fantasy):
+- The Debt (sea keeps score), Voyage Cycle, Ship Traits
+- Ship mechanics, naval combat, boarding
+- Infamy, Pirate Code, Curses, Bestiary, Voodoo
+- For: treasure hunts, revenge, fleet building
+
+**cyberpunk-red.md** — Dark Future (R. Talsorian):
+- 10 Roles, Humanity/Cyberpsychosis
+- Quick-Jack Netrunning, Night City
+- Gig cycle, Street Cred, Heat mechanics
+- For: edgerunner mercs, corporate espionage
+
+**dark-souls.md** — Undead Curse and Pattern Mastery:
+- Telegraph System (GM describes tell before attack)
+- Death Loop, Soul Echo, Hollowing Track
+- Stamina, phase bosses, weapon upgrades, 7 Covenants
+- For: brutal boss fights, earned victories
+
+**deadlands.md** — Horror-Western (Pinnacle Deadlands):
+- The Deal: every supernatural power feeds the Reckoners
+- Fear Level (0-6 regional), Dominion (Harrowed demon struggle)
+- 5 Arcane Backgrounds (Huckster/Blessed/Harrowed/Mad Scientist/Shaman)
+- Western Showdown (Staredown/Draw/Aftermath), Grit
+- For: horror-western, frontier lawman, Harrowed redemption
+
+**deus-ex.md** — Conspiracy Thriller:
+- Paranoia System: Trust Clocks, Suspicion, Chaos Principle
+- Augmentation, Integration/Neuropozyne, 6 Roles
+- For: conspiracies, transhumanism
 
 **disco-elysium.md** — Skills as Inner Voices (ZA/UM):
-- Era post-revolution Revachol, Martinaise district
 - 24 skills as arguing personalities in the detective's head
-- Thought Cabinet internalization, 4-track Ideology system
-- Copotype emerges from playstyle, Health/Morale dual death tracks
-- No combat focus — investigation through dialogue and failure
-- Session Zero awakening template, five-layer case structure
-- For: political tragedy, internal conflict, amnesiac detective noir
+- Thought Cabinet, Ideology, Copotype, Health/Morale dual tracks
+- Five-layer case structure, Session Zero awakening
+- For: political tragedy, amnesiac detective noir
 
-**persona.md** — School Life meets Shadow World (Atlus Persona series):
-- Modern Japan, high school setting with hidden supernatural layer
-- Arcana Loyalty system with 5 Clusters (SPARK/BOND/ORDER/SHADOW/VOID)
-- All actions use [ARCANA, STAT] format — combat, social, exploration
-- Allies with permadeath, relationship maintenance required
-- Time Pressure: 16 actions/week, Exam failures = Game Over
-- Soul weapon with Arcana-based visuals, Essences (4 tattoo slots)
-- Velvet Room as quest hub (Igor + generated Attendants)
-- Shadow World procedural exploration with layer difficulty scaling
-- For: JRPG drama, school life + dungeon crawling, identity themes
+**exalted.md** — Demigods Reborn (White Wolf Exalted):
+- Stunt System: ★/★★/★★★ chaos modifier (--stunt 1/2/3, random -N..+N)
+- Essence 1-10 power scale, Charms, 3 Sorcery circles
+- Great Curse: Limit 0-10, Virtue Flaws, Limit Break
+- 6 Exalt Types (Solar/Lunar/Dragon-Blooded/Sidereal/Abyssal/Infernal)
+- For: mythic demigod drama, nation-building, tragic power fantasy
+
+**harry-potter.md** — Wizarding World:
+- The Descent (dark temptation 0-10, Stain mechanic)
+- Bonds (love as power, rate-limited)
+- 4 Houses (rebalanced), Unforgivable Curses, 7 Heritage options
+- For: school drama, Auror campaign, Order resistance
+
+**persona.md** — School Life meets Shadow World (Atlus):
+- Arcana Loyalty with 5 Clusters, [ARCANA, STAT] format
+- Allies with permadeath, Time Pressure (16 actions/week)
+- Shadow World procedural exploration, Velvet Room hub
+- For: JRPG drama, school life + dungeon crawling
 
 **runeterra.md** — League of Legends (All Regions):
-- Power Tier system (Human/Hero/Legend), stat caps, ability unlocks
-- 15 magic traditions with unique mechanics (Hextech, Void, Black Mist, etc.)
-- Champion encounter rules (Legendary Actions, Resistance, Lair Actions)
-- 4 Corruption clocks with staged effects and defined reduction
-- 13 regions, 6 campaign frameworks, Timeline
-- For: champion encounters, cross-regional adventure, rise to legend
+- Power Tier (Human/Hero/Legend), 15 Magic Traditions
+- Champion Encounters (Legendary Actions), 13 Regions
+- For: champion encounters, cross-regional adventure
 
-**stalker.md** — Chernobyl Exclusion Zone (S.T.A.L.K.E.R. + Roadside Picnic):
-- Era 2006-2026, Zone around Chernobyl NPP
+**sanguo.md** — Three Kingdoms China:
+- Virtue system (Ren/Yi/Zhi/Xin/Yong), 36 stratagems
+- Wuxia martial arts, brotherhood oaths
+- For: Romance of Three Kingdoms
+
+**scp.md** — Bureaucratic Horror:
+- Usefulness vs Liability (corporate survival)
+- Processing Clock, Hume Levels, O5 Council
+- Clearance levels, [REDACTED] mechanic, 6 Roles
+- For: containment operations, procedural horror
+
+**sengoku.md** — Warring States Japan:
+- Honor as social capital (0-10)
+- 5-stance tactical combat, giri obligations
+- Retainers, rivals, clans
+- For: samurai drama, ronin noir
+
+**shadowrun-lite.md** — Magic + Cyber + Corps:
+- 8 Archetypes, Essence/Magic system, 5 metatypes
+- Quick-Jack Matrix with Trace Clock
+- For: shadowrunners, corporate espionage
+
+**stalker.md** — Chernobyl Exclusion Zone (S.T.A.L.K.E.R.):
 - Emission Clock, Zombification Clock, Radiation tracking
-- Anomalies (5 types) with artifact spawning system
-- 10 Factions with reputation system (-3 to +5)
-- Job Cycle (Acquisition → Travel → Execution → Extraction → Settlement)
-- 4 Backgrounds (Ex-Military, Scientist, Criminal, Rookie)
-- "Reach the Center" 20-session campaign
-- For: artifact hunting, faction warfare, Zone survival, post-apocalyptic horror
+- 10 Factions, Job Cycle, "Reach the Center" 20-session campaign
+- For: artifact hunting, Zone survival
 
 **star-wars.md** — Galaxy Far Far Away (All Eras):
-- Era selection: Old Republic, Clone Wars, Imperial, New Republic, Sequel
-- Force Alignment spectrum (-10 Dark to +10 Light) with temptation mechanics
-- Force Strain system, Lightsaber Forms (I-VII)
-- 5 Campaign Frameworks (Rebel Cell, Smuggler, Bounty Hunter, Jedi/Sith, Mandalorian)
-- 8 Roles with unique specials, GRIT system for non-Force users
-- Vehicle combat with shields, system damage, boarding
-- 12 species, factions with reputation, Imperial Heat clock
-- For: rebellion, smuggling, Force drama, galactic adventure
+- Force Alignment (-10 to +10), Temptation, Strain
+- 5 Campaign Frameworks, GRIT for non-Force users
+- Lightsaber Forms, Vehicle combat
+- For: rebellion, smuggling, Force drama
 
-**dark-souls.md** — Undead Curse and Pattern Mastery (DS1/DS2/DS3):
-- Souls as dual currency (XP + money in one pool)
-- Death Loop with Soul Echo retrieval mechanic
-- Hollowing Track (CHA/WIS degradation → character loss)
-- Telegraph System for boss fights (GM describes tell before resolution)
-- Stamina system (every action costs, depletion = stagger)
-- Phase-based bosses with momentum combat
-- Weapon upgrades, infusion paths, status buildup (Bleed, Poison, Curse)
-- 7 Covenants with rank rewards, Sin tracking
-- For: brutal boss fights, earned victories, cryptic lore exploration
+**vtm.md** — Vampire: The Masquerade:
+- Three Currencies (Hunger/Humanity/Willpower), Push
+- Beast Voice × Humanity matrix, Night Cycle
+- Arcade Disciplines, 8 generators
+- For: urban horror, political intrigue
+
+**warhammer-fantasy.md** — IRON LAW (The Old World):
+- Three Forces (Order/Corruption/Decay), Push
+- Condition/HP bridge, Faction Drift
+- Fate/Fortune, Marks & Disorders, Winds of Magic
+- For: grim dark fantasy, transformation drama
+
+**warhammer-40k.md** — Grimdark Far Future:
+- IRON WILL: Control/Warp/Entropy (all hostile)
+- Scar System, Mission Cycle, Rank
+- For: military campaigns, Inquisitorial investigations
+
+**witcher.md** — Monster Hunters (Sapkowski + CDPR):
+- The Path + Lesser Evil, Hunt Cycle
+- 6 Schools, Signs, Toxicity, alchemy
+- For: monster contracts, grim moral choices
+
+**xianxia.md** — Path of Immortality:
+- Three-clock engine (Cultivation/Deviation/Dao Heart)
+- Tribulations at 3/6/9/10, Karma, Five Elements cycles
+- 7 Paths, Sects, Jianghu Rules, Secret Realms
+- For: cultivation fantasy, sect politics, ascension
 
 ### Ruleset Tier List
 
@@ -283,6 +285,8 @@ Quality rating based on: unique mechanics, central pressure, internal coherence,
 | vtm | Three Currencies (Hunger/Humanity/Willpower), Push, Beast Voice × Humanity matrix, Night Cycle, 8 generators. |
 | warhammer-fantasy | IRON LAW. Three Forces (Order/Corruption/Decay), Push, Condition/HP bridge, Drift, Path of Blood/Hunger. |
 | warhammer-40k | IRON WILL. Control/Warp/Entropy (all hostile), Scar System, Mission Cycle, Rank, 8-15 session lifespan. |
+| deadlands | The Deal — every power feeds the Reckoners you fight; Fear/Dominion/Backlash clocks create inescapable Faustian tension across five arcane traditions. |
+| exalted | The Stunt/Mote/Limit triangle — audacity fuels power fuels madness — with six mechanically distinct Exalt types and the Great Curse as inescapable central pressure engine. |
 
 **A-Tier (Strong)**
 | Ruleset | Why |
@@ -291,7 +295,6 @@ Quality rating based on: unique mechanics, central pressure, internal coherence,
 | cursed-seas | The Debt (sea keeps score), Voyage Cycle, Ship Traits. S-tier core, tone presets need mechanical teeth. |
 | stalker | The Call (Zone addiction 0-10), Withdrawal, Emission/Zombification Clocks. S-tier core, tracking overhead. |
 | sanguo | 36 stratagems, brotherhood oaths. Duels slightly simpler than could be. |
-| battletech | Company management, politics, contracts. Combat deliberately abstract. |
 | cyberpunk-red | Humanity/cyberpsychosis, Heat/Cred. Overloaded with reference data. |
 | shadowrun-lite | Magic+Matrix+cyber in parallel. Trace Clock. |
 | blades-lite | Stress/Trauma, Heat/Wanted, occult. Close to original. |
@@ -360,20 +363,9 @@ Typical context usage (1M context):
 ## Commit Conventions
 
 ```
-[core]    — Core GM system (gm-skill.md, .claude/commands/)
-[ruleset] — Update existing ruleset
-[new]     — Add new ruleset
-[fix]     — Bug fixes
-[docs]    — Documentation only
-[save]    — Session saves
-```
-
-Examples:
-```
-[core] Add new mechanic to gm-skill.md
-[ruleset] warhammer-fantasy: IRON LAW full rewrite (Forces, Condition, Push)
-[new] China 1900-1952: Warlords, Revolution, Survival
-[fix] Correct faction clock math in sengoku.md
-[docs] Update README with new commands
-[save] Campaign: The Long March session 5
+[core]     — Core GM system (gm-skill.md, scripts/, .claude/commands/)
+[rulesets] — New or updated rulesets
+[fix]      — Bug fixes
+[docs]     — Documentation only
+[save]     — Session saves
 ```
