@@ -9,17 +9,22 @@ Usage:
   python combat.py --attacks "Kenji:STR3:AC12:charge"   # BATTERING RAM +2/+2
   python combat.py --attacks "Kenji:STR3:AC12" --damage d8
   python combat.py --attacks "Bandit1:STR2:AC13, Bandit2:STR2:AC13" --target-htk
+  python combat.py --attacks "Kenji:STR3:AC12:snapback"  # auto-hit, skip attack roll
+  python combat.py --attacks "..." --annihilation        # d20 on hit, 15+ = instant kill
   python combat.py --initiative "Kenji:DEX2, Gempachi:DEX3, Bandit1:DEX2, Bandit2:DEX1"
-  python combat.py --secret --attacks "..."   # hidden from player
+  python combat.py --breaking-point 5                    # morale check for 5 enemies
+  python combat.py --secret --attacks "..."              # hidden from player
 
 Attack format: Name:STAT+mod:AC[:flags]
-  Flags: adv, dis, atk+N (attack bonus), dmg+N (damage bonus)
+  Flags: adv, dis, atk+N (attack bonus), dmg+N (damage bonus), snapback (auto-hit)
   Combine: "Kenji:STR3:AC12:atk+2:dmg+2" for charge + bonus
 
 --damage XdY        damage die for all attacks (default: d8)
 --damage-mod N      flat damage modifier (stat mod, added automatically from attack stat)
 --target-htk        target has HARD TO KILL (d20 17+ = ignore damage)
 --cleave            attacker has CLEAVE — not resolved here, just flagged
+--annihilation      passive: after each hit that deals damage, d20 15+ = instant kill
+--breaking-point N  morale check: roll d20 for N enemies (15+ switch, 10-14 leave, 1-9 unaffected)
 """
 
 import random
@@ -84,7 +89,7 @@ def roll_damage(count, sides, stat_mod, outcome_idx):
         return total, rolls
 
 
-def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False):
+def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False, annihilation=False):
     if secret:
         print("GM SECRETS - DO NOT EXPAND\n" * 5)
 
@@ -117,6 +122,7 @@ def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False
         atk_bonus = 0
         dmg_bonus = 0
         roll_mode = "normal"
+        is_snapback = False
         notes = []
 
         for flag in flags:
@@ -124,6 +130,8 @@ def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False
                 roll_mode = "advantage"
             elif flag == "dis":
                 roll_mode = "disadvantage"
+            elif flag == "snapback":
+                is_snapback = True
             elif flag.startswith("atk"):
                 m = re.match(r'atk([+-]?\d+)', flag)
                 if m:
@@ -132,6 +140,48 @@ def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False
                 m = re.match(r'dmg([+-]?\d+)', flag)
                 if m:
                     dmg_bonus += int(m.group(1))
+
+        # Snapback: auto-hit, skip attack roll, force Success outcome
+        if is_snapback:
+            nat = 0
+            outcome = "Success"
+            outcome_idx = 3  # Success index
+            total = ac  # irrelevant but consistent
+            margin = 0
+
+            # Damage (always full, outcome_idx=3=Success)
+            total_dmg, dmg_rolls = roll_damage(dmg_count, dmg_sides, stat_mod + dmg_bonus, outcome_idx)
+
+            # Hard to Kill check
+            htk_blocked = False
+            if target_htk and total_dmg > 0:
+                htk_roll = random.randint(1, 20)
+                if htk_roll >= 17:
+                    htk_blocked = True
+                    notes.append(f"HTK d20={htk_roll} BLOCKED")
+                else:
+                    notes.append(f"HTK d20={htk_roll} pass")
+
+            # Output
+            notes_str = f" ({', '.join(notes)})" if notes else ""
+            print(f"  {name} [{stat_name}] AUTO-HIT (SNAPBACK)")
+
+            if total_dmg > 0:
+                if htk_blocked:
+                    print(f"    Damage: {dmg_rolls} +{stat_mod + dmg_bonus} = {total_dmg} -> IGNORED (Hard to Kill)")
+                else:
+                    print(f"    Damage: {dmg_rolls} +{stat_mod + dmg_bonus} = {total_dmg}{notes_str}")
+
+                    # Annihilation check
+                    if annihilation and not htk_blocked:
+                        ann_roll = random.randint(1, 20)
+                        if ann_roll >= 15:
+                            print(f"    >> ANNIHILATED (d20={ann_roll})")
+                        else:
+                            print(f"    Annihilation d20={ann_roll} -- no")
+
+            print()
+            continue
 
         # Roll attack
         if roll_mode == "advantage":
@@ -173,6 +223,14 @@ def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False
                 print(f"    Damage: {dmg_rolls} +{stat_mod + dmg_bonus} = {total_dmg} -> IGNORED (Hard to Kill)")
             else:
                 print(f"    Damage: {dmg_rolls} +{stat_mod + dmg_bonus} = {total_dmg}{notes_str}")
+
+                # Annihilation check
+                if annihilation:
+                    ann_roll = random.randint(1, 20)
+                    if ann_roll >= 15:
+                        print(f"    >> ANNIHILATED (d20={ann_roll})")
+                    else:
+                        print(f"    Annihilation d20={ann_roll} -- no")
         elif outcome_idx <= 1:
             print(f"    Miss{notes_str}")
 
@@ -211,14 +269,40 @@ def resolve_initiative(init_str):
     print("\n=== END ===")
 
 
+def resolve_breaking_point(n):
+    print(f"=== BREAKING POINT (morale check for {n} enemies) ===\n")
+
+    switches = 0
+    leaves = 0
+    unaffected = 0
+
+    for i in range(1, n + 1):
+        roll = random.randint(1, 20)
+        if roll >= 15:
+            result = "SWITCHES (joins your side)"
+            switches += 1
+        elif roll >= 10:
+            result = "LEAVES (exits combat)"
+            leaves += 1
+        else:
+            result = "UNAFFECTED"
+            unaffected += 1
+        print(f"  Enemy {i}: d20={roll} -> {result}")
+
+    print(f"\n  Summary: {switches} switch, {leaves} leave, {unaffected} unaffected")
+    print("\n=== END ===")
+
+
 def main():
     args = sys.argv[1:]
 
     secret = "--secret" in args
     target_htk = "--target-htk" in args
+    annihilation = "--annihilation" in args
 
     attacks_str = None
     init_str = None
+    breaking_point_n = None
     damage_str = "d8"
 
     i = 0
@@ -229,21 +313,29 @@ def main():
         elif args[i] == "--initiative" and i + 1 < len(args):
             init_str = args[i + 1]
             i += 2
+        elif args[i] == "--breaking-point" and i + 1 < len(args):
+            breaking_point_n = int(args[i + 1])
+            i += 2
         elif args[i] == "--damage" and i + 1 < len(args):
             damage_str = args[i + 1]
             i += 2
         else:
             i += 1
 
-    if init_str:
+    if breaking_point_n is not None:
+        resolve_breaking_point(breaking_point_n)
+    elif init_str:
         resolve_initiative(init_str)
     elif attacks_str:
-        resolve_attacks(attacks_str, damage_str, target_htk, secret)
+        resolve_attacks(attacks_str, damage_str, target_htk, secret, annihilation)
     else:
         print("Usage:")
         print('  python combat.py --attacks "Name:STATmod:AC, ..."')
+        print('  python combat.py --attacks "Name:STATmod:AC:snapback"  # auto-hit')
         print('  python combat.py --initiative "Name:DEXmod, ..."')
+        print('  python combat.py --breaking-point N                   # morale check for N enemies')
         print('  python combat.py --attacks "..." --damage d10 --target-htk')
+        print('  python combat.py --attacks "..." --annihilation       # d20 on hit, 15+ = instant kill')
 
 
 if __name__ == "__main__":
