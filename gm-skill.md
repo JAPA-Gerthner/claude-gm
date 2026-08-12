@@ -148,6 +148,15 @@ python scripts/combat.py --initiative "Kenji:DEX2, Bandit1:DEX2, Boss:DEX4"
 # Heroism: player attacks with adv, enemy attacks with dis
 python scripts/combat.py --attacks "Kenji:STR3:AC12:adv, Enemy:STR3:AC13:dis"
 
+# SNAPBACK: auto-hit counter-attack (no attack roll, just damage)
+python scripts/combat.py --attacks "Kenji:DEX4:AC12:snapback" --damage d8
+
+# ANNIHILATION: after each hit, d20 — on 15+ target dies instantly
+python scripts/combat.py --attacks "Kenji:DEX5:AC10" --annihilation --damage d8
+
+# BREAKING POINT: all enemies roll d20 (15+ switch, 10-14 leave, 1-9 unaffected)
+python scripts/combat.py --breaking-point 8
+
 # Secret combat (hidden from player)
 python scripts/combat.py --secret --attacks "..."
 ```
@@ -159,6 +168,8 @@ python scripts/npc.py --samurai           # samurai clan surname
 python scripts/npc.py --ninja             # ninja code name
 python scripts/npc.py --gender female     # specify gender
 python scripts/npc.py --count 3           # batch generate
+python scripts/npc.py --companion         # NPC with Bond Stat & Bond Ability
+python scripts/npc.py --companion --bond-stat STR  # companion with specific bond stat
 python scripts/npc.py --secret            # hidden from player
 ```
 
@@ -611,6 +622,12 @@ Bond Ability: [NAME] — [trigger]. [effect].
 ...
 ===
 ```
+
+Bond Ability guidelines: `npc.py --companion` generates a random ability from
+a base table. GM should **narratively modify** the result to fit the companion's
+personality, background, and fighting style. The table is a foundation, not a
+constraint — rename, reskin, adjust flavor freely. Keep the mechanical effect
+at ≤ threshold-4 power level (1/scene or 1/combat, simple trigger + effect).
 
 ---
 
