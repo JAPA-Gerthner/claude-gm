@@ -145,7 +145,7 @@ python scripts/combat.py --attacks "Enemy:STR3:AC13" --target-htk
 # Initiative
 python scripts/combat.py --initiative "Kenji:DEX2, Bandit1:DEX2, Boss:DEX4"
 
-# Heroism / SILVER TONGUE: player attacks with adv, enemy attacks with dis
+# Heroism: player attacks with adv, enemy attacks with dis
 python scripts/combat.py --attacks "Kenji:STR3:AC12:adv, Enemy:STR3:AC13:dis"
 
 # Secret combat (hidden from player)
@@ -501,17 +501,26 @@ STR 10: EXECUTION — Bonus action. Target below 25% HP: instant kill,
 
 ### DEX (Dexterity)
 ```
-DEX 4: STEADY HANDS — +1 accuracy on all attacks (passive).
+DEX 4: SNAPBACK — When any enemy attack misses by 5+, free
+       counter-attack (reaction). Auto-hit — no attack roll, roll
+       damage directly. Melee attacks: always available. Ranged
+       attacks: only if you have a ranged weapon equipped.
 
-DEX 6: RIPOSTE — When enemy misses melee by 5+, free counter-attack
-       (reaction).
+DEX 6: AFTERIMAGE — 1/combat. For one round: all defensive rolls
+       made twice, take better result. More misses = more SNAPBACK.
 
-DEX 8: PERFECT DODGE — 1/combat. For one round: all defensive rolls
-       made twice, take better result.
+DEX 8: DOUBLE TAKE — Passive. In combat, GM adds 2 INSTANT ACTION
+       options to every set — quick strikes, maneuvers, grabs,
+       repositioning. Instant actions don't give enemies a turn.
+       Chain: instant + instant + normal = enemies react once.
+       Instant actions are NOT immune to Crit.Fail consequences.
 
-DEX 10: DOUBLE TAKE — 1/combat. Bonus action. Take two full turns
-        back-to-back. Enemies CANNOT act, react, or use abilities
-        between them — time freezes for everyone else.
+DEX 10: ANNIHILATION — Passive. When you deal damage to any target,
+        that target rolls d20 (no modifiers). On 15+: target dies
+        instantly. Triggers on ALL your damage (attacks, RIPOSTE,
+        CLEAVE, any source you cause).
+        Boss exception: narrative bosses with massive HP pools —
+        ANNIHILATION deals 20% of max HP instead of instakill.
 ```
 
 ### CON (Constitution)
@@ -519,18 +528,22 @@ DEX 10: DOUBLE TAKE — 1/combat. Bonus action. Take two full turns
 CON 4: HARD TO KILL — Passive. When you take damage, roll d20.
        On 17+: damage ignored completely.
 
-CON 6: RELENTLESS — 1/combat. First time dropping to 0 HP, stay at
-       1 HP instead.
-
-CON 8: UNKILLABLE — Don't die until HP reaches -CON×5. Fight while
+CON 6: UNKILLABLE — Don't die until HP reaches -CON×5. Fight while
        bleeding out. Death saves only begin when combat ends.
 
-CON 10: LAST STAND — Passive. Below 25% HP: +2 to all rolls.
+CON 8: LAST STAND — Passive. Below 25% HP: +2 to all rolls.
+
+CON 10: DEATHLESS — 1/combat. When you reach -CON×5 HP (death
+        threshold from UNKILLABLE), instead of dying: reset to 1 HP.
+        +2 to all rolls for the rest of combat (stacks with LAST
+        STAND for +4 total). You died. You came back angrier.
 ```
 
 ### INT (Intelligence)
 ```
-INT 4: CUNNING INSIGHT — 1/scene. Bonus action. +4 to any single roll.
+INT 4: CUNNING INSIGHT — 1/scene. Bonus action. Substitute INT for any
+       stat on a single roll. If INT ≤ required stat (including INT
+       checks), +4 to the roll instead. Scales with INT investment.
 
 INT 6: KEEN MIND — 1/scene. Learn hidden details about NPC, item, or
        location. GM generates additional content (secret rooms, unique
@@ -566,20 +579,37 @@ WIS 10: THREAD OF FATE — 1/chapter. Rewind time. Everything that
 ```
 
 ### CHA (Charisma)
+
+Companions as inventory. CHA characters draw strength from their people.
+Each companion is generated with a **Bond Stat** (+2 to that stat) and a
+**Bond Ability** (simple, ≤ threshold-4 power, 1/scene or 1/combat).
+
 ```
-CHA 4: SILVER TONGUE — 1/scene. Advantage for social (2d20 take best).
+CHA 4: RIGHT HAND — 1/scene. Bind a loyal companion. While bound:
+       +2 to rolls of their Bond Stat. Only one bound at a time.
+       Re-activating swaps the bind. Companion must be present.
 
-CHA 6: OLD FRIENDS — 1/chapter. An NPC turns out to be an old
-       acquaintance who reacts positively. +2 to all rolls for scene.
-       GM introduces when narratively appropriate.
+CHA 6: INNER CIRCLE — Passive. You can activate the Bond Ability of
+       your bound companion. The NPC cannot use it themselves — only
+       you trigger it. Losing the companion loses the ability.
 
-CHA 8: PARLEY — 1/combat. Negotiate mid-fight. Group: some may switch
-       sides or leave. Solo: cease combat and talk. Roll d20, no
-       modifiers — on 11+: works. GM offers when viable.
+CHA 8: ALLEGIANCE — 1/chapter. Recruit one hostile or neutral NPC
+       permanently. They see it's better to be with you. Becomes a
+       companion with Bond Stat and Bond Ability generated on recruit.
 
-CHA 10: LEGEND'S VOICE — 1/chapter. Recruit hostile/neutral/known NPC.
-        Interacts with OLD FRIENDS and PARLEY — someone met through
-        those abilities can be permanently recruited.
+CHA 10: BREAKING POINT — 1/combat. All enemies roll d20 (no modifiers):
+        15+: switch to your side (temporary, until end of combat)
+        10-14: leave the fight
+        1-9: unaffected
+```
+
+Companion template (added at generation):
+```
+=== COMPANION: [NAME] ===
+Bond Stat: [STR/DEX/CON/INT/WIS/CHA]
+Bond Ability: [NAME] — [trigger]. [effect].
+...
+===
 ```
 
 ---
@@ -1073,6 +1103,16 @@ GM may set harder DC for non-standard actions — creativity has cost.
 
 This protects game integrity. GM controls what's possible.
 Player controls which possibility to choose.
+
+CHAINING:
+Player can choose multiple options at once: "1, 3, 5"
+Actions execute in listed order. Speeds up game pace.
+
+Outside combat: all actions resolve sequentially, no penalty.
+In combat: enemies act BETWEEN each regular action — choosing
+a chain of 3 actions means taking hits between them.
+Exception: INSTANT actions (from DOUBLE TAKE) don't give enemies
+a turn. Chain instant + instant + normal = enemies react once.
 ```
 
 ---
