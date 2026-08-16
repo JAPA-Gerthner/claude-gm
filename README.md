@@ -15,7 +15,6 @@ claude-gm/
 ├── scripts/
 │   ├── roll.py              # Dice roller (d20, adv/dis, DC, margin, stunt, quality)
 │   ├── combat.py            # Batch attack resolver (initiative, damage, HTK)
-│   └── npc.py               # NPC generator (honesty/courage/loyalty, motivation)
 ├── rulesets/
 │   ├── INDEX.md             # One-line index of all rulesets
 │   ├── battletech.md        # MechWarrior Feudal Drama
@@ -119,7 +118,6 @@ python scripts/roll.py d20 --volatility 3 --trickster --mod 4 --dc 16  # stacked
 python scripts/roll.py --quality                          # item quality tier
 python scripts/combat.py --attacks "PC:STR3:AC12, NPC:DEX2:AC13" --damage d8
 python scripts/combat.py --initiative "PC:DEX2, NPC:DEX4"
-python scripts/npc.py --count 3                           # batch NPC generation
 ```
 
 ### Rulesets (rulesets/)

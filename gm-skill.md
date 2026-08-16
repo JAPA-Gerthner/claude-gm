@@ -161,18 +161,6 @@ python scripts/combat.py --breaking-point 8
 python scripts/combat.py --secret --attacks "..."
 ```
 
-**NPC generator** (`scripts/npc.py`):
-```bash
-python scripts/npc.py                     # random NPC (name, honesty/courage/loyalty, motivation)
-python scripts/npc.py --samurai           # samurai clan surname
-python scripts/npc.py --ninja             # ninja code name
-python scripts/npc.py --gender female     # specify gender
-python scripts/npc.py --count 3           # batch generate
-python scripts/npc.py --companion         # NPC with Bond Stat & Bond Ability
-python scripts/npc.py --companion --bond-stat STR  # companion with specific bond stat
-python scripts/npc.py --secret            # hidden from player
-```
-
 **Item quality** (`scripts/roll.py --quality`):
 ```bash
 python scripts/roll.py --quality          # d20 -> FLAWED/WORN/STANDARD/QUALITY/EXCEPTIONAL
@@ -592,17 +580,20 @@ WIS 10: THREAD OF FATE — 1/chapter. Rewind time. Everything that
 ### CHA (Charisma)
 
 Companions as inventory. CHA characters draw strength from their people.
-Each companion is generated with a **Bond Stat** (+2 to that stat) and a
-**Bond Ability** (simple, ≤ threshold-4 power, 1/scene or 1/combat).
+Each companion has a **Bond Stat** (+2 to that stat) and a **Bond Ability**.
+GM generates both when companion is introduced — kept in thinking, invisible
+to player until CHA 4 (Bond Stat revealed) and CHA 6 (Bond Ability revealed).
 
 ```
 CHA 4: RIGHT HAND — 1/scene. Bind a loyal companion. While bound:
        +2 to rolls of their Bond Stat. Only one bound at a time.
        Re-activating swaps the bind. Companion must be present.
+       On bind: GM reveals companion's Bond Stat.
 
 CHA 6: INNER CIRCLE — Passive. You can activate the Bond Ability of
        your bound companion. The NPC cannot use it themselves — only
        you trigger it. Losing the companion loses the ability.
+       On unlock: GM reveals Bond Abilities of all current companions.
 
 CHA 8: ALLEGIANCE — 1/chapter. Recruit one hostile or neutral NPC
        permanently. They see it's better to be with you. Becomes a
@@ -614,20 +605,81 @@ CHA 10: BREAKING POINT — 1/combat. All enemies roll d20 (no modifiers):
         1-9: unaffected
 ```
 
-Companion template (added at generation):
+### Bond Ability Design
+
+Bond Abilities are the CORE of the CHA tree. They must be interesting,
+distinct, and motivate the player to swap binds for different situations.
+
+**Principles:**
+1. **Character-driven** — ability reflects WHO the companion IS.
+   Thief steals/scouts. Herbalist brews/heals. Smith repairs/upgrades.
+   Diplomat persuades. Monk meditates/protects. Tracker finds/reads terrain.
+   Fighter guards/strikes. Merchant appraises/bargains. Healer mends.
+2. **Benefit the PLAYER CHARACTER** — all effects target the PC directly.
+   Not "one ally" — the player. Companion serves the hero, not the party.
+   Not just "+1 to thing" — create moments, open options, change situations.
+3. **Varied activation** — passive (always on while bound) OR active
+   (1/scene, 1/combat). Mix both across companions.
+4. **Encourage swapping** — each ability shines in different contexts.
+   Combat companion for fights, social companion for negotiations,
+   utility companion for exploration. Player should WANT to swap.
+5. **Scaling with narrative** — abilities can evolve as companion's
+   clock progresses. GM may upgrade ability at 5/6 or 6/6.
+
+**Examples by Bond Stat (not exhaustive — create freely):**
+
+STR:
+- WALL BREAKER — 1/combat. Destroy cover or barrier automatically.
+- SHOULDER CHARGE — 1/combat. Knock one enemy prone, no save.
+- HURL OBJECT — 1/combat. Throw heavy object at enemy. Damage + stagger 1 round.
+- FORCED ENTRY — 1/scene. Smash through locked door/gate/barricade without roll.
+- IRON TOSS — 1/combat. Grab and throw one enemy into another. Both take damage.
+
+DEX:
+- SMOKE SCREEN — 1/combat. Player disengages without opportunity attacks.
+- QUICK DRAW — 1/scene. Draw weapon + attack in same action, +2 to hit.
+- LIGHT FINGERS — 1/scene. Steal or plant one small item unnoticed.
+- TUMBLE PAST — 1/combat. Move through enemy lines untouched. Reach any target.
+- SNAP SHOT — 1/combat. Interrupt enemy action with ranged attack. Hit = action fails.
+- VANISH — 1/scene. Slip away from sight. Cannot be found for 1 round.
+
+CON:
+- BODY SHIELD — 1/combat. Intercept attack targeting player. Companion takes damage instead.
+- IRON GRIP — 1/combat. Grapple one enemy automatically. Cannot move 1 round.
+- SHAKE IT OFF — 1/combat. Remove one poison, stun, or bleed from the player.
+- STAND TOGETHER — 1/combat. While companion is adjacent: player gets +2 to all rolls for 1 round.
+- HOLD THE LINE — 1/combat. Brace in chokepoint. No enemy passes for 2 rounds.
+
+INT:
+- TACTICAL ADVICE — 1/scene. Player gets +3 to next roll.
+- WEAK POINT — 1/combat. Identify vulnerability. Player's next attack vs that enemy: advantage.
+- TRAP SENSE — 1/scene. Deduce trap/puzzle mechanism. Reveal how to disarm/solve.
+- BATTLE PLAN — 1/combat. Before combat, rearrange ally turn order freely.
+- RECALL LORE — 1/scene. Know one useful fact about creature/faction/location. GM answers honestly.
+- READ THE ROOM — 1/scene. Analyze situation. GM reveals one hidden detail.
+
+WIS:
+- DANGER SENSE — 1/scene. Warn player of ambush/trap. Auto-success on player's perception check.
+- CALM PRESENCE — 1/scene. Remove fear or panic from the player.
+- TRACKER'S EYE — 1/scene. Pick up cold trail. Learn direction target went.
+- GUT FEELING — 1/scene. Ask GM if specific NPC is lying. Honest answer.
+- NATURE'S AID — 1/scene. Find herbs, shelter, or water in the wild without roll.
+
+CHA:
+- DISTRACTION — 1/combat. Draw attention. Player's next attack: advantage.
+- RALLY — 1/combat. Player gets +2 to all rolls until end of next turn.
+- FAST TALK — 1/scene. Stall one NPC with conversation for 1 minute. Player acts freely.
+- TAUNT — 1/combat. Force one enemy to target companion instead of player.
+- SMOOTH OVER — 1/scene. De-escalate. Hostile NPCs become merely unfriendly.
+
+Companion template:
 ```
 === COMPANION: [NAME] ===
 Bond Stat: [STR/DEX/CON/INT/WIS/CHA]
-Bond Ability: [NAME] — [trigger]. [effect].
+Bond Ability: [NAME] — [type]. [trigger]. [effect].
 ...
 ===
 ```
-
-Bond Ability guidelines: `npc.py --companion` generates a random ability from
-a base table. GM should **narratively modify** the result to fit the companion's
-personality, background, and fighting style. The table is a foundation, not a
-constraint — rename, reskin, adjust flavor freely. Keep the mechanical effect
-at ≤ threshold-4 power level (1/scene or 1/combat, simple trigger + effect).
 
 ---
 
