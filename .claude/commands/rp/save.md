@@ -264,7 +264,7 @@ After saving output:
   Context: [save + gm-skill.md tokens]k / [model context limit]k
 ```
 
-Calculate tokens for save file + gm-skill.md combined. Show as ratio to current model's context window (e.g. "12.5k / 200k").
+Calculate tokens for save file + gm-skill.md combined. Show as ratio to current model's context window (e.g. "25k / 1000k").
 
 ---
 META: This is NOT a game action. Time does not pass, world does not change.

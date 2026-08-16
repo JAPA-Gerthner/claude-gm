@@ -23,7 +23,8 @@
       "Read(//home/gerthner/.local/share/applications/**)",
       "Bash(pgrep -af [Ww]hats)",
       "PowerShell(python -c \"import random; first=['Lyosha','Kostya','Pasha','Seryoga','Tolik','Zhenya','Slava','Misha','Dima','Yura']; last=['Poltorak','Belov','Mirny','Zhdanov','Tkachuk','Sivtsov','Kravets','Dorosh','Pilat','Grechko']; picks=random.sample\\(range\\(len\\(first\\)\\),5\\); [print\\(f'{first[i]} {last[random.randint\\(0,len\\(last\\)-1\\)]}'\\) for i in picks]\")",
-      "Skill(update-config)"
+      "Skill(update-config)",
+      "Bash(git *)"
     ]
   },
   "spinnerTipsEnabled": false
