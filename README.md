@@ -122,7 +122,7 @@ python scripts/combat.py --initiative "PC:DEX2, NPC:DEX4"
 
 ### Rulesets (rulesets/)
 
-26 complete setting packs — pick one at session start.
+25 complete setting packs — pick one at session start.
 
 **battletech.md** — MechWarrior Feudal Drama:
 - The Sync (mech-pilot bond 0-10), Ghost Sync, phantom pain
@@ -186,6 +186,15 @@ python scripts/combat.py --initiative "PC:DEX2, NPC:DEX4"
 - Great Curse: Limit 0-10, Virtue Flaws, Limit Break
 - 6 Exalt Types (Solar/Lunar/Dragon-Blooded/Sidereal/Abyssal/Infernal)
 - For: mythic demigod drama, nation-building, tragic power fantasy
+
+**iron-weltkrieg.md** — Dieselpunk Alternate History (Kaiserreich 1936):
+- Ideology Compass (10 ideologies from Kaiserreich)
+- Global Tension 0-100%, Nuclear Clock 0-10
+- Machines: Walkers, Flying Fortresses, Naval, Aviation
+- Crew Bonds, Machine Stress, Scale Shift (Soldier→Leader)
+- 20 Regional conflict clocks with cascade effects
+- Scale Thresholds (level 5/8/12 promotions)
+- For: alt-history war journalism, Balkan intrigue, industrial warfare
 
 **harry-potter.md** — Wizarding World:
 - The Descent (dark temptation 0-10, Stain mechanic)

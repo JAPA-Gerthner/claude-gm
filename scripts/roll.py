@@ -33,13 +33,16 @@ def parse_die(s):
     return count, sides
 
 
-def margin_outcome(margin, nat_roll=None):
-    thresholds = [
-        (-6, "Crit.Fail"),
-        (-1, "Fail"),
-        (4, "Partial"),
-        (9, "Success"),
-    ]
+DIFFICULTY_THRESHOLDS = {
+    "casual":   [(-8, "Crit.Fail"), (-1, "Fail"), (2, "Partial"), (7, "Success")],
+    "standard": [(-6, "Crit.Fail"), (-1, "Fail"), (4, "Partial"), (9, "Success")],
+    "hardcore": [(-4, "Crit.Fail"), (-1, "Fail"), (6, "Partial"), (11, "Success")],
+}
+
+
+def margin_outcome(margin, nat_roll=None, difficulty="standard"):
+    thresholds = DIFFICULTY_THRESHOLDS.get(difficulty, DIFFICULTY_THRESHOLDS["standard"])
+
     outcome = "Crit.Success"
     for limit, name in thresholds:
         if margin <= limit:
@@ -72,6 +75,7 @@ def main():
     dc = None
     volatility = 0
     trickster = "--trickster" in args
+    difficulty = "standard"
 
     clean_args = []
     i = 0
@@ -84,6 +88,9 @@ def main():
             i += 2
         elif args[i] in ("--volatility", "--stunt") and i + 1 < len(args):
             volatility = int(args[i + 1])
+            i += 2
+        elif args[i] == "--difficulty" and i + 1 < len(args):
+            difficulty = args[i + 1].lower()
             i += 2
         elif args[i].startswith("--"):
             i += 1
@@ -161,7 +168,7 @@ def main():
             nat = best
             if dc:
                 margin = total - dc
-                print(f"  vs DC {dc}: {'+' if margin >= 0 else ''}{margin} -> {margin_outcome(margin, nat)}")
+                print(f"  vs DC {dc}: {'+' if margin >= 0 else ''}{margin} -> {margin_outcome(margin, nat, difficulty)}")
 
         elif dis and sides == 20 and count == 1:
             r1, r2 = random.randint(1, 20), random.randint(1, 20)
@@ -171,7 +178,7 @@ def main():
             nat = worst
             if dc:
                 margin = total - dc
-                print(f"  vs DC {dc}: {'+' if margin >= 0 else ''}{margin} -> {margin_outcome(margin, nat)}")
+                print(f"  vs DC {dc}: {'+' if margin >= 0 else ''}{margin} -> {margin_outcome(margin, nat, difficulty)}")
 
         elif count > 1 and sides == 20:
             rolls = [random.randint(1, sides) for _ in range(count)]
@@ -183,7 +190,7 @@ def main():
                 for idx, r in enumerate(rolls):
                     total = r + mod
                     margin = total - dc
-                    print(f"  [{idx+1}] {total} vs DC {dc}: {'+' if margin >= 0 else ''}{margin} -> {margin_outcome(margin, r)}")
+                    print(f"  [{idx+1}] {total} vs DC {dc}: {'+' if margin >= 0 else ''}{margin} -> {margin_outcome(margin, r, difficulty)}")
 
         elif count > 1:
             rolls = [random.randint(1, sides) for _ in range(count)]
@@ -199,7 +206,7 @@ def main():
                 print(f"d{sides}: {roll}")
             if dc:
                 margin = total - dc
-                print(f"  vs DC {dc}: {'+' if margin >= 0 else ''}{margin} -> {margin_outcome(margin, roll)}")
+                print(f"  vs DC {dc}: {'+' if margin >= 0 else ''}{margin} -> {margin_outcome(margin, roll, difficulty)}")
 
 
 if __name__ == "__main__":
