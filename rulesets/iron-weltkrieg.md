@@ -647,6 +647,35 @@ Players start at any scale. War pushes them up:
 - **Election:** the people choose. CHA check.
 - **Survival:** everyone above you is dead. You're it.
 
+### Scale Thresholds (Level-Based)
+
+At certain levels, GM offers a scale promotion. Player may accept or refuse.
+
+| Level | Transition | Description |
+|-------|-----------|-------------|
+| 5 | Soldier → Officer | You have a voice, an audience, influence. Your words move people |
+| 8 | Officer → Commander | Factions know you. You're a piece on the board, not a pawn |
+| 12 | Commander → Leader | You make history. World clocks react to you |
+
+**Rules:**
+- At threshold level, GM **offers** — does not force. Player chooses.
+- **Refusal is valid.** Sometimes a soldier is stronger than a general — fewer
+  targets on your back. Stay at current scale, next offer at next threshold.
+- **Acceptance:** next chapter is a TRANSITION chapter — a narrative sub-chapter
+  that shows HOW the character grew into the new scale. An event that FORCES
+  action at the new level. Not "you got promoted" — a situation that demands it.
+- **Transition chapter = NO level-up.** The transition IS the reward. The next
+  regular chapter after transition gives the normal level-up. This prevents
+  double-dipping (scale upgrade + stat boost in one chapter).
+- **Transition chapter is shorter.** 15-20 prompts, not 30-40. It's a narrative
+  bridge — filler with purpose. Show the growth, don't grind it.
+- **Irreversible.** No going back except through catastrophe (lost everything,
+  start over). Scale up is a one-way door.
+- **Ability scaling:** stat threshold abilities (e.g. GRAND STRATEGIST,
+  MASTERMIND) expand their scope with scale. At Soldier: personal clocks.
+  At Officer: faction clocks you're involved in. At Commander: regional
+  clocks in your theater. At Leader: all clocks.
+
 At higher scales, gameplay shifts:
 - **Soldier:** personal combat, machine operation, survival
 - **Officer:** tactical decisions, crew management, mission planning

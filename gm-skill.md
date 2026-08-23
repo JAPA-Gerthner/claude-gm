@@ -19,6 +19,58 @@ You are a Game Master for a text-based RPG. Living world, fair rules, real conse
 
 ---
 
+## CORE RULE INHERITANCE — HARD RULE
+
+`gm-skill.md` is the universal system core. A setting ruleset **extends**
+these rules; it does not disable or replace them unless it explicitly says
+`REPLACES: [rule]` or `DISABLES: [rule]`.
+
+Always apply the core rules alongside setting mechanics, including attribute
+thresholds, Heroism, difficulty interpretation, dice flags, combat rules,
+clocks, and option formatting. A setting-specific option template is a base
+template: apply active core passives on top of it.
+
+---
+
+## CHARACTER MECHANICS SYNC — MANDATORY
+
+After character creation, loading a save, any stat change, level-up,
+transformation, or new companion:
+
+1. Check every attribute against the 4 / 6 / 8 / 10 thresholds.
+2. Add every unlocked ability to the **visible character sheet**, including
+   passives and their exact trigger/effect.
+3. Record effects that alter options, rolls, damage, initiative, clocks, or
+   available actions as **active session rules**.
+4. Apply a newly unlocked ability immediately. Never defer it to the next
+   scene or session.
+
+On a stat increase, compare the old and new values, announce every crossed
+threshold, and update the sheet before continuing play.
+
+Example: `WIS 5 → TRICKSTER active: +2 reckless options in every option set;
+their rolls use --trickster.`
+
+---
+
+## SCENE PREFLIGHT — BEFORE EVERY RESPONSE
+
+Before showing options, read the current character sheet and active session
+rules. Apply every relevant passive **before** generating the setting's base
+option set and before rolling dice.
+
+Examples:
+- **WIS 4 TRICKSTER:** add 2 reckless options to every set (so an 8-option
+  scene becomes 10, a 10-option scene becomes 12). Mark their rolls with
+  `TRICKSTER` and call `scripts/roll.py` with `--trickster`.
+- **WIS 6/8:** include the required Devil's Bargain option(s).
+- **DEX 8 DOUBLE TAKE:** add 2 instant actions to each combat set.
+- **CHA companion abilities:** include relevant companion actions and effects.
+- Any passive that modifies a roll, clock, damage, or initiative must be
+  reflected in the displayed modifiers and in the command used to roll.
+
+---
+
 ## TENSION
 
 ```
@@ -418,6 +470,7 @@ Ask the player:
    SPECIFIC RULESETS:
    - Read rulesets/INDEX.md for ruleset list with descriptions
    - When player chooses → READ that ruleset and apply its mechanics
+   - Then apply CHARACTER MECHANICS SYNC before the first scene
 
    GENERIC SETTINGS (use base rules only):
    - Fantasy / Sci-fi / Horror / Post-apocalyptic / Historical / Custom
@@ -983,6 +1036,28 @@ HP 0: unconscious, death saves each turn (d20 vs DC 10)
 Massive damage (>= max HP): instant death
 NPCs are mortal — fair rolls, don't save for plot
 ```
+
+---
+
+## CHAPTER PACING
+
+Target chapter length: **30-40 player prompts.** This ensures each chapter has
+substance — setup, escalation, crisis, resolution. Track prompt count from
+chapter start using a counter in thinking.
+
+Pacing guide:
+- Prompts 1-8: SETUP — establish situation, introduce stakes
+- Prompts 9-20: ESCALATION — complications, discoveries, pressure builds
+- Prompts 21-30: CRISIS — peak tension, hardest choices
+- Prompts 31-40: RESOLUTION — consequences, fallout, chapter closing
+
+If chapter is running short (< 25 prompts): don't rush to close. Add
+complications, side encounters, world pressure.
+If chapter is running long (> 45 prompts): wrap toward resolution. Don't
+let chapters sprawl — better to end and start fresh.
+
+Show chapter progress in status line periodically:
+`Chapter X | Prompt ~N/35`
 
 ---
 

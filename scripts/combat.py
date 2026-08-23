@@ -34,18 +34,21 @@ import re
 
 OUTCOMES = ["Crit.Fail", "Fail", "Partial", "Success", "Crit.Success"]
 
+DIFFICULTY_THRESHOLDS = {
+    "casual":   [(-8, "Crit.Fail"), (-1, "Fail"), (2, "Partial"), (7, "Success")],
+    "standard": [(-6, "Crit.Fail"), (-1, "Fail"), (4, "Partial"), (9, "Success")],
+    "hardcore": [(-4, "Crit.Fail"), (-1, "Fail"), (6, "Partial"), (11, "Success")],
+}
 
-def margin_outcome(margin, nat_roll=None):
-    if margin <= -6:
-        outcome = "Crit.Fail"
-    elif margin <= -1:
-        outcome = "Fail"
-    elif margin <= 4:
-        outcome = "Partial"
-    elif margin <= 9:
-        outcome = "Success"
-    else:
-        outcome = "Crit.Success"
+
+def margin_outcome(margin, nat_roll=None, difficulty="standard"):
+    thresholds = DIFFICULTY_THRESHOLDS.get(difficulty, DIFFICULTY_THRESHOLDS["standard"])
+
+    outcome = "Crit.Success"
+    for limit, name in thresholds:
+        if margin <= limit:
+            outcome = name
+            break
 
     idx = OUTCOMES.index(outcome)
     shifted = False
@@ -89,7 +92,7 @@ def roll_damage(count, sides, stat_mod, outcome_idx):
         return total, rolls
 
 
-def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False, annihilation=False):
+def resolve_attacks(attacks_str, damage_str="d8", damage_mod=0, target_htk=False, secret=False, annihilation=False, cleave=False, difficulty="standard"):
     if secret:
         print("GM SECRETS - DO NOT EXPAND\n" * 5)
 
@@ -109,7 +112,7 @@ def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False
         stat_str = parts[1].upper()
         ac_str = parts[2].upper().replace("AC", "")
         ac = int(ac_str)
-        flags = parts[3].lower().split("+") if len(parts) > 3 else []
+        flags = [p.lower() for p in parts[3:]] if len(parts) > 3 else []
 
         stat_match = re.match(r'([A-Z]+)(\d+)', stat_str)
         if not stat_match:
@@ -120,10 +123,12 @@ def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False
         stat_mod = int(stat_match.group(2))
 
         atk_bonus = 0
-        dmg_bonus = 0
+        dmg_bonus = damage_mod
         roll_mode = "normal"
         is_snapback = False
         notes = []
+        if cleave:
+            notes.append("CLEAVE ready")
 
         for flag in flags:
             if flag == "adv":
@@ -132,6 +137,10 @@ def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False
                 roll_mode = "disadvantage"
             elif flag == "snapback":
                 is_snapback = True
+            elif flag == "charge":
+                atk_bonus += 2
+                dmg_bonus += 2
+                notes.append("CHARGE +2/+2")
             elif flag.startswith("atk"):
                 m = re.match(r'atk([+-]?\d+)', flag)
                 if m:
@@ -198,7 +207,7 @@ def resolve_attacks(attacks_str, damage_str="d8", target_htk=False, secret=False
 
         total = nat + stat_mod + atk_bonus
         margin = total - ac
-        outcome, outcome_idx = margin_outcome(margin, nat)
+        outcome, outcome_idx = margin_outcome(margin, nat, difficulty)
 
         # Damage
         total_dmg, dmg_rolls = roll_damage(dmg_count, dmg_sides, stat_mod + dmg_bonus, outcome_idx)
@@ -299,11 +308,14 @@ def main():
     secret = "--secret" in args
     target_htk = "--target-htk" in args
     annihilation = "--annihilation" in args
+    cleave = "--cleave" in args
 
     attacks_str = None
     init_str = None
     breaking_point_n = None
     damage_str = "d8"
+    damage_mod = 0
+    difficulty = "standard"
 
     i = 0
     while i < len(args):
@@ -319,6 +331,12 @@ def main():
         elif args[i] == "--damage" and i + 1 < len(args):
             damage_str = args[i + 1]
             i += 2
+        elif args[i] == "--damage-mod" and i + 1 < len(args):
+            damage_mod = int(args[i + 1])
+            i += 2
+        elif args[i] == "--difficulty" and i + 1 < len(args):
+            difficulty = args[i + 1].lower()
+            i += 2
         else:
             i += 1
 
@@ -327,7 +345,7 @@ def main():
     elif init_str:
         resolve_initiative(init_str)
     elif attacks_str:
-        resolve_attacks(attacks_str, damage_str, target_htk, secret, annihilation)
+        resolve_attacks(attacks_str, damage_str, damage_mod, target_htk, secret, annihilation, cleave, difficulty)
     else:
         print("Usage:")
         print('  python combat.py --attacks "Name:STATmod:AC, ..."')
