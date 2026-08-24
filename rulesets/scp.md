@@ -610,15 +610,23 @@ When attempting to counter an anomaly:
 
 **2. Propose Counter-Tactic:** Player describes approach, GM evaluates.
 
-**3. Roll Against Resistance:**
-| Class | DC |
-|-------|-----|
-| Safe | 12 |
-| Euclid | 14 |
-| Keter | 16 |
-| Apollyon | 20+ |
+**3. Roll Against Immediate Risk:**
+Use the anomaly's **Risk Class** for direct exposure, survival, suppression, or short-term counter-tactics. Object Class does NOT mean "combat power."
+
+| Risk Class | DC |
+|------------|-----|
+| Notice | 10 |
+| Caution | 12 |
+| Warning | 14 |
+| Danger | 16 |
+| Critical | 18+ |
 
 **4. Resolve:** Partial+ = tactic works temporarily. Fail = escalation (+2 DC next attempt). Crit Fail = cascade.
+
+**Classification roles:**
+- **Risk Class** → immediate danger/resistance DC to personnel.
+- **Object Class** → difficulty and resource burden of long-term containment. If a containment roll needs a base DC: Safe 12, Euclid 14, Keter 16, Apollyon 20+; Thaumiel is context-dependent.
+- **Disruption Class** → scale/range of consequences when containment or countermeasures fail, not a direct DC modifier.
 
 **Note:** "Counter" = suppress/evade/neutralize temporarily. Permanent containment requires protocols.
 

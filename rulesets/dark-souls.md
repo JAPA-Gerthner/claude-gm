@@ -173,7 +173,8 @@ Track as single integer: `[SOULS: 4,250]`
 On death:
 1. Wake at last Bonfire with 0 Souls
 2. All Souls drop at death location as **Soul Echo**
-3. World persists — doors open, shortcuts unlocked, enemies respawn
+3. If Human, lose Human form and gain 1 Hollow stack; if already not Human, gain 1 additional Hollow stack
+4. World persists — doors open, shortcuts unlocked, enemies respawn
 
 **Soul Echo Recovery:**
 - Reach death location, interact (trivial if area clear)
@@ -191,7 +192,7 @@ HOLLOW TRACK:
   Lost    ●●●●  — NPC control, character gone
 
 GAINING STACKS:
-- Die while not Human → +1 stack
+- Death → +1 stack. If Human, death first removes Human form, then applies the stack.
 - Curse attacks, dark environments → +1 stack (GM call)
 
 REMOVING STACKS:
@@ -430,6 +431,8 @@ Player responds. THEN roll.
 ```
 Phase 1 → 2: HP drops below 60%
 Phase 2 → 3: HP drops below 30%
+
+Bosses with only two designed phases use the 60% transition and omit Phase 3; three-phase bosses use both thresholds.
 ```
 
 At transition:
@@ -553,8 +556,10 @@ PHASE 2 — [state]
 ### Boss Fight Pacing
 
 Bosses have MOMENTUM, not turn initiative:
-- Boss attacks 2-3 times per exchange (Phase 1), 3-4 (Phase 2)
-- Player has 1 action per exchange: dodge, attack, heal, or reposition
+- Boss presents 2-3 telegraphed strikes per exchange (Phase 1), 3-4 (Phase 2)
+- The player may take one REACTION to each telegraphed strike (dodge/block/parry) as long as Stamina allows
+- After/among the sequence, the player has 1 MAIN ACTION per exchange: attack, heal, reposition, item, spell, etc.
+- A Dodge Roll still avoids only one incoming strike; surviving a combo requires multiple reactions and enough Stamina
 - Consecutive hits (3+) = **Poise Break** → free attack
 
 **Estus Mid-Fight:** Committed action. Must create distance first (DEX DC 12), then drink. Fail = boss punishes before heal.
@@ -589,7 +594,7 @@ Bonfires are respawn points, save files, and the last warm thing.
 **Warping:** Unlocked mid-game (requires Lord Soul or special item). Teleport between lit bonfires.
 
 **Estus Flask:**
-- Base: 5 charges per session
+- Base: 5 charges per Bonfire rest (resting refills to current max)
 - Use: Full action, restore 2d4+2 HP
 - Kindled: restore 2d6+4 HP
 - Max charges: 15 (with full kindling)
@@ -826,7 +831,7 @@ Condition: Human form, outside safe zones.
 | 3 | Steel Protection | -2 physical damage |
 | 4 | Havel's Ring | +50% equip burden |
 | 5 | Chloranthy | +2 Stamina regen |
-| 6 | Wolf Ring | +20 Poise |
+| 6 | Wolf Ring | +2 Poise |
 | 7 | Gold Serpent | +1 loot rolls |
 | 8 | Silver Serpent | +20% souls |
 | 9 | Sun's Firstborn | +20% miracle damage |

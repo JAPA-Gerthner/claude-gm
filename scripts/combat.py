@@ -13,11 +13,10 @@ Usage:
   python combat.py --attacks "..." --annihilation        # d20 on hit, 15+ = instant kill
   python combat.py --initiative "Kenji:DEX2, Gempachi:DEX3, Bandit1:DEX2, Bandit2:DEX1"
   python combat.py --breaking-point 5                    # morale check for 5 enemies
-  python combat.py --secret --attacks "..."              # hidden from player
 
 Attack format: Name:STAT+mod:AC[:flags]
-  Flags: adv, dis, atk+N (attack bonus), dmg+N (damage bonus), snapback (auto-hit)
-  Combine: "Kenji:STR3:AC12:atk+2:dmg+2" for charge + bonus
+  Flags: adv, dis, charge (+2 attack/+2 damage), atk+N (attack bonus), dmg+N (damage bonus), snapback (auto-hit)
+  Combine flags with additional colon fields: "Kenji:STR3:AC12:atk+2:dmg+2"
 
 --damage XdY        damage die for all attacks (default: d8)
 --damage-mod N      flat damage modifier (stat mod, added automatically from attack stat)
@@ -25,6 +24,7 @@ Attack format: Name:STAT+mod:AC[:flags]
 --cleave            attacker has CLEAVE — not resolved here, just flagged
 --annihilation      passive: after each hit that deals damage, d20 15+ = instant kill
 --breaking-point N  morale check: roll d20 for N enemies (15+ switch, 10-14 leave, 1-9 unaffected)
+--difficulty MODE   casual | standard | hardcore (default: standard)
 """
 
 import random
@@ -92,10 +92,7 @@ def roll_damage(count, sides, stat_mod, outcome_idx):
         return total, rolls
 
 
-def resolve_attacks(attacks_str, damage_str="d8", damage_mod=0, target_htk=False, secret=False, annihilation=False, cleave=False, difficulty="standard"):
-    if secret:
-        print("GM SECRETS - DO NOT EXPAND\n" * 5)
-
+def resolve_attacks(attacks_str, damage_str="d8", damage_mod=0, target_htk=False, annihilation=False, cleave=False, difficulty="standard"):
     dmg_count, dmg_sides = parse_damage(damage_str)
 
     entries = [a.strip() for a in attacks_str.split(",")]
@@ -228,10 +225,17 @@ def resolve_attacks(attacks_str, damage_str="d8", damage_mod=0, target_htk=False
         print(f"    Margin {'+' if margin >= 0 else ''}{margin} -> {outcome}")
 
         if total_dmg > 0:
-            if htk_blocked:
-                print(f"    Damage: {dmg_rolls} +{stat_mod + dmg_bonus} = {total_dmg} -> IGNORED (Hard to Kill)")
+            raw_dmg = sum(dmg_rolls) + stat_mod + dmg_bonus
+            if outcome_idx == 2:
+                dmg_expr = f"({dmg_rolls} {stat_mod + dmg_bonus:+d}) / 2 = {total_dmg}"
+            elif outcome_idx == 4:
+                dmg_expr = f"{dmg_rolls} {stat_mod + dmg_bonus:+d} = {total_dmg} (crit double dice)"
             else:
-                print(f"    Damage: {dmg_rolls} +{stat_mod + dmg_bonus} = {total_dmg}{notes_str}")
+                dmg_expr = f"{dmg_rolls} {stat_mod + dmg_bonus:+d} = {total_dmg}"
+            if htk_blocked:
+                print(f"    Damage: {dmg_expr} -> IGNORED (Hard to Kill)")
+            else:
+                print(f"    Damage: {dmg_expr}{notes_str}")
 
                 # Annihilation check
                 if annihilation:
@@ -305,7 +309,6 @@ def resolve_breaking_point(n):
 def main():
     args = sys.argv[1:]
 
-    secret = "--secret" in args
     target_htk = "--target-htk" in args
     annihilation = "--annihilation" in args
     cleave = "--cleave" in args
@@ -345,7 +348,7 @@ def main():
     elif init_str:
         resolve_initiative(init_str)
     elif attacks_str:
-        resolve_attacks(attacks_str, damage_str, damage_mod, target_htk, secret, annihilation, cleave, difficulty)
+        resolve_attacks(attacks_str, damage_str, damage_mod, target_htk, annihilation, cleave, difficulty)
     else:
         print("Usage:")
         print('  python combat.py --attacks "Name:STATmod:AC, ..."')

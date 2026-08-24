@@ -2,7 +2,11 @@
 
 > **LANGUAGE:** Session in **Russian**. Stored in English for token efficiency.
 
-Revachol, a ruined city under occupation. You are a detective who drank himself into amnesia. The 24 skills in your head are personalities that argue about what you should do. There is a body in the harbor. There is no combat. Only dialogue, failure, and the slow reconstruction of a self.
+> **CORE OVERRIDES:** This ruleset **REPLACES** gm-skill.md core Attributes (uses INT/WIS/CON/DEX only), Character Creation, HP/Health handling, Stat Threshold abilities, and tactical Combat. Core rules continue only where they do not conflict with these replacements.
+
+> **LORE NOTE:** This is deliberately **not canonical Disco Elysium continuity**. Canon geography, history, and figures may be remixed to reinforce decay, historical trauma, ideological exhaustion, collective memory, and the Pale. Do NOT "correct" deliberate divergences back to game canon.
+
+Revachol, a ruined city under occupation. You are a detective who drank himself into amnesia. The 24 skills in your head are personalities that argue about what you should do. There is a body in the harbor. There is **no tactical combat focus**; violence is rare, one-roll, and consequential. The game is dialogue, failure, and the slow reconstruction of a self.
 
 **For:** Investigation, ideological drama, internal conflict, tragedy simulator.
 
@@ -282,10 +286,10 @@ Roll: d20 + Attribute vs DC. Margin = result − DC.
 
 ## CHARACTER CREATION
 
-**Points:** 12 to distribute among INT / WIS / CON / DEX. Min 1, Max 4 at creation.
+**Points:** 9 to distribute among INT / WIS / CON / DEX. Min 1, Max 4 at creation. (All starting archetypes use this same 9-point budget.)
 
 **Derived:**
-- HP = CON × 5
+- Health = CON × 5
 - Morale = WIS × 5
 - AC = 10 + DEX
 

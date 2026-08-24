@@ -290,7 +290,7 @@ Political operator with resources and connections.
 **Toward Light (+):**
 - Spare enemy: +1
 - Self-sacrifice: +1
-- Refuse Dark temptation: +1
+- Refuse a **significant** Dark temptation: +1 (maximum once per session)
 - Redeem Dark user: +2
 
 ### Force Strain
@@ -348,7 +348,7 @@ When desperate (below 25% HP, ally dying, overwhelming odds): WIS save.
 
 **Fail:** GM offers Devil's Bargain — power for -1 alignment.
 **Crit.Fail:** Use Dark power automatically, -2 alignment.
-**Success:** Resist AND +1 alignment (immediate reward for struggle).
+**Success:** Resist. If this is the first significant Dark temptation resisted this session, also gain +1 alignment; repeated routine resistance does not farm Light alignment.
 **Aid:** Light-aligned ally in scene grants ADV on save. Anchor reduces DC by 2.
 
 ### Redemption
@@ -387,8 +387,8 @@ Choose one Form. Additional forms require training arc.
 ### Force Bonds
 
 **Master-Apprentice:** Sense each other across distance. +1 fighting together. If one dies: WIS DC 16 or stunned.
-**Life Debt/Attachment:** +2 resist Dark temptation involving them. If harmed: -2 resist Dark.
-**Anchor:** Non-Force touchstone (ship, droid, memento). +1 resist temptation near it.
+**Life Debt/Attachment:** +2 resist Dark temptation involving them. If that same person is currently harmed/threatened, apply -2 as well (net 0 before other modifiers): the bond is both strength and leverage.
+**Anchor:** Non-Force touchstone (ship, droid, memento). Reduces Dark temptation DC by 2 when meaningfully present/remembered.
 
 ---
 

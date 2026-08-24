@@ -56,34 +56,35 @@ Starting total across all three: max 4.
 
 ---
 
-## CORE RULE: ONE SHIFT PER SCENE
+## CORE RULE: ONE FORCE EVENT PER SCENE
 
-Per scene or encounter, apply at most ONE base Force shift.
+Per scene or encounter, resolve at most ONE base Force event. A single event may move one or two Forces when the same act genuinely serves both pressures (for example, obedient atrocity = Control + Entropy).
 
 ```
-Choose the most significant driver:
+Choose the most significant driver/event:
 - how the problem was solved
 - what the character chose under pressure
 - the dominant method (obedient / forbidden / passive)
 
-BASE: +1 Force (standard)
-      +2 Force (major outcome)
-      +3 Force (catastrophic — rare, GM only)
+STANDARD EVENT: +1 total positive Force
+MAJOR / DUAL / AMPLIFIED EVENT: up to +2 total positive Force, split across one or two Forces as appropriate
+CATASTROPHIC EVENT: up to +3 total positive Force (rare, GM only)
 
 INACTION on a pressing matter: +1 Entropy
+Reductions caused by the same event do not count toward the positive-gain cap.
 ```
 
 ### Amplifiers
 
-The following can increase the scene's shift by +1 (max total +2 unless catastrophic):
+The following can increase the scene's total positive Force gain by +1 (max +2 unless catastrophic):
 
 ```
 - Killing a sentient being (if central to the scene)
 - Psychic power as the primary solution
 - Extreme methods (Exterminatus-level thinking, torture, sacrifice)
 
-If multiple apply: still cap at +2 total.
-GM picks the dominant narrative cause.
+If multiple apply: still cap at +2 total positive gain.
+GM records one Force event; split it across two Forces only when the action truly has two distinct pressures.
 ```
 
 Target pacing: ~2-5 Force per session. Critical thresholds in 2-4 sessions.
@@ -612,8 +613,8 @@ PSY RATINGS:
 | 5      | Alpha      | +5    | Nat 1-3     | Major         |
 | 6+     | Alpha-Plus | +6    | Nat 1-4     | Apocalyptic   |
 
-EVERY CAST = +1 Warp (minimum). Psychic power IS Push (Warp).
-Can Push additionally: +1d6 to casting, +1 more Warp (total +2).
+FIRST meaningful psychic cast in a scene establishes that scene's Warp Force event: normally +1 Warp. Psychic power IS Push (Warp).
+Additional casts in the SAME scene do not each add another base +1 Warp; they still risk Perils, and explicit Perils/catastrophic effects may amplify the scene's event. An additional Push can raise the scene's Warp gain by +1 (normally max +2 total positive Force for the scene).
 
 POWER TIERS:
 Minor (DC 10): sense emotions, spark flame, minor telekinesis
@@ -690,8 +691,8 @@ FAITH = faction reputation with the Emperor (0-6).
   At 6: Living Saint potential. Reality bends around you.
 
 FAITH IS A PUSH (CONTROL):
-Every answered prayer = +1 Control.
-Miracles at Faith 5+ = +2 Control guaranteed.
+The FIRST answered prayer in a scene establishes that scene's Control Force event: normally +1 Control.
+Additional answered prayers in the same scene do not stack repeated base shifts. A major miracle at Faith 5+ makes the scene's Control event +2 total (subject to the normal Force-event cap).
 The Emperor protects. The Imperium tightens.
 
 CRISIS OF FAITH:
@@ -1329,7 +1330,7 @@ THREE FORCES:
 CONTROL   (0-10) → the Imperium's grip
 WARP      (0-10) → Hell reaching in
 ENTROPY   (0-10) → the slow death of meaning
-All three hostile. One shift per scene. Inaction = +Entropy.
+All three hostile. One Force event per scene; one event may split across two Forces. Inaction = +Entropy.
 
 THREE CURRENCIES:
 FORCE     = strategic (who's breaking you)
@@ -1346,8 +1347,8 @@ Condition 3+ = Scar (permanent). 5+ Scars = broken. 7+ = unplayable.
 FATE: 0-2 by origin. Cheats death once per point.
 FORTUNE: 1-3 by origin. Reroll, +2, enemy reroll, −1 Condition. Cannot reduce Forces.
 
-PSYCHIC: d20 + WIS + Psy vs DC. Every cast = +1 Warp.
-FAITH: CHA + Faith vs DC. Every answered prayer = +1 Control.
+PSYCHIC: d20 + WIS + Psy vs DC. First meaningful cast/scene = +1 Warp event; later casts risk Perils but do not stack base shifts.
+FAITH: CHA + Faith vs DC. First answered prayer/scene = +1 Control event; major miracle can make it +2.
 
 RANK: 0 expendable → 3 officer → 5 authority
   Higher = more resources, more Control pressure.
@@ -1375,7 +1376,7 @@ Player chooses their pace. The war takes everyone eventually.
 
 ```
 [ ] Mission phase clear?
-[ ] Forces tracked? (one shift per scene)
+[ ] Forces tracked? (one Force event per scene; split only when justified)
 [ ] Warp pressure on everyone? (not just psykers)
 [ ] Control pressure from hierarchy? (orders, doctrine, faith)
 [ ] Entropy from inaction/losses? (the grind)

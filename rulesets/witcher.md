@@ -183,6 +183,8 @@ The Path moves ONLY through Lesser Evil decisions. Not through every action. Not
 
 ### Path Direction
 
+**Judge the reason and accepted cost, not only the visible outcome.** "Killed" does not automatically mean Monster and "spared" does not automatically mean Human. The bullets below are defaults/evidence; classify the Lesser Evil choice by what the witcher prioritized and why.
+
 ```
 Path moves toward MONSTER (0) when you:
 - Choose efficiency over mercy
@@ -213,7 +215,7 @@ One shift per contract. Maximum.
 The engine that drives The Path. Not a suggestion — a structural requirement.
 
 ```
-EVERY CONTRACT must contain at least one moral dilemma.
+Every **SIGNIFICANT** contract should contain at least one moral dilemma. Routine professional contracts may be clean hunts; use them as contrast so Lesser Evil choices stay meaningful rather than becoming predictable.
 
 There is no clean solution.
 Every outcome has a cost.
@@ -234,7 +236,7 @@ Examples:
 - Burn the leshen's totems (village safe, forest dies) OR negotiate (village relocates)
 
 After resolution:
-1. Shift The Path (one step, direction based on choice)
+1. Shift The Path (one step, direction based on **why the choice was made**, not merely whether the target lived or died). Mercy can be selfish; killing can be protective. Judge the character's governing motive and accepted cost.
 2. Apply consequences (reputation, narrative, world state)
 3. The choice echoes — NPCs remember, factions react, the world shifts
 ```
@@ -964,7 +966,7 @@ Hidden (d6): 1-Testing defenses 2-Ingredient has rights 3-Wants tissue samples 4
 
 ### Moral Dilemmas (Lesser Evil Seeds)
 
-Every contract MUST offer at least one moral choice (see LESSER EVIL system).
+Every significant contract should offer at least one moral choice (see LESSER EVIL system). Routine clean hunts are allowed as pacing contrast.
 These are seeds — GM expands based on contract context:
 
 - **Kill or spare?** — Monster intelligent, begging for life → Path shift
@@ -1019,7 +1021,7 @@ These are seeds — GM expands based on contract context:
 | Resist Axii (normal human) | 10 |
 | Resist Axii (strong-willed) | 15 |
 | Brew standard potion | 10 |
-| Brew decoction | 15 |
+| Brew decoction | 18 |
 | Lift simple curse | 15 |
 | Lift complex curse | 20 |
 
@@ -1197,7 +1199,7 @@ THE PATH: 0 Monster ←— 5 Witcher —→ 10 Human
   4-6: baseline witcher, balanced
   8-10: social bonuses, combat hesitation, exploitable
 
-LESSER EVIL: Every contract = moral dilemma. No clean solutions.
+LESSER EVIL: Significant contracts = moral dilemma. Routine contracts may be clean. When a dilemma appears, there is no clean solution.
   Choose → Path shifts → consequences echo.
   Refuse to choose → Path stays, but worst outcome happens.
 

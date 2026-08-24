@@ -88,11 +88,13 @@ STAGE 10: IMMORTAL ASCENSION
 
 ### Power Gaps (ABSOLUTE)
 
+**Power gaps are measured by CULTIVATION REALM, not every numbered sub-stage.** Stages 1-2 are the same Qi Condensation realm; 3-4 Foundation; 5-6 Golden Core; 7-8 Nascent Soul; 9 Spirit Severing; 10 Immortal.
+
 ```
-SAME STAGE: Normal combat. Rolls matter.
-1 STAGE ABOVE: +3 to all rolls vs lower. Lower needs Crit to wound.
-2 STAGES ABOVE: +6 to all rolls. Lower needs Crit + special circumstance.
-3+ STAGES ABOVE: AUTO-WIN. No roll needed. Lower cannot harm higher.
+SAME REALM: Normal combat. Rolls matter, including fights between the two sub-stages of one realm.
+1 REALM ABOVE: +3 to all rolls vs lower. Lower needs Crit to wound.
+2 REALMS ABOVE: +6 to all rolls. Lower needs Crit + special circumstance.
+3+ REALMS ABOVE: AUTO-WIN. No roll needed. Lower cannot harm higher.
   Exception: Heavenly-grade treasures, forbidden techniques, or formations.
 ```
 
@@ -242,7 +244,7 @@ DEVIATION: 0 ————————————→ 6
 -2: Heavenly-blessed location purification (rare)
 
 LIMITS:
-- Maximum -1 per session (purification is slow)
+- Maximum -1 per session from ORDINARY purification. Successful tribulations and rare Heavenly-blessed purification are explicit exceptions and may reduce Deviation by -2 as listed above.
 - Deviation 4+: purification requires DC 18
 - Deviation 5+: requires EXTERNAL help (elder, sacred ground, or treasure)
 - Deviation 6: only Heaven's direct intervention or supreme sacrifice
@@ -454,6 +456,8 @@ FORMAT: Mental combat scene
 ## FORBIDDEN TECHNIQUES
 
 The fast path. Always works. Always costs.
+
+**Forbidden advancement can bypass Resources and Comprehension, but NEVER a Tribulation.** If a forbidden technique would push cultivation across a tribulation threshold, the Tribulation triggers immediately; the new realm does not stabilize until it is survived.
 
 ```
 === SOUL DEVOURING ===

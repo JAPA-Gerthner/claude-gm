@@ -60,7 +60,7 @@ YI: ●●●●●○○○○○ (5/10)
 + Officers more likely to stay loyal
 + Peasants support you (+1 Supply per month in friendly territory)
 + Can invoke "righteous cause" for +1 army morale (once per battle)
-+ CANNOT use treacherous stratagems (#10, #31, #34)
++ CAN use treacherous stratagems, but must pay their listed Yi cost; using one may immediately knock the character out of High Yi
 ```
 
 ### Neutral Yi (4-6)
@@ -171,7 +171,7 @@ Spending Heroism (any brother):
 - Inspire army (+1 morale, one battle): 2 points
 - Survive lethal blow (1 HP instead of 0): 3 points
 
-Pool resets when all brothers reunite (1+ week together after separation).
+Pool resets when all brothers reunite after a **meaningful separation** (at least 1 week apart during which different brothers faced real duties, travel, danger, or story events). Deliberately splitting up to refresh Heroism does not count.
 Max spend per round: 2 points.
 ```
 
@@ -569,7 +569,7 @@ Territory limit: Small = max 3, Medium = 5, Large = 8
 When armies clash:
 
 ```
-Both commanders roll: d20 + INT + Morale + Terrain modifiers
+Both commanders roll: d20 + INT + **Morale Modifier** (from the table above, -2 to +2) + Terrain modifiers
 Calculate margin: Your roll - Enemy roll
 
 Margin-based outcomes:
@@ -622,7 +622,7 @@ At 6/6: City falls.
 
 ## Yi + Everything
 ```
-Yi 7+: +1 Supply/month friendly territory, cannot use TREACHEROUS stratagems
+Yi 7+: +1 Supply/month friendly territory; treacherous stratagems are allowed but immediately cost Yi
 Yi 4-6: Flexible, pick 1 High/Low benefit per session
 Yi 1-3: -1 Supply hostile territory, intimidation advantage, cheap stratagems
 Yi 0: Oaths worthless, only mercenaries/bandits follow you
@@ -1039,7 +1039,7 @@ Max prepared = INT mod. Trigger = action.
 Yi cost: 0 (tactical), -1 (deceptive), -2 (TREACHEROUS)
 Counter: WIS vs prep DC to detect, INT vs execution to negate
 
-TREACHEROUS (Yi 7+ cannot use): #10 Hide Knife, #31 Beauty Trap, #34 Self-Injury
+TREACHEROUS (Yi cost applies even at Yi 7+): #10 Hide Knife, #31 Beauty Trap, #34 Self-Injury
 ```
 
 ## Duel Quick
@@ -1055,7 +1055,7 @@ Signature weapons: +2 to +4, special abilities
 Strength: troops (5 = 5000), recover +1/week (100g)
 Morale: 5 elite (+2) to 1 breaking (-2)
 Supply: 5 months to 0 starving, resupply +1/week
-Battle: d20 + INT + Morale + mods, winner by margin
+Battle: d20 + INT + Morale Modifier (-2..+2) + other mods, winner by margin
 ```
 
 ---

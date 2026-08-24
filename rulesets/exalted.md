@@ -268,10 +268,12 @@ THE signature mechanic. Exalted rewards audacity. Go big or go home. Every optio
 GM tags response options with stunt tiers. Higher stunt = more cinematic action = wilder outcome.
 
 ```
-MECHANICAL EFFECT (--stunt flag on dice script):
-  ★ (stunt 1): random(-1..+1) — mild dramatic flair
-  ★★ (stunt 2): random(-2..+2) — cinematic action
-  ★★★ (stunt 3): random(-3..+3) — reality-bending insanity
+MECHANICAL EFFECT:
+  ★ (stunt 1): +1 flat bonus AND random(-1..+1) chaos — mild dramatic flair
+  ★★ (stunt 2): +2 flat bonus AND random(-2..+2) chaos — cinematic action
+  ★★★ (stunt 3): +3 flat bonus AND random(-3..+3) chaos — reality-bending insanity
+
+  The dice script's --volatility/--stunt flag supplies ONLY the random chaos. Add the flat stunt bonus to --mod yourself.
 
 OPTION FORMAT:
   1. [-] Walk to the gate and knock.
@@ -280,10 +282,10 @@ OPTION FORMAT:
   4. [DEX, ★★] Run along the rooftop, leap the gap, land on the balcony.
   5. [STR, ★★★] Rip the gate from its hinges, hurl it at the guards, stride through the dust.
 
-ROLL COMMAND:
-  python scripts/roll.py d20 --mod 4 --dc 16 --volatility 2
-  With WIS 4 TRICKSTER (from gm-skill.md):
-  python scripts/roll.py d20 --mod 4 --dc 16 --volatility 3 --trickster  # ±5 CHAOS
+ROLL COMMAND (example base stat/mod = +4):
+  ★★: python scripts/roll.py d20 --mod 6 --dc 16 --volatility 2  # +4 base +2 stunt, plus ±2 chaos
+  With WIS 4 TRICKSTER (from gm-skill.md), ★★★:
+  python scripts/roll.py d20 --mod 7 --dc 16 --volatility 3 --trickster  # +4 base +3 stunt, plus up to ±5 CHAOS
 ```
 ### Stunt Tiers Described
 
@@ -1711,7 +1713,7 @@ Tick down: rebellion, invasion, betrayal, neglect
 Clock: ○○○○○○ (0/6) | Tick up: Limit Breaks, tyrannical acts, ignoring counsel
 Tick down: humility, accepting criticism, voluntary restraint
 6/6: You become what the First Age Solars became.
-0/6: Breaking the cycle. Proof Solars can rule.
+0/6: The Curse is held at bay, not automatically defeated. If the campaign CONCLUDES here after sustained rule, this can prove the cycle was broken.
 ===
 ```
 ### C) The War
@@ -1952,7 +1954,7 @@ END: Limit ticked 1+? Faction clocks ticked? Essence milestones? NPCs updated?
 
 ```
 CLOCKS: Mote Depletion (0/N, pool size from Essence) | Limit (0-10, curse) | Anima (Dim/Glowing/Burning/Iconic)
-STUNTS: ★ +1 bonus, stunt 1 | ★★ +2 bonus, stunt 2 | ★★★ +3 bonus, stunt 3. Recovery: -1 on success, -2 on ★★★/Crit.
+STUNTS: ★ +1 flat + ±1 chaos | ★★ +2 flat + ±2 chaos | ★★★ +3 flat + ±3 chaos. `--volatility` supplies chaos only; include flat bonus in `--mod`. Recovery: -1 on success, -2 on ★★★/Crit.
 ESSENCE: d20 + WIS vs DC (10 + Essence x 2). Requires legendary deed.
 GAPS: Same E = fair | +2 E = +4 rolls | +3 E = auto-win
 TYPES: Solar (strongest/cursed) | Lunar (shape) | DB (numbers) | Sidereal (fate) | Abyssal (death) | Infernal (demon)
