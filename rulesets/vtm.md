@@ -51,10 +51,11 @@ PUSH (HUNGER):   +1d6 to the roll
 PUSH (HUMANITY): +1d4 to the roll
                  Humanity check DC 12
                  Fail: −1 Humanity
+                 Success: no Humanity loss, but the Beast remembers — the NEXT Beast temptation before dawn is +2 DC to refuse (does not stack). GM must offer one if a meaningful temptation occurs.
                  You do what the Beast would do. Efficient. Inhuman.
 ```
 
-Both cost something now AND later. Choice is real.
+Both carry a price now and/or later. Hunger Push guarantees bodily debt; Humanity Push risks Humanity and, even on success, makes the next meaningful Beast temptation harder. Choice is real.
 
 Cannot Push both ways on same roll.
 Discipline use is a Push — follows same rules.
@@ -540,7 +541,7 @@ OVERUSE: 3+ Discipline uses per night without feeding:
 EXTRA PUSH ON DISCIPLINE:
   Can Push additionally when using a Discipline.
   Push (Hunger): +1d6 to Discipline roll, +1 Hunger (total +2)
-  Push (Humanity): +1d4 to Discipline roll, Humanity check
+  Push (Humanity): +1d4 to Discipline roll, Humanity check (success still makes next Beast temptation before dawn +2 DC)
   Pushing a Discipline = desperation. The Beast LOVES it.
 ```
 
@@ -1948,7 +1949,7 @@ WILLPOWER (3) → can you hold on
 
 PUSH:
 HUNGER:   +1d6, +1 Hunger — body pays
-HUMANITY: +1d4, check DC 12 — soul pays
+HUMANITY: +1d4, check DC 12 — fail: -1 Humanity; success: next Beast temptation before dawn +2 DC
 
 HUNGER: 0 sated → 3 Beast whispers → 4 Frenzy on fail → 5 Frenzy on stress
 HUMANITY: 7 start → 5 cold → 3 monster → 0 lost

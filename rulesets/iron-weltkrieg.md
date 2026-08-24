@@ -35,7 +35,7 @@ Black Monday — the global economic crash of 1936 — shatters the fragile peac
 - **Flying fortresses:** Not dirigibles. Steel boxes held aloft by brute-force jet thrust. Boxy, non-aerodynamic, armored. Like Soviet lunar landers that someone bolted guns to. HighFleet aesthetic.
 - **Walkers/Mechs:** Boilers welded to tractor legs. Exposed pistons, smoke-belching stacks, riveted plate armor. From infantry-sized exosuits to barn-sized quadrupeds. Iron Harvest / 1920+ aesthetic.
 - **Tanks, ships, artillery:** Conventional but massive. Dreadnoughts. Railway guns. Landships. Everything scaled to industrial gigantism.
-- **No electronics.** Vacuum tubes, mechanical computers, analog everything. Radio is king. Radar is new and unreliable. Cryptography is manual.
+- **No digital or solid-state electronics.** Vacuum-tube analog electronics, relays, mechanical computers, analog dials. Radio is king. Radar is new and unreliable. Cryptography is manual.
 
 ### Tone
 
@@ -151,10 +151,12 @@ GLOBAL TENSION: 0% ————————————————————�
 ### Between Chapters: World Events
 
 Every chapter end, GM:
-1. Rolls d20 for 2-3 active regional conflict clocks (see regional tables)
+1. Mechanically advances **all active regional conflict clocks** that are due to move (batch-roll if necessary). Only 2-3 foreground results need detailed narration.
 2. Updates tension based on results
 3. Processes cascade effects
-4. Delivers news to player via **newspaper headlines, radio broadcasts, orders from command**
+4. Delivers the most relevant results to player via **newspaper headlines, radio broadcasts, orders from command**
+
+Offscreen does NOT mean arbitrary: do not choose distant winners for drama. Their clocks/resolution tables still determine history; simply summarize most offscreen rolls.
 
 Format:
 ```
@@ -174,20 +176,27 @@ CONFLICT CLOCK: 0 ——————— 6
                 Side A wins   Side B wins
 ```
 
+**CLOCK TYPES:**
+- **Binary clock with explicit endpoint labels:** 0/6 is authoritative. The endpoint determines who/what wins; any RESOLUTION table may only determine the *form* of that compatible victory. Reroll/ignore entries that contradict the reached endpoint.
+- **Multi-faction or unlabeled crisis clock:** the clock measures time/escalation until resolution, not a binary winner. Advance it toward resolution and record who the player materially supports. At resolution, use the listed multi-faction table, giving direct player involvement strong narrative/mechanical weight; never pretend an unlabeled clock already named a winner.
+
 **Tick rate accelerates with age:**
 - Chapter 1 of conflict: ±1 per chapter
 - Chapter 2-3: ±2 per chapter
 - Chapter 4+: ±3 per chapter
 - Conflicts CANNOT stall forever — escalating ticks guarantee resolution
 
-**Direction:** Each chapter, GM rolls d20 for each active conflict:
+**Direction:** For BINARY clocks, each chapter GM rolls d20 for each active conflict:
 - 1-10: tick toward Side A (lower number = stronger push)
 - 11-20: tick toward Side B (higher = stronger)
 - Player actions: ±1-3 modifier based on direct involvement
 - External intervention: ±1-2 modifier from cascade effects
 
-**Resolution:** When clock hits 0 or 6, roll on the conflict's RESOLUTION table (d20)
-in the regional file. Result determines winner, post-war path, and cascade effects.
+For MULTI-FACTION / UNLABELED crisis clocks, advance toward the resolution threshold using age/escalation and events; track player-backed factions/actions as resolution leverage rather than pretending the two endpoints name every possible faction.
+
+**Resolution:** When a clock reaches its resolution endpoint/threshold, consult that conflict's RESOLUTION table.
+- Binary clock: endpoint winner is authoritative; table selects only a compatible post-war path/variant and cascade effects.
+- Multi-faction/unlabeled clock: table may determine the winner, but direct player leverage must materially weight/limit the plausible results.
 
 ### Cascade Effects
 
@@ -249,13 +258,15 @@ NUCLEAR CLOCK: 0 ——————————————— 10
 
 ### Nuclear Clock Ticks
 
-- Each chapter after activation: clock ticks +1 automatically
-- Player actions can delay by 1 tick (maximum once per chapter):
+- Each chapter after activation: clock ticks +1 automatically.
+- The world has only **3 DELAYS total** once the Nuclear Clock starts. Track `NUCLEAR DELAYS USED: 0/3`.
+- A successful player delay can cancel that chapter's **automatic** +1 tick (maximum once per chapter), then mark one Delay used:
   - Assassinate a leader pushing for launch
   - Destroy a nuclear facility
   - Broker ceasefire between nuclear powers
   - Sabotage delivery systems
-- Nothing stops the clock permanently. MAD is inevitable. Question is how many chapters you have.
+- Event-driven extra ticks (actual nuclear use, escalation events, etc.) are not canceled unless the event itself was prevented before it occurred.
+- After all 3 Delays are spent, the automatic chapter tick cannot be canceled. Nothing stops the clock permanently. MAD is inevitable; player action can only buy a few chapters.
 
 ### Nuclear Weapons in Play
 
@@ -602,7 +613,7 @@ MACHINE STRESS: 0 ————————————— 10
 | Critical hit received | +2 |
 | Engine overrev (push speed beyond rating) | +1 |
 | Fuel contamination | +1 |
-| Field repair (temporary fix) | -1 but max stress +1 permanent |
+| Field repair (temporary fix) | -1 current Stress, but Stress Floor +1 permanently |
 | Full maintenance (base/port, 1 chapter) | Reset to 0 |
 | Ammo cook-off survived | +3 |
 
@@ -619,8 +630,8 @@ MACHINE STRESS: 0 ————————————— 10
 
 ### Repairs
 
-- **Field repair:** Engineer rolls INT vs DC 12. Success: -1 stress. But machine's max stress permanently +1 (patched, not fixed).
-- **Full maintenance:** Requires base/port/depot. 1 chapter downtime. Resets stress to 0. Removes permanent max increases.
+- **Field repair:** Engineer rolls INT vs DC 12. Success: -1 current Stress, but the machine's **Stress Floor permanently rises by +1** (patched, not fixed). Current Stress can never be reduced below that floor by field repairs.
+- **Full maintenance:** Requires base/port/depot. 1 chapter downtime. Resets Stress to 0 and removes accumulated Stress Floor increases.
 - **No engineer:** No field repairs possible. Stress only goes up.
 
 ---
@@ -918,10 +929,10 @@ Player Machine: [type, stress X/10, crew status]
 ### Between-Chapter Processing
 
 ```
-1. SELECT ACTIVE CLOCKS
-   └─ Player's region clock (always)
-   └─ 1-2 clocks that cascaded into player's region (if any)
-   └─ Other regions: GM narrates outcomes without dice
+1. SELECT / ADVANCE ACTIVE CLOCKS
+   └─ Mechanically advance ALL active clocks that are due this chapter (batch-roll offscreen clocks)
+   └─ Player's region + 1-2 relevant cascaded clocks are FOREGROUND and get detailed narration
+   └─ Other regions are summarized after their mechanical rolls; GM does NOT choose offscreen winners arbitrarily
 
 2. ROLL CLOCKS
    └─ d20 per active clock → tick direction
@@ -943,7 +954,8 @@ Player Machine: [type, stress X/10, crew status]
 
 6. NUCLEAR CLOCK (if active)
    └─ +1 tick (automatic)
-   └─ Player delay applied? (-1, max once)
+   └─ Successful delay available? Cancel this automatic tick and mark 1 of 3 campaign-wide Delays used (max once/chapter)
+   └─ Extra event-driven nuclear ticks still apply unless their triggering event was prevented
    └─ If clock = 10: MAD. End credits.
 
 7. DELIVER NEWS

@@ -290,7 +290,7 @@ DARK PATH:
 IMPORTANT:
 - You can ALWAYS choose to leave the Zone. Always. The gate is open.
 - But the higher your Call, the harder it is to walk through.
-- You cannot reduce Call while staying in the Zone.
+- You cannot **heal** Call while staying in the Zone. The DARK PATH is the only exception: it reduces Call by transferring the debt to another person, not by recovery.
 - The Zone does not let go willingly.
 
 WITHDRAWAL (leaving Zone at high Call):
@@ -356,7 +356,8 @@ WITHDRAWAL (leaving Zone at high Call):
 
 ```
 ARTIFACTS: Using artifacts = +Call. The Zone's gifts are hooks.
-  Equipped artifact (per week): +1 Call
+  One or more equipped artifacts used regularly for a week: +1 Call TOTAL per week, not per artifact.
+  Equipping 3+ artifacts simultaneously triggers the separate +2 Call escalation once when that threshold is first crossed; do not stack it again every week merely for keeping the same loadout.
   The more you carry, the faster you're claimed.
 
 ANOMALIES: Surviving anomalies = +Call. The Zone is testing you.

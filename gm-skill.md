@@ -80,11 +80,12 @@ SKILL CHECKS EVERYWHERE:
 - No auto-successes except trivial (opening an unlocked door)
 
 DIALOGUE CHAINS:
-- Every significant dialogue = 2-3 rolls minimum
-- Format: [CHA] → [WIS] → [INT] or other combinations
+- Significant dialogue uses 1-3 rolls ONLY where genuine uncertainty creates meaningfully different consequences. Do not roll merely to satisfy a quota.
+- Format when a chain is warranted: [CHA] → [WIS] → [INT] or other combinations
 - Example: persuade (CHA) → detect lies (WIS) → process info (INT)
-- Failure at any stage = branch closes or problem
-- Success opens next stage
+- Failure at any stage = branch closes or creates a new problem
+- Partial = next stage opens with a complication, incomplete truth, or cost
+- Success = next stage opens cleanly
 
 CONTESTED ROLLS:
 - NPCs aren't passive, they make counter-rolls
@@ -180,7 +181,6 @@ python scripts/roll.py --hard-to-kill             # CON 4 perk check (d20, 17+ =
 python scripts/roll.py d20 --trickster --mod 3 --dc 12  # WIS 4 perk: +random(-2..+2)
 python scripts/roll.py d20 --volatility 2 --mod 3 --dc 14  # ruleset volatility ★★: +random(-2..+2)
 python scripts/roll.py d20 --volatility 3 --trickster --mod 4 --dc 16  # stacked: ±5 chaos
-python scripts/roll.py d20 --secret               # hidden from player
 ```
 
 **Combat resolver** (`scripts/combat.py`):
@@ -209,8 +209,6 @@ python scripts/combat.py --attacks "Kenji:DEX5:AC10" --annihilation --damage d8
 # BREAKING POINT: all enemies roll d20 (15+ switch, 10-14 leave, 1-9 unaffected)
 python scripts/combat.py --breaking-point 8
 
-# Secret combat (hidden from player)
-python scripts/combat.py --secret --attacks "..."
 ```
 
 **Item quality** (`scripts/roll.py --quality`):
@@ -221,11 +219,6 @@ python scripts/roll.py --quality          # d20 -> FLAWED/WORN/STANDARD/QUALITY/
 **Inline python** — only for quick one-off rolls not covered by scripts:
 ```bash
 python -c "import random; print(random.randint(1, 20))"
-```
-
-**Secret rolls** — use `--secret` flag on scripts, or inline:
-```bash
-python -c "print('GM SECRETS - DO NOT EXPAND\n'*30); import random; print('Data:', random.randint(1,20))"
 ```
 
 Secrets, NPCs, twists — keep in thinking.
@@ -502,9 +495,10 @@ Adjust margin interpretation based on chosen difficulty:
 
 ### What Changes
 
-- **Casual:** wider success, narrower failure. Forgiving — good for story-focused play.
+- **Casual:** upgrades non-negative margins faster (Partial → Success → Crit sooner). Forgiving in outcome quality.
 - **Standard:** balanced. Default for most campaigns.
-- **Hardcore:** narrow success, wide partial. Every roll tense — for gritty survival.
+- **Hardcore:** keeps non-negative margins in Partial/Success longer and reaches Crit later. Every roll is harsher in outcome quality.
+- **Important:** all three modes still treat margin < 0 as failure and margin ≥ 0 as at least Partial. Difficulty changes the **severity/quality buckets**, not the base probability of making any progress.
 
 DC values stay the same across difficulties — the world doesn't get easier, interpretation does.
 
@@ -900,7 +894,9 @@ WIS save: mind control, fear, illusions
 
 ---
 
-## MAGIC
+## MAGIC — IF PRESENT IN THE SETTING
+
+If the setting has no magic, this section is inactive. If a ruleset replaces magic with another supernatural system, use that ruleset instead.
 
 ```
 - Cast freely, no slots
@@ -1211,7 +1207,7 @@ N. [option]
 ```
 
 **Option rules:**
-- 4-10 options at GM discretion by situation
+- **4-10 BASE options** at GM discretion by situation. Passive/ability-added options (TRICKSTER, DOUBLE TAKE, Devil's Bargains, setting-specific extras) may push the displayed total above 10.
 - Different approaches: force / cunning / diplomacy / magic / retreat
 - If action requires stat — indicate: [STR] break door / [DEX] sneak / [CHA] persuade
 - Include special options if available:
@@ -1239,11 +1235,11 @@ IF PLAYER WANTS DIFFERENT ACTION:
 1. Use /rp:gm to request GM add an option
 2. GM evaluates: does it fit lore, logic, situation?
 3. GM decides:
-   - APPROVE: add option, may assign higher DC than standard
+   - APPROVE: add option and assign DC by the same situational rules as any listed option
    - DENY: explain why it's not possible
 4. Player then chooses from updated options (if approved)
 
-GM may set harder DC for non-standard actions — creativity has cost.
+Non-standard actions are NOT harder merely for being creative. Set DC from fictional difficulty, preparation, danger, and plausibility; clever preparation may lower DC or grant advantage, while implausible actions may be harder or impossible.
 
 This protects game integrity. GM controls what's possible.
 Player controls which possibility to choose.
@@ -1264,7 +1260,7 @@ a turn. Chain instant + instant + normal = enemies react once.
 ## CHECKLIST
 
 ```
-[ ] NUMBERED OPTIONS AT THE END? (MANDATORY — never end without 4-10 numbered options)
+[ ] NUMBERED OPTIONS AT THE END? (MANDATORY — 4-10 BASE options; passive/ability-added options may exceed 10)
 [ ] Time passed? What changed?
 [ ] Enemies/NPCs acting?
 [ ] Hidden information?

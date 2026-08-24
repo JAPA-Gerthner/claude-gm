@@ -156,7 +156,7 @@ Social specialist and negotiator.
 ### Adept
 Magic-enhanced physical abilities.
 - **Start:** +2 Combat OR Athletics, +1 Perception
-- **Bonus:** 3 Adept powers (0.5 Essence each)
+- **Bonus:** 3 Adept Power points; buy starting powers from the Adept Powers table. Power costs are Power Points, not Essence.
 - **Essence:** Usually 4.5-6
 
 ### Technomancer
@@ -183,7 +183,7 @@ Metaphysical wholeness. Starts at 6. Cyberware reduces it.
 | 0 | **DEATH** |
 
 **Mundanes:** No penalty for low Essence. Chrome freely.
-**Awakened:** Essence 4+ required to use magic.
+**Awakened:** Magic remains usable at Essence 1+, but Magic Rating is capped by current Essence and low-Essence penalties in the table apply. Specific abilities (such as some spirit summoning) may still require Essence 4+.
 
 ---
 
@@ -257,6 +257,8 @@ Metaphysical wholeness. Starts at 6. Cyberware reduces it.
 | Water | 3 | Healing d8 |
 
 ### Adept Powers
+
+**Cost is in Adept Power Points (PP), not Essence.** Starting Adepts have 3 PP.
 
 | Power | Cost | Effect |
 |-------|------|--------|
@@ -649,6 +651,7 @@ Getting out is half the job.
 Meet Johnson. Collect balance. Fence extras.
 
 **Johnson Reliability (d6):**
+Roll this only when payment is genuinely uncertain: a new/untrusted Johnson, a sensitive job, warning signs, or changed circumstances. Established reliable Johnsons do not acquire a flat 1-in-6 betrayal chance every run.
 | d6 | Result |
 |----|--------|
 | 1 | Betrayal — see Betrayal table |

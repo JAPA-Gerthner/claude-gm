@@ -380,11 +380,12 @@ Between scores. Social interaction. Personal goals.
 
 The job itself. Structured as:
 
-1. **Engagement Roll:** d20 + relevant modifier vs DC based on plan type
-   - DC 8: Simple plan
-   - DC 12: Standard plan
-   - DC 16: Complex plan
-   - DC 20: Desperate plan
+1. **Engagement Roll:** d20 + relevant modifier vs DC based on starting position/setup quality
+   - DC 8: Controlled — strong setup, leverage, favorable position
+   - DC 12: Risky — ordinary setup, meaningful opposition
+   - DC 16: Poor — exposed, rushed, weak setup
+   - DC 20: Desperate — operation is already close to compromised
+   - Plan complexity does NOT raise this DC by itself; complexity is paid through Flashback stress and execution complications.
 
 2. **The Action:** Margin-based resolution
    - Crit Fail: Disaster, complications stack
@@ -457,6 +458,16 @@ Uses gm-skill.md margin-based system.
 | **Attune** | Sense/interact with supernatural |
 
 ### Harm Levels
+
+**PCs use Harm instead of core HP for combat injury. Do NOT track both HP loss and Harm on a player character. NPCs may keep the HP statblocks below for fast GM resolution.**
+
+When a damaging attack lands on a PC, roll the weapon's listed damage die and convert the total to Harm:
+- 1-4 damage → Level 1 Harm
+- 5-8 damage → Level 2 Harm
+- 9-12 damage → Level 3 Harm
+- 13+ damage → Level 4 Harm
+
+Margin modifies the resulting Harm: Partial reduces it by 1 level (minimum 1); Crit increases it by 1 level (maximum 4). Other explicit armor/resistance effects apply normally.
 
 | Level | Effect | Recovery |
 |-------|--------|----------|
@@ -835,6 +846,7 @@ After a score, roll d6 + Heat for entanglements:
 
 | Roll | Entanglement |
 |------|--------------|
+| 1 | **Quiet Night** — Somehow, nothing comes back to bite you. |
 | 2-3 | **Gang Trouble** — Rival gang takes notice |
 | 4 | **Questioning** — Bluecoats question someone close |
 | 5 | **Reprisal** — Enemies strike back (property or contact) |

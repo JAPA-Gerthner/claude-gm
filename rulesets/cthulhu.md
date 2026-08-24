@@ -1564,7 +1564,7 @@ MK: 0-20 (Reality +1 every 3 MK)
 - Stats: STR, DEX, CON, INT, WIS, CHA (standard 1-5)
 - HP/AC for human combat only
 - Primordial = no stats, no combat
-- Madness = visible to player, affects options and stats
+- Madness = hidden from player; its behavioral/options/stat effects are visible through play
 
 ---
 

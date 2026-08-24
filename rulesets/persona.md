@@ -437,7 +437,7 @@ Action in your Cluster (different Arcana): +0
 Action in neutral Cluster: -3
 Action in opposed Cluster: -5
 
-When loyalty reaches 0:
+When loyalty reaches 10 or less (danger zone):
 - Every action outside your Arcana = roll for Persona transformation
 - Transformation changes Persona to Arcana of that action
 - New Persona = new abilities, old upgrades LOST

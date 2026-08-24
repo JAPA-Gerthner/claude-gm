@@ -3,6 +3,7 @@
 Edgerunners in the dark future. Based on R. Talsorian Games' Cyberpunk 2020/RED.
 
 **Era:** 2045-2077 (Time of the Red to Reunification)
+**LOCK THE YEAR AT CAMPAIGN START:** Choose 2045, 2060, 2077, or a custom year. Treat that year as canonical for the campaign; filter living NPCs, corporate leadership, technology availability, politics, and city conditions accordingly. Do NOT combine incompatible snapshots from different decades just because they appear in this ruleset.
 **Players:** Edgerunners (mercenaries, fixers, solos, netrunners)
 **Tone:** Style over substance, high tech low life
 **System:** Uses gm-skill.md base rules (d20, attributes, DCs)
@@ -277,7 +278,7 @@ Cyberware costs Humanity. Lose too much, lose yourself.
 
 ### Weapon Properties
 
-**Autofire (X):** Spend X ammo. Each 2 points above AC = +1 hit (max X).
+**Autofire (X):** Spend X ammo. Each **4** points above AC = +1 additional hit (max X total hits).
 **Stopping Power:** Target CON save DC 12 or stagger.
 **Spread:** Close range (≤10m): roll twice, take best.
 **AP X:** Reduce target SP by X.
@@ -385,8 +386,10 @@ Triggered when single attack deals 10+ damage after armor.
 
 ### NCPD Response
 
-| Heat | Response | Time |
-|------|----------|------|
+**NCPD Alert is the response level for the CURRENT incident. It is distinct from the long-term Crew Heat clock below. Derive Alert from the current Escalation, witnessed violence, district, and active calls; long-term Heat alone does not instantly summon MaxTac.**
+
+| NCPD Alert | Response | Time |
+|------------|----------|------|
 | 1 | None | — |
 | 2 | Patrol car | 5 min |
 | 3 | Multiple units | 3 min |
@@ -1053,7 +1056,7 @@ Margin: ≤-6 Crit.Fail | -5..-1 Fail | 0..+4 Partial | +5..+9 Success | +10+ Cr
 - Black ICE = brain damage = real HP loss
 
 ### Humanity
-- CHA × 10 starting
+- Starting Humanity = 20 + (CHA × 5), minimum 30
 - Cyberware costs Humanity
 - 0 = Cyberpsychosis (NPC)
 

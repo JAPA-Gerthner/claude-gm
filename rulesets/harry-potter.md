@@ -281,7 +281,7 @@ RATE LIMIT: Bond can increase maximum +1 per scene.
 3-4: SOLID — normal relationship. Takes moderate risks for you.
 5/6: STRONG — actively helps. +1 CHA with them. Stands with you in crisis.
 6/6: DEVOTED — will die for you. +2 CHA. Unlocks ONE reward:
-  - SACRIFICE: NPC takes killing blow for you (once, Bond resets to 3/6)
+  - SACRIFICE: NPC takes a killing blow for you (once). If the blow kills them, they die; the active Bond ends and becomes a LEGACY BOND 6/6 (memory, Patronus/Descent/Lily-style narrative effects may still reference it). Do not reset a dead NPC to an active 3/6 Bond.
   - ANCHOR: NPC presence reduces Descent by 1 (1/session, requires scene together)
   - GIFT: NPC teaches unique spell/ability
   - INSIGHT: NPC reveals crucial plot information
@@ -603,7 +603,7 @@ DEFENSE (AC): 10 + DEX + magical protection
 
 ## UNFORGIVABLE CURSES
 
-Three spells. Life in Azkaban for use. Every Dark wizard uses them. Every Light wizard is tempted. They are unforgivable because they WORK.
+Three spells. Life in Azkaban for use. Every Dark wizard uses them. Every Light wizard is tempted. They are unforgivable because **on a successful cast, their effects are absolute** — they do not degrade into half-measures.
 
 ```
 === IMPERIO (Imperius Curse) ===
@@ -633,16 +633,15 @@ Why tempting: certainty. One spell ends it.
 First Unforgivable use leaves a permanent mark on the soul.
 
 ```
-STAIN: Each Unforgivable used for the first time adds +1 PERMANENT Descent
-  that can never be reduced below.
-  First Imperio: floor rises to 1. First Crucio: floor rises to 2. First AK: floor rises to 3.
-  Subsequent uses of the SAME Unforgivable: normal +2/+3, reducible.
+STAIN: The first use of each DISTINCT Unforgivable permanently raises the character's minimum Descent by +1, cumulative to a maximum floor of 3.
+  Example: first distinct curse used → floor 1; second distinct curse → floor 2; third distinct curse → floor 3, regardless of which spell came first.
+  Subsequent uses of the SAME Unforgivable: normal +2/+3 Descent, reducible down to the current floor.
   But the floor never drops. You broke something that doesn't heal.
 ```
 
 ### The Temptation Loop
 
-GM presents problem → multiple solutions exist → Unforgivable = SHORTCUT that ALWAYS works → Cost: +2/+3 Descent + permanent stain (first use). The question is never "can I?" — the question is "should I?"
+GM presents problem → multiple solutions exist → Unforgivable = SHORTCUT whose effect is absolute **if the cast succeeds** → Cost: +2/+3 Descent + permanent stain (first distinct use). The question is not whether the effect will be softened; it is whether you choose to attempt it.
 
 ### Resistance to Unforgivables
 
@@ -1620,7 +1619,7 @@ SPELLCASTING: d20 + INT/WIS/CHA vs DC.
   Cantrip 8 | Standard 12 | Advanced 16 | Master 20 | Legendary 24
   Nonverbal +4 DC | Wandless +6 DC | Ritual -4 DC
 
-UNFORGIVABLES: Always work. Always cost (+2/+3 Descent). Always tempting.
+UNFORGIVABLES: Successful casts have absolute effects. Always cost (+2/+3 Descent). Always tempting.
   Imperio (control) | Crucio (pain) | Avada Kedavra (death)
 
 LOVE: Bond 6/6 + willing death = Lily's Protection.

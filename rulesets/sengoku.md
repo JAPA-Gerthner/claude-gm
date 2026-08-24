@@ -232,6 +232,8 @@ HONOR: ●●●●●○○○○○ (5/10)
 
 ## LOSING HONOR
 
+**Honor is social capital, not an internal morality meter.** A secret act does not change Honor until it is witnessed, confessed, credibly reported, or supported by evidence. Hidden wrongdoing can create Rumor/Evidence risk that may apply the loss later.
+
 ### Dishonorable Actions
 
 | Action | Loss |
@@ -253,12 +255,12 @@ That restriction is Edo-period (Sakoku) policy, not warring states ethics.
 Against lower status: penalty ×0.5 (round down)
 Against equal: full penalty
 Against higher status: penalty ×1.5 (round up)
-Unseen: penalty ×0.5, but GM rolls d20 — on 15+ rumor spreads
+Unseen: no immediate Honor loss. GM rolls d20 — on 15+ rumor/evidence spreads and the normal context-adjusted penalty applies
 At war: ambushes — no penalty (see Firearms section for guns)
 
 STACKING LIMIT: Modifiers stack once maximum.
-Example: "Unseen" + "lower status" = ×0.5 (NOT ×0.25)
-Pick the most favorable single modifier only.
+Example: unseen act against lower status = 0 immediate loss; if exposed later, apply the lower-status ×0.5 modifier.
+Pick the most favorable single status/war modifier only; visibility is handled separately.
 ```
 
 ---

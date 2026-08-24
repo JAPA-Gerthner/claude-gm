@@ -74,34 +74,35 @@ Starting total across all three: max 4.
 
 ---
 
-## CORE RULE: ONE SHIFT PER SCENE
+## CORE RULE: ONE FORCE EVENT PER SCENE
 
-Per scene or encounter, apply at most ONE base Force shift.
+Per scene or encounter, resolve at most ONE base Force event. A single event may move one or two Forces when the same act genuinely serves both pressures (for example, enforcing quarantine by burning a village can be Order + Decay).
 
 ```
-Choose the most significant driver:
+Choose the most significant driver/event:
 - how the problem was solved
 - what the character chose under pressure
 - the dominant method (lawful / brutal / apathetic)
 
-BASE: +1 Force (standard)
-      +2 Force (major outcome)
-      +3 Force (catastrophic — rare, GM only)
+STANDARD EVENT: +1 total positive Force
+MAJOR / DUAL / AMPLIFIED EVENT: up to +2 total positive Force, split across one or two Forces as appropriate
+CATASTROPHIC EVENT: up to +3 total positive Force (rare, GM only)
 
 INACTION on a pressing matter: +1 Decay
+Reductions caused by the same event do not count toward the positive-gain cap.
 ```
 
 ### Amplifiers
 
-The following can increase the scene's shift by +1 (max total +2 unless catastrophic):
+The following can increase the scene's total positive Force gain by +1 (max +2 unless catastrophic):
 
 ```
 - Killing a sentient being (if central to the scene)
 - Magic as the primary solution
 - Extreme methods (torture, mass collateral, burning a village)
 
-If multiple apply: still cap at +2 total.
-GM picks the dominant narrative cause.
+If multiple apply: still cap at +2 total positive gain.
+GM records one Force event; split it across two Forces only when the action truly has two distinct pressures.
 ```
 
 ### What Does NOT Generate Shifts
@@ -440,6 +441,11 @@ REFUSE → UNBOUND:
   - No Patron Clock. No obligation. No safety net.
   - You walk alone. Everything is harder. Everything is yours.
 
+EXTENDED-CAP OVERRIDE:
+  - A Force reaching 10 normally causes the listed terminal/agency-loss state.
+  - If a patron extended THAT Force to 12: at 10 apply all threshold penalties/transformation flavor, but postpone NPC/terminal loss; 11 uses the patron-specific threshold, 12 is terminal/epilogue.
+  - If UNBOUND extended a Force to 11: at 10 apply all threshold penalties/transformation flavor, but the player retains agency. Reaching 11 is the terminal Force end-state (system tyrant / spawn-like corruption / deathless revenant, as appropriate).
+
 POLYTHEISTIC EXCEPTION:
   Norsca, Ind, and similar cultures — GM may offer 2 competing
   patrons. The gods fight over you. You pick. GM decides when
@@ -708,7 +714,7 @@ Common: Athel Loren
 === HALFLING ===
 Fortune: 4
 Traits: Small (advantage stealth, disadvantage heavy weapons),
-        Lucky (one extra Fortune per session),
+        Lucky (one bonus Fortune spend per session; does NOT increase the Fortune pool above 4),
         Overlooked (−2 Suspicion in crowds)
 Common: The Moot, Empire
 
@@ -2057,7 +2063,7 @@ CORRUPTION: power → instability → mutation → Spawn (5+: lose Push choice. 
 DECAY:      survival → numbness → hollowness → undeath (5+: ignore Condition 1+2. 7+: immune mental.)
 
 Thresholds: 3 / 6 / 8 / 10
-One shift per scene (+1, max +2 with amplifier). Inaction: +1 Decay.
+One Force event per scene (+1 standard, up to +2 major/dual/amplified). Inaction: +1 Decay.
 Corruption 5+: Push (Force) always → Corruption. Push (Body) unchanged.
 ```
 
@@ -2069,7 +2075,7 @@ Corruption 5+: Push (Force) always → Corruption. Push (Body) unchanged.
 Derived from HP (CON×5+10). Thresholds: 76%+ / 51-75% / 26-50% / 1-25% / 0
 0 healthy | 1 hurt (−1) | 2 wounded (disadv) | 3 critical (save to act) | 4 dying
 
-Condition goes DOWN with HP. Does NOT go back up when healed.
+Condition goes UP as HP goes DOWN. It does NOT automatically go back DOWN when HP is healed.
 Only rest and explicit recovery reduce Condition.
 
 Heavy hit (≥25% max HP): +1 extra Condition

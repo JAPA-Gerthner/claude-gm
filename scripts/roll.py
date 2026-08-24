@@ -10,7 +10,6 @@ Usage:
   python roll.py d20 --dis              # 2d20 take worst
   python roll.py d20 --mod 3            # d20+3
   python roll.py d20 --mod 3 --dc 12    # d20+3 vs DC 12, show margin and outcome
-  python roll.py d20 --secret           # prefix output to hide from player
   python roll.py d30                    # d30 for Devil's Bargain etc.
   python roll.py --hard-to-kill         # d20, 17+ = "IGNORED"
   python roll.py --quality              # item quality roll (d20 -> tier)
@@ -65,7 +64,6 @@ def margin_outcome(margin, nat_roll=None, difficulty="standard"):
 def main():
     args = sys.argv[1:]
 
-    secret = "--secret" in args
     adv = "--adv" in args
     dis = "--dis" in args
     htk = "--hard-to-kill" in args
@@ -107,9 +105,6 @@ def main():
         trick_mod = random.randint(-2, 2)
     chaos_total = vol_mod + trick_mod
     mod += chaos_total
-
-    if secret:
-        print("GM SECRETS - DO NOT EXPAND\n" * 5)
 
     if volatility or trickster:
         parts = []

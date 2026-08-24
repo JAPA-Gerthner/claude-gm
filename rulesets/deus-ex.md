@@ -305,7 +305,7 @@ Unlike cyberpunk's "losing yourself," Deus Ex is about CONTROL — who controls 
 | 8-11 | Stable | Normal |
 | 4-7 | Rejection | -1 aug rolls, glitches |
 | 1-3 | Critical | Malfunctions, seizure risk |
-| 0 | System Failure | Death or coma |
+| 0 | System Failure | Augs shut down; character collapses/risks coma but does not die from Integration alone |
 
 ### Neuropozyne Dependency
 
@@ -315,6 +315,8 @@ Augmented characters require Neuropozyne.
 - **Sources:** Legal (500cr, tracked), Black market (200-400cr, risky), Corporate (free, owned)
 
 ### Integration Recovery
+
+**Aug installation cost is temporary Current Integration loss, not a permanent reduction of the starting maximum.** Recovery can restore Integration to the character's starting value unless a specific effect explicitly lowers that maximum.
 
 Integration CAN be restored (prevents death spiral):
 - **Proper Neuropozyne regimen:** +1/week (max = starting value)
@@ -382,7 +384,7 @@ Most corporate augs include hidden killswitches.
 |-------------|------|-------|
 | +1 Stat (to 5) | 10 XP | Human peak |
 | +1 Stat (6+) | 15 XP | Requires matching aug |
-| New Augmentation | 8 XP | Plus install cost, -Integration |
+| New Augmentation | 8 XP | Plus install cost; apply listed Integration cost to current Integration |
 | Upgrade Aug | 5 XP | Improve existing one tier |
 | New Contact | 3 XP | Start at Trust 2 |
 | Skill Specialty | 4 XP | +2 to narrow application |

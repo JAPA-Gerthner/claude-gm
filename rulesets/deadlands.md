@@ -293,11 +293,11 @@ Tick ↓ (human regains): act with compassion, resist temptation,
 
 1: CONTAINED — Manitou whispers rarely.
 
-2: CONTESTED — DEFAULT START. Manitou speaks during stress.
+2: CONTESTED — Manitou speaks during stress.
    [MANITOU]: "First person temptation, addressed to character"
    WIS DC 12 to resist acting on suggestion.
 
-3: STRUGGLING — Manitou active during sleep, stress, combat.
+3: STRUGGLING — DEFAULT START. Manitou active during sleep, stress, combat.
    Character blacks out occasionally (GM controls 1 action/session).
    -1 CHA (something wrong about you).
 
@@ -1097,11 +1097,12 @@ Duels are NOT regular combat. They are ritual. Two gunfighters face each other. 
 ### Phase 1: The Staredown
 
 ```
-Contested WIS vs WIS. Both roll d20 + WIS.
+Both roll d20 + WIS against a Nerve DC of (10 + local Fear Level), then compare totals.
+- One passes and one fails: passer wins the staredown.
+- Both pass: higher total wins. Tie = neither flinches.
+- Both fail: neither gains a Draw bonus; tension holds.
 Winner: +2 to Draw.
-Crit winner: +4 to Draw. Opponent visibly shaken.
-Both fail: neither flinches. No bonus. Tension holds.
-Fear Level modifier: +1 to staredown DC per Fear Level of location.
+Crit winner (wins by 10+): +4 to Draw. Opponent visibly shaken.
 
 Heroism: If activated before staredown, auto-win Phase 1.
   "The crowd knows. This one doesn't blink."
@@ -1973,7 +1974,7 @@ CLOCKS: Hunt 0/6 | Victims 2/6 (daily tick) | Weather 3/6
 ```
 FEAR IS THE MECHANIC:
 - The Reckoners feed on fear. Fear Level is the world clock.
-- Every horror scene that works = Fear Level ticks up.
+- Horror atmosphere alone does NOT raise Fear. Fear Level ticks up when a horror event leaves lasting public terror, witnesses, an uncontained threat, or another concrete regional consequence.
 - Every horror scene defeated PUBLICLY = Fear Level ticks down.
 - Good session: player debates whether to expose truth or hide it.
 

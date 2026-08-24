@@ -143,11 +143,11 @@ Heat Cap = maximum heat before meltdown. Thresholds scale proportionally:
 
 ```
 MECH HP = CON × 8 + weight modifier
-  (Pilot HP and Mech HP are the SAME pool at Sync 5+)
+  (Pilot HP and Mech HP become the SAME pool at Sync 7+)
 
-Below Sync 5: Pilot takes phantom damage (1 per 10 mech damage)
-At Sync 5+: All mech damage IS pilot damage. Shared pool.
-At Sync 7+: Mech destruction = pilot death unless emergency eject.
+Below Sync 5: Pilot takes no direct HP damage from ordinary mech damage.
+At Sync 5-6: Pilot takes phantom damage (1 per 10 mech damage), as described by MELDED.
+At Sync 7+: All mech damage IS pilot damage. Shared pool; mech destruction = pilot death unless emergency eject.
 
 CONSEQUENCE: You cannot hide behind armor. When your Atlas
 takes an AC/20 to the chest, YOUR ribs crack.
@@ -223,6 +223,8 @@ CUSTOMIZATION: Every modification is personal.
 ## HONOR
 
 In the Inner Sphere, reputation is currency. Honor is not morality — it is political CAPITAL. You spend it to command, borrow it to survive, lose it and die alone.
+
+**Visibility rule:** Honor changes only when an act is witnessed, credibly reported, confessed, or otherwise becomes part of your public/faction reputation. Secret misconduct creates evidence, blackmail, or discovery risk; it does not directly change Honor until it becomes known.
 
 ```
 HONOR: 0 ————————————→ 10
@@ -424,7 +426,8 @@ Apply background + role bonuses
 STAT CAP: No stat may exceed 5 at creation.
 Background and Role bonuses cannot stack on the same stat.
 
-HP = CON × 8 + weight class modifier
+MECH HP = CON × 8 + weight class modifier
+PERSONAL HP = CON × 5 + 10
 AC = 10 + DEX + armor (mech AC = 10 + DEX + mech armor)
 ```
 
@@ -698,8 +701,9 @@ PERSONAL ARMOR:
   Flak jacket: AC 13 (infantry standard)
   Battle armor: AC 16 (Elemental-lite, rare and expensive)
 
-PERSONAL HP: CON × 5 + 10 (separate from mech HP at Sync below 5)
-  At Sync 5+: shared pool means pilot is already damaged when mech is.
+PERSONAL HP: CON × 5 + 10 (separate from mech HP below Sync 7)
+  Sync 5-6: mech damage causes only the listed phantom damage.
+  At Sync 7+: shared pool means pilot is directly damaged when the mech is.
   
 INFANTRY VS MECH:
   Standard weapons: cannot damage mech (narrative only)
@@ -887,7 +891,7 @@ ASSASSINATION:
   Available only at Nemesis 8+ or contract type.
   DEX DC (target's security level): 14 standard, 18 protected, 22 paranoid
   Failure: combat at disadvantage + Honor consequences
-  Success: target dead, Honor -2 (always, even if "justified")
+  Success: target dead. Honor -2 if the assassination becomes known or credibly attributed; otherwise create evidence/blackmail risk until discovery.
   Clan assassinations: -4 Honor (dezgra, period)
 ```
 
