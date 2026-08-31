@@ -30,15 +30,17 @@ You will never know the truth. GM never confirms.
 ```
 
 > The question is not "will you survive."
-> The question is "how will you die."
+> The question is "what will survival cost, and which end state will catch you first?"
 
-All characters die or go mad. GM must kill the character. This is not failure — this is genre.
+The system applies terminal pressure, but the GM never forces a death or finale for genre compliance. End states happen only when their stated mechanics or a player choice trigger them. Fair rolls, core death rules, and player choices remain authoritative.
 
 ---
 
 ## THREE AXES OF UNCERTAINTY
 
 GM secretly tracks character position on three axes. Player NEVER knows their position.
+
+**Axis bounds:** Reality, Time, and Identity are always clamped to 0-6. Apply a shift once, then clamp. If one shift crosses multiple listed thresholds (for example 2 → 5), resolve every crossed threshold once, in order. A threshold effect never retriggers merely because the axis remains at that value.
 
 ### 1. REALITY AXIS (What is real?)
 
@@ -75,13 +77,15 @@ SURFACE ←――――――――――――――――→ PRIMORDIAL
 
 **Trigger:** Player declares search/investigate action ("I search the room", "I examine the body"). One roll per action, not per description.
 
-| Reality | DC | Effect |
-|---------|-----|--------|
+| Reality | Trigger Roll | Effect |
+|---------|--------------|--------|
 | 0-1 | — | Normal perception |
-| 2 | 16+ | Sees "extra" — shadow, symbol, wrong angle. Real? |
-| 3 | 12+ | Layer Slip — perceives OTHER layer, can interact |
-| 4 | 8+ | Layer Slip easier, layers bleed constantly |
+| 2 | d20 ≥ 16 | Sees "extra" — shadow, symbol, wrong angle. Real? |
+| 3 | d20 ≥ 12 | Layer Slip — perceives OTHER layer, can interact |
+| 4 | d20 ≥ 8 | Layer Slip easier, layers bleed constantly |
 | 5+ | Auto | Layers overlap. DIS on mundane actions. |
+
+**Perception Bleed roll:** flat d20, no modifiers. It is a hidden trigger roll layered on top of the normal investigation resolution, not a replacement for it.
 
 **Layer Slip Rules (Reality 3+):**
 - Character sees and can touch things from deeper Reality
@@ -125,13 +129,15 @@ STABLE ←――――――――――――――――→ UNMOORED
 
 **Trigger:** Player asks about past/future ("What happened here?", "What will they do?") or reads historical documents. One roll per question/document.
 
-| Time | DC | Effect |
-|------|-----|--------|
+| Time | Trigger Roll | Effect |
+|------|--------------|--------|
 | 0-1 | — | No visions |
-| 2 | 16+ | Brief flash — image, sound, smell. One detail. |
-| 3 | 12+ | Full vision — 1-2 rounds, frozen, sees scene. |
-| 4 | 8+ | Displacement — character IS THERE, can act. |
+| 2 | d20 ≥ 16 | Brief flash — image, sound, smell. One detail. |
+| 3 | d20 ≥ 12 | Full vision — 1-2 rounds, frozen, sees scene. |
+| 4 | d20 ≥ 8 | Displacement — character IS THERE, can act. |
 | 5+ | Auto | Displacement without trigger. GM chooses when. |
+
+**Time Vision roll:** flat d20, no modifiers. It is a hidden trigger roll; any underlying Research/Social/Investigation check resolves separately under core rules.
 
 **Displacement Rules (Time 3+):**
 - Character takes actions in vision as if real
@@ -164,7 +170,7 @@ SELF ←――――――――――――――――→ OTHER
 |-------|-------|
 | Mi-Go contact (even brief) | +1 |
 | Extended Nyarlathotep contact | +2 |
-| Time axis hit 2+ | +1 |
+| Time axis first reaches 2 | +1 |
 | Possession ritual (incomplete) | +1 |
 | Possession ritual (complete) | +3 |
 | Killed a person (first time) | +1 |
@@ -176,14 +182,16 @@ SELF ←――――――――――――――――→ OTHER
 
 **Trigger:** Combat start, witnessing horror, critical decision moment, strong emotion in scene. One roll per trigger event.
 
-| Identity | DC | Effect |
-|----------|-----|--------|
+| Identity | Trigger Roll | Effect |
+|----------|--------------|--------|
 | 0-1 | — | Full control |
-| 2 | 16+ | Intrusive impulse — GM offers alternative, player may refuse (WIS DC 12) |
-| 3 | 12+ | Blackout micro — lose 1 round, GM narrates what you did |
-| 4 | 8+ | Other takes wheel — GM plays character 1-3 rounds |
+| 2 | d20 ≥ 16 | Intrusive impulse — GM offers alternative, player may refuse (WIS DC 12) |
+| 3 | d20 ≥ 12 | Blackout micro — lose 1 round, GM narrates what you did |
+| 4 | d20 ≥ 8 | Other takes wheel — GM plays character 1-3 rounds |
 | 5+ | Auto | GM seizes control at ANY stress moment |
 | 6 | — | **FINALE — Possessed**, character is NPC now |
+
+**Control Slip roll:** flat d20, no modifiers. Meeting or exceeding the listed number means the slip **triggers**. This is not a saving throw and does not use the margin system.
 
 **Control Slip Rules (Identity 3+):**
 - Player loses agency temporarily
@@ -289,8 +297,8 @@ Character can SLOW descent. But the price is self-destruction of another kind.
 
 | Mechanism | Effect | Price | Mechanic |
 |-----------|--------|-------|----------|
-| **Opium** | -1 Reality (temporary) | Addiction Clock | After comedown: +1 Reality |
-| **Alcohol** | -1 Reality (temporary) | -1 CON permanent | Need more each time |
+| **Opium** | -1 effective Reality (temporary) | Addiction Clock | Comedown removes the temporary -1; base Reality does not change |
+| **Alcohol** | -1 effective Reality (temporary) | -1 CON permanent | Each later use requires one additional drink/dose; comedown removes the temporary -1 |
 | **Denial** | Holds in place | GM increases pressure | WIS save each session or +1 Reality |
 | **Forgetting** | Erase knowledge | Lose skill/contact | Once per knowledge |
 | **Suicide** | End | End | Character finale |
@@ -301,13 +309,17 @@ Character can SLOW descent. But the price is self-destruction of another kind.
 ADDICTION: ○○○○○○ (0/6)
 ```
 
-+1 for each escape mechanism use.
++1 for each Opium or Alcohol use. Denial and Forgetting do not add Addiction unless a specific effect says otherwise.
 
 | Level | Effect |
 |-------|--------|
-| 2 | Must use once per session |
-| 4 | Must use every stress scene |
-| 6 | Overdose / Delirium Tremens — possible finale |
+| 2 | Craving once per session. Refuse: WIS save DC 12; on Fail or worse, DIS on the next stress-scene roll. |
+| 4 | Craving at each stress scene. Refuse: WIS save DC 16; on Fail or worse, DIS until that scene ends. |
+| 6 | Critical dependency. Each further Opium/Alcohol use requires CON save DC 16; Fail or Crit.Fail triggers **Overdose** finale. |
+
+Addiction 6 by itself is not an automatic finale. It creates the lethal check above; abstaining remains possible but invokes the level-4 craving rule.
+
+**Alcohol CON floor:** permanent Alcohol loss can reduce base CON to a minimum of 1, never below. Because this is a real stat change, run core CHARACTER MECHANICS SYNC after each loss.
 
 ---
 
@@ -336,9 +348,9 @@ ADDICTION: ○○○○○○ (0/6)
 | NPC (doesn't exist/is someone else) | 1 |
 | Event (didn't happen/happened differently) | 1 |
 | Scene (entire hallucination) | 2 |
-| Self (you did something else) | 3 |
+| Self (memory/perception altered during an already-triggered Control Slip) | 3 |
 
-**Golden Rule:** GM never uses deception as retroactive punishment. Hallucination adds to choices, doesn't negate them.
+**Golden Rule:** GM never uses deception as retroactive punishment. Hallucination adds to choices, doesn't negate them. Deception may change what a character perceived, but may never rewrite a numbered option the player actually chose. Whole-scene hallucinations preserve the player's decisions and any guaranteed anchors below; only the perceived context may be false.
 
 **Three Guaranteed Anchors (always real):**
 1. Physical pain — if it hurts, it happened
@@ -369,9 +381,9 @@ MADNESS: ○○○○○○ (0-6)
 | 0 | Stable | Functional. Stressed, but holding. |
 | 1 | Cracked | Nightmares, jumpiness, minor compulsions. |
 | 2 | Fraying | Paranoid thoughts, rituals for safety, trust issues. |
-| 3 | Breaking | **ALL stats -1.** Behavior noticeably abnormal. |
+| 3 | Breaking | **-1 to all rolls.** Behavior noticeably abnormal. |
 | 4 | Unraveling | Cannot distinguish important from trivial. Fixations. |
-| 5 | Shattered | **ALL stats -1 again (cumulative -2).** Barely functional. |
+| 5 | Shattered | **-2 to all rolls total.** Barely functional. |
 | 6 | Gone | Finale — Institutionalized, catatonic, or dangerous. |
 
 ### Triggers
@@ -389,16 +401,16 @@ MADNESS: ○○○○○○ (0-6)
 
 **Madness cannot decrease.** Therapy, rest, escape mechanisms — none reverse it. Damage is done.
 
-### Stat Penalties
+### Roll Penalties
 
 | Madness | Penalty |
 |---------|---------|
-| 3+ | -1 to ALL stats (STR, DEX, CON, INT, WIS, CHA) |
-| 5+ | -1 to ALL stats again (cumulative -2) |
+| 3-4 | -1 to all character rolls |
+| 5 | -2 to all character rolls total |
 
-**HP recalculates:** CON × 5. As CON drops, max HP drops.
+These are **roll penalties, not stat changes**. Base STR/DEX/CON/INT/WIS/CHA do not decrease, so Madness never locks or unlocks core 4/6/8/10 threshold abilities and does not recalculate HP, AC, passive WIS, or companion Bond Stats. Apply the penalty as a visible situational modifier when the affected roll is shown.
 
-**Stat floor:** No stat below 1. At stat 1, failures become automatic on hard DCs.
+Madness never causes an automatic failure solely because a stat is low. DC remains situational as defined by `gm-skill.md`.
 
 ### Behavioral Effects (MANDATORY)
 
@@ -410,9 +422,9 @@ Standard play. Options are rational, tactical, varied.
 
 ```
 What do you do?
-1. [WIS] Search the office for evidence
-2. [CHA] Ask the secretary about Dr. West's schedule
-3. [DEX] Slip into the records room while she's distracted
+1. [INT 12] Search the office for evidence
+2. [CHA 10] Ask the secretary about Dr. West's schedule
+3. [DEX 12] Slip into the records room while she's distracted
 4. [-] Leave and return tonight
 ```
 
@@ -422,9 +434,9 @@ What do you do?
 
 ```
 What do you do?
-1. [WIS] Search the office for evidence
-2. [CHA] Ask the secretary about Dr. West's schedule
-3. [DEX] Check if the secretary's shadow moves correctly
+1. [INT 12, -Madness] Search the office for evidence
+2. [CHA 10, -Madness] Ask the secretary about Dr. West's schedule
+3. [DEX 12, -Madness] Check if the secretary's shadow moves correctly
 4. [-] Leave — you've been here too long, they're watching
 ```
 
@@ -439,15 +451,15 @@ Most options reflect broken thinking. 1-2 "sane" options remain, but may have pe
 
 ```
 What do you do?
-1. [WIS, DIS] Search the office (but the files are lying)
-2. [CHA] Demand the secretary confess her role
-3. [STR] The desk drawer — something breathes inside it
+1. [INT 12, DIS, -Madness] Search the office (but the files are lying)
+2. [CHA 16, -Madness] Demand the secretary confess her role
+3. [STR 12, -Madness] Tear open the desk drawer — something breathes inside it
 4. [-] Write warning on wall so next victim knows
-5. [DEX] Cut your palm — blood reveals hidden writing
+5. [DEX 8, -Madness] Cut your palm carefully — blood reveals hidden writing
 ```
 
 GM rules:
-- "Normal" options get disadvantage or higher DC
+- "Normal" options may get disadvantage or the Madness roll penalty; never raise DC solely because of Madness
 - Violence becomes casual option
 - Self-harm presented neutrally
 - Helping others framed as suspicious
@@ -477,7 +489,7 @@ Player can request custom options via /rp:gm. Madness affects GM response:
 
 Player: "/rp:gm I want to calmly interview the witness"
 
-GM: "Added option: [CHA, DIS] Interview the witness (you keep glancing at exits)"
+GM: "Added option: [CHA 12, DIS, -Madness] Interview the witness (you keep glancing at exits)"
 
 **Example at Madness 5:**
 
@@ -576,13 +588,13 @@ Mythos Knowledge (MK) is the anti-progression system. Replaces XP.
 | 7 | Read forbidden languages (partial) |
 | 9 | Once per session: ask GM one truthful Mythos question |
 | 12 | Can attempt Mythos rituals |
-| 15 | Immune to fear from Reality 3- creatures |
+| 15 | Immune to fear caused by Lesser Mythos creatures; Primordial presence can still trigger horror effects |
 | 18 | +3 to all Occult and Research |
 | 20 | Terminal Knowledge (see below) |
 
 ### What MK Takes
 
-**Every 3 MK gained → Reality +1 automatically.**
+**Each time total MK crosses a multiple of 3 (3/6/9/12/15/18) → Reality +1 automatically.** Resolve every crossed milestone once if one gain crosses more than one.
 
 ### Terminal Knowledge (MK 20)
 
@@ -742,20 +754,23 @@ Roll d6:
 
 **Conspiracy:** All elites connected. Police bought. Journalists disappear. Psychiatrists work for cults. The only honest person — maybe you (maybe not).
 
-### Primordial Threats (Undefeatable)
+### Mythos Threats
 
-**NO STATBLOCKS.** Primordial creatures have no HP, AC, attacks. They are phenomena.
+Mythos entities are split into two mechanical categories:
 
-| Creature | Description | Presence Effect |
-|----------|-------------|-----------------|
-| Shoggoth | Mass of eyes and mouths | Reality +2 automatic |
-| Deep One | Fish-person | May be "defeatable" — or is it human? |
-| Mi-Go | Winged fungi | Identity +1, voices in head |
-| Hound of Tindalos | Angles | Time axis destabilized |
-| Colour Out of Space | Color | CON drain — 1 CON/day exposure. Plants grey, animals listless, humans hollow. No hallucinations — horror is real. |
-| Great Old One | ??? | Character finale |
+- **Lesser Mythos creatures** can have HP/AC and may be fought, trapped, bargained with, or banished if a scenario gives them statistics.
+- **True Primordial entities** have no HP, AC, or attack routine. They are phenomena. Core combat does not apply to them unless a scenario explicitly says otherwise.
 
-**Rule:** Primordial appears → character can only flee. Combat = death.
+| Creature | Category | Description | Presence Effect |
+|----------|----------|-------------|-----------------|
+| Shoggoth | Primordial | Mass of eyes and mouths | Reality +2 automatic |
+| Deep One | Lesser | Fish-person | Can be fought or bargained with; outcome may still be ambiguous |
+| Mi-Go | Lesser | Winged fungi | Identity +1, voices in head |
+| Hound of Tindalos | Primordial | Angles | Time axis destabilized |
+| Colour Out of Space | Primordial | Color | CON drain — 1 CON/day exposure. Plants grey, animals listless, humans hollow. No hallucinations — horror is real. |
+| Great Old One | Primordial | ??? | Character finale |
+
+**Rule:** A true Primordial manifestation is not a normal combat encounter. Options should focus on escape, containment, interruption, sacrifice, or reaching a scenario-specific objective. Do not resolve it by assigning ordinary HP and trading attacks.
 
 ### Creature Behavior (beyond stat effects)
 
@@ -1065,7 +1080,7 @@ At 25% HP or below: **Badly Wounded** (-2 to all rolls, STR save DC 12 each turn
 **Full reading:** d4 sessions of dedicated study.
 **Skimming:** 1 scene. Partial knowledge only. GM withholds d4 entries.
 
-After completing tome: gain Forbidden Knowledge AND Reality shifts up.
+After completing a named tome: gain Forbidden Knowledge and apply that tome's listed Reality Cost. The named tome cost **replaces** the generic `Read occult text (partial/complete)` Reality trigger; never apply both for the same reading. Unlisted occult texts use the generic trigger.
 
 ### Tome List
 
@@ -1097,12 +1112,12 @@ Every ritual needs 4 components. Missing any changes result:
 4. INTENTION — clear goal and will
 ```
 
-| Components | Result |
-|------------|--------|
-| 4/4 | Works as described |
-| 3/4 | Works partially + unpredictable side effect |
-| 2/4 | Doesn't work, but something hears |
-| 1/4 | Nothing visible. GM makes note. |
+| Components | Resolution |
+|------------|------------|
+| 4/4 | Make the ritual roll normally; no outcome cap. |
+| 3/4 | Make the ritual roll with DIS; best possible outcome is Partial, which includes an unpredictable side effect. |
+| 2/4 | No success roll: ritual fails, full listed price is paid, and something hears. |
+| 1/4 | No success roll: nothing visible happens; pay Reality +1 and GM records a hidden consequence/attention. |
 
 ### Ritual Table
 
@@ -1112,15 +1127,16 @@ Every ritual needs 4 components. Missing any changes result:
 | Sight | See hidden at Reality+1 | 14 | Reality +2, permanent |
 | Call | Summon creature | 18 | Reality +2-4, creature not obligated to help |
 | Bind | Hold creature | 22 | Reality +3, Identity +1, failure = death |
-| Banish | Send creature away | 18 | Reality +2, creature's native Reality must ≤ your current Reality |
+| Banish | Send summoned/Lesser Mythos creature away | 18 | Reality +2; no effect on true Primordial entities |
 | Gate | Transport | 22 | Reality +3, Time +2 |
 
-**Ritual Roll:** d20 + INT mod vs DC. Occultist: normal. Others: disadvantage.
+**Ritual Roll:** only when the component table permits a roll. Use d20 + INT vs DC; add +2 for the Occult skill when proficient. Characters without Occult proficiency roll with disadvantage. Being an Occultist is not a separate bypass — the role simply starts proficient in Occult.
 - Crit Fail: ritual turns against you, price ×2
 - Fail: doesn't work, full price paid
 - Partial: works with side effect
 - Success: works, standard price
 - Crit: works, price reduced one tier
+- Apply the component outcome cap after resolving the margin/natural-1/natural-20 tier.
 
 ---
 
@@ -1130,21 +1146,25 @@ Every ritual needs 4 components. Missing any changes result:
 |------|-------------|---------|---------------|
 | **Investigator** | Detective, journalist | Investigation, Contacts | Curiosity = faster descent |
 | **Academic** | Professor, scientist | Research, Languages | Knowledge = faster descent |
-| **Artist** | Writer, painter | Perception, Expression | Sees more (Reality +1 start) |
-| **Veteran** | Soldier, policeman | Combat, Resilience | PTSD (Time axis unstable) |
-| **Occultist** | Already touched forbidden | Mythos Knowledge | Reality +2 start, enemies know you |
-| **Heir** | Inheritor of dark | Resources, Legacy | Blood contaminated (Identity +1 start) |
+| **Artist** | Writer, painter | Perception, Insight | Sees more (Reality 1 start) |
+| **Veteran** | Soldier, policeman | Firearms, Athletics | PTSD (Time 1 start) |
+| **Occultist** | Already touched forbidden | Occult, Research | Reality 2 start, MK 2 start, enemies know you |
+| **Heir** | Inheritor of dark | Contacts, Persuasion | Blood contaminated (Identity 1 start) |
 
 ### Starting Stats by Role
 
 | Role | STR | DEX | CON | INT | WIS | CHA | HP | AC | Skills |
 |------|-----|-----|-----|-----|-----|-----|----|----|--------|
-| Investigator | 2 | 3 | 2 | 4 | 3 | 3 | 10 | 11 | Investigation, Contacts + 2 free |
-| Academic | 1 | 2 | 2 | 5 | 4 | 2 | 10 | 10 | Research, Languages + 2 free |
-| Artist | 2 | 3 | 2 | 3 | 4 | 3 | 10 | 11 | Perception, Expression + 2 free |
-| Veteran | 4 | 3 | 4 | 2 | 3 | 2 | 20 | 12 | Firearms, Athletics + 2 free |
-| Occultist | 2 | 2 | 2 | 4 | 3 | 3 | 10 | 10 | Occult, Research + 2 free |
-| Heir | 2 | 2 | 3 | 3 | 3 | 4 | 15 | 10 | Contacts, Persuasion + 2 free |
+| Investigator | 2 | 3 | 2 | 4 | 3 | 3 | 10 | 13 | Investigation, Contacts + 2 free |
+| Academic | 1 | 2 | 2 | 5 | 4 | 2 | 10 | 12 | Research, Languages + 2 free |
+| Artist | 2 | 3 | 2 | 3 | 4 | 3 | 10 | 13 | Perception, Insight + 2 free |
+| Veteran | 4 | 3 | 4 | 2 | 3 | 2 | 20 | 13 | Firearms, Athletics + 2 free |
+| Occultist | 2 | 2 | 2 | 4 | 3 | 3 | 10 | 12 | Occult, Research + 2 free |
+| Heir | 2 | 2 | 3 | 3 | 3 | 4 | 15 | 12 | Contacts, Persuasion + 2 free |
+
+**Starting hidden tracks:** Investigator/Academic start Reality 0, Time 0, Identity 0, MK 0. Artist starts Reality 1. Veteran starts Time 1. Occultist starts Reality 2 and MK 2. Heir starts Identity 1. Unlisted axes start at 0.
+
+**Starting AC:** roles above are unarmored and therefore use core `10 + DEX`. If equipment changes armor category, recalculate AC with the core armor rules.
 
 ---
 
@@ -1157,9 +1177,9 @@ All paths lead to finale. Question is which.
 | **Devoured** | Reality 6 | Consumed by Primordial |
 | **Lost in Time** | Time 6 | Consciousness forever in another era |
 | **Possessed** | Identity 6 | Body occupied by something else |
-| **Murdered** | HP 0 from cultists | Killed by humans |
+| **Murdered** | 3 failed death saves or massive damage caused by a human threat | Killed by humans; core HARD TO KILL / UNKILLABLE / DEATHLESS apply normally |
 | **Institutionalized** | Madness 6 | In asylum, being "treated" |
-| **Overdose** | Addiction 6 | Died from escape mechanism |
+| **Overdose** | Failed CON save after Opium/Alcohol use at Addiction 6 | Died from escape mechanism |
 | **Suicide** | Player choice | Only controlled exit |
 | **Converted** | Joined cult | Became part of conspiracy (NPC) |
 | **Unknown** | ??? | Vanished, fate unknown |
@@ -1309,6 +1329,10 @@ Step-by-step for common actions. Follow in order.
 Run this at the start of every new scene.
 
 ```
+0. CORE PREFLIGHT
+   └─ Read character sheet + active session rules
+   └─ Apply core threshold passives, Heroism state, cooldowns, companion effects, and any setting modifiers before generating options
+
 1. AXES CHECK
    └─ Note current Reality, Time, Identity levels
    └─ Which Narrative Effects apply? (see table)
@@ -1338,29 +1362,33 @@ Run this at the start of every new scene.
 ### Investigation (search, examine, investigate)
 
 ```
-1. AXIS CHECK
-   └─ Reality 2+? → Perception Bleed roll (DC: R2=16, R3=12, R4=8, R5=auto)
-   └─ Success? → Player sees "extra" (shadow, symbol, wrong angle)
-   └─ Reality 3+? → Layer Slip possible (WIS DC 14 to return)
+1. MAIN INVESTIGATION CHECK
+   └─ Use the DC already shown in the chosen option; never recalculate it after seeing modifiers
+   └─ Roll d20 + INT + applicable skill/situational modifiers vs DC
+   └─ Investigation proficiency = +2; no proficiency = normal skill penalty from SKILLS
+   └─ Resolve Crit.Fail / Fail / Partial / Success / Crit by core margin rules
+   └─ This result determines mundane progress/clues and is never replaced by an Axis roll
 
-2. DECEPTION BUDGET
+2. HIDDEN AXIS BLEED
+   └─ Reality 2+? → separate flat Perception Bleed trigger roll (R2=16+, R3=12+, R4=8+, R5=auto)
+   └─ Triggered? → add the axis effect (extra detail / Layer Slip) on top of the main result
+   └─ Reality 3+ Layer Slip return uses WIS save DC 14
+
+3. DECEPTION BUDGET
    └─ Reality 0: all true
    └─ Reality 1: 1 detail can be false
    └─ Reality 2: 1 NPC/object can be false
    └─ Reality 3: 50% can be false
-   └─ Reality 4+: entire scene can be hallucination
+   └─ Reality 4+: entire perceived scene can be hallucination, subject to Guaranteed Anchors
 
-3. MADNESS OPTIONS
+4. MADNESS OPTIONS
    └─ Madness 0-2: normal options
    └─ Madness 3-4: add 1-2 irrational options
-   └─ Madness 5: majority irrational, sane options get DIS
+   └─ Madness 5: majority irrational, sane options may get DIS
 
-4. NARRATIVE STYLE
-   └─ Apply Axis Narrative Effects (see table)
-   └─ Add intrusions based on highest axis level
-
-5. RESULT
-   └─ Present options to player
+5. NARRATIVE + RESULT
+   └─ Apply Axis Narrative Effects and intrusion density
+   └─ Narrate the resolved check, then present the next numbered options
 ```
 
 ### Social (talk, persuade, interrogate)
@@ -1383,9 +1411,10 @@ Run this at the start of every new scene.
    └─ "They're lying" / "They're one of them" / "Check their shadow"
 
 5. DIALOGUE CHAIN
-   └─ Significant dialogue = 2-3 rolls minimum
-   └─ CHA → WIS → INT or similar
-   └─ Failure at any stage = branch closes
+   └─ Use 1-3 rolls only where genuine uncertainty creates meaningfully different consequences
+   └─ Do not roll merely to satisfy a quota
+   └─ When a chain is warranted: CHA → WIS → INT or similar
+   └─ Failure at any stage closes the branch or creates a new problem; Partial opens it with complication
 
 6. RESULT
    └─ Present options to player
@@ -1395,8 +1424,8 @@ Run this at the start of every new scene.
 
 ```
 1. IDENTITY CHECK
-   └─ Identity 2+? → Control Slip roll at combat start
-   └─ Failed? → GM narrates 1+ rounds
+   └─ Identity 2+? → Control Slip trigger roll at combat start
+   └─ Triggered? → resolve the Identity-level effect; at Identity 2 the player still gets the listed WIS refusal save
 
 2. MADNESS CHECK
    └─ Madness 3+? → Combat options include irrational choices
@@ -1424,7 +1453,7 @@ Run this at the start of every new scene.
    └─ Skimming: 1 scene (GM withholds d4 entries)
 
 2. AXIS COST (paid on completion)
-   └─ Apply Reality cost from tome table
+   └─ Apply Reality cost from tome table; this replaces the generic occult-text Reality trigger for this reading
    └─ Apply secondary effects (Time, Identity, saves)
 
 3. MK GAIN
@@ -1444,21 +1473,22 @@ Run this at the start of every new scene.
 ```
 1. COMPONENTS CHECK
    └─ Knowledge + Material + Place + Intention
-   └─ 4/4: works as intended
-   └─ 3/4: partial + side effect
-   └─ 2/4: fails, but something hears
-   └─ 1/4: nothing visible (GM notes)
+   └─ 4/4: roll normally, no cap
+   └─ 3/4: roll with DIS, best outcome Partial + side effect
+   └─ 2/4: no success roll; Fail + full price + something hears
+   └─ 1/4: no success roll; no visible effect + Reality +1 + hidden attention
 
-2. ROLL
-   └─ d20 + INT vs DC
-   └─ Occultist: normal | Others: disadvantage
+2. ROLL (only for 3/4 or 4/4)
+   └─ d20 + INT vs DC; Occult proficiency adds +2
+   └─ No Occult proficiency: DIS
+   └─ Resolve margin tier, then apply component cap
 
-3. COST (always paid)
-   └─ Apply Reality/Time/Identity shifts
-   └─ Madness +1
+3. COST
+   └─ Apply the outcome's listed price and Reality/Time/Identity shifts
+   └─ Completed forbidden ritual: Madness +1 per Madness trigger table
 
 4. RESULT
-   └─ Crit Fail: turns against you, price ×2
+   └─ Crit.Fail: turns against you, price ×2
    └─ Fail: doesn't work, full price
    └─ Partial: works with side effect
    └─ Success: works, standard price
@@ -1475,7 +1505,7 @@ Run this at the start of every new scene.
 REALITY:  ○○○○○○○ (0-6)
 TIME:     ○○○○○○○ (0-6)
 IDENTITY: ○○○○○○○ (0-6)
-MADNESS:  ○○○○○○ (0-6)      | 3+: all stats -1 | 5+: all stats -2 total
+MADNESS:  ○○○○○○ (0-6)      | 3-4: -1 all rolls | 5: -2 all rolls total
 ADDICTION: ○○○○○○ (0/6)
 MK: 0-20 (Reality +1 every 3 MK)
 ```
@@ -1493,9 +1523,9 @@ MK: 0-20 (Reality +1 every 3 MK)
 
 **Min intrusions/scene:** Lvl 3 = 1-2 | Lvl 4 = 2-3 | Lvl 5 = constant | Lvl 6 = FINALE
 
-### Axis Mechanics Quick (roll d20, 1 roll per action)
+### Axis Mechanics Quick (flat d20 trigger rolls)
 
-**Unified DC:** Lvl 2 = 16+ | Lvl 3 = 12+ | Lvl 4 = 8+ | Lvl 5+ = Auto
+**Unified trigger threshold:** Lvl 2 = 16+ | Lvl 3 = 12+ | Lvl 4 = 8+ | Lvl 5+ = Auto. No stat modifiers; underlying core action rolls resolve separately.
 
 | Axis | Trigger | Effect progression |
 |------|---------|-------------------|
@@ -1519,7 +1549,7 @@ MK: 0-20 (Reality +1 every 3 MK)
 
 | Opium | Alcohol | Denial | Forgetting |
 |-------|---------|--------|------------|
-| -1 Reality temp, Addiction +1, +1 Reality after | -1 Reality temp, -1 CON permanent | Hold, WIS save/session | Lose skill/contact |
+| -1 effective Reality temp, Addiction +1, returns to base after | -1 effective Reality temp, -1 CON permanent, Addiction +1 | Hold, WIS save/session | Lose skill/contact |
 
 ### Session Flow
 
@@ -1529,15 +1559,15 @@ MK: 0-20 (Reality +1 every 3 MK)
 
 ### Finale Triggers
 
-- Reality 6 | Time 6 | Identity 6 | Madness 6 | HP 0 | Addiction 6 | MK 20 | Player choice
+- Reality 6 | Time 6 | Identity 6 | Madness 6 | core death completed | failed Addiction-6 overdose save | MK 20 | Player choice
 
 ### Madness Quick (hidden from player)
 
 | Level | Effect |
 |-------|--------|
 | 0-2 | Normal options |
-| 3-4 | ALL stats -1, 1-2 irrational options/scene |
-| 5 | ALL stats -2 total, majority irrational, /rp:gm restricted |
+| 3-4 | -1 all rolls, 1-2 irrational options/scene |
+| 5 | -2 all rolls total, majority irrational, /rp:gm restricted |
 | 6 | Finale (Institutionalized) |
 
 **Player sees effects, not the number. Cannot decrease.**
@@ -1558,13 +1588,19 @@ MK: 0-20 (Reality +1 every 3 MK)
 
 ## INTEGRATION WITH gm-skill.md
 
-- d20 rolls for investigation, combat, social
-- Margin system (Crit.Fail / Fail / Partial / Success / Crit)
-- Clocks for Addiction
-- Stats: STR, DEX, CON, INT, WIS, CHA (standard 1-5)
-- HP/AC for human combat only
-- Primordial = no stats, no combat
-- Madness = hidden from player; its behavioral/options/stat effects are visible through play
+`cthulhu.md` extends the universal core. Unless listed below, all core rules remain active, including difficulty/margins, stat-threshold abilities, Heroism, option formatting, character mechanics sync, clocks, human combat, social checks, and death saves.
+
+**REPLACES: core MAGIC** → Cthulhu uses `RITUALS` and Mythos effects instead of core spell circles/cooldowns.
+
+**REPLACES: core CHAPTER END level-up package** → Cthulhu has no heroic level-up rewards (`+1 stat / new ability / new spell / +10 HP`). Mythos Knowledge is the setting's progression/anti-progression track. Chapter titles, pacing, ally fates, world consequences, and save/sheet updates still apply.
+
+- d20 + margin rules resolve investigation, human combat, social actions, saves, and ritual rolls unless a Cthulhu mechanic explicitly says `flat d20 trigger roll`.
+- Addiction uses a 0-6 setting clock; other core clocks remain available.
+- Stats are standard STR/DEX/CON/INT/WIS/CHA. Madness applies roll penalties and does not change base stats.
+- Human and Lesser Mythos combat use core HP/AC when statistics exist.
+- True Primordial entities use the Mythos Threat rules above and are not ordinary HP-trading encounters.
+- Core death rules remain authoritative. `HP 0` alone is not a finale.
+- Hidden Axes/Madness values remain secret, but any modifier that affects a displayed player roll must be shown in that option/result as required by core formatting.
 
 ---
 

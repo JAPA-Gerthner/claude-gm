@@ -11,7 +11,9 @@ For: sandbox adventures across all regions, political intrigue, magical explorat
 Runeterra — world of diverse magic, ancient empires, and rising nations. Magic is everywhere but takes radically different forms. Technology and magic blend in some regions, while others reject one or both.
 
 **Core themes:**
-- Magic as identity (your magic defines who you are and where you belong)
+- Magic as language and identity — a tradition is a way a culture explains reality
+- Arcane interregnum — old schools are stable; globalization forces magical languages to collide
+- Synthesis vs tradition — hybrids create impossible possibilities but carry instability and stigma
 - Regional conflict (nations clash over resources, ideology, magic)
 - Rise to legend (start as nobody, become champion-tier)
 - Champions exist (canonical LoL characters are part of this world)
@@ -19,6 +21,52 @@ Runeterra — world of diverse magic, ancient empires, and rising nations. Magic
 **Eras:**
 - Ancient (Shuriman Empire, Darkin War, Ruination) — legendary backdrop
 - Modern (current LoL timeline) — default play era
+
+### BASE SYSTEM AND INHERITANCE
+
+Runeterra extends `gm-skill.md`. Use all core rules unless this file explicitly replaces them.
+
+```
+REPLACES: CHARACTER CREATION
+  Runeterra uses Region Origin → Background → Arcane Identity → Stats → Details
+  instead of the generic race + class build generator. After creation, still run
+  mandatory gm-skill CHARACTER MECHANICS SYNC and grant all stat-threshold abilities.
+
+REPLACES: CHAPTER END — LEVEL UP
+  Use RUNETERRA LEVEL UP below. Core chapter-derived ability generation still applies.
+
+REPLACES: MAGIC — After cast = cooldown by circle
+  Keep core cooldown durations, but the cooldown attaches to the caster's
+  FOUNDATION TRADITION + CIRCLE channel, not to an exact spell name. Rewording or
+  improvising a different expression cannot bypass that channel cooldown.
+
+REPLACES: MAGIC — Can cast on cooldown → INT check DC 8+circle
+  In Runeterra, overcasting a Foundation channel uses that tradition's casting stat
+  vs DC 8+circle. Fail triggers a meaningful consequence and the Foundation Risk;
+  Synthesis also checks Instability Breakdown normally.
+```
+
+Core MAGIC otherwise remains active: free casting, core cooldown durations, and circle
+scale all still apply. Runeterra adds tradition casting stats, cultural risks, Arcane
+Synthesis, Instability, Dialects, and regional reactions on top of core magic.
+
+### THE ARCANE INTERREGNUM
+
+For most of history, a mage inherited one magical language from a place, bloodline,
+order, god, craft, or teacher. That language came with rituals, taboos, institutions,
+and a shared idea of what magic *is*. A master of one tradition is culturally legible
+and mechanically reliable.
+
+The modern world is different. Hexgates move people and ideas. Empires conquer.
+Refugees carry rites across borders. Zaun industrializes anything it can touch.
+Yordles ignore categories humans treat as sacred. Ixtali axioms leak. Old relics are
+reverse-engineered. Mages discover that traditions are not mutually exclusive laws —
+they are partially compatible languages.
+
+The old order is weakening. The next one is not stable yet. In the gap, new dialects,
+new industries, new faiths, and magical disasters appear.
+
+**Campaign thesis:** Tradition gives mastery. Synthesis gives possibility.
 
 ---
 
@@ -65,7 +113,7 @@ At level 6, choose or create one.
 | Type | Example | Effect |
 |------|---------|--------|
 | Combat | Combo Finisher | After 2+ hits same target, bonus d6 damage |
-| Magic | Overcharge | Cast one spell at +1 circle, 1/day |
+| Magic | Overcharge | Compile/cast one expression at +1 circle, +2 Instability, 1/day |
 | Social | Reputation | Advantage on first impression in your region |
 | Survival | Second Wind | Drop to 1 HP instead of 0, 1/day |
 | Stealth | Vanish | Disappear from combat, reposition anywhere unseen |
@@ -98,12 +146,19 @@ Examples:
 - Design ULTIMATE ABILITY with GM approval
 - Stat cap increases to 10, all magic circles unlocked
 
-### Stat Progression
+### Runeterra Level Up
 
-Each level, choose ONE:
+At chapter end: Level +1, then choose **2** options:
 - +1 to any stat (cannot exceed tier cap)
-- New ability or spell
-- +5 HP
+- +10 HP
+- New chapter-derived ability using the core gm-skill ability-generation rules
+- **Arcane Advancement:** increase one known Tradition Circle by 1, learn Circle 1 syntax
+  of a new tradition with narrative access, OR add +2 Research to one Prototype Formula
+  that was meaningfully tested/researched during this chapter
+
+Circle caps still follow Power Tier. Learning a tradition requires an actual source:
+mentor, community, stolen manual, artifact, spirit pact, bloodline awakening, captured
+device, or comparable fiction. A level-up cannot conjure a magical culture from nowhere.
 
 **Supernatural Threshold:** Stats 6+ are supernatural. Grant access to gm-skill.md STAT THRESHOLD abilities.
 
@@ -495,7 +550,10 @@ Thirteen major regions. Each has distinct culture, magic, and politics.
 
 ## MAGIC TRADITIONS
 
-Unified framework. Each tradition uses same core mechanics with unique flavor.
+Each tradition is both a power source and a **magical language**: a set of assumptions,
+ritual habits, operators, taboos, and social institutions. The spell examples below are
+seeds, not closed lists. A practitioner may create new expressions inside the grammar
+of a tradition, and a syncretic practitioner may compile operators from several.
 
 ### Core Magic Mechanics
 
@@ -514,31 +572,466 @@ Unified framework. Each tradition uses same core mechanics with unique flavor.
 - Hero (6-10): Circles 1-4
 - Legend (11+): All circles
 
-**Cooldowns:** Same as gm-skill.md, modified by tradition
+**Cooldowns:** Use gm-skill durations, but track them by `Foundation Tradition + Circle`.
+Casting Hextech Circle 3 puts the caster's Hextech C3 channel on cooldown; changing the
+target or compiling another Hextech C3 expression does not create a fresh cooldown.
+Other Circles and other Foundation traditions remain separate channels.
 
 ### Magic Margin Outcomes
 
 | Outcome | Margin | Effect |
 |---------|--------|--------|
-| Crit.Fail | ≤-6 | Spell fails + Tradition Risk + Cooldown starts |
-| Fail | -5 to -1 | Spell fails, cooldown starts |
-| Partial | 0 to +4 | Spell works with complication |
+| Crit.Fail | ≤-6 | Pure spell fails + Tradition Risk; Synthesis also resolves Instability Breakdown |
+| Fail | -5 to -1 | Spell fails, cooldown starts; unstable Synthesis may break down |
+| Partial | 0 to +4 | Spell works with complication; high Instability may add an anomaly |
 | Success | +5 to +9 | Spell works as intended |
-| Crit | ≥+10 | Spell enhanced (+50% effect or -1 cooldown tier) |
+| Crit | ≥+10 | Spell enhanced (+50% effect or -1 cooldown tier); may suppress one Synthesis complication |
 
-**Partial Complications (d6):** 1-Delayed, 2-Reduced, 3-Noticed, 4-Backlash (d4), 5-Drained (DIS next), 6-Tradition-specific
+**Stable/Pure Partial Complications (ROLL d6):** 1-Delayed, 2-Reduced, 3-Noticed, 4-Backlash (d4), 5-Drained (DIS next), 6-Tradition-specific
+
+## ARCANE COMPILER — SPELLS AS LANGUAGE
+
+This is the signature Runeterra magic system.
+
+A spell is not selected from a closed list. It is **compiled** from a magical language.
+Traditional magic uses one language. Arcane Synthesis imports operators from other
+languages to create effects that no single tradition can express cleanly.
+
+### Compile an Expression
+
+For any improvised spell, ritual, technique, or magical artifact:
+
+```
+1. INTENT      — Say what you want reality to do.
+2. CIRCLE      — GM sets Circle 1-5 by scale/power using core magic scale.
+3. FOUNDATION  — Choose the tradition whose worldview controls the expression.
+4. OPERATORS   — Use at least one Foundation operator; add 0+ imported operators.
+5. FORM        — How is it performed? Gesture, device, pact, blood rite, inscription, etc.
+6. INSTABILITY — Calculate only if more than one tradition participates.
+7. CAST        — d20 + Foundation casting stat vs Base Circle DC + number of imports.
+8. RESOLVE     — Apply normal margin outcome, then Instability Breakdown if triggered.
+```
+
+The **Foundation** matters. It determines casting stat, cooldown interaction, native
+Risk, social identity, and how the GM interprets ambiguous effects. The same operators
+compiled under a different Foundation can produce a different spell.
+
+### Circle Scale for Freeform Expressions
+
+Use circle as a hard ceiling on **scale**, not as a spell list.
+
+| Circle | Typical Scale | Examples |
+|--------|---------------|----------|
+| 1 | person / object / seconds-minutes | bolt, sense, minor shift, brief ward |
+| 2 | room / small group / scene | barrier, invisibility, portal hop, strong alteration |
+| 3 | building / battlefield / hours | major summon, flight, large transformation, storm pocket |
+| 4 | district / army / day | resurrection-scale miracle, mass control, major planar effect |
+| 5 | city / region / lasting world effect | legendary gates, mass undeath, reality architecture |
+
+A synthesis may produce a **novel kind** of effect, but it does not bypass Circle scale.
+Time travel, causal rewriting, mass identity changes, and similar impossible results are
+normally consequences of Instability 8-10, Runic/Celestial/Void-scale story access, or
+Legend-tier breakthroughs — not cheap Circle 1 wording tricks.
+
+### Grammar Lexicon
+
+Operators are conceptual verbs. They describe what a tradition believes can be done to
+reality. They are intentionally broad; Circle determines magnitude.
+
+| Tradition | Grammar Operators | Ritual / Cultural Form |
+|-----------|-------------------|------------------------|
+| Hextech | **Encode · Store · Repeat · Interface** | diagrams, calibration, crystal circuits, tools |
+| Chemtech | **Catalyze · Mutate · Amplify · Adapt** | dosage, reaction, injection, pressure, fumes |
+| Petricite | **Absorb · Silence · Contain · Release** | contact, geometry, carved channels, grounding |
+| Spirit | **Relate · Bargain · Harmonize · Manifest** | breath, gesture, offering, names, reciprocity |
+| True Ice | **Preserve · Bind · Endure · Still** | bloodline, touch, ordeal, cold, oath |
+| Ascension | **Elevate · Idealize · Embody · Command** | solar rite, title, lineage, sacred geometry |
+| Black Mist | **Remember · Bind Soul · Persist · Haunt** | relics of the dead, names, grief, mist |
+| Celestial | **Archetype · Destiny · Authority · Scale** | constellation, vow, revelation, alignment |
+| Void | **Consume · Subtract · Adapt · Unmake** | hunger, fracture, silence, impossible pattern |
+| Nagakabouros | **Move · Test · Transform · Reject Stasis** | motion, struggle, sea rite, ordeal |
+| Fae/Glamour | **Fold · Associate · Mislead · Reframe** | story, joke, name, portal logic, symbolism |
+| Elemental | **Transform · Combine · Separate · Balance** | axioms, kata, diagrams, exact relation |
+| Blood | **Sacrifice · Inherit · Own · Transmit** | blood, lineage, wound, exchange, claim |
+| Runic | **Define · Rewrite · Anchor · Make Permanent** | inscription, true naming, geometric law |
+| Darkin | **Possess · Weaponize · Dominate · Become** | weapon bond, violence, will contest |
+| Vastayan | **Shape · Instinct · Lineage · Embody** | rhythm, body, emotion, ancestral pattern |
+
+These operators do **not** replace each tradition's Signature or Weakness below. They
+are the generative grammar layered on top of those mechanics.
+
+### Operator Mastery
+
+To compile a Circle N synthesis:
+
+- Foundation must be known at Circle N.
+- Each imported tradition should be known at least at Circle `ceil(N / 2)`.
+  - Circle 1-2 expression → import Circle 1 is enough.
+  - Circle 3-4 → import Circle 2.
+  - Circle 5 → import Circle 3.
+- If you do not personally know the required syntax, you may use **Borrowed Syntax**:
+  an allied caster, captured device, spirit pact, relic, textbook, blood sample, etc.
+  Borrowed Syntax adds **+2 Instability per underqualified import**.
+
+This lets a party compile magic together. A yordle can provide Fae syntax while a
+Zaunite engineer supplies Chemtech and a Piltovan artificer anchors the Hextech
+Foundation. The result belongs fully to none of them.
+
+### Orthodox Precision
+
+Single-tradition expressions have **Instability 0**.
+
+When a pure expression is performed with its authentic focus/ritual form:
+- no Synthesis DC surcharge;
+- Partial never causes an Arcane Catastrophe;
+- on Partial, the caster chooses **Delayed, Reduced, or Noticed** instead of rolling
+  the full complication table;
+- its social meaning is immediately legible to people familiar with that tradition.
+
+Traditional masters are therefore the safest casters in the world. Synthesis is not a
+strict upgrade; it trades reliability and cultural legitimacy for design space.
+
+---
+
+## ARCANE SYNTHESIS
+
+**Synthesis = one Foundation + at least one imported tradition.**
+
+Example:
+
+```
+BANDLE HEXGATE PROTOTYPE
+Circle: 3
+Foundation: Fae/Glamour — FOLD + ASSOCIATE
+Import: Hextech — ENCODE + INTERFACE
+Intent: handheld device opens a portal to a place emotionally associated with its owner
+Base Instability: 2
+Casting: CHA vs DC 17 (Circle 3 DC 16 + 1 import)
+```
+
+Change the Foundation to Hextech and the same parts become an engineered transport
+network that happens to use Fae association as routing data. Change it to Blood and the
+portal may recognize ancestry rather than a device owner. **Foundation is semantics.**
+
+### Synthesis Seeds — Examples, Never Recipes
+
+| Foundation + Imports | Possible Expression | Why it is culturally dangerous |
+|----------------------|---------------------|-------------------------------|
+| Fae + Hextech | emotional-address hexgates, impossible storage spaces | turns yordle relationship-logic into infrastructure |
+| Chemtech + Spirit | living prosthesis that negotiates with its own spirit | treats body, chemistry, and personhood as one mutable system |
+| Petricite + Hextech | programmable spell battery / selective anti-magic firewall | Demacian suppression becomes exportable technology |
+| Blood + Runic | hereditary contract that recognizes descendants as legal targets/owners | writes lineage into reality as law |
+| Black Mist + Hextech | device that stores a dead person's memory/voice/skills | converts grief and souls into reproducible machinery |
+| Vastayan + Chemtech | mutagen that adapts differently to each bloodline | industrial mutation starts behaving like ancestry |
+| Celestial + Hextech | machine that routes power by constellation/archetype | engineers cosmic authority instead of worshipping it |
+| Elemental + Fae | portal whose destination is selected by weather/elemental state | combines exact axioms with symbolic geography |
+| Void + Petricite | sink that absorbs magic and then subtracts the space it occupied | anti-magic begins consuming reality itself |
+| True Ice + Nagakabouros | moving engine built from perfect stasis | direct metaphysical contradiction; powerful and inherently unstable |
+
+The GM should reward combinations that follow the operators' logic, not merely combine
+nouns. `Fire + portal` is ordinary. `Fae Fold + Hextech Encode` changes what an address
+*means*. That is Synthesis.
+
+### Instability Score
+
+Start from the number of distinct traditions in one expression:
+
+| Traditions | Base Instability |
+|------------|------------------|
+| 1 | 0 — Orthodox |
+| 2 | 2 — Experimental |
+| 3 | 5 — Volatile |
+| 4 | 8 — Reality Breach |
+| 5+ | 10 — Impossible Magic |
+
+Then modify:
+
+```
++2  each use of Borrowed / underqualified Syntax
++1  hybrid effect is made permanent or autonomous in an artifact/system
++1  Foundation and import directly contradict each other's metaphysics
+-1  one scene or 1+ hour spent preparing/calibrating this exact cast
+-1  every participating tradition has an authentic focus, practitioner, or material present
+-1  Formula has reached Research 3/6
+-2  recognized Dialect applies to this expression
+```
+
+Preparation/focus reductions together are capped at −2. Research stabilization is
+**−1 at Formula OR −2 at Dialect, not both**. Established regional Diffusion can add its
+separate −1. Instability is always 0-10.
+
+**Common contradictions (+1):** Celestial↔Void, Spirit↔Black Mist/Darkin,
+True Ice↔Nagakabouros, Runic↔Fae, Ascension↔Void, or any Petricite expression that
+must simultaneously suppress and continuously channel the same magic. GM may mark
+another contradiction only when the principles genuinely oppose each other, not merely
+because two traditions are culturally hostile.
+
+### Synthesis DC
+
+```
+SYNTHESIS DC = normal Circle DC + number of imported traditions
+```
+
+Instability itself does not keep inflating DC. It changes **what failure means**.
+A revolutionary mage can be technically brilliant and still be building something that
+has no safe failure state.
+
+### Instability Breakdown
+
+Resolve the normal casting outcome first, then consult the band's trigger.
+
+| Instability | Band | Breakdown |
+|-------------|------|-----------|
+| 0-1 | Stable | normal magic only |
+| 2-3 | Experimental | Crit.Fail → 1 Glitch + Foundation Risk |
+| 4-5 | Volatile | Fail → 1 Glitch; Crit.Fail → 1 Catastrophe + Foundation Risk |
+| 6-7 | Unbound | Partial → 1 Glitch; Fail → 1 Catastrophe; Crit.Fail → 2 Catastrophe domains |
+| 8-9 | Breach | Partial → effect + 1 Catastrophe; Fail → 2 domains; Crit.Fail → 3 domains |
+| 10 | Impossible | Crit → effect + controlled Glitch; Success → effect + 1 Catastrophe; Partial → effect + 2; Fail → 2; Crit.Fail → inverted effect + 3 |
+
+On a hybrid Crit.Fail at Instability 6+, GM may also ROLL one participating tradition
+and apply its native Risk if fiction supports it. At Instability 8+, roll two different
+traditions instead. This is the **Risk Chorus**: every language brought into the machine
+may demand payment.
+
+A Critical Success at Instability 2-9 may suppress one Glitch/Catastrophe that would
+otherwise occur and adds +1 Research if this was a meaningful test of a Prototype.
+
+---
+
+## ARCANE CATASTROPHE TABLES
+
+When Breakdown calls for a Glitch or Catastrophe, **ROLL**. Do not choose the safest
+or funniest result manually.
+
+### Domain — ROLL d12
+
+| d12 | Domain | Reality does... |
+|-----|--------|-----------------|
+| 1 | SCALE | magnifies, miniaturizes, or broadens the target category |
+| 2 | SPACE | folds, swaps, loops, portals, overlaps locations |
+| 3 | TIME | delays, repeats, skips, ages, or creates a retroactive echo |
+| 4 | IDENTITY | changes who/what something counts as, owns, names, or obeys |
+| 5 | MEMORY | deletes, copies, externalizes, or shares memory |
+| 6 | MATTER | transmutes, phases, liquefies, crystallizes, changes substance |
+| 7 | LIFE | mutates, grows, heals wrongly, breeds, or creates ecology |
+| 8 | SOUL | splits, binds, possesses, displaces, or manifests spirit |
+| 9 | PERCEPTION | swaps senses, makes illusion consensual, hides/reveals truths |
+| 10 | CAUSALITY | reverses cause/effect, creates debt to a future cause |
+| 11 | DUPLICATION | copies target, spell, caster, location, or consequence |
+| 12 | INVERSION | reverses property, allegiance, direction, weakness, or intent |
+
+### Anchor — ROLL d6
+
+| d6 | Anchor |
+|----|--------|
+| 1 | caster |
+| 2 | intended target |
+| 3 | random participant / witness |
+| 4 | focus, weapon, device, or ritual object |
+| 5 | surrounding location / institution |
+| 6 | a magically connected elsewhere/elsewhen determined by the involved traditions |
+
+### Severity
+
+- **Glitch:** local, temporary, inconvenient or dangerous; usually ends this scene/day.
+- **Catastrophe (Instability 4-7):** major scene/building consequence; persists until
+  actively solved or naturally expires.
+- **Breach (Instability 8-9):** district/faction/campaign consequence; create or advance
+  a core Clock when appropriate.
+- **Impossible (10):** roll all required domains first, then combine them into **one
+  coherent impossible event**. Do not resolve them as unrelated random jokes. Permanent
+  world change is allowed.
+
+Example: `SPACE + DUPLICATION + SCALE` on a Fae/Hextech/Chemtech lighter might not
+explode for huge damage. Instead, every doorway in a district begins opening into the
+same growing chemical fire. The catastrophe follows the grammar that created it.
+
+---
+
+## PROTOTYPES, FORMULAS, AND DIALECTS
+
+The central long-term progression of Synthesis is turning dangerous novelty into culture.
+
+Every distinct experimental technique can gain a core **RESEARCH Clock 0/6**.
+A technique is broader than one exact spell but narrower than two whole traditions:
+`Fae Fold + Hextech Interface for portal routing` is a technique; `all Fae + Hextech`
+is not.
+
+### Research Clock
+
+```
+0/6 — PROTOTYPE: first dangerous expression; no stabilization
+1-2 — REPEATABLE: notes exist; others can reproduce with guidance
+3-5 — FORMULA: −1 Instability for users who know this research
+6/6 — DIALECT: −2 Instability; may be taught as a named magical practice
+```
+
+Tick Research only for meaningful new information:
+- +1 first successful field use under a new condition
+- +1 controlled experiment that tests a real unknown
+- +1 survive a Catastrophe and correctly identify what caused it
+- +1 obtain a missing teacher/material/theory that resolves a known flaw
+- +2 Critical Success on a genuinely novel test
+
+Do not tick for repeating the same safe laboratory action.
+
+At 6/6, name the Dialect and define:
+- Foundation + imported operator family
+- characteristic ritual/tool/aesthetic
+- one thing it is unusually good at
+- one assumption/taboo inherited from its origins
+- who claims ownership of it
+
+### Diffusion Clock — 0/6 per Region
+
+A Dialect can spread beyond its inventors.
+
+```
++1 public demonstration that matters
++1 teach a meaningful NPC cohort / academy / gang / order
++1 publish, sell, steal, or mass-produce reproducible instructions
++1 major faction adopts it
+-1 successful suppression, purge, destroyed supply chain, or discrediting scandal
+```
+
+**3/6 — NOTORIOUS:** laws, black markets, imitators, critics, and specialists appear.  
+**6/6 — ESTABLISHED:** local infrastructure understands it; users gain another −1
+Instability in that region when proper materials/training are available.
+
+If one Dialect reaches 6/6 Diffusion in **three distinct regions**, it can become a
+**NEW SCHOOL**. It may appear in future character creation and NPC generation. The GM
+must update at least one faction, law, industry, ritual, or conflict to reflect that the
+world learned a new magical language.
+
+This is how players change Runeterra without needing to conquer it.
+
+### Hybrid Artifacts
+
+An artifact can freeze a compiled expression into hardware, flesh, a rune, a weapon, or
+another persistent carrier.
+
+- Record Foundation, operators, Circle, and Instability on the item.
+- Hybrid permanent/autonomous artifacts add +1 Instability before stabilization.
+- If activation requires magic, roll normally using the operator's Foundation stat.
+- A non-caster can activate it only if the formula includes a plausible **Interface**
+  (Hextech is common, but Fae names, Blood ownership, Petricite release triggers, etc.
+  may also work).
+- A Catastrophe gives the artifact **1 Scar**: a permanent quirk/constraint tied to the
+  rolled domain. At 3 Scars, it is destroyed, becomes an autonomous anomaly, or changes
+  category entirely — ROLL/derive from the last Catastrophe rather than choosing safety.
+
+A revolutionary lighter can therefore become a campaign object with a history.
+
+---
+
+## SYNTHESIS AND SOCIETY
+
+Magic is culture. Reliability is social capital.
+
+### Arcane Legibility
+
+A practitioner known as a deep specialist is easier for traditional institutions to
+understand and trust.
+
+- Circle 3+ publicly associated with one Foundation: **+1** on relevant first-impression
+  / faction checks with institutions that approve that tradition.
+- Circle 5 master with no notorious public hybrid practice: **+2** instead.
+- Public use of a Prototype at Instability 4+ suspends that orthodox bonus with witnesses
+  until the institution decides what the practitioner now represents.
+- An Established Dialect can eventually earn its own legitimacy and bonuses.
+
+These modifiers never make an impossible request possible and do not override established
+relationship/faction standing.
+
+### Regional Default Attitudes
+
+Apply these to institutions and communities when magical identity is relevant, not to
+every individual NPC automatically.
+
+### GLOBALIZATION IS ALREADY HERE — HARD RULE
+
+Runeterra is already in the middle of an arcane interregnum. Regional culture creates a
+**bias**, never ideological uniformity. Trade, conquest, migration, academies, refugees,
+yordle portals, Piltover industry, Zaun experimentation, Noxian expansion, and surviving
+ancient traditions have already mixed magical languages across the world.
+
+When generating society:
+- **Every meaningful NPC gets an ARCANE POSITION**, even if they cannot cast magic. For a
+  non-caster it describes what kinds of magic they trust, fear, recognize, fund, regulate,
+  or consider morally legitimate.
+- **Every faction gets an ARCANE DOCTRINE** plus at least one internal dissenting bloc. A
+  major faction is never ideologically uniform unless the fiction explicitly makes it a
+  closed cult/sect; if so, its rigidity should itself create pressure or enemies.
+- In a cosmopolitan, occupied, trade-heavy, refugee-heavy, academy, port, or border
+  location, among the first **3 meaningful NPCs**, at least **1 must differ materially from
+  the regional default** in language alignment or orthodoxy.
+- A character's origin does not determine belief. An Ionian may industrialize spirits; a
+  Zaunite may be a ritual purist; a Demacian may secretly admire Runic theory; an Ixtali
+  exile may preach synthesis. Treat these as normal products of the age, not exceptional
+  protagonist-only behavior.
+- New Dialects immediately create social constituencies: adopters, opportunists, victims,
+  regulators, rivals, traditionalists, and people who simply think the new thing is ugly.
+
+The player characters are not the only people living through magical globalization.
+They are participants in a conflict that already has history, institutions, careers,
+prejudices, black markets, schools, and generational divides.
+
+### Arcane Position Profile
+
+Use this short profile for important NPCs and factions:
+
+```
+ARCANE POSITION
+Alignment: [dominant language / heritage language / imported language / Dialect / anti-magic / pluralist]
+Orthodoxy: [Dogmatist / Purist / Traditionalist / Pragmatist / Syncretist / Radical Synthesist / Revolutionary]
+Known Dialects: [none or named Formula/Dialect/New School]
+Red Line: [one practice they consider unacceptable]
+Material Interest: [what they gain/lose if synthesis spreads]
+Contradiction: [optional private belief, dependency, hypocrisy, or generational split]
+```
+
+Do not collapse these into good/evil. A Purist may be compassionate and correct about a
+real danger. A Revolutionary may be exploitative, reckless, or corporate.
+
+| Region | Orthodox Legibility | Synthesis Default |
+|--------|----------------------|------------------|
+| Demacia | authorized Petricite/anti-magic +1 | visible unauthorized magic usually −3; hybrid status does not excuse being a mage |
+| Noxus | competence matters more than purity | useful success +1; humiliating instability −2 |
+| Piltover | licensed Hextech / academy practice +1 | registered Formula/Dialect +1; unlicensed Prototype −2 |
+| Zaun | no general purity bonus; radical innovator factions may treat proud orthodoxy −1 | Prototype +1 with innovators; radical useful success may gain +2; regulation is faction-specific |
+| Ionia | Spirit/Vastayan lineage +2 | respectful reciprocity 0/+1; binding/industrializing spirits −3 |
+| Freljord | recognized True Ice lineage +2 | synthesis using sacred blood/ice without standing −2/−3 |
+| Shurima | recognized Ascension/ancient lineage +2 | foreign remix of sacred relics −2; restorationists may treat it as theft |
+| Bilgewater | results and motion matter | useful/profitable +1; catastrophe threatening crew/port −2 |
+| Shadow Isles | no unified living society | reaction depends on the dead, Sentinels, or intruders present |
+| Targon | sect-approved Celestial practice +2 | doctrinal hybrid −2; Celestial↔Void experimentation usually −3 |
+| The Void | no normal social legitimacy | only cults/individual Voidborn have attitudes |
+| Bandle City | Fae practice +1 | playful hybrid +1; permanent cages/anchors that violate Fae logic −2 |
+| Ixtal | Elemental orthodoxy +2 | authorized elite research 0; outsider synthesis using stolen axioms −3 |
+
+Faction Standing remains the durable record. A public hybrid success, catastrophe, ban,
+patent, heresy trial, academy endorsement, or black-market adoption should move existing
+Faction Standing when fiction warrants it.
+
+---
 
 ### Tradition Template
 
 ```
 TRADITION: [Name]
 Source: What powers it
-Stat: Primary casting stat
-Risk: What happens on critical failure
-Social: How society views practitioners
+Stat: Foundation casting stat
+Risk: What happens when the tradition's Risk triggers
+Social: How society views recognizable practitioners
 Signature: Unique mechanical benefit
 Weakness: Unique vulnerability
+Grammar: See ARCANE COMPILER lexicon
+Form: See ARCANE COMPILER ritual/cultural form
 ```
+
+Tradition entries below retain their old examples and special mechanics. Treat all
+listed spells/effects as **sample expressions**, never as a closed permission list.
 
 ---
 
@@ -553,7 +1046,7 @@ Weakness: Unique vulnerability
 | Signature | Devices can store spells for later use (1 spell per device) |
 | Weakness | Requires functional device; EMP/dispel disables |
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Shock charge, light beam, minor shield
 - Circle 3: Hextech golem, energy cannon, flight pack
 - Circle 5: Hexgate activation, massive construct
@@ -576,7 +1069,7 @@ Weakness: Unique vulnerability
 - 3: Minor mutation (cosmetic + small benefit/drawback)
 - 6: Major mutation (significant change, may lose humanity)
 
-**Sample Effects:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Shimmer boost, acid splash, toxin resistance
 - Circle 3: Limb enhancement, gas cloud, regeneration
 - Circle 5: Full mutation, chemtech abomination form
@@ -594,7 +1087,7 @@ Weakness: Unique vulnerability
 | Signature | Can absorb incoming spell (negate + store for later release) |
 | Weakness | Requires petricite contact; storage has limits |
 
-**Sample Effects:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Suppress minor magic, detect mages
 - Circle 3: Drain spell, release stored energy, anti-magic zone
 - Circle 5: Massive absorption, Galio-style activation
@@ -612,7 +1105,7 @@ Weakness: Unique vulnerability
 | Signature | Can communicate with spirits, ask for aid (CHA roll) |
 | Weakness | Harming nature/spirits weakens magic |
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Spirit sight, minor healing, nature speech
 - Circle 3: Spirit ally, dream walk, balance restoration
 - Circle 5: Major spirit pact, land awakening
@@ -632,7 +1125,7 @@ Weakness: Unique vulnerability
 
 **Iceborn Requirement:** Must have Iceborn blood (character creation choice) or be granted by Watcher exposure (dangerous).
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Ice weapon, cold resistance, freeze water
 - Circle 3: Ice wall, blizzard, cold aura
 - Circle 5: True Ice construct, Watcher's glimpse
@@ -652,7 +1145,7 @@ Weakness: Unique vulnerability
 
 **Note:** Full Ascension is Legend tier only. Partial Ascension is Hero tier (1/day, lasts 1 minute).
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Sunlight, sand control, endurance
 - Circle 3: Solar beam, sand soldier, desert walk
 - Circle 5: Partial Ascension, raise ancient construct
@@ -675,7 +1168,7 @@ Weakness: Unique vulnerability
 - 3: Death-touched (pale, cold, undead sense you as kin)
 - 6: Undead (lose mortality, become creature)
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Death sight, fear, minor soul binding
 - Circle 3: Raise undead, mist form, soul rip
 - Circle 5: Mass undeath, spectral army, Ruination echo
@@ -698,7 +1191,7 @@ Weakness: Unique vulnerability
 - Gain Aspect's signature power for 1 minute
 - WIS save DC 15 or Aspect controls actions for duration
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Starlight, minor blessing, celestial sight
 - Circle 3: Solar/lunar beam, divine protection, prophecy
 - Circle 5: Aspect manifestation, cosmic judgment
@@ -721,7 +1214,7 @@ Weakness: Unique vulnerability
 - 3: Void-touched (purple veins, can see void rifts)
 - 6: Voidborn (lose humanity, become creature — likely NPC)
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Void bolt, consume light, sense rift
 - Circle 3: Void zone, tentacle summon, reality tear
 - Circle 5: Major rift, call Voidborn, void transformation
@@ -739,7 +1232,7 @@ Weakness: Unique vulnerability
 | Signature | Motion heals (moving 30+ ft per turn heals d4 HP) |
 | Weakness | Stagnation punished (standing still for turn = disadvantage next turn) |
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Water breathing, tentacle lash, sea sight
 - Circle 3: Summon tentacle, test of spirit, storm call
 - Circle 5: Nagakabouros manifestation, mass trial
@@ -759,7 +1252,7 @@ Weakness: Unique vulnerability
 
 **Note:** Non-yordles can learn but always at disadvantage. Yordles have racial affinity.
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Minor illusion, color spray, portal peek
 - Circle 3: Major illusion, polymorph other, portal jump
 - Circle 5: Realm hop, mass glamour, reshape reality (local)
@@ -785,7 +1278,12 @@ Weakness: Unique vulnerability
 - Plant + Fire = Smoke/Poison
 - Lightning + Metal = Magnetism
 
-**Sample Spells:**
+**Old-world precedent:** Ixtal is the clearest surviving culture to formalize combination
+inside a single magical language. Ixtali masters often view cross-tradition Synthesis as
+a crude, dangerous misunderstanding of what their Axioms proved: combination is valid
+only when the grammar itself is rigorous. Outsiders increasingly disagree.
+
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Single element control, elemental bolt
 - Circle 3: Major element shaping, dual combination
 - Circle 5: Triple combination, elemental avatar
@@ -803,7 +1301,7 @@ Weakness: Unique vulnerability
 | Signature | Can use own HP as spell power (+1 circle per 5 HP spent) |
 | Weakness | Requires blood (own or other); anemia if overused |
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 1: Blood bolt, life sense, minor drain
 - Circle 3: Blood pool, life steal, control bleeding
 - Circle 5: Hemoplague, exsanguinate, blood form
@@ -823,7 +1321,7 @@ Weakness: Unique vulnerability
 
 **Note:** Requires direct World Rune contact or fragment. Extremely rare. Legend tier effectively required.
 
-**Sample Spells:**
+**Sample Expressions (examples, not a closed spell list):**
 - Circle 3: Rune bolt, reality anchor, power surge
 - Circle 5: World shaping, permanent enchantment, planar breach
 
@@ -1205,6 +1703,18 @@ Tick +: Mage persecution, Sylas victories
 Tick -: Tolerance growth, Sylas defeat
 Impact: Civil war potential, Lux's choice
 ===
+
+
+=== WORLD CHANGE: ARCANE INTERREGNUM ===
+Status: Accelerating
+Clock: 1/6
+Effect: traditions collide; institutions cannot agree what counts as legitimate magic
+Tick +: new Dialect established, public hybrid catastrophe, state adoption, stolen school secrets
+Tick -: successful suppression, isolation, destroyed research networks
+Impact 3/6: synthesis laws, black markets, schisms, patents, heresy trials become common
+Impact 5/6: old orders split; nations race to control hybrid schools
+Impact 6/6: the magical age changes — graduate any eligible Dialect into a New School; if none qualifies yet, create an equally permanent institutional shift and keep New School requirements intact
+===
 ```
 
 ---
@@ -1232,21 +1742,35 @@ Choose home region. Grants:
 | Survivor | +1 CON, wilderness advantage | Survival gear, scars, stories |
 | Artisan | +1 INT or DEX, craft advantage | Tools, workshop access, reputation |
 
-### Step 3: Magic Tradition (Optional)
+### Step 3: Arcane Identity (Optional)
 
-Choose 0-2 traditions. Each requires:
-- Narrative justification (how did you learn?)
-- Starting at Circle 1-2
-- Accept tradition's risks and social implications
+Non-mages choose none. Mages choose a **Foundation Tradition** and explain who taught
+you its language, rituals, and taboos. Start Foundation at Circle 1 or 2 as appropriate
+to the campaign.
 
-Multi-tradition:
-- 2 traditions = neither above Circle 3 until level 8
-- Conflicting traditions (Void + Celestial, Black Mist + Spirit) = extra WIS saves
+Then choose one start mode:
+
+**ORTHODOX APPRENTICE**
+- one Foundation only
+- begin with one named pure expression you have practiced extensively
+- culturally legible; use Orthodox Precision normally
+
+**SYNCRETIC APPRENTICE**
+- Foundation Circle 1
+- one additional Tradition at Circle 1 as imported syntax
+- begin with one **Prototype Formula** using both traditions, Research 1/6
+- compute its Instability normally; decide who taught you something your home culture
+  may consider improper
+
+Additional traditions are learned through play and Arcane Advancement. Knowing many
+languages expands possibility but does not erase any tradition's Risk, Weakness, social
+meaning, or access requirements (Iceborn blood, World Rune contact, Darkin weapon, etc.).
 
 ### Step 4: Stats
 
-Standard array: 4, 3, 3, 2, 2, 1 (distribute to STR/DEX/CON/INT/WIS/CHA)
-Or roll: 6 × (d4+1), assign as desired
+Standard array: 4, 3, 3, 2, 2, 1 (distribute to STR/DEX/CON/INT/WIS/CHA).
+For random assignment, ROLL to shuffle this same array among the six stats; do not use
+`6 × (d4+1)`, which creates a much stronger character than the standard array.
 
 ### Step 5: Details
 
@@ -1336,6 +1860,102 @@ Or roll: 6 × (d4+1), assign as desired
 
 ### NPC Generator (d20 each)
 
+Roll the normal identity tables below, then **always roll ARCANE POSITION** for every
+meaningful NPC. Do this for non-casters too.
+
+#### Arcane Alignment (d12)
+
+This determines which magical language/culture the NPC treats as most legible or
+important. If several concrete traditions fit a result, roll among the plausible
+candidates rather than choosing the most convenient one.
+
+```
+1-4: ROOTED — dominant local tradition / accepted anti-magic order
+5-6: HERITAGE — old, minority, clan, sect, or suppressed local tradition
+7-8: IMPORTED — foreign language carried by trade, war, migration, study, or occupation
+9:   DIALECT — an existing Formula/Dialect/New School matters more than a parent tradition
+10:  EXPERIMENTAL — follows a Prototype scene, hybrid workshop, or notorious synthesist
+11:  COUNTER-CULTURE — aligned with a language the local majority distrusts or forbids
+12:  PLURALIST — treats multiple languages as legitimate; no single school defines reality
+```
+
+For a caster, this is usually their Foundation or strongest cultural influence. For a
+non-caster, it is a social allegiance, prejudice, profession, faith, aesthetic, or
+institutional interest.
+
+#### Orthodoxy (d12 + regional bias, clamp 1-12)
+
+Roll independently from Arcane Alignment. This is **how tightly** the NPC believes one
+language should define legitimate magic.
+
+```
+1:   DOGMATIST — other grammars are corruption, fraud, sacrilege, or existential danger
+2-3: PURIST — one tradition should remain internally clean; synthesis is suspect
+4-5: TRADITIONALIST — hybrids can exist, but inherited forms deserve authority and caution
+6-7: PRAGMATIST — judge methods by cost, reliability, and consequences
+8-9: SYNCRETIST — mixing languages is normal; stabilization and ethics matter more than purity
+10-11: RADICAL SYNTHESIST — deliberately seeks cross-language combinations and broken taboos
+12:  REVOLUTIONARY — believes the old schools are obsolete categories and wants new ones born
+```
+
+Regional bias to this roll:
+```
+Demacia -2   Targon -2    Ixtal -2
+Ionia -1     Freljord -1  Shurima -1
+Piltover +0  Shadow Isles/Void +0 or use local faction
+Noxus +1     Bilgewater +1
+Bandle +2    Zaun +3
+```
+
+Bias is not destiny. A natural roll can still create a Zaunite Purist or Ionian
+Revolutionary. That tension is intentional.
+
+#### Arcane Red Line (d10)
+
+```
+1: Binding a spirit/person without consent
+2: Using souls or memories as components
+3: Void grammar of any kind
+4: Blood sacrifice / hereditary ownership
+5: Rewriting identity, loyalty, or perception
+6: Time manipulation
+7: Permanent reality alteration / World Rune logic
+8: Industrial mass production of magic
+9: Keeping magic exclusive to bloodline/caste/state
+10: No sacred line — only unacceptable consequences
+```
+
+#### Material Interest (d8)
+
+Belief is rarely abstract. Roll for important NPCs to determine what the magical order
+does to their actual life.
+
+```
+1: LIVELIHOOD — job/status depends on an orthodox institution staying powerful
+2: LINEAGE — family/clan identity is bound to one traditional language
+3: MARKET — profits from a hybrid technology, Dialect, patent, smuggling route, or workshop
+4: SCAR — personally harmed by a magical catastrophe or unstable Prototype
+5: CONTROL — works in licensing, policing, priesthood, academy, military, or regulation
+6: MIGRATION — exile/refugee/occupier experience brought a foreign language into their life
+7: RELATIONSHIP — mentor, lover, child, rival, or patron is invested in the opposite camp
+8: IDEALIST — little direct material stake; belief is philosophical, aesthetic, or moral
+```
+
+#### Contradiction (d8)
+
+Roll for major NPCs, or whenever a simple ideology would make them flat.
+
+```
+1: None — unusually consistent
+2: Secretly studies a second language they condemn publicly
+3: Depends materially on a Dialect they dislike
+4: Loves someone from the opposing magical culture
+5: Publicly progressive, privately attached to inherited hierarchy
+6: Publicly orthodox, privately fascinated by synthesis
+7: Survived a catastrophe and changed belief, but old allies have not
+8: Their child/student/mentor belongs to the opposite camp
+```
+
 **Origin:**
 ```
 1-2: Demacia    11-12: Bilgewater
@@ -1376,6 +1996,65 @@ Or roll: 6 × (d4+1), assign as desired
 18-19: Love/Protection
 20: Chaos/Fun
 ```
+
+### Faction Generator — Arcane Doctrine
+
+Whenever the GM creates a new faction, guild, cult, academy, gang, military unit,
+corporation, tribe, ministry, or revolutionary cell, generate its magical politics as
+part of the faction rather than adding them later.
+
+**1. Public Orthodoxy — roll d12 + regional bias**
+Use the NPC Orthodoxy table, but interpret the result institutionally:
+
+```
+Dogmatist/Purist       → bans, expels, destroys, or monopolizes foreign grammar
+Traditionalist         → permits exceptions but inherited authority comes first
+Pragmatist             → licenses whatever works and can be controlled
+Syncretist             → actively supports compatible cross-language work
+Radical Synthesist     → funds prototypes and recruits boundary-breakers
+Revolutionary          → wants old schools replaced by new Dialects/New Schools
+```
+
+**2. Favored Arcane Alignment — roll d12**
+Use Arcane Alignment. This determines the language, Dialect, or anti-magic worldview the
+faction treats as culturally central.
+
+**3. Institutional Strategy — d8**
+```
+1: SUPPRESS — raids, censorship, confiscation, heresy trials
+2: SEGREGATE — separate schools may exist but must not mix
+3: LICENSE — legal synthesis only through approved institutions
+4: MONOPOLIZE — hybrids are acceptable if the faction owns the patents/secrets
+5: STEAL — publicly condemns synthesis while acquiring it covertly
+6: INCUBATE — funds controlled labs, monasteries, workshops, or field teams
+7: MARKET — spreads profitable Dialects aggressively
+8: EVANGELIZE — sees synthesis/new school creation as ideological mission
+```
+
+**4. Red Line — roll d10**
+Use Arcane Red Line. A faction may tolerate broad synthesis while becoming violently
+hostile when this line is crossed.
+
+**5. Internal Bloc — mandatory for major factions**
+Roll Orthodoxy again with **no regional bias**. If it matches the public doctrine, move it
+2 steps toward the nearest different position. This bloc can be a youth wing, elders,
+field officers, investors, priesthood, labor faction, dissident academy, criminal branch,
+or rival family.
+
+A major faction therefore has at minimum:
+```
+PUBLIC DOCTRINE + FAVORED LANGUAGE + STRATEGY + RED LINE + INTERNAL BLOC
+```
+
+Do not treat the internal bloc as cosmetic. Give it a named NPC, resource, and one thing
+it can do without permission from central leadership.
+
+#### Dialect Shock
+
+When a new Formula/Dialect becomes locally important, major factions do not wait for the
+PCs to interact with them. Each affected faction takes or prepares one response consistent
+with its doctrine: suppress, license, steal, sponsor, recruit, smear, weaponize, or adopt.
+This may tick Faction Standing, Diffusion, or ARCANE INTERREGNUM as fiction warrants.
 
 ### Location Generator (d20)
 
@@ -1670,13 +2349,33 @@ Secret: Corruption clock at 2
 
 ---
 
+### Framework 7: ARCANE INTERREGNUM (Multi-region)
+
+**Start:** Human tier, one border city / academy / trade route where traditions collide  
+**Theme:** invention vs inheritance; globalization of magic; who owns a new language  
+**Best regions:** Piltover/Zaun, Ionia/Noxus frontier, Bilgewater trade routes, Bandle crossings, Ixtal border
+
+**Act structure:**
+1. **Borrowed Word (levels 1-3):** learn a second syntax; build first Prototype; survive its first real failure
+2. **Formula War (levels 4-6):** institutions try to buy, ban, steal, patent, sanctify, or destroy the technique
+3. **Dialect (levels 7-9):** reach Research 6/6; teach others; Diffusion creates imitators and political backlash
+4. **New Language (levels 10+):** establish a New School OR attempt Instability 8-10 magic that forces the old world to respond
+
+**Required GM pressure:** Every magical breakthrough must create at least one non-combat
+stake: a faction claim, cultural taboo, labor/economic disruption, religious argument,
+black market, displaced profession, new weapon, or a community that depends on the new
+technique. The campaign is not only "invent stronger spells." It is about what happens
+when an invention becomes a culture.
+
+---
+
 ## SESSION ZERO
 
 ### Questions for Players
 
 1. **Region:** Where are you from? Where do you start?
 2. **Tier:** Human (default), Hero (experienced start)?
-3. **Magic:** Do you use magic? Which tradition?
+3. **Magic:** Do you use magic? What is your Foundation? Orthodox or Syncretic? Which magical taboo would you cross for a breakthrough?
 4. **Champions:** Any you want to meet? Avoid?
 5. **Framework:** Which campaign concept appeals?
 6. **Tone:** Dark (Arcane S1), Medium (adventure), Light (heroic)?
@@ -1688,8 +2387,13 @@ Secret: Corruption clock at 2
 - Pick 2-3 active World Event Clocks
 - Decide which champions are "active" in region
 - Establish starting faction standings
-- Create 3-5 NPCs with secrets
+- Create 3-5 NPCs with secrets **and roll ARCANE POSITION for each**
+- Ensure at least one starting NPC materially disagrees with the regional magical default
 - Have mission generator ready
+- Generate ARCANE DOCTRINE for every newly created major faction; give each one an internal dissenting bloc
+- If Synthesis matters: choose one institution threatened by hybrid magic and one faction hungry to adopt it
+- Establish one local taboo about mixing traditions
+- Start the ARCANE INTERREGNUM world clock and any active Dialect Diffusion clocks
 
 ---
 
@@ -1738,6 +2442,28 @@ DC = 4 + (circle × 4)
 Circle 1: DC 8 | Circle 2: DC 12 | Circle 3: DC 16 | Circle 4: DC 20 | Circle 5: DC 24
 ```
 
+### Arcane Synthesis
+```
+Compile: Intent → Circle → Foundation → Operators → Form → Instability → Cast
+Cooldown channel = Foundation + Circle (not exact spell wording)
+Synthesis DC = Circle DC + number of imports
+Traditions: 1=Inst 0 | 2=2 | 3=5 | 4=8 | 5+=10
+Borrowed syntax: +2 Instability each
+Pure magic: Orthodox Precision
+Research: 0 Prototype | 3 Formula (-1 Inst) | 6 Dialect (-2 Inst)
+Dialect Diffusion 6/6 in 3 regions → eligible New School
+```
+
+### Breakdown Bands
+```
+0-1 Stable
+2-3 Experimental: Crit.Fail glitch
+4-5 Volatile: Fail glitch, Crit.Fail catastrophe
+6-7 Unbound: Partial glitch, Fail catastrophe
+8-9 Breach: Partial already causes catastrophe
+10 Impossible: even Success causes catastrophe; combine domains
+```
+
 ### Faction Standing
 ```
 -3 Hunted | -2 Hostile | -1 Distrusted | 0 Neutral | +1 Friendly | +2 Allied | +3 Champion
@@ -1757,4 +2483,4 @@ Reduction requires specific cure per tradition
 
 ---
 
-*In this world, legends are made — and broken. Choose your path wisely.*
+*Tradition gives mastery. Synthesis gives possibility. The next magical language may be yours.*

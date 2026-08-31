@@ -14,7 +14,7 @@ Uses gm-skill.md core mechanics:
 - Clocks, Heroism, Companions, Abilities — all from base
 - Writing style, response format, player rules — all from base
 
-**This ruleset adds:** Essence (1-10), Stunts (star/chaos system), Limit (0-10), Anima Banner, Mote Pool, Charms, Sorcery, Martial Arts, Exalt Types, Castes, Creation geography.
+**This ruleset adds:** Essence (1-10), Stunts (star/chaos system), Limit (0-10), Anima Banner, Mote Pool, Charms, Sorcery, Martial Arts, Exalt Types, Castes, Creation geography, and the Divine Myth system (Legend, Cults, Doctrines, Miracles, Schism).
 
 **Do not duplicate base mechanics.** If gm-skill covers it, use it as-is unless this ruleset explicitly overrides.
 
@@ -29,6 +29,7 @@ Tone: Hindu-Mesopotamian-Greek mythology meets tragic opera. Demigods from sessi
 CORE THEMES:
 - Power corrupts absolutely — the Great Curse ensures it. Every gift is a trap.
 - Mythic scale — you ARE the myth. Cities named after you. Armies kneel.
+- The world writes back — witnesses turn deeds into stories, stories into doctrine, and doctrine into real divine permissions you may not have chosen.
 - The cycle repeats — empires rise, go mad, fall. You are the newest iteration.
 - No good options — every faction has blood on its hands. Every solution creates problems.
 - The personal vs the cosmic — your lover vs the fate of nations. Always.
@@ -41,6 +42,7 @@ KEY CONCEPTS:
 - Charms: supernatural abilities. Trees of escalating power. Low: "hit harder." High: "rewrite physics."
 - Sorcery: three circles. Terrestrial (useful), Celestial (devastating), Solar (reshape continents).
 - Stunts: the signature mechanic. Audacity is mechanically rewarded. Go big or go home.
+- Divine Myth: deeds -> witnesses -> Legend -> Cult -> Doctrine -> Miracle -> Schism. Mortals do not merely react to demigods; sustained belief can reshape what those demigods are allowed to become.
 
 COSMOLOGY:
 - Creation: flat disk, ~10,000 miles across. Five Elemental Poles define its nature.
@@ -626,6 +628,7 @@ HIGH ANIMA IS A BEACON:
 - Local spirits report to Celestial Bureaucracy
 - Other Exalted sense it and may investigate — or hunt
 - Mortals worship, flee, or form angry mobs depending on culture
+- Witnessed Burning/Iconic deeds can seed or advance Doctrine. Anima is not only exposure; it is myth-production.
 - Stealth impossible at Burning+. Disguise impossible at Iconic.
 You CANNOT be a subtle demigod. Power or secrecy — choose.
 ```
@@ -672,6 +675,441 @@ RECOVERY: 1 hour rest = -1 | Full night = -2 | 8 hours = full reset
 
 POOL SIZE (clock size): E1-2: 6 | E3-4: 8 | E5-6: 10 | E7-8: 12 | E9-10: 14
 ```
+
+# PART IV-B: DIVINE MYTH — THE WORLD WRITES BACK
+
+## DIVINE MYTH
+
+Exalted begin as demigods, but godhood is not only Essence. It is interpretation.
+
+Charms describe what the Exaltation has learned to do. **Doctrine describes what mortals, cults, enemies, priests, and institutions have collectively decided the Exalt MEANS.** Persistent belief can eventually create a mythic permission the character never purchased and may not want.
+
+```
+THE SECOND POWER LOOP:
+DEED -> WITNESS -> LEGEND -> CULT -> DOCTRINE -> MIRACLE -> SCHISM
+                  ^                                  |
+                  |----------- REINTERPRETATION -----|
+
+The first loop is personal power: Stunt -> Motes -> Anima -> Limit.
+The second loop is social divinity: the world sees power, tells stories about it,
+organizes around those stories, and sends the result back into the character sheet.
+```
+
+### Hard Separation: Charms vs Myth
+
+```
+ESSENCE = how much reality you can move.
+CHARMS = what your Exaltation knows how to do reliably.
+ANIMA = what the world can see.
+LEGEND = how widely your story is known.
+CULT = how deeply a community organizes around that story.
+DOCTRINE = what believers insist is true about you.
+MIRACLE = a thematic permission created by Canon Doctrine.
+SCHISM = how incompatible your accepted myths have become.
+LIMIT / RESONANCE / TORMENT = what all this power does to YOU.
+```
+
+**Doctrine NEVER replaces Charms.** It does not grant permanent stat bonuses, free damage, free actions, or a better version of an existing Charm. It grants permission to ATTEMPT a qualitative divine effect fitting the belief. Essence still caps scale; Motes, Anima, DC, and consequences still apply.
+
+**Believers choose the Claim.** The player can encourage, reject, reform, exploit, or suppress a Doctrine, but cannot simply buy or declare one during level-up.
+
+---
+
+## LEGEND — HOW FAR THE STORY TRAVELS
+
+Every Exalted tracks one global LEGEND core clock.
+
+```
+LEGEND: ○○○○○○ (0/6)
+
+0/6 — UNKNOWN: a local rumor at most.
+1/6 — WHISPERED: witnesses and nearby settlements know stories.
+2/6 — NOTED: local rulers, cults, and rivals have heard the name/title.
+3/6 — REGIONAL: songs, wanted notices, sermons, or monuments carry the story.
+4/6 — FAMOUS: major factions interpret the Exalt as a political/religious fact.
+5/6 — MYTHIC: distant people know incompatible versions of the same legend.
+6/6 — CREATION-FAMOUS: the title echoes in Yu-Shan; gods and nations must account for it.
+
+TICK UP: a genuinely legendary deed with surviving witnesses; a song/sermon/monument
+that reaches a new population; a public victory or catastrophe that changes history.
+Max +1 from repeating the same kind of deed without new stakes/audience.
+
+TICK DOWN: sustained historical erasure, successful discrediting across a major audience,
+long disappearance, or deliberate destruction of the institutions carrying the story.
+Ordinary failure does NOT erase a legend.
+```
+
+Legend measures reach, not love. `LEGEND 6 / CULT 0` is possible: everyone knows the monster, nobody worships it.
+
+---
+
+## CULTS — WHO ORGANIZES AROUND THE STORY
+
+Track each SIGNIFICANT worship community as a core 0-6 faction clock. Do not track every village shrine.
+
+```
+CULT: [TITLE / COMMUNITY]
+Clock: ○○○○○○ (0/6)
+Interpreter: [priest / poet / general / ancestor / bureaucracy / prophet]
+Current Doctrines: [claims and strengths]
+Rival Interpretation: [if any]
+Material Interest: [what this cult gains by believing]
+
+0/6 — no organized worship
+1/6 — circle of believers / household rites
+2/6 — local shrine, repeated ritual, recognizable title
+3/6 — organized priesthood or social institution
+4/6 — network across several communities
+5/6 — regional religion / army cult / dynastic cult
+6/6 — established faith able to move politics, money, and armies
+```
+
+**Cult ticks up** through conversion, public miracles, institutions, protection, charismatic interpreters, or political sponsorship. **Ticks down** through persecution, scandal, abandonment, failed prophecy, loss of institutions, or a successful reformation.
+
+Cult is not a free Mote battery. Organized worship provides people, sanctuary, information, ritual preparation, propaganda, and political leverage. When a cult meaningfully prepares a Doctrine Miracle, treat that preparation as a normal fictional setup modifier (usually `+1` or ADV if the situation truly supports it), never as automatic success.
+
+---
+
+## DOCTRINE — WHAT PEOPLE INSIST IS TRUE
+
+A Doctrine is a specific statement about the Exalt, not a vague domain.
+
+Good:
+`THE RAIN-BEARER HEARS THE THIRSTY.`
+`THE GOLDEN BULL CANNOT BE DRIVEN FROM CLAIMED GROUND.`
+`THE SILVER HUNTRESS ALWAYS RETURNS A STOLEN CHILD.`
+
+Bad:
+`God of Weather.`
+`Very Strong.`
+`Can Do Anything With Fire.`
+
+### Doctrine Record
+
+```
+DOCTRINE: [CLAIM]
+Source Cult: [who believes it]
+Origin: [the deed/story that produced it]
+Strength: 0/3
+Permission: [qualitative miracle theme if Canon]
+Demand: [behavior believers expect from the Exalt]
+Contradicts: [other Doctrine, if any]
+
+0/3 — STORY: interpretation exists, no supernatural authority.
+1/3 — RUMOR: repeated by multiple witnesses/communities.
+2/3 — BELIEF: people make decisions as though it is true.
+3/3 — CANON: stable enough to grant Mythic Permission.
+```
+
+### How Doctrine Is Born
+
+When a witnessed deed is unusually vivid, culturally meaningful, repeated, or Iconic, the GM may create a **Doctrine Seed**. The GM derives the claim from what witnesses would actually understand, not from the player's intent.
+
+```
+1. WHAT DID THEY SEE?
+2. WHAT DID THEIR CULTURE ALREADY BELIEVE?
+3. WHO BENEFITS FROM A PARTICULAR INTERPRETATION?
+4. WHAT DETAIL WILL RETELLING EXAGGERATE OR OMIT?
+5. Write ONE specific Claim + ONE Demand.
+```
+
+**Important:** a Doctrine can be wrong about the original event. If enough people organize around the wrong interpretation, that misunderstanding can still become Canon.
+
+### Doctrine Growth
+
+```
++1 Doctrine Strength when:
+- a new meaningful audience adopts the same interpretation;
+- the Exalt publicly fulfills the Claim in a high-stakes way;
+- an Interpreter successfully institutionalizes the story;
+- a matching miracle is witnessed and survives retelling.
+
+No farming:
+- the same crowd repeating the same sermon does not tick again;
+- trivial displays do not advance Doctrine;
+- one scene normally advances a specific Doctrine at most once.
+```
+
+A Doctrine cannot become `3/3 CANON` unless at least one significant source Cult is `2/6+`; scattered rumor alone cannot rewrite divinity. When it reaches Canon, write its Permission and Demand on the Exalt's Divine Myth sheet. This is now a real mechanical fact until reformed, broken, or displaced.
+
+---
+
+## ANIMA AS MYTH-PRODUCTION
+
+Anima determines how easily deeds become public theology.
+
+```
+DIM: only direct witnesses can carry the story. No automatic Doctrine pressure.
+GLOWING: memorable supernatural proof. A major deed can create a Doctrine Seed.
+BURNING: if a meaningful deed has witnesses, an existing matching Doctrine may gain +1.
+ICONIC: the totemic image itself demands interpretation. After a session-defining deed,
+         create or advance ONE relevant Doctrine Seed if the story survives.
+```
+
+Iconic Anima is NOT objective theology. A golden bull may mean strength to the Exalt, fertility to farmers, kingship to priests, and predation to enemies. Different communities can build different Doctrines from the same symbol.
+
+**Sidereal exception:** personal identity is hard to retain. Their Doctrine tends to attach to a ROLE, OFFICE, SIGN, PROPHECY, MASK, or recurring coincidence rather than a remembered face/name.
+
+---
+
+## MIRACLES — WHEN BELIEF BECOMES PERMISSION
+
+A Canon Doctrine (`3/3`) grants permission to attempt a Miracle that fits the Claim but is not already covered cleanly by a known Charm.
+
+### Miracle Procedure
+
+```
+1. Cite ONE Canon Doctrine.
+2. State the miracle in one sentence.
+3. GM sets SCALE from Essence BEFORE modifiers.
+4. Roll d20 + CHA vs locked DC. Use WIS only when the miracle is explicitly
+   performed as ritual intercession, interpretation, or communion rather than embodiment.
+5. Pay Mote Depletion based on scale.
+6. Anima rises to the listed minimum.
+7. Resolve with normal gm-skill margin tiers.
+
+ACTION ECONOMY: a Miracle uses a standard action unless it is a longer ritual. Doctrine
+never grants a bonus action/reaction cast by itself; only an established Charm/ability can.
+```
+
+### Essence Caps Myth
+
+| Essence | Maximum routine Miracle scale | Base DC | Cost | Minimum Anima |
+|---:|---|---:|---:|---|
+| 1 | one target / room / small local phenomenon | 12 | +1 Dep | Glowing |
+| 2 | building / warband / street / village-scale effect | 14 | +1 Dep | Glowing |
+| 3 | battlefield / district / major crowd / city phenomenon | 16 | +2 Dep | Burning |
+| 4 | city / army / wide landscape / regional institution | 18 | +2 Dep | Burning |
+| 5 | province / nation-scale symbolic act / legendary natural event | 20 | +3 Dep | Iconic |
+| 6+ | continental, metaphysical, or cosmic effects | 22+ | +3 Dep + declared mythic cost | Iconic |
+
+For Essence 6+ miracles, the GM states the additional mythic cost **before the roll** (examples: +1 Limit, a named sacrifice, consuming an artifact, or advancing a major world clock). Never invent the cost after seeing the result.
+
+**Scale is a ceiling, not an entitlement.** A Canon about rain does not permit resurrection. A Canon about never retreating does not create mind control. The miracle must follow the exact Claim's logic.
+
+**Power gaps still apply.** Doctrine does not let an E1 Exalt bypass an E5 ward, Primordial, or equivalent opposition just because mortals believe hard enough.
+
+### Mythic Channel Strain
+
+The first use of a specific Canon in a scene uses normal cost/DC. Reusing the SAME Canon in that scene is possible, but each additional use is `+1 Depletion` and `+2 DC` cumulative, set before the roll. Rephrasing the miracle does not reset strain. A new scene resets this strain.
+
+This keeps Doctrine flexible without turning one popular belief into an infinite free spell list.
+
+### Miracle Outcomes
+
+```
+CRIT.FAIL: miracle twists through the Doctrine's Demand or witness interpretation.
+           +1 Schism if another Canon offers a plausible contradictory reading.
+FAIL: no clean miracle; Motes spent; Anima still flares; belief may still react.
+PARTIAL: miracle works with a theological cost, narrowed scope, collateral interpretation,
+         or a new obligation demanded by believers.
+SUCCESS: miracle occurs as stated within scale.
+CRIT: miracle becomes the version future witnesses tell. Eligible Doctrine/Cult may +1.
+```
+
+Do not convert Doctrine into a generic spell list. Miracles should feel like **the world forcing a mythic metaphor to become temporarily literal**.
+
+---
+
+## DEMANDS — POWER WRITES OBLIGATIONS BACK
+
+Every Canon Doctrine has a Demand: what believers expect their god to do or never do.
+
+Examples:
+- Rain-Bearer: do not knowingly deny water to the desperate.
+- Golden Bull: do not abandon ground publicly claimed as yours.
+- Mother of Lost Children: answer a sincere plea concerning a missing child.
+- Judge Beneath Noon: do not knowingly protect a proven oath-breaker.
+
+A Demand is NOT supernatural mind control. The player may violate it.
+
+When a Canon Demand is publicly violated, choose the consequence that best fits the fiction:
+- Doctrine -1 (belief weakens), OR
+- Schism +1 (followers reinterpret rather than abandon faith), OR
+- Cult -1 (institution fractures), OR
+- create a Counter-Doctrine at 1/3 if a charismatic Interpreter explains the contradiction.
+
+At high Limit, a flattering Doctrine can become dangerous validation. If a Doctrine directly excuses the current Virtue Flaw, Great Curse scene pressure should use it: priests praise the behavior, followers imitate it, enemies bait it. Doctrine NEVER cancels player agency or replaces the normal Limit rules.
+
+---
+
+## SCHISM — WHEN THE GOD HAS TOO MANY TRUE FACES
+
+Each Exalt with at least two active Canon Doctrines tracks one SCHISM 0-6 clock.
+
+```
+SCHISM: ○○○○○○ (0/6)
+
+0-1 COHERENT MYTH: doctrines coexist cleanly.
+2-3 COMPETING INTERPRETATIONS: sects argue; politics forms around theology.
+4-5 LIVING CONTRADICTION: incompatible Canons are both real. Schismatic Miracles unlock.
+6/6 THEOLOGICAL CRISIS: the contradiction becomes a campaign event. Resolve before
+    another Schismatic Miracle can be attempted.
+```
+
+Tick Schism UP when:
+- two Canon Doctrines give incompatible Demands in the same public crisis;
+- the Exalt invokes one Canon to violate another;
+- cults fight over which interpretation is legitimate;
+- a Limit Break is publicly mythologized as divine behavior;
+- an Interpreter deliberately weaponizes contradiction.
+
+Tick Schism DOWN only through meaningful resolution: syncretic ritual, public reformation, destroying/abandoning a major cult, reconciling two Canons through a legendary deed, or allowing one interpretation to die.
+
+### Schismatic Miracles (Schism 4-5)
+
+Combine TWO Canon Doctrines that normally should not fit together.
+
+```
+Requirements: Schism 4-5, two Canons, effect follows BOTH Claims.
+Cost: normal Miracle cost +2 Depletion, +1 Limit (or equivalent Resonance/Torment),
+      minimum Anima Burning (Iconic if Essence 5+).
+Roll: d20 + CHA vs normal scale DC +2.
+
+CRIT.FAIL/FAIL: GM makes the contradiction literal; +1 Schism.
+PARTIAL: works, but one cult gains leverage, a new Demand appears, or the miracle
+         changes how one Doctrine is understood.
+SUCCESS+: impossible synthesis occurs. It may seed a new syncretic Doctrine.
+```
+
+Example: `THE RAIN-BEARER HEARS THE THIRSTY` + `THE GOLDEN CONQUEROR NEVER YIELDS GROUND` may produce a golden storm that heals an advancing army while turning the enemy approach to sucking mud. Neither Canon alone permits that exact miracle.
+
+### Schism 6 — Theological Crisis
+
+When Schism reaches 6, stop treating it as a number and make it a scene/arc. Roll or choose after establishing the factions involved:
+
+| d6 | Crisis |
+|---:|---|
+| 1 | **Great Schism:** one Cult splits into two hostile institutions, each keeping a different Canon. |
+| 2 | **Reformation:** a charismatic Interpreter rewrites one Doctrine; its Demand changes immediately if the movement survives. |
+| 3 | **Holy Violence:** followers act on contradiction without permission; war, purge, assassination, or crusade begins. |
+| 4 | **Claimant:** a god, spirit, Exalt, ancestor, or fraud claims to be the TRUE bearer/interpreter of one title. |
+| 5 | **Syncretism:** believers invent a new Doctrine that explains both sides. Start it at 2/3; if made Canon, Schism resets lower. |
+| 6 | **Apotheosis Event:** reality answers the contradiction with a unique mythic omen/miracle; all major factions reinterpret the Exalt afterward. |
+
+After the crisis is genuinely resolved, reset Schism to 2-3 depending on how many incompatible Canons remain. Consequences persist.
+
+---
+
+## THE GREAT CURSE WRITES RELIGION TOO
+
+The Great Curse does not pause while people worship you. Sometimes the WORST thing you ever do becomes scripture.
+
+```
+PUBLIC LIMIT BREAK:
+If a Limit Break (or Abyssal Resonance / Infernal Torment equivalent) is witnessed by a
+meaningful audience, the GM may create or advance ONE dark Doctrine Seed describing the
+behavior as revelation, punishment, sacred necessity, prophecy, or proof of divine nature.
+
+Examples:
+- "The Sun-King burns traitors so the realm remains pure."
+- "Mercy is the Moon-Huntress testing whether prey deserves another night."
+- "The Silent Minister erases names that Fate has judged unnecessary."
+```
+
+This does not mean all witnesses approve. Enemies can spread a Doctrine too. Hatred, fear, propaganda, and heresy can shape public myth just as worship can, but only organized belief (`Cult`) can stabilize it into Canon.
+
+---
+
+## REFORMING YOUR OWN RELIGION
+
+An Exalt can fight back, but not by editing the sheet between scenes.
+
+Create a normal 0-6 REFORMATION clock for a specific Doctrine.
+
+```
+REFORMATION: ○○○○○○ (0/6)
+Tick up: public counter-example, winning key Interpreter, ritual council, new scripture,
+         legendary deed that preserves the old symbol while changing its meaning.
+Tick down: public hypocrisy, old priesthood victory, miracle that confirms old reading.
+
+6/6: rewrite ONE part of the Doctrine: Claim OR Demand OR Source interpretation.
+      Strength remains 3/3 only if the faithful accept continuity; otherwise drop to 2/3.
+0/6: reform collapses; old interpretation hardens. Cult or Doctrine may +1 where possible.
+```
+
+Destroying believers is faster than persuading them, but it is also a legendary act people will interpret.
+
+---
+
+## DIVINE MYTH BY EXALT TYPE
+
+```
+SOLAR: Hero-king / savior / prophet / conqueror cults are straightforward. Iconic anima
+       produces strong symbols. Zeniths are especially likely to become institutionalized.
+
+LUNAR: Different shapes may accumulate DIFFERENT titles and cults. If followers discover
+       two gods were one Lunar all along, immediately test for Schism or syncretic Doctrine.
+
+DRAGON-BLOODED: Myth often attaches to bloodline, House, ancestor, city, or elemental office.
+       Personal Doctrine can coexist with dynastic Doctrine; political relatives will exploit it.
+
+SIDEREAL: Personal remembrance is unstable. Doctrine attaches to roles, masks, offices,
+       prophecies, recurring signs, or "the stranger who always arrives before the bridge falls."
+
+ABYSSAL: Funeral cults, martyrdom, grief, memory, vengeance, and sacred death are common.
+       Replace Limit references in this subsystem with the ruleset's Abyssal Resonance where appropriate.
+
+INFERNAL: Human cults can reinterpret Yozi principles into forms the Yozi did not intend.
+       Replace Limit references with Torment where appropriate; a successful reformation may
+       become a genuinely dangerous ideological mutation inside a Yozi's own mythology.
+```
+
+---
+
+## CULT / DOCTRINE NPC & FACTION GENERATION
+
+Whenever a cult, temple, army religion, heresy, ancestor movement, or worshipful faction becomes significant, record:
+
+```
+TITLE: what they call the Exalt
+CULT CLOCK: 0-6
+INTERPRETER: who explains what the myth means
+DOCTRINES: 1-3 current claims with Strength
+MATERIAL INTEREST: what the institution gains from this interpretation
+RED LINE: what would make them call the Exalt false, fallen, or heretical
+RIVAL: competing cult / priest / faction / doctrine
+```
+
+**Major cults are not monoliths.** If Cult reaches 4+, create at least one internal bloc with a different preferred Doctrine or Demand. The player should never feel like the only person with ideas while worshippers are passive props.
+
+### Autonomous Cult Turn
+
+At each core Chapter End, choose the 1-3 cults currently most relevant to play. Each takes ONE autonomous action based on its Interpreter, Material Interest, Red Line, and current crisis. The Exalt does not control this action.
+
+```
+SPREAD — reach a new audience; eligible Legend/Cult +1.
+CODIFY — advance one Doctrine toward Canon if Cult requirement is met.
+REFORM — advance or attack a Reformation project.
+POLITICIZE — gain an ally/resource or create an enemy/obligation.
+SCHISM — an internal bloc pushes a rival reading; Schism +1 or Counter-Doctrine 1/3.
+DEMAND — publicly require the Exalt to fulfill a Canon Demand.
+```
+
+Do not freeze religion while the PCs are elsewhere. If a cult has a clear plan, use that instead of rolling. If no plan is obvious, roll d6 across the six actions above.
+
+### Doctrine Interpretation Seeds (d12)
+
+Roll first when witnesses need an interpretation the GM did not pre-plan.
+
+| d12 | Witnesses decide the deed proves... |
+|---:|---|
+| 1 | **Protection:** "They stand between us and what hunts us." |
+| 2 | **Punishment:** "Suffering reveals who deserves judgment." |
+| 3 | **Mercy:** "A sincere plea can move them." |
+| 4 | **Kingship:** "Order exists where they claim responsibility." |
+| 5 | **Freedom:** "No chain has sacred authority over their chosen." |
+| 6 | **Fertility/Provision:** "Their presence makes life multiply or resources return." |
+| 7 | **War:** "Victory follows those who imitate their courage/method." |
+| 8 | **Truth:** "Secrets cannot survive their attention." |
+| 9 | **Journey:** "Those who follow their sign reach places thought unreachable." |
+| 10 | **Death/Memory:** "They decide what is allowed to be forgotten." |
+| 11 | **Transformation:** "To survive is to become something new." |
+| 12 | **Taboo:** "One specific act offended or pleased them; therefore it must never/always be repeated." |
+
+Then make the statement SPECIFIC to the witnessed deed and culture. Never leave it as a generic domain.
+
+---
 
 # PART V: EXALT TYPES
 
@@ -1428,6 +1866,28 @@ Clock: ●●●○○○ | Up: death, necromancy, neglect | Down: exorcism, Sol
 6/6: Permanent shadowland. | 0/6: Healed.
 ===
 ```
+### Cults as Political Factions
+
+Cult mechanics use the Divine Myth rules in Part IV-B, but cults are also ordinary factions with money, enemies, leaders, logistics, and internal blocs.
+
+```
+CULTS CAN:
+- protect or hide the Exalt;
+- spread Legend and Doctrine into new populations;
+- demand miracles, laws, wars, marriages, taboos, or appointments;
+- be infiltrated, bought, persecuted, nationalized, or split;
+- weaponize a Doctrine against the Exalt who inspired it.
+
+FACTIONS CAN WEAPONIZE CULTS:
+- Realm propagandists can promote a monstrous interpretation of a Solar deed;
+- Gold Sidereals can quietly sponsor a stabilizing cult;
+- Bronze Sidereals can erase records or seed counter-legends;
+- Deathlords can turn martyrdom into a funerary Doctrine;
+- Yozis can encourage a flattering interpretation that pushes an Exalt toward Limit/Torment.
+```
+
+When a faction deliberately changes public theology, treat it as a normal project/clock, not an automatic rewrite of Doctrine.
+
 ### Faction Abilities
 
 ```
@@ -1507,6 +1967,23 @@ Roll first, interpret creatively. Entries are seeds — expand with context.
 | 8 | Terrestrial god asks PC to smuggle a petition into Yu-Shan |
 | 9 | Local gods forming conspiracy against their superior — want PC as enforcer |
 | 10 | Yozi cultist has corrupted a minor god — the infection spreading through the court |
+
+### Cult & Doctrine Complications (d12)
+
+| d12 | Complication |
+|---:|---|
+| 1 | A priest announces a Demand the Exalt never endorsed — and the faithful love it. |
+| 2 | Two villages share the same title but opposite Doctrines; both demand arbitration. |
+| 3 | A military unit adopts the Exalt as patron and commits an atrocity "in accordance with doctrine." |
+| 4 | A rival faction funds a flattering cult because the interpretation makes the Exalt easier to manipulate. |
+| 5 | A child performs a tiny apparent miracle while invoking the Exalt's title; nobody agrees what it means. |
+| 6 | The cult discovers an old deed that contradicts current Canon. Schism +1 unless addressed. |
+| 7 | A local god claims worship intended for the Exalt is legally part of its heavenly domain. |
+| 8 | An enemy writes the most popular hymn about the Exalt. It is beautiful, memorable, and poisonous. |
+| 9 | One Interpreter dies. Three successors offer incompatible readings. |
+| 10 | A Doctrine becomes politically useful to a ruler who does not believe it. Cult +1, autonomy threatened. |
+| 11 | A Limit Break story spreads faster than any heroic deed this chapter. Seed/advance a dark Doctrine. |
+| 12 | Two previously separate cults realize they worship the same Exalt under different titles. Test for syncretism or Schism. |
 
 ### Limit Break Triggers (d10)
 
@@ -1646,6 +2123,23 @@ SCARLET EMPRESS (if returns, E7): HP 150, AC 20. Controls Realm Defense Grid.
 | Mask of Winters (E8+) | 250 | 22 | 3d10+8 | Campaign |
 | Ma-Ha-Suchi (E7) | 120 | 19 | 2d10+8 | Endgame |
 
+### NPC Divine Myth Quick Generation
+
+Significant NPC Exalted should also exist inside the myth economy. The player is not the only demigod people interpret.
+
+For an Exalted NPC whose public history matters, assign directly or roll:
+
+| d6 | Public Myth State |
+|---:|---|
+| 1 | **Hidden / Rejected:** Legend 0-1, no Cult. They fear or despise worship. |
+| 2 | **Rumored:** Legend 1-2, one Doctrine Seed 1/3, no stable Cult. |
+| 3 | **Local Patron:** Legend 2, Cult 2/6, one Doctrine 2/3. |
+| 4 | **Established Saint/God-King:** Legend 3-4, Cult 3/6, one Canon Doctrine. |
+| 5 | **Competing Cults:** Legend 4-5, two Cults, two Canons, Schism 2/6. |
+| 6 | **Living Theology:** Legend 5-6, Cult 4-6, 2-3 Canons, Schism d4+1. Their religion is a faction. |
+
+Modify for Exalt type and secrecy. Sidereals usually attach myth to roles/signs, Lunars may have separate cults per shape, Dragon-Blooded may inherit dynastic worship, Abyssals/Infernal cults often face persecution or manipulation.
+
 ### Encounter Design & Generators
 
 ```
@@ -1754,11 +2248,10 @@ ARC: 15-20 sessions. Each Essence level is a chapter.
   E4 (12-15): Mythic. E5 (16-20): Reality-bender. "Can I?" becomes "should I?"
 
 CLOCKS:
-=== ITEM CLOCK: LEGEND ===
-Clock: ○○○○○○ (0/6)
-Tick up: legendary deeds witnessed, songs written, monuments built
-Tick down: failure, anonymity, mortal connections severed
-6/6: Name echoes in Yu-Shan. Gods take notice. | 0/6: Forgotten mortal.
+=== GLOBAL: LEGEND ===
+Use the Divine Myth LEGEND 0/6 clock from Part IV-B. Ascension foregrounds it every chapter.
+At 3/6, at least one major faction actively interprets the character's public myth.
+At 6/6, the name/title echoes in Yu-Shan and at least one Cult/Doctrine becomes a campaign-level political force.
 ===
 === THREAT: THE GREAT CURSE ===
 Clock: ○○○○○○ (0/6) | Tick up: Limit Breaks, power used carelessly, isolation
@@ -1767,6 +2260,8 @@ Clock: ○○○○○○ (0/6) | Tick up: Limit Breaks, power used carelessly, 
 
 ESCALATION: Each Essence level raises the stakes. E3: regions fight over you.
   E4: factions court or hunt you. E5: the question is cosmic — what do you become?
+  Divine Myth escalation: early chapters create Rumors; mid-campaign cults institutionalize them;
+  late campaign asks whether the Exalt controls the religion, serves it, reforms it, or fractures under Schism.
 ```
 ### E) The Intrigue
 
@@ -1886,6 +2381,12 @@ STEP 5 — CHARMS & GEAR:
   3-5 Tier 1 Charms (at least 2 from Caste domain).
   One weapon (+1 quality), light armor (AC 12), mundane gear, one minor artifact.
   Define ICONIC ANIMA BANNER (totemic image at Iconic level).
+
+STEP 6 — PUBLIC MYTH SEED:
+  Name ONE deed, rumor, omen, or public misunderstanding already associated with you.
+  The PLAYER supplies the event; the GM/witness culture interprets what it means.
+  Start one Doctrine at 1/3 RUMOR unless the campaign explicitly begins before anyone could know you.
+  Also name one mortal Interpreter or community currently spreading that version.
 ```
 
 # PART XVII: GM PRINCIPLES
@@ -1917,6 +2418,13 @@ MORTAL CONNECTIONS:
 - Mortals anchor Exalted. Every mortal connection: potential -1 Limit.
 - Every mortal lost: +2 Limit. Protect them or watch the Curse win.
 
+THE WORLD WRITES BACK:
+- After a public mythic deed, ask what witnesses think it MEANT, not only what happened.
+- Never let players directly purchase a Doctrine. Let them influence people and institutions instead.
+- Cults have interests, leaders, rivals, and internal blocs. Worshippers are political actors, not applause.
+- A wrong interpretation can become mechanically true at 3/3 Canon. Preserve that discomfort.
+- When Great Curse behavior is witnessed, consider whether mortals will condemn it, imitate it, or canonize it.
+
 PACING BY ANIMA: Dim (human drama) -> Glowing (rising stakes) -> Iconic (climax, session-defining).
 ```
 
@@ -1924,7 +2432,8 @@ PACING BY ANIMA: Dim (human drama) -> Glowing (rising stakes) -> Iconic (climax,
 
 ```
 Roll tables when: session start (Threshold d20), entering city (Spirit d10),
-  finding ruin (Ruin d8), acquiring artifact (Quirks d8), need pressure (Limit d10).
+  finding ruin (Ruin d8), acquiring artifact (Quirks d8), need pressure (Limit d10),
+  or public worship/myth needs a complication (Cult/Doctrine d12).
 Combine 2-3 tables simultaneously and weave results together.
 ```
 
@@ -1938,14 +2447,15 @@ Combine 2-3 tables simultaneously and weave results together.
 5. Tone? Dark (Curse dominant) / Medium (heroic with shadows) / Light (adventure)
 6. Limit Break type? Choose Virtue, define personal trigger.
 7. "The Curse": clarify — power WILL corrupt. The question is how you fight it.
+8. Public myth: what do mortals already get WRONG about you? Who is spreading that interpretation?
 ```
 
 ## GM CHECKLIST
 
 ```
-START: Essence? Mote Depletion? Limit? Wyld Hunt clock?
-SCENE: Stunt tiers on options? Limit/Anima/Motes tracked? Mortal reactions shown?
-END: Limit ticked 1+? Faction clocks ticked? Essence milestones? NPCs updated?
+START: Essence? Mote Depletion? Limit? Legend? Schism? Wyld Hunt clock? Active Cult clocks?
+SCENE: Stunt tiers on options? Limit/Anima/Motes tracked? Mortal reactions shown? Witnesses interpreting deeds?
+END: Limit ticked 1+? Faction/Cult clocks ticked? Doctrine seeds advanced? Schism checked? At Chapter End: autonomous Cult turns? Essence milestones? NPCs updated?
 ```
 
 ---
@@ -1953,11 +2463,12 @@ END: Limit ticked 1+? Faction clocks ticked? Essence milestones? NPCs updated?
 ## QUICK REFERENCE
 
 ```
-CLOCKS: Mote Depletion (0/N, pool size from Essence) | Limit (0-10, curse) | Anima (Dim/Glowing/Burning/Iconic)
+CLOCKS: Mote Depletion (0/N) | Limit (0-10) | Anima (Dim/Glowing/Burning/Iconic) | Legend (0-6) | Cults (0-6 each) | Doctrine (0-3 each) | Schism (0-6)
 STUNTS: ★ +1 flat + ±1 chaos | ★★ +2 flat + ±2 chaos | ★★★ +3 flat + ±3 chaos. `--volatility` supplies chaos only; include flat bonus in `--mod`. Recovery: -1 on success, -2 on ★★★/Crit.
 ESSENCE: d20 + WIS vs DC (10 + Essence x 2). Requires legendary deed.
 GAPS: Same E = fair | +2 E = +4 rolls | +3 E = auto-win
 TYPES: Solar (strongest/cursed) | Lunar (shape) | DB (numbers) | Sidereal (fate) | Abyssal (death) | Infernal (demon)
+DIVINE MYTH: Deed -> Witness -> Legend -> Cult -> Doctrine -> Miracle -> Schism. Canon 3/3 grants thematic permission, not a Charm/stat bonus.
 CAMPAIGNS: Returned | Kingdom | War | Ascension | Intrigue
 ```
 

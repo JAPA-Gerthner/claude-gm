@@ -42,7 +42,7 @@ Entry point for developing and maintaining rulesets in gm-skill.
 - Merge all 9 agent outputs
 - Remove duplicates and conflicts
 - Structure into coherent ruleset
-- Check line count (~1000-1100)
+- Check line count (~1500-2000)
 
 ### PHASE 3: Review (3 agents in parallel)
 
@@ -143,7 +143,7 @@ Brief description. For: [campaign types].
 
 Before marking ruleset complete:
 
-- [ ] Lines: 1000-1100
+- [ ] Lines: 1500-2000
 - [ ] All playable factions covered
 - [ ] Core unique mechanic fully implemented
 - [ ] Weapon/equipment stats (if combat-heavy)
@@ -174,7 +174,7 @@ Before marking ruleset complete:
 | blades-lite.md | 1115 | **COMPLETE** | Full pipeline: Crew/Score/Heat, Stress/Trauma, Doskvol, Factions, Occult |
 | deus-ex.md | 1075 | **COMPLETE** | Full pipeline: Paranoia System (Trust Clocks, Suspicion, Chaos Principle), Integration, Neuropozyne |
 | scp.md | 1187 | **COMPLETE** | Full pipeline: Usefulness/Liability, Processing Clock, O5 Council (13), Hume Levels, Anomaly Engagement |
-| cthulhu.md | 1008 | **COMPLETE** | Full pipeline: Three Axes (Reality/Time/Identity), Deception Budget, Mythos Knowledge anti-XP, 9 End States, 6 Roles |
+| cthulhu.md | 1608 | **COMPLETE** | Core-inheritance audit: Three Axes, Deception Budget, MK anti-progression, coherent death/ritual/investigation flows, 9 End States, 6 Roles |
 | stalker.md | 1092 | **COMPLETE** | Full pipeline: Emission/Zombification Clocks, Radiation tracking, 10 factions, Job Cycle, "Reach the Center" campaign |
 | star-wars.md | 1086 | **COMPLETE** | Full pipeline: Era selection, Force Alignment/Strain/Temptation, 5 Campaign Frameworks, GRIT system, Vehicle combat |
 | dark-souls.md | 1203 | **COMPLETE** | Full pipeline: Telegraph System, Hollowing Track, Kingdom/Boss/Enemy generators, Covenant archetypes, Campaign Frameworks, S-Tier |
@@ -202,7 +202,7 @@ You are a [LORE/GM/MECHANICS] EXPERT for [SETTING].
 
 Read: C:\Workspace\gm-skill\rulesets\[file].md
 
-Current: X lines. Target: ~1000-1100 lines.
+Current: X lines. Target: ~1500-2000 lines.
 
 Your focus area: [specific focus]
 
@@ -236,6 +236,7 @@ Verdict: Ready / Needs work
 
 | Date | Ruleset | Change |
 |------|---------|--------|
+| 2026-08-26 | cthulhu.md | Core-inheritance bugfix pass: fixed death/finale semantics, Control Slip trigger direction, investigation/social/ritual resolution, Madness roll penalties, role AC/hidden starts, Mythos threat categories, tome double-cost, Addiction trigger, explicit core replacements; 1608 lines |
 | 2026-08-07 | exalted.md | Full pipeline: NEW 1952 lines, Stunt/Mote/Limit triangle (audacity->power->madness), Essence (1-10 with stat caps, power gaps, E10 capstone), Great Curse (Limit 0-10, Virtue Flaws, Limit Break), 6 Exalt Types (Solar/Lunar/Dragon-Blooded/Sidereal/Abyssal/Infernal), Charms by stat with Charm creation template, 3 Sorcery circles, Martial Arts styles, Anima Banner (visibility cost), Mote Depletion (variable pool 6-14), Manses & Hearthstones, 5 Campaign Frameworks, 4 Starter Scenarios, S-Tier |
 | 2026-08-07 | deadlands.md | Full pipeline: NEW 2073 lines, The Deal (every power feeds Reckoners), Fear Level (0-6 regional clock with 6 thresholds), Dominion (Harrowed demon struggle 0-6), 5 Arcane Backgrounds (Huckster poker-to-d20 with Backlash clock, Blessed Faith clock, Harrowed undead powers, Mad Scientist Reliability/Malfunction, Shaman Guardian Spirit), Grit system, Western Showdown (Staredown/Draw/Aftermath), Reckoner Tax, 7 random tables, 4 Campaign Frameworks (Lawman/Drifter/Posse/Reckoning), 4 Starter Scenarios, S-Tier |
 | 2026-07-27 | xianxia.md | Full pipeline: NEW 1903 lines, Cultivation (0-10 with tribulations at 3/6/9/10), Deviation (0-6 demonic corruption), Dao Heart (0-6 conviction), Karma, Five Elements cycles, 7 Paths, Sects, Jianghu Rules, Secret Realms, 4 Campaign Frameworks, S-Tier |
