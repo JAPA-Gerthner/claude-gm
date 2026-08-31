@@ -48,7 +48,7 @@ transformation, or new companion:
 On a stat increase, compare the old and new values, announce every crossed
 threshold, and update the sheet before continuing play.
 
-Example: `WIS 5 → TRICKSTER active: +2 reckless options in every option set;
+Example: `WIS 3 → 4: TRICKSTER unlocked — +2 reckless options in every option set;
 their rolls use --trickster.`
 
 ---
@@ -552,8 +552,9 @@ DEX 4: SNAPBACK — When any enemy attack misses by 5+, free
        damage directly. Melee attacks: always available. Ranged
        attacks: only if you have a ranged weapon equipped.
 
-DEX 6: AFTERIMAGE — 1/combat. For one round: all defensive rolls
-       made twice, take better result. More misses = more SNAPBACK.
+DEX 6: AFTERIMAGE — 1/combat. For one round: enemy attack rolls
+       against you have DIS, and saving throws you make are rolled twice,
+       taking the better result. More enemy misses = more SNAPBACK.
 
 DEX 8: DOUBLE TAKE — Passive. In combat, GM adds 2 INSTANT ACTION
        options to every set — quick strikes, maneuvers, grabs,
@@ -941,7 +942,8 @@ Auto-fail: impossible requests, against beliefs, deception already exposed
 Poisoned: disadvantage on everything, possibly d4 damage/turn
 Stunned: skip turn, attacks against you with advantage
 Frightened: disadvantage, can't approach source
-Exhausted 1-6: disadvantage → speed ×½ → HP ×½ → speed 0 → death
+Exhausted 1-6 (cumulative): L1 DIS on skill checks → L2 speed ×½ →
+L3 DIS on attacks and saves → L4 max HP ×½ → L5 speed 0 → L6 death
 ```
 
 Formula: `[name] — [effect] — [how to remove]`

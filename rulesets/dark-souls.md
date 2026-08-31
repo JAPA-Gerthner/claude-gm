@@ -28,6 +28,23 @@ The Lords waged war on dragons. Won. Built kingdoms. But fire fades.
 
 ---
 
+## CORE OVERRIDES
+
+`gm-skill.md` remains active except for the explicit replacements/disable below.
+All core stat thresholds, Heroism, margin interpretation, clocks, option formatting,
+CHARACTER MECHANICS SYNC, and passive abilities still apply.
+
+- `REPLACES: [CORE MAGIC]` — use this ruleset's **MAGIC SYSTEMS**: Attunement Slots + Dark Souls cooldowns. Core free-casting/circle rules do not stack with them.
+- `REPLACES: [CORE REST]` — Bonfire Rest is the only safe rest. There are no Short Rests or Hit Dice healing.
+- `DISABLES: [EXHAUSTION]` — Hollowing is the setting's long-term attrition track.
+- `REPLACES: [CHAPTER END LEVEL UP]` — chapter endings do not grant the core automatic Level +1 / Choose 2 package. Advancement uses **Souls Leveling** at Bonfires. Chapter-end ally fates, path choice, recap, and full character-sheet update still apply.
+- `REPLACES: [CORE ARMOR AC]` — use the **Armor & Poise** AC values in this ruleset. Shields do not add the core +2 AC; they enable the Dark Souls Block reaction below.
+- `REPLACES: [CORE TURN STRUCTURE / INITIATIVE IN BOSS ENCOUNTERS]` — boss fights use **Boss Momentum**: no initiative roll, one player Main Action per exchange, and one Reaction to each telegraphed boss strike. Core initiative and the normal one-Reaction-per-round limit still apply in non-boss combat.
+
+**Death integration:** The core death-save procedure remains active unless a core ability changes it. When the cursed player character would actually die, trigger **Death Loop** instead of permanent character loss unless a specific lore effect explicitly severs or bypasses the Undead Curse.
+
+---
+
 ## KINGDOM GENERATOR
 
 Every cycle has a kingdom. Roll or choose.
@@ -222,23 +239,26 @@ Consumable resource. Count: `[Humanity: X]`
 
 ```
 DS → GM-SKILL:
-  VIT/END  → CON  (HP = CON×5, Stamina = CON×3)
+  VIT      → CON  (HP = CON×5)
+  END      → Vigor system (Vigor max = STR + DEX + CON)
   STR      → STR  (melee scaling, heavy weapons)
   DEX      → DEX  (fast weapons, ranged, cast speed)
   INT      → INT  (sorceries, lore, traps)
   FTH      → WIS  (miracles, divine insight, curse resist)
+
+Mental reserve is represented by Resolve (Resolve max = INT + WIS + CHA).
 ```
 
 ### Starting Classes
 
-| Class | STR | DEX | CON | INT | WIS | CHA | HP | Stamina |
-|-------|-----|-----|-----|-----|-----|-----|----|----|
-| Knight | 3 | 2 | 3 | 1 | 1 | 1 | 15 | 9 |
-| Pyromancer | 2 | 2 | 2 | 2 | 1 | 2 | 10 | 6 |
-| Sorcerer | 1 | 1 | 2 | 4 | 2 | 1 | 10 | 6 |
-| Cleric | 2 | 1 | 2 | 1 | 4 | 1 | 10 | 6 |
-| Wanderer | 1 | 3 | 2 | 1 | 2 | 2 | 10 | 6 |
-| Deprived | 1 | 1 | 1 | 1 | 1 | 1 | 5 | 3 |
+| Class | STR | DEX | CON | INT | WIS | CHA | HP | Vigor | Resolve |
+|-------|-----|-----|-----|-----|-----|-----|----|-------|---------|
+| Knight | 3 | 2 | 3 | 1 | 1 | 1 | 15 | 8 | 3 |
+| Pyromancer | 2 | 2 | 2 | 2 | 1 | 2 | 10 | 6 | 5 |
+| Sorcerer | 1 | 1 | 2 | 4 | 2 | 1 | 10 | 4 | 7 |
+| Cleric | 2 | 1 | 2 | 1 | 4 | 1 | 10 | 5 | 6 |
+| Wanderer | 1 | 3 | 2 | 1 | 2 | 2 | 10 | 6 | 5 |
+| Deprived | 1 | 1 | 1 | 1 | 1 | 1 | 5 | 3 | 3 |
 
 ### Leveling (Bonfire Only)
 
@@ -251,30 +271,48 @@ DS → GM-SKILL:
 | 21–30 | 20,000 |
 | 31+ | 40,000 |
 
-Each level: +1 to any stat.
+Each Souls level: +1 to any stat. This is the campaign's only automatic level-up reward.
+After every increase, immediately run core **CHARACTER MECHANICS SYNC**: recalculate Vigor/Resolve maxima, check 4/6/8/10 thresholds, reveal newly unlocked abilities, and apply them before play continues.
 
 ---
 
-## STAMINA SYSTEM
+## VIGOR & RESOLVE
 
-**Stamina Pool:** CON × 3 (minimum 3)
+Two reserves let the player deliberately invest in important rolls without changing the core action economy.
+They never grant extra actions. Abilities such as core **DOUBLE TAKE** remain the source of additional actions.
 
-| Action | Cost |
-|--------|------|
-| Light Attack | 2 |
-| Heavy Attack | 4 |
-| Dodge Roll | 3 |
-| Block (per hit) | damage÷3 |
-| Parry attempt | 2 |
-| Sprint (per round) | 1 |
+```
+VIGOR MAX   = STR + DEX + CON
+RESOLVE MAX = INT + WIS + CHA
+```
 
-**Recovery:** +4 Stamina at turn start
-- Chloranthy Ring: +2 additional
-- Medium load (50-70%): -1
-- Heavy load (70%+): -2
-- Shield raised: -1
+- **Vigor** fuels physical effort: STR, DEX, and CON rolls.
+- **Resolve** fuels mental and social effort: INT, WIS, and CHA rolls.
+- Both pools start full after resting at a Bonfire.
+- At the start of each player turn/exchange, recover **+1 Vigor and +1 Resolve**, up to maximum.
+- Outside combat, each resolved player option counts as one exchange for recovery.
+- Stat increases immediately recalculate the relevant maximum; current points do not increase unless a rule restores them.
 
-**Depletion:** At 0 Stamina mid-action → **Staggered** (no further actions this round)
+### Push a Roll
+
+Before a roll, the player may append `(+N)` to the chosen option/action.
+
+Example:
+`7 (+3)`
+
+If option 7 is `[CHA 14] ...`, spend 3 Resolve and add **+3** to that CHA roll.
+If it is `[DEX 14] ...`, spend 3 Vigor and add **+3** to that DEX roll.
+
+Rules:
+- `(+N)` may be any value up to the current relevant pool. There is no fixed Push cap.
+- The stat **actually rolled** determines which pool is spent after substitutions such as CUNNING INSIGHT. The player never needs to name the pool.
+- A Push modifies one stat-based d20 roll: checks, attacks, saves, or reactions. It never modifies DC, damage dice, quality rolls, d30 Bargain rolls, ANNIHILATION checks, or other flat/random rolls.
+- Declared points are spent before that roll and remain spent regardless of outcome.
+- `[-]` actions cannot be Pushed because they have no roll.
+- A multi-stage action is Pushed per stage. Write investments in stage order: `[CHA/WIS 14] (+3/+2)` spends 3 Resolve on CHA and 2 Resolve on WIS. `[DEX/INT 14] (+2/+3)` spends 2 Vigor, then 3 Resolve.
+- If a chain shows only one value, such as `(+3)`, it applies to the **first roll only**.
+
+**Display:** `Vigor: X/Y | Resolve: X/Y`
 
 ---
 
@@ -282,24 +320,27 @@ Each level: +1 to any stat.
 
 ### Actions
 
-**Light Attack:** Weapon die + STR/DEX. Fast, no penalty.
+**Light Attack:** Use the core attack roll (`d20 + STR/DEX vs AC`). On a damaging hit, damage is weapon die + the same scaling stat. Fast, no penalty.
 
-**Heavy Attack:** Roll weapon die twice, take higher (1H) or add both (2H). Costs 4 Stamina. Target makes Poise Save DC 12 or staggers.
+**Heavy Attack:** Use the core attack roll with **-2 accuracy**. On a damaging hit, roll the weapon die twice: take higher (1H) or add both (2H), then add the scaling stat. Deals +2 additional Poise Damage. The attack roll may be Pushed with Vigor.
 
-**Dodge Roll:** 3 Stamina. One incoming attack misses (your choice).
-- Light roll (<30% burden): +2 evasion
-- Medium roll (30-50%): standard
-- Fat roll (70%+): DEX DC 13 or dodge fails
+**Dodge Roll:** Reaction. Against a boss telegraph, make a DEX check against its situational DC. Against a normal enemy attack that already hit AC, make the DEX check against the enemy's **total attack result** as DC. Success avoids that strike; Partial takes half damage; Fail takes full damage. The check may be Pushed with Vigor.
+- Light burden: +2 to the DEX check
+- Medium burden: standard
+- Heavy burden: -1 to the DEX check
+- Fat burden: -2 to the DEX check
 
-**Block:** Reaction. Reduce damage by shield Stability. Costs Stamina.
+Burden is determined by equipped armor tier, not by a separate percentage calculation. Ordinary weapons are abstracted into that tier; exceptionally heavy gear can shift burden one tier heavier when explicitly stated.
 
-**Parry & Riposte:** Reaction before enemy light attack. DEX+d20 vs DC 14.
+**Block:** Reaction, shield required. Against a boss telegraph, make a CON check against its situational DC. Against a normal enemy attack that already hit AC, use the enemy's **total attack result** as DC. Success reduces damage by the shield's Block %, Partial reduces damage by half that %, Fail takes full damage. The check may be Pushed with Vigor. Stability is used for guard/Poise effects.
+
+**Parry & Riposte:** Reaction before a parryable melee attack. Against a boss telegraph, roll DEX against its situational DC; against a normal enemy attack that hit AC, use the enemy's **total attack result** as DC. The check may be Pushed with Vigor.
 - Crit (+10): Perfect parry, Riposte deals ×2 max damage
 - Success (+5): attack nullified, enemy prone, free Riposte (max damage)
 - Partial (0-4): Deflected — take half damage, no Riposte
 - Fail (-1 to -5): Mistimed — take full damage
 - Crit Fail (-6): Weapon knocked aside, enemy gets free attack
-- Cannot parry heavy attacks or large bosses
+- Cannot parry heavy attacks or large bosses unless their move explicitly says parryable
 
 **Backstab:** Move behind unaware/guard-broken target. Full action. 2× max weapon damage + STR. CON DC 15 or Staggered 1 round.
 
@@ -309,30 +350,42 @@ Each level: +1 to any stat.
 |----------|--------|-------|------------|
 | Dagger | d4 | DEX | +2 parry, light |
 | Straight Sword | d6 | STR/DEX | Balanced |
-| Curved Sword | d6 | DEX | +1 attack, bleed (3 hits = d8) |
-| Katana | d6 | DEX | Bleed, reach, fragile (break on nat 1) |
-| Greatsword | 2d6 | STR | Poise +2, two-hand |
-| Ultra Greatsword | 2d8 | STR | Poise +4, must two-hand, -1 attack |
+| Curved Sword | d6 | DEX | +1 attack, Bleed +5 buildup |
+| Katana | d6 | DEX | Bleed +5 buildup, reach, fragile (break on nat 1) |
+| Greatsword | 2d6 | STR | +2 Poise Damage, two-hand |
+| Ultra Greatsword | 2d8 | STR | +4 Poise Damage, must two-hand, -1 attack |
 | Axe | d8 | STR | +2 vs shields |
-| Greataxe | 2d6 | STR | Poise +3, cleave |
+| Greataxe | 2d6 | STR | +3 Poise Damage, cleave |
 | Spear | d6 | STR/DEX | Reach, attack while blocking |
 | Halberd | d10 | STR | Reach, sweep (DEX DC 13 or prone) |
-| Hammer | d6 | STR | Poise +2, +d4 vs armor |
-| Great Hammer | 2d8 | STR | Poise +5, slow (DIS if moved) |
+| Hammer | d6 | STR | +2 Poise Damage, +d4 vs armor |
+| Great Hammer | 2d8 | STR | +5 Poise Damage, slow (DIS if moved) |
 | Rapier | d6 | DEX | Crit on 19-20, ×3 on nat 20 |
 | Crossbow | d8 | DEX | Ranged 60/120, reload = action |
 
 ### Armor & Poise
 
-| Tier | Weight | AC | Poise |
-|------|--------|----|----|
-| Unarmored | 0 | +0 | 0 |
-| Light | 1-8 | +1 | 1 |
-| Medium | 9-20 | +2 | 3 |
-| Heavy | 21-35 | +4 | 6 |
-| Giant | 36+ | +5 | 8 |
+This table **replaces core armor AC**. AC is an absolute value/formula, not a bonus to core armor.
 
-**Poise:** When Poise Damage received ≥ your Poise → Staggered. Resets each turn.
+| Tier | Typical Weight | AC | Poise | Burden |
+|------|----------------|----|-------|--------|
+| Unarmored | 0 | 10 + DEX | 0 | Light |
+| Light | 1-8 | 11 + DEX | 1 | Light |
+| Medium | 9-20 | 13 + DEX (max +2) | 3 | Medium |
+| Heavy | 21-35 | 16 | 6 | Heavy |
+| Giant | 36+ | 18 | 8 | Fat |
+
+**Burden:** Use the Burden column for Dodge Roll modifiers. Do not calculate a separate percentage load. If a unique item explicitly changes burden, shift the category as stated.
+
+**Poise Damage:**
+- Every damaging melee hit deals **1 base Poise Damage**.
+- A weapon property such as `+3 Poise Damage` adds to that base.
+- Heavy Attack adds another **+2 Poise Damage** on a damaging hit.
+- Track Poise Damage taken during the current target turn/exchange. When accumulated Poise Damage ≥ Poise, the target is **Staggered** and accumulated Poise Damage resets to 0.
+- If the threshold is not reached, accumulated Poise Damage resets to 0 at the start of that target's next turn/exchange.
+- On a successful Block, reduce incoming Poise Damage by shield Stability (minimum 0). On a Partial Block, reduce it by half Stability, rounded down.
+- A target with Poise 0 is Staggered by any damaging melee hit unless an effect says otherwise.
+- NPCs use the Poise of their visible armor tier unless their stat block overrides it. Boss Poise comes from the Boss Scale table.
 
 ### Shields
 
@@ -340,7 +393,7 @@ Each level: +1 to any stat.
 |------|-----------|---------|---------|
 | Small | 2 | 70% | +1 parry |
 | Medium | 4 | 85% | Standard |
-| Greatshield | 7 | 100% | -2 Stamina regen |
+| Greatshield | 7 | 100% | No Vigor recovery while actively guarding |
 | Buckler | 1 | 60% | +2 parry |
 
 ---
@@ -387,7 +440,7 @@ Status effects accumulate through repeated hits or exposure. Track buildup per s
 | Poison | 12 | d4 damage/round for 10 rounds | Purple Moss |
 | Toxic | 8 | d8 damage/round for 10 rounds | Blooming Moss |
 | Bleed | 15 | Instant d12 damage (ignores armor) | Bloodred Moss |
-| Frostbite | 10 | d6 damage + Stamina regen halved 3 rounds | Rime Blue Moss |
+| Frostbite | 10 | d6 damage + no Vigor recovery for 3 rounds | Rime Blue Moss |
 | Curse | 8 | Max HP halved until cured | Purging Stone |
 
 ### Buildup Sources
@@ -403,7 +456,7 @@ Status effects accumulate through repeated hits or exposure. Track buildup per s
 - Toxic swamp: +6 Toxic
 - Basilisk fog: +4 Curse
 
-**Recovery:** Buildup resets to 0 after 3 rounds without exposure.
+**Proc & Recovery:** When buildup reaches its threshold, apply the Proc Effect and reset that status's buildup to 0. Ongoing exposure can build it again. Buildup also resets to 0 after 3 rounds without exposure. A cure removes both active effect and current buildup for that status unless stated otherwise.
 
 ---
 
@@ -447,7 +500,7 @@ Do NOT telegraph exact HP. Describe behavior change.
 ```
 === BOSS: [NAME] ===
 Lore: [1 sentence]
-HP: [total] | AC: [value] | Phase: [threshold]
+HP: [total] | AC: [value] | Poise: [value] | Phase: [threshold]
 Souls: [reward] | Soul Trade: [weapon or spell]
 
 PHASE 1 — [state]
@@ -485,12 +538,12 @@ PHASE 2 — [state]
 
 ### Boss Scale (by region difficulty)
 
-| Tier | HP | AC | Souls | Damage |
-|------|----|----|-------|--------|
-| Early | 80-120 | 13-14 | 2,000-5,000 | d10 |
-| Mid | 150-250 | 15-16 | 8,000-15,000 | 2d8 |
-| Late | 300-500 | 17-18 | 20,000-40,000 | 2d10 |
-| Lord | 500-800 | 18-20 | 50,000-100,000 | 2d12 |
+| Tier | HP | AC | Poise | Souls | Damage |
+|------|----|----|-------|-------|--------|
+| Early | 80-120 | 13-14 | 4 | 2,000-5,000 | d10 |
+| Mid | 150-250 | 15-16 | 6 | 8,000-15,000 | 2d8 |
+| Late | 300-500 | 17-18 | 8 | 20,000-40,000 | 2d10 |
+| Lord | 500-800 | 18-20 | 10 | 50,000-100,000 | 2d12 |
 
 ### Phase 1 Attacks (roll 3)
 
@@ -507,16 +560,18 @@ PHASE 2 — [state]
 | 9 | **Tail/Back Attack** | Repositions suddenly | d6, hits behind | Don't hug back |
 | 10 | **Delayed Strike** | Holds pose 3 sec | 2d12 | Punishes early dodge |
 
-### Phase 2 Trigger (d6)
+### Phase 2 Change (d6)
 
-| d6 | Trigger | Change |
-|----|---------|--------|
-| 1 | 60% HP | Speed increase, shorter tells |
-| 2 | 50% HP | New element (fire/lightning/dark) |
-| 3 | 40% HP | Weapon breaks, fights unarmed/claws |
-| 4 | 30% HP | Transformation (larger, different moveset) |
-| 5 | 50% HP | Summons adds (2-3 minions) |
-| 6 | 60% HP | Arena changes (fire floor, collapse) |
+Phase thresholds are fixed by **Phase Transitions** above: Phase 2 begins below 60% HP; optional Phase 3 begins below 30% HP. Roll only for what changes.
+
+| d6 | Change |
+|----|--------|
+| 1 | Speed increase, shorter tells |
+| 2 | New element (fire/lightning/dark) |
+| 3 | Weapon breaks, fights unarmed/claws |
+| 4 | Transformation (larger, different moveset) |
+| 5 | Summons adds (2-3 minions) |
+| 6 | Arena changes (fire floor, collapse) |
 
 ### Phase 2 Additions (roll 2)
 
@@ -528,7 +583,7 @@ PHASE 2 — [state]
 | 4 | Environmental hazard activates |
 | 5 | Heal once (20% HP) |
 | 6 | Clone/illusion (decoy with 1 HP) |
-| 7 | Rage mode (attacks twice per exchange) |
+| 7 | Rage mode (+1 telegraphed strike per exchange) |
 | 8 | Desperation attack (all-in, vulnerable after) |
 
 ### Boss Soul Trade (d6)
@@ -557,10 +612,10 @@ PHASE 2 — [state]
 
 Bosses have MOMENTUM, not turn initiative:
 - Boss presents 2-3 telegraphed strikes per exchange (Phase 1), 3-4 (Phase 2)
-- The player may take one REACTION to each telegraphed strike (dodge/block/parry) as long as Stamina allows
+- The player may take one REACTION to each telegraphed strike (dodge/block/parry); each reaction is a roll and may be Pushed with Vigor
 - After/among the sequence, the player has 1 MAIN ACTION per exchange: attack, heal, reposition, item, spell, etc.
-- A Dodge Roll still avoids only one incoming strike; surviving a combo requires multiple reactions and enough Stamina
-- Consecutive hits (3+) = **Poise Break** → free attack
+- A Dodge Roll still answers only one incoming strike; surviving a combo requires multiple successful reactions. Saving Vigor lets the player heavily invest in the strike that matters most.
+- When boss Poise is broken, the boss is **Staggered** and the player gains a free opening for one immediate attack
 
 **Estus Mid-Fight:** Committed action. Must create distance first (DEX DC 12), then drink. Fail = boss punishes before heal.
 
@@ -586,6 +641,8 @@ Bonfires are respawn points, save files, and the last warm thing.
 **Resting:**
 - Refill Estus to current max
 - Full HP recovery
+- Refill Vigor and Resolve to maximum
+- Reset all spell cooldowns; Attunement may be changed
 - All area enemies respawn (NOT bosses)
 - Save position — death returns here
 
@@ -603,10 +660,10 @@ Bonfires are respawn points, save files, and the last warm thing.
 
 ## MAGIC SYSTEMS
 
-### Spell Slots & Cooldowns
+### Attunement & Cooldowns
 
-**Spell Slots:** INT or WIS modifier = number of spell slots (minimum 1)
-**Attunement:** Equip spells at bonfire. Slots limit how many you carry.
+**Attunement Slots:** `max(INT, WIS)` slots (minimum 1). These are preparation capacity, **not consumable charges**.
+**Attunement:** Equip or swap prepared spells only at a Bonfire. Each spell occupies 1 slot unless a spell explicitly says otherwise. Casting never spends an Attunement Slot; cooldown is the repeat-use limiter.
 
 **Cooldowns by Circle:**
 - Circle 1: 2 hours
@@ -614,9 +671,14 @@ Bonfires are respawn points, save files, and the last warm thing.
 - Circle 3: 12 hours
 - Circle 4: 24 hours
 
-**Cooldown reduction:** -2 hours per point of casting stat above requirement.
+**Cooldown reduction:** Sorcery: -2 hours per INT above 3. Miracles: -2 hours per WIS above 3. Minimum cooldown 0. Pyromancy cooldowns are not reduced by stats; Flame upgrades increase damage only.
 
-**Casting on Cooldown:** INT/WIS check DC 8 + circle. Fail = spell fizzles, take d6 feedback damage.
+**Casting on Cooldown:** Roll the spell's casting stat vs `DC 8 + circle` (Sorcery = INT, Miracle = WIS, Pyromancy = higher of INT/WIS). Resolve with core margins:
+- Crit.Fail: fizzles, take d8 feedback, cooldown restarts at full duration
+- Fail: fizzles, take d6 feedback
+- Partial: spell casts, take d4 feedback
+- Success/Crit: spell casts cleanly
+The check may be Pushed with Resolve.
 
 ### Sorceries (INT)
 
@@ -741,7 +803,7 @@ Condition: Human form, outside safe zones.
 
 **Ruin:** Collapsed ceilings, hidden rooms, unstable floors (STR save or fall).
 
-**Swamp:** Poison water, reduced movement. Each round = d4 poison buildup. 3 rounds = Poisoned (d4/round).
+**Swamp:** Poison water, reduced movement. Use the STATUS EFFECTS buildup rules: shallow water +4 Poison/round, deep water +8 Poison/round. Poison procs at 12 buildup.
 
 **Fortress:** Patrol routes, murder holes, archer towers. Stealth vs assault branching.
 
@@ -751,7 +813,7 @@ Condition: Human form, outside safe zones.
 
 ### Environmental Hazards
 
-**Poison Swamp:** Movement ×½. 3 rounds shallow / 1 round deep = Poisoned. Purple Moss cures.
+**Poison Swamp:** Movement ×½. Shallow water +4 Poison/round; deep water +8 Poison/round. At 12 buildup, apply Poison from the STATUS EFFECTS table. Purple Moss clears Poison and its buildup.
 
 **Gravity:** Illusory floors (WIS DC 14). Narrow ledges (DEX DC 12). Enemy shoves (opposed Athletics).
 
@@ -829,8 +891,8 @@ Condition: Human form, outside safe zones.
 | 1 | Ring of Sacrifice | Retain souls on death, shatters |
 | 2 | Hornet Ring | +50% crit damage |
 | 3 | Steel Protection | -2 physical damage |
-| 4 | Havel's Ring | +50% equip burden |
-| 5 | Chloranthy | +2 Stamina regen |
+| 4 | Havel's Ring | Treat armor burden as one tier lighter for Dodge Roll (minimum Light) |
+| 5 | Chloranthy | +1 additional Vigor recovery each turn |
 | 6 | Wolf Ring | +2 Poise |
 | 7 | Gold Serpent | +1 loot rolls |
 | 8 | Silver Serpent | +20% souls |
@@ -964,7 +1026,7 @@ If dies: player Morale -1
 | 2 | Spear | d6, reach |
 | 3 | Sword + shield | d6, blocks |
 | 4 | Greataxe | d10, slow |
-| 5 | Claws | d6, bleed |
+| 5 | Claws | d6, Bleed +5 buildup |
 | 6 | Magic staff | d8 ranged |
 | 7 | Whip | d4, reach, grabs |
 | 8 | Unarmed | d4+STR, grapple |
@@ -1017,7 +1079,7 @@ Special: Immune to fire. Drops Black Knight weapon (10% chance).
 
 === SKELETON ===
 HP: 20 | AC: 12 | Souls: 150
-Weapon: Scimitar (d6) or Falchion (d6, bleed)
+Weapon: Scimitar (d6) or Falchion (d6, Bleed +5 buildup)
 Behavior: Rises again 1 round after death unless killed by Divine/Fire
 Special: Reassemble — reforms at half HP if not destroyed properly
 ===
@@ -1026,7 +1088,7 @@ Special: Reassemble — reforms at half HP if not destroyed properly
 HP: 30 | AC: 12 | Souls: 200
 Attack: Bite (d4)
 Behavior: Circles, sprays Curse fog
-Special: Curse Fog — 10ft cloud, +6 Curse buildup/round. Stay 2 rounds = Cursed.
+Special: Curse Fog — 10ft cloud, +4 Curse buildup/round. At 8 buildup, Curse procs per STATUS EFFECTS.
 ===
 
 === MIMIC ===
@@ -1172,7 +1234,7 @@ NOTE: This is a template. Use Boss Generator for custom bosses.
 
 ### Combat Round
 ```
-[ ] Stamina tracked per action?
+[ ] Vigor/Resolve recovered +1 at turn/exchange start and Push spending tracked?
 [ ] Poise damage this round?
 [ ] Status buildup updated?
 [ ] Boss telegraph BEFORE attack resolution?
@@ -1192,16 +1254,21 @@ NOTE: This is a template. Use Boss Generator for custom bosses.
 
 ## REST INTEGRATION
 
-**Bonfire Rest = Long Rest equivalent:**
+This section implements the explicit CORE OVERRIDES above.
+
+**Bonfire Rest = Dark Souls Long Rest:**
 - Full HP recovery
 - Estus refilled
-- All spell slots restored
-- Cooldowns reset
-- -1 Hollowing stack (if Human form)
+- Vigor and Resolve refilled
+- All spell cooldowns reset
+- Attunement may be changed; Attunement Slots are capacity and are never "restored"
+- Area enemies respawn (bosses do not)
 
-**No Short Rests:** Dark Souls has no safe short rest. Estus replaces Hit Dice healing.
+**No Short Rests:** `REPLACES: [CORE REST]`. Dark Souls has no safe Short Rest; Estus replaces Hit Dice healing.
 
-**Exhaustion:** Not used in this ruleset. Hollowing replaces exhaustion as attrition mechanic.
+**Exhaustion:** `DISABLES: [EXHAUSTION]`. Hollowing replaces exhaustion as the setting's attrition mechanic.
+
+**Hollowing:** Bonfire rest by itself does not remove Hollowing. Spend Humanity or use a specific blessing/effect listed under Hollowing.
 
 ---
 

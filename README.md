@@ -18,7 +18,7 @@ claude-gm/
 ├── rulesets/
 │   ├── INDEX.md             # One-line index of all rulesets
 │   ├── battletech.md        # MechWarrior Feudal Drama
-│   ├── blades-lite.md       # Haunted Industrial Heists
+│   ├── fallen-blades.md     # Fractured Industrial Heists
 │   ├── cthulhu.md           # Cosmic Horror
 │   ├── cursed-seas.md       # Golden Age of Piracy
 │   ├── cyberpunk-red.md     # Dark Future
@@ -131,12 +131,13 @@ python scripts/combat.py --initiative "PC:DEX2, NPC:DEX4"
 - Intrigue (Favor/Nemesis/Contracts/Marriage/HPG)
 - For: Game of Thrones with giant robots
 
-**blades-lite.md** — Haunted Industrial Heists:
-- Doskvol: eternal night, ghosts, lightning barriers
+**fallen-blades.md** — Fallen Blades: Fractured Industrial Heists:
+- Doskvol: eternal night, ghosts, lightning barriers, fractured continuity
 - Score Cycle: Freeplay → Score → Downtime
-- Crew/Heat/Wanted mechanics, Stress/Trauma
-- 7 Playbooks, 6 Crew types, Occult system
-- For: heists, gang warfare, occult mysteries
+- Stress/Trauma, Heat/Wanted, Crew/Faction pressure
+- Anchor/Reflection/Seam/Facet; Crossfade and named Contradiction clocks
+- Mirror Crews, desynced loot, occult continuity crime
+- For: heists, gang warfare, fractured identity, occult mysteries
 
 **cthulhu.md** — Cosmic Horror (Lovecraft):
 - Three Axes system (Reality/Time/Identity) instead of Sanity
@@ -159,7 +160,7 @@ python scripts/combat.py --initiative "PC:DEX2, NPC:DEX4"
 **dark-souls.md** — Undead Curse and Pattern Mastery:
 - Telegraph System (GM describes tell before attack)
 - Death Loop, Soul Echo, Hollowing Track
-- Stamina, phase bosses, weapon upgrades, 7 Covenants
+- Vigor/Resolve Push economy, phase bosses, weapon upgrades, 7 Covenants
 - For: brutal boss fights, earned victories
 
 **deadlands.md** — Horror-Western (Pinnacle Deadlands):
@@ -258,10 +259,12 @@ python scripts/combat.py --initiative "PC:DEX2, NPC:DEX4"
 - Fate/Fortune, Marks & Disorders, Winds of Magic
 - For: grim dark fantasy, transformation drama
 
-**warhammer-40k.md** — Grimdark Far Future:
-- IRON WILL: Control/Warp/Entropy (all hostile)
-- Scar System, Mission Cycle, Rank
-- For: military campaigns, Inquisitorial investigations
+**warhammer-40k.md** — IRON WILL (Grimdark Far Future):
+- Mission Board: Objective / Pressure / Extraction; Theater Board for the wider war
+- Asymmetric Control/Warp/Entropy: institutional debt / immaterial corruption / Mission Wear
+- Scar Adaptation progression, Commit, Rank/Standing + Authority Override, Psychic Overchannel
+- Imperial / Chaos / Xenos / Rogue Trader campaign frameworks
+- For: military operations, Inquisitorial investigations, warbands, xenos expeditions
 
 **witcher.md** — Monster Hunters (Sapkowski + CDPR):
 - The Path + Lesser Evil, Hunt Cycle
@@ -291,7 +294,7 @@ Quality rating based on: unique mechanics, central pressure, internal coherence,
 | disco-elysium | 24 skills-as-inner-voices. Thought Cabinet / Ideology / Copotype interlock. 10 districts, case generators, replayable detective noir. |
 | vtm | Three Currencies (Hunger/Humanity/Willpower), Push, Beast Voice × Humanity matrix, Night Cycle, 8 generators. |
 | warhammer-fantasy | IRON LAW. Three Forces (Order/Corruption/Decay), Push, Condition/HP bridge, Drift, Path of Blood/Hunger. |
-| warhammer-40k | IRON WILL. Control/Warp/Entropy (all hostile), Scar System, Mission Cycle, Rank, 8-15 session lifespan. |
+| warhammer-40k | IRON WILL. Mission Board + Theater Board make operations the engine; asymmetric Control/Warp/Entropy and Scar Adaptation turn authority, corruption, attrition, and survival into distinct long-term costs. |
 | deadlands | The Deal — every power feeds the Reckoners you fight; Fear/Dominion/Backlash clocks create inescapable Faustian tension across five arcane traditions. |
 | exalted | The Stunt/Mote/Limit triangle — audacity fuels power fuels madness — with six mechanically distinct Exalt types and the Great Curse as inescapable central pressure engine. |
 
@@ -304,7 +307,7 @@ Quality rating based on: unique mechanics, central pressure, internal coherence,
 | sanguo | 36 stratagems, brotherhood oaths. Duels slightly simpler than could be. |
 | cyberpunk-red | Humanity/cyberpsychosis, Heat/Cred. Overloaded with reference data. |
 | shadowrun-lite | Magic+Matrix+cyber in parallel. Trace Clock. |
-| blades-lite | Stress/Trauma, Heat/Wanted, occult. Close to original. |
+| fallen-blades | Reflections/Crossfade/Contradictions turn Doskvol continuity into a heist engine; distinctive, but state/clock load remains high. |
 | deus-ex | Trust Clocks, Integration/Neuropozyne. Too many weapon tables. |
 | cthulhu | Three hidden axes, Deception Budget, flowcharts. High GM load. |
 | persona | Arcana Loyalty + Clusters, Time Pressure, Ally permadeath. |

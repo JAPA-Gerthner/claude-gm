@@ -28,27 +28,90 @@ Every choice destroys you.
 Uses gm-skill.md core mechanics:
 - d20 + stat vs DC (margin-based: Crit.Fail / Fail / Partial / Success / Crit)
 - Six stats: STR, DEX, CON, INT, WIS, CHA
-- Clocks, Heroism, Companions, Abilities — all from base
-- Writing style, response format, player rules — all from base
+- Core 0–6 clocks, Heroism, Companions, stat-threshold Abilities
+- Core combat action economy, natural 1/20 tier shifts, death saves
+- Writing style, response format, player rules
 
-**This ruleset adds:** Forces, Condition, Fortune, Winds of Magic, Mutations, Warhammer-specific content.
+**This ruleset adds:** Forces, Condition, Fate/Fortune, Winds of Magic, Mutations,
+Faction Drift, Pressure Clocks, and Warhammer-specific content.
 
-**Do not duplicate base mechanics.** If gm-skill covers it, use it as-is unless this ruleset explicitly overrides.
+### Explicit inheritance contract
+
+The following are the ONLY base mechanics replaced by IRON LAW:
+
+```
+REPLACES: ATTRIBUTES — CON HP formula
+  Warhammer HP = CON × 5 + 10.
+
+REPLACES: ATTRIBUTES — starting stat scale
+  Warhammer PCs may start at stat 0. Mortal starting range is 0–5;
+  6+ remains supernatural. After all creation modifiers, minimum stat is 0.
+
+REPLACES: COMBAT — AC formula
+  Warhammer armor uses AC = 10 + DEX contribution + armor bonus.
+  Heavy armor caps DEX contribution at +1.
+
+REPLACES: MAGIC — IF PRESENT
+  The core circle/cooldown magic system is inactive. Use Winds of Magic,
+  Overcast, and Miscast from this ruleset instead.
+```
+
+Everything else inherits from gm-skill.md unless a later rule uses an explicit
+`REPLACES:` or `DISABLES:` label. In particular, core stat-threshold abilities,
+Heroism, natural 1/20 outcome shifts, death rules, and ordinary 0–6 clocks remain active.
 
 ---
 
-## DC REFERENCE (WARHAMMER-ADJUSTED)
+## ERA & CANON MODE
+
+Default campaign era is the **Karl Franz Era, c. 2522 IC**, because the named
+NPC roster and the Colleges of Magic in this file are written for late-era
+Warhammer Fantasy Battle.
+
+At session start, the player may instead choose:
 
 ```
-8   Easy — trained person, no pressure
-12  Standard — requires skill
-15  Hard — expert-level challenge
-18  Very Hard — peak ability
-22  Extreme — legendary
-26+ Impossible — supernatural territory
+2276 IC — WARHAMMER: THE OLD WORLD
+  Empire: the Anarchy; no single Emperor.
+  Colleges of Magic: not yet founded; human wizardry is provincial, courtly,
+  religious, hedge, or otherwise locally regulated.
+  Named mortal characters from the Karl Franz era are replaced with
+  era-appropriate figures. Long-lived characters may remain where lore allows.
+  Skaven are far less visible in the established surface history of this era.
+
+2522 IC — KARL FRANZ ERA (default)
+  Use the named NPCs, institutions, and political assumptions in this file.
+
+2524+ IC — END TIMES
+  Only by explicit player choice. Increase world clocks and existential pressure.
+
+CUSTOM — GM defines date and filters named characters/institutions accordingly.
 ```
 
-The Old World is harsher. Standard challenges start at 12, not 10.
+**Canon-density note:** Cathay is supported by modern official material. Araby
+has substantial legacy material but varies by edition. Nippon, Ind, and Khuresh
+remain comparatively sparse in official detail; entries below are deliberately
+minimal and should be expanded by campaign generation rather than presented as
+fixed canon.
+
+---
+
+## DC REFERENCE
+
+Use the gm-skill.md DC scale unchanged:
+
+```
+5   Trivial — formality; failure means something is wrong
+8   Easy — simple task for a trained person
+12  Medium — requires skill; standard challenge
+16  Hard — difficult even for an expert
+20  Very Hard — peak human ability
+24  Extreme — legendary feat
+28+ Impossible — supernatural territory
+```
+
+The Old World is harsher through consequences, Force pressure, Condition,
+Suspicion, and scarcity — not by secretly changing locked DCs.
 
 ---
 
@@ -112,28 +175,48 @@ Routine actions, individual attacks, incidental casts.
 Minor actions within a scene are noise — only the scene's OUTCOME matters.
 ```
 
-Target pacing: ~2-5 Force per session. Critical thresholds in 2-4 sessions.
+Target pacing: ~2-5 Force from SCENE EVENTS per session. Explicit DIRECT costs can push the total higher; that is intentional when characters embrace dangerous power.
 
 GM assigns force shift. Player may argue, GM decides.
 
+### Direct Force Shifts
+
+The one-event cap governs **scene Force events** only. Some rules explicitly
+charge a **DIRECT Force shift**: Push (Force), Dhar, Chaos Magic, Necromancy,
+Chaos Marks, patron effects, and similar supernatural prices.
+
+```
+DIRECT FORCE SHIFT:
+- applies immediately when its trigger says so
+- bypasses the one-scene-event cap
+- is not also counted again as the scene's normal Force event
+- never exists implicitly: if a rule does not say DIRECT, use the scene event system
+```
+
+This distinction prevents incidental attacks or ordinary spell spam from
+silently generating extra Force while preserving deliberately dangerous magic.
+
 ---
 
-## THREE CURRENCIES
+## THREE PRESSURE CURRENCIES
 
-The game has exactly three costs. They do not overlap.
+IRON LAW revolves around three pressure currencies. They are not the only
+resources in gm-skill.md: Heroism, Fate, ability uses, clocks, HP, equipment,
+and companion/faction relationships still exist.
 
 ```
 FORCE     = strategic price (long-term transformation)
             "Who are you becoming?"
 
-CONDITION = tactical price (immediate risk)
+CONDITION = tactical price (immediate injury/strain)
             "Can you survive right now?"
 
-FORTUNE   = insurance (limited, spend to avoid the above)
+FORTUNE   = insurance (limited, spend to avoid imposed consequences)
             "Do you burn your luck?"
 ```
 
-Every significant choice costs one of these. If you can't identify which — the action is free or trivial.
+A significant IRON LAW choice should normally expose at least one of these
+pressures. It does not need to literally spend one every time.
 
 ---
 
@@ -143,20 +226,24 @@ Before any roll — declare Push. Choose your price:
 
 ```
 PUSH (FORCE):  +1d4 to the roll
-               +1 to an aligned Force
+               DIRECT +1 to a Force that fictionally powers the action
                −1 to next related roll (the shift destabilizes you)
                You sell a piece of your future.
 
 PUSH (BODY):   +1d6 to the roll
-               +1 Condition
+               +1 Condition directly
                Ignore Condition penalties for THIS roll (adrenaline)
                You break yourself right now.
 ```
 
-Both cost something now AND later. Choice is real.
+For Push (Force), name the aligned Force before rolling. The fiction must support
+it; at Corruption 5+ the Corruption hijack rule still applies.
 
-Cannot Push both ways on same roll.
-Overcast (magic) is a Push — follows same rules.
+Both cost something now AND later. Choice is real. A declared Push cost cannot
+be canceled by Fortune or another insurance effect.
+
+Cannot Push both ways on the same roll. Overcast is the magic form of Push and
+cannot be combined with a separate ordinary Push on that casting roll.
 
 ---
 
@@ -211,7 +298,7 @@ COSTS:
 -1: Show mercy where law demands punishment
 -1: Spend extended time outside civilization (1+ week)
 -2: Betray your faction for moral reasons
-Cannot reduce below current institutional rank (see Factions)
+Institutional rank creates no Force floor. Acting against your office may cost faction reputation, authority, or rank, but Order itself can still fall.
 ```
 
 ---
@@ -247,16 +334,16 @@ Power stays. Agency goes. That's the deal.
 ```
 0-2: CLEAN — no effect
 3:   TOUCHED — dreams, whispers. −1 WIS saves vs Chaos.
-     GM rolls mutation check (d20: 18+ = mutation)
+     Routine mutation checks begin at 18+ (see Mutations).
 4-5: MARKED — minor physical signs (concealable).
      +1 casting, −1 WIS saves. Daemons notice you.
 6:   UNSTABLE — visible marks possible.
-     On any natural 1: roll on Backlash table (not just magic).
-     Mutation check: 14+ = mutation.
+     On any natural 1: roll on CHAOS BACKLASH (not just magic).
+     Routine mutation checks now succeed on 14+.
 7:   DANGEROUS — involuntary outbursts.
      WIS save DC 14 in stressful situations or act on impulse.
-8:   MUTATED — gain major mutation if not already.
-     −2 CHA (except intimidation). Magic +2 but Backlash on 1-3.
+8:   MUTATED — gain a Major Mutation if not already.
+     −2 CHA (except intimidation). +2 casting; CHAOS BACKLASH on natural 1-3.
 9:   DAMNED — Chaos gods actively court you.
      GM may offer Chaos bargains. Refusing costs +1 Condition.
 10:  LOST — Chaos Spawn or dark ascension.
@@ -270,6 +357,28 @@ Power stays. Agency goes. That's the deal.
      Ascension if patron is pleased. Spawn if not. GM decides.
 ```
 
+### Chaos Backlash
+
+Roll when a Corruption threshold explicitly tells you to. This is a generic
+Chaos consequence, not the spell Miscast table.
+
+```
+CHAOS BACKLASH (d8):
+1: +1 Condition — seizure, internal tearing, sudden fever
+2: −2 to next related roll — intrusive impulse or sensory distortion
+3: Mutation check immediately
+4: Nearby mundane item spoils, cracks, rusts, or warps; GM chooses something relevant
+5: DIRECT +1 Corruption — the breach widens
+6: Lose Reaction until your next turn; outside combat, lose your next quick response
+7: Brief involuntary act/utterance chosen by GM; cannot directly self-kill
+8: Chaos notices — tick the most relevant Chaos/Patron/Regional pressure clock +1
+```
+
+If the same casting roll triggers both CHAOS BACKLASH and a Miscast, resolve
+only the **higher-severity Miscast**. Do not stack both tables on one die result.
+
+---
+
 ### Reducing Corruption
 
 ```
@@ -280,23 +389,23 @@ PATH OF LIGHT (costly, rare):
 -2: Grail Chapel blessing (Bretonnia, if Lady accepts)
 -1: Dwarfen rune of warding (expensive, requires Dwarf ally)
 -2: Ally performs exorcism/intervention at personal risk (GM-triggered)
-    Works even above Corruption 7. They may take +1 Corruption themselves.
+    Works even above Corruption 7. They may take DIRECT +1 Corruption themselves.
     Chaos doesn't let go — someone has to grab you and pull.
 
 PATH OF BLOOD (easier, darker):
 -1: Sacrifice a sentient being in ritual (victim dies or gains permanent debuff)
-    +1 Decay. Chaos doesn't vanish — it transfers through suffering.
+    DIRECT +1 Decay. Chaos doesn't vanish — it transfers through suffering.
 -1: Brutalize enemy in combat as offering (kill + dedicate to Chaos god)
-    +1 Decay. Skulls for the skull throne. You feel less each time.
+    DIRECT +1 Decay. Skulls for the skull throne. You feel less each time.
 -2: Sacrifice someone who trusts you (ally, follower, prisoner who surrendered)
-    +2 Decay. The screaming stops. So does something inside you.
-    Risk: GM rolls d20. On 1-4: patron god demands MORE. +1 Corruption back.
+    DIRECT +2 Decay. The screaming stops. So does something inside you.
+    Risk: GM rolls d20. On 1-4: patron god demands MORE. DIRECT +1 Corruption back.
 
 Chaos transfers through violence. It doesn't cleanse — it moves.
 Corruption goes down. Decay goes up. You traded one rot for another.
 
-Cannot reduce below mutation count.
-Removing mutation: legendary quest, reduces floor by 1.
+Cannot reduce Corruption below total mutation levels. Each mutation result is one level; duplicate/intensified results add another level.
+Removing one mutation level requires a legendary quest and reduces the floor by 1.
 ```
 
 ---
@@ -312,7 +421,7 @@ BENEFITS:
 + at Decay 5+: ignore Condition 1 AND 2. Pain doesn't register.
 + at Decay 7+: immune to Fear, Terror, Intimidation, mind control.
   Nothing reaches you. Nothing can.
-+ at Decay 8+: don't need to eat, sleep, or rest.
++ at Decay 8+: don't need to eat or sleep; may still take downtime to gain rest recovery.
   You just... continue.
 
 COSTS:
@@ -330,13 +439,16 @@ Decay = strongest defense in the game. Price = you stop being human.
 3:   DETACHED — −1 CHA in emotional contexts.
      Colors seem duller. Food tastes like nothing.
 4:   RESISTANT — advantage poison/disease. You stopped flinching.
-5:   NUMB — ignore Condition 1+2. Cannot gain advantage from ally Help.
-     Companions notice your distance. Clock penalty −1.
-6:   HOLLOW — immune to Fear. −2 CHA, −1 WIS. Cannot form new bonds.
+5:   NUMB — ignore Condition 1+2 penalties. Cannot gain advantage from ally Help.
+     On first crossing into Decay 5, each present companion clock ticks −1 once.
+6:   HOLLOW — immune to Fear. −2 CHA, −1 WIS.
+     DISABLES: forming NEW companion bonds, including first-time RIGHT HAND
+     binds and ALLEGIANCE recruitment. Existing companion bonds still function.
 7:   IMPERVIOUS — immune Fear, Terror, Intimidation, mind control.
      You forget names. Old memories blur.
-8:   UNDYING — don't need food, sleep, rest. Half movement.
-     You are still moving. No one knows why. Including you.
+8:   UNDYING — don't need food or sleep. Half movement.
+     You may still spend 8h in downtime to receive normal Long Rest recovery;
+     you simply do not need to sleep during it.
 9:   EMPTY — −3 CHA. No emotional response. Allies may leave.
 10:  UNDEAD STATE — character functionally dead inside.
      Becomes NPC or revenant. Roll new character.
@@ -344,7 +456,7 @@ Decay = strongest defense in the game. Price = you stop being human.
 --- BEYOND 10: REQUIRES DIVINE PATRONAGE (Decay patron) ---
 
 11:  DEATHLESS — you don't die. Not because you're strong.
-     Because death forgot you. Immune to Condition 4 (dying).
+     Because death forgot you. Condition 4 from HP loss no longer starts death saves and lethal HP thresholds cannot kill you; explicit campaign-ending effects still can.
      But you feel nothing. −4 CHA. Allies leave.
 12:  ETERNAL — undead lord, barrow-king, or void entity.
      Campaign epilogue. You outlast everything. Including the story.
@@ -363,12 +475,12 @@ PATH OF LIFE (costly, rare):
 
 PATH OF HUNGER (easier, darker):
 -1: Drain life force from a living being (victim permanently weakened: -1 stat or chronic illness)
-    +1 Corruption. You feel alive again. Stolen warmth.
+    DIRECT +1 Corruption. You feel alive again. Stolen warmth.
 -1: Consume vitality through dark ritual or vampiric feeding (victim ages d20 years)
-    +1 Corruption. Their years become your fire.
+    DIRECT +1 Corruption. Their years become your fire.
 -2: Devour someone completely — body, soul, essence (victim dies, no resurrection possible)
-    +2 Corruption. You burn with borrowed life. It won't last.
-    Risk: GM rolls d20. On 1-4: addiction. Next time Decay rises, must feed or +2 Decay.
+    DIRECT +2 Corruption. You burn with borrowed life. It won't last.
+    Risk: GM rolls d20. On 1-4: addiction. Next time Decay rises, must feed or DIRECT +2 Decay.
 
 The dead don't return to life through love. They feed.
 Decay goes down. Corruption goes up. You traded emptiness for hunger.
@@ -406,13 +518,13 @@ Specialists survive longer but are more extreme.
 ACTION                                      FORCE
 Report heretic to Witch Hunters             +1 Order
 Torture prisoner for information            +1 Order, +1 Corruption
-Use Dark Magic to save ally                 +2 Corruption
+Use Dark Magic to save ally                 DIRECT +2 Corruption (Dhar cost)
 Ignore suffering villagers                  +1 Decay
 Enforce unjust law                          +1 Order
 Refuse to act on clear threat               +1 Decay
 Burn village to stop plague                 +1 Order, +1 Decay
-Accept Chaos gift for power                 +2 Corruption
-Raise dead to fight Chaos                   +1 Corruption, +1 Decay
+Accept Chaos gift for power                 DIRECT +2 Corruption (or gift's listed cost)
+Raise dead to fight Chaos                   DIRECT +1 Corruption, +1 Decay (Necromancy)
 Kill Witch Hunter to protect mutant friend  +1 Corruption, −1 Order
 Wait out a siege doing nothing              +2 Decay
 ```
@@ -447,7 +559,7 @@ EXTENDED-CAP OVERRIDE:
   - If UNBOUND extended a Force to 11: at 10 apply all threshold penalties/transformation flavor, but the player retains agency. Reaching 11 is the terminal Force end-state (system tyrant / spawn-like corruption / deathless revenant, as appropriate).
 
 POLYTHEISTIC EXCEPTION:
-  Norsca, Ind, and similar cultures — GM may offer 2 competing
+  Norsca or any campaign-defined polytheistic culture — GM may offer 2 competing
   patrons. The gods fight over you. You pick. GM decides when
   this applies.
 ```
@@ -475,6 +587,8 @@ GM judges — no table needed. You know the deal. So does your god.
 
 6:   ABANDONED — patron withdraws. Permanently.
      Ability lost forever. Force cap returns to 10.
+     If the patron-aligned Force is already above 10, set it to 10 and
+     immediately resolve that Force's normal terminal/agency-loss state.
      You kept everything you became. Lost everything you were given.
      Worse than Unbound — they chose freedom. You failed a god.
 
@@ -517,106 +631,164 @@ Desperate nobody hits Corruption 7, refuses → Unbound.
 
 ## CONDITION
 
-Condition is derived from HP. It is the dramatic layer on top of hit points.
+Condition is a separate 0–4 trauma track with an **HP floor**. HP determines
+the minimum physical Condition, while strain, fear, heavy impacts, and special
+rules can push Condition above that minimum.
 
 ```
-HP = CON × 5 + 10 (from character creation)
+HP = CON × 5 + 10
 
-CONDITION THRESHOLDS (% of max HP):
-0: HEALTHY (76-100%) — no penalties
-1: HURT (51-75%) — bruised, shaken. −1 to rolls.
-2: WOUNDED (26-50%) — broken bones, fear. Disadvantage on rolls.
-3: CRITICAL (1-25%) — organ damage, breakdown.
-   Cannot act without CON or WIS save DC 14.
-4: DYING (0 HP) — death saves begin (d20 vs DC 10, 3 success/fail per base rules).
-   Fortune or immediate intervention required.
+HP FLOOR FOR CONDITION:
+76-100% max HP -> minimum Condition 0
+51-75%          -> minimum Condition 1
+26-50%          -> minimum Condition 2
+1-25%           -> minimum Condition 3
+0 HP or less    -> minimum Condition 4
+
+CURRENT CONDITION EFFECT:
+0: HEALTHY  — no penalty
+1: HURT     — −1 to rolls
+2: WOUNDED  — disadvantage on rolls
+3: CRITICAL — disadvantage; before a strenuous action, CON or WIS DC 14.
+               Fail: the action is lost/aborted. Partial+: act normally.
+4: COLLAPSED — state depends on cause; see below.
+```
+
+Use only the current tier's listed roll penalty; tiers do not stack their −1
+and disadvantage with each other.
+
+### Condition 4: Collapse vs Dying
+
+Condition 4 is not automatically death.
+
+```
+LETHAL PHYSICAL COLLAPSE (HP <= 0):
+  Use gm-skill.md DEATH normally: unconscious, death saves each turn.
+
+CON 6 UNKILLABLE:
+  Core ability overrides the normal 0 HP collapse exactly as written.
+  At HP <= 0 the character remains conscious and fights while bleeding out;
+  death threshold is −CON×5 and death saves begin only when combat ends.
+  Condition remains 4, but UNKILLABLE permits actions despite collapse.
+
+NONLETHAL PHYSICAL COLLAPSE (HP > 0):
+  Incapacitated from shock/strain until stabilized (Medicine INT DC 12,
+  healing magic, or a safe short rest). No death saves unless HP also reaches 0.
+
+MENTAL COLLAPSE (fear/horror/betrayal/mind attack):
+  Breakdown, not bodily death. Cannot act meaningfully until immediate danger
+  passes or WIS DC 14 succeeds. Recover to Condition 3 and gain a Disorder.
 ```
 
 ### Condition Direction
 
 ```
-Condition increases when HP crosses a LOWER threshold.
-Condition does NOT decrease when HP is restored.
-
-Healing HP does not erase Condition.
-Only explicit Condition recovery (rest, rare magic) reduces it.
-
-This means: wounds have inertia. A potion stops the bleeding,
-but you're still broken until you properly recover.
+When HP falls, raise Condition to at least the new HP floor.
+When HP rises, the HP floor may fall — but current Condition does NOT.
+Healing HP therefore stops physical danger without erasing trauma.
+Only explicit Condition recovery reduces the track.
 ```
 
 ### Gaining Condition
 
 ```
-NORMAL DAMAGE: reduces HP. Condition updates when threshold crossed.
+NORMAL DAMAGE:
+  Reduce HP, then raise Condition to at least the resulting HP floor.
 
-HEAVY HIT: single hit ≥ 25% max HP → +1 extra Condition (skip a threshold)
-MASSIVE HIT: single hit ≥ 50% max HP → +2 extra Condition
+HEAVY HIT:
+  A single hit >= 25% max HP -> after applying the HP floor, +1 Condition.
 
-CRITICAL HIT: double damage dice, then apply Heavy/Massive rules.
-  A greatsword crit can jump you from Healthy to Wounded in one blow.
+MASSIVE HIT:
+  A single hit >= 50% max HP -> after applying the HP floor, +2 Condition.
 
-PUSH (BODY): +1 Condition directly (no HP loss — pure strain)
+CRIT DAMAGE:
+  Resolve core Crit damage, then apply Heavy/Massive thresholds to final damage.
 
-MENTAL SHOCK: +1 Condition directly (fear, horror, betrayal)
-  GM uses this for Fear/Terror failures — not a separate system.
-  Crit.Fail fear = +1 Condition AND force shift.
+PUSH (BODY):
+  +1 Condition directly. This declared cost cannot be canceled by Fortune.
+  At Condition 3, the roll still resolves; afterward you reach 4 and collapse.
+
+MENTAL SHOCK:
+  +1 Condition directly when a rule says so. Mental Condition 4 is a breakdown,
+  not death. Crit.Fail Fear/Terror may add Force as specified by that system.
 ```
+
+Condition cannot exceed 4.
 
 ### Recovering Condition
 
+Condition recovery requires time and safety. HP healing alone never lowers it.
+
 ```
-Condition recovery requires TIME and SAFETY — separate from HP healing.
+4 -> 3 (lethal physical): stabilize per core death rules, Fate, or powerful magic.
+4 -> 3 (nonlethal/mental): immediate aid + 10 minutes safe recovery, or relevant magic.
+3 -> 2: one Long Rest in safety + Medicine INT DC 14.
+         Without medicine: two safe Long Rests.
+2 -> 1: one safe Long Rest with basic care.
+         Without care: two safe Long Rests.
+1 -> 0: one Short Rest in a safe location.
+         If the location is unsafe, requires a Long Rest instead.
 
-4→3: immediate medical attention (INT DC 16) or powerful magic
-3→2: long rest + medicine (INT DC 14)
-2→1: long rest + basic care
-1→0: short rest in safe location
-
-Without safety: recovery one step slower.
-Without medicine: recovery two steps slower.
-
-HP heals normally (rest, potions, magic).
-Condition heals on its own track. They are parallel, not linked.
+Unsafe conditions never permit 3->2 or 2->1 recovery; at best they stabilize
+Condition so it does not worsen from neglect.
 ```
+
+After reducing Condition, it can never go below the current HP floor.
+
+### Fear & Terror
+
+Fear/Terror use the core WIS save and the Condition track. Roll only on first
+meaningful exposure to that source in a scene unless circumstances escalate.
+
+```
+FEAR N:   WIS DC = 10 + (2 × N)
+TERROR N: WIS DC = 12 + (2 × N)
+
+Crit.Fail: +1 Condition, Frightened; Terror also loses next main action.
+Fail:      +1 Condition, Frightened for 1 round / one exchange.
+Partial:   Frightened for 1 round / one exchange; no Condition.
+Success:   resist.
+Crit:      resist and immune to that source's Fear/Terror for the scene.
+```
+
+`Fear 1`, `Terror 1`, and `Terror 3` in NPC templates use this scale. Immunity
+to Fear/Terror ignores these rolls entirely.
 
 ### NPCs
 
 ```
-CONDITION: NPCs use the same thresholds based on their max HP (75/50/25/0).
+NPCs use the same HP floors and Condition 0–4 track when the extra detail matters.
+Minor NPCs may simply use HP and narrative wounds to reduce bookkeeping.
 
-FORCES: Track exact Forces only for:
-- recurring NPCs
-- key antagonists
-- faction leaders
-For minor NPCs: assign a rough bias (Order/Corruption/Decay),
-apply effects narratively. Use exact tracking only when
-the NPC's transformation matters to the story.
+FORCES: Track exact Forces only for recurring NPCs, key antagonists, and faction
+leaders. For minor NPCs, assign a rough Order/Corruption/Decay bias and apply it
+narratively unless their transformation matters to the story.
 ```
 
 ### Marks (Trauma)
 
-```
-At Condition 4, if you survive (death saves or Fortune),
-gain a permanent Mark:
+When a character reaches physical Condition 4 and later recovers to 3, gain a
+permanent Mark. This includes stabilization through death saves, Fate, or recovery
+from a nonlethal physical collapse.
 
+```
 MARKS (d8, or GM picks):
 1. Paranoid — −1 CHA, advantage on Perception vs ambush
 2. Reckless — +1 attack, −1 AC
-3. Numb — −1 CHA, immune to Fear (Condition from fear)
+3. Numb — −1 CHA, immune to Fear
 4. Obsessive — +1 INT (specific topic), must pursue related goals
 5. Violent — +1 melee damage, WIS DC 12 or escalate conflicts
 6. Haunted — −1 WIS at night, advantage on Undead/Chaos knowledge
 7. Broken — −1 all social, +2 resist Intimidation
 8. Fanatic — +1 aligned faith actions, −2 to compromise
 
-3+ Marks = character unplayable. They've been broken too many times.
+3+ total Marks/Disorders = character unplayable. They have been broken too many times.
 ```
 
 ### Disorders (Mental Trauma Marks)
 
-If Condition 4 was caused by mental trauma (fear, horror, Chaos exposure,
-mind control, betrayal), use this table instead of standard Marks:
+If Condition 4 was caused by mental trauma, use this table instead of Marks.
+The Disorder is gained when the character recovers from the breakdown to 3.
 
 ```
 DISORDERS (d8, or GM picks):
@@ -629,25 +801,36 @@ DISORDERS (d8, or GM picks):
 7. Voices — +1 to Chaos-aligned actions, −1 WIS
 8. Emotional numbness — −2 CHA, resist manipulation
 
-Same rules as Marks. 3+ total (Marks + Disorders combined) = unplayable.
+Same limit: 3+ total Marks + Disorders = unplayable.
 ```
 
 ---
 
 ## FATE
 
-Fate is not a resource. It is a mistake of destiny.
+Fate is a permanent meta-resource: a finite mistake of destiny.
 
 ```
-FATE: ★★ (2, permanent)
+FATE: ★★ (typical Human/Dwarf start; origin may differ)
 
-Spend Fate to avoid death at Condition 4:
-- stabilize at Condition 3
-- gain a Mark (or Disorder if mental cause)
-- survive what should have killed you
+Spend 1 Fate when the character WOULD DIE from:
+- 3 failed death saves
+- massive-damage instant death
+- reaching the UNKILLABLE death threshold (−CON×5)
+- another explicit lethal effect
+
+If CON 10 DEATHLESS is available, resolve DEATHLESS first. Fate is offered only
+if the character would still die after all automatic core prevention effects resolve.
+
+FATE EFFECT:
+- death is canceled
+- HP becomes 1
+- Condition becomes 3 (or the HP floor, if somehow higher)
+- clear current death-save successes/failures
+- gain a physical Mark appropriate to the event
 
 Fate never refreshes. When it's gone — it's gone.
-Nothing else spends Fate. Nothing else restores it.
+Nothing else spends Fate. Nothing restores it unless a future rule explicitly says so.
 
 STARTING FATE (by origin):
 Human: 2 | Dwarf: 2 | Elf: 1 | Halfling: 3 | Other: 1
@@ -666,8 +849,14 @@ SPEND TO:
 - Reroll any one die (keep second result)
 - Add +2 to any roll (declare before result)
 - Force enemy to reroll one attack against you
-- Reduce incoming Condition by 1
-- Reduce incoming Force shift by 1
+- Reduce an imposed/direct incoming Condition gain by 1
+- Reduce an imposed incoming Force shift by 1
+
+LIMITS:
+- Fortune cannot reduce Condition below the current HP floor.
+- Fortune cannot cancel a voluntarily declared cost: Push, Overcast, Devil's Bargain,
+  Chaos Mark, sacrifice, or any effect explicitly labeled as an accepted price.
+- Fortune cannot cancel death. Use Fate for that.
 
 STARTING FORTUNE (by origin):
 Human: 3 | Dwarf: 2 | Elf: 2 | Halfling: 4 | Other: 2
@@ -689,53 +878,53 @@ Fortune does NOT cheat death. That's what Fate is for.
 
 ```
 === HUMAN ===
-Fortune: 3
+Fate: 2 | Fortune: 3
 Trait: Adaptable — choose +1 to any stat
 Common: Empire, Bretonnia, Kislev, Tilea, Estalia, Araby, Cathay, Nippon
 
 === DWARF ===
-Fortune: 2
+Fate: 2 | Fortune: 2
 Traits: Sturdy (+1 CON), Grudgebearer (must record wrongs),
         Magic Resistant (advantage on magic saves, cannot be wizard)
 Common: Karaz Ankor holds
 
 === HIGH ELF ===
-Fortune: 2
+Fate: 1 | Fortune: 2
 Traits: Refined (+1 INT), Ancient Knowledge (advantage lore checks),
         Fragile Pride (−1 CHA when humiliated)
 Common: Ulthuan
 
 === WOOD ELF ===
-Fortune: 2
+Fate: 1 | Fortune: 2
 Traits: Wild (+1 DEX), Forest Movement (no terrain penalty in forests),
         Isolationist (−1 CHA in cities)
 Common: Athel Loren
 
 === HALFLING ===
-Fortune: 4
+Fate: 3 | Fortune: 4
 Traits: Small (advantage stealth, disadvantage heavy weapons),
         Lucky (one bonus Fortune spend per session; does NOT increase the Fortune pool above 4),
-        Overlooked (−2 Suspicion in crowds)
+        Overlooked (when a crowd incident would raise Suspicion, reduce that gain by 2, minimum 0)
 Common: The Moot, Empire
 
 === DARK ELF ===
-Fortune: 2
-Traits: Cruel (+1 CHA intimidation), Pain Tolerance (ignore Condition 1 in combat),
+Fate: 1 | Fortune: 2
+Traits: Cruel (+1 CHA intimidation), Pain Tolerance (ignore the roll penalty from Condition 1 in combat),
         Paranoid (advantage detect betrayal)
 Common: Naggaroth
 
 === OGRE ===
-Fortune: 1
+Fate: 1 | Fortune: 1
 Traits: Massive (+2 STR, +1 CON, −2 INT, −1 CHA),
         Always Hungry (hunger clock if starved),
         Thick Skin (+1 natural AC)
 Common: Ogre Kingdoms, mercenary companies
 
 === SKAVEN ===
-Fortune: 2
+Fate: 1 | Fortune: 2
 Traits: Cunning (+1 DEX), Paranoid (advantage detect betrayal),
         Cowardly (disadvantage vs Fear if alone, advantage if outnumber),
-        Warpstone Affinity (+1 to warpstone items, −1 Corruption threshold)
+        Warpstone Affinity (+1 to rolls using warpstone items; routine mutation checks treat Corruption as 1 higher)
 Common: Under-Empire
 ```
 
@@ -743,8 +932,9 @@ Common: Under-Empire
 
 ```
 === SOLDIER ===
-Bonus: +1 STR or CON, proficiency all weapons/armor
-Special: BATTLE-HARDENED — first Condition gain per combat is reduced by 1
+Bonus: +1 STR or CON
+Training: all specialized weapons and armor
+Special: BATTLE-HARDENED — reduce the first Heavy/Massive bonus or other imposed Condition gain each combat by 1. Cannot suppress the HP floor or a declared Push cost
 
 === WITCH / MAGE ===
 Bonus: +1 INT, choose one Wind (see Magic)
@@ -755,7 +945,8 @@ Bonus: +1 WIS or CHA, choose one god (see Faith)
 Special: DIVINE CHANNEL — prayer for blessings (CHA + faith modifier vs DC)
 
 === AGENT / HUNTER ===
-Bonus: +1 WIS or DEX, proficiency concealed weapons
+Bonus: +1 WIS or DEX
+Special: CONCEALED ARMS — +2 to hide/draw Concealed weapons; draw one as a bonus action
 Special: READ THE ROOM — one free hidden WIS check per scene
 
 === ROGUE / OUTCAST ===
@@ -764,17 +955,36 @@ Special: UNDERWORLD — criminal contacts in any settlement (CHA DC 12)
 
 === NOBLE / DIPLOMAT ===
 Bonus: +1 CHA, starting wealth one tier higher
-Special: AUTHORITY — invoke rank once per scene (may backfire)
+Special: AUTHORITY — 1/scene, before a CHA roll where formal rank is recognized, gain ADV. On Crit.Fail, lose 1 relevant faction reputation or gain +1 Suspicion
 
 === ENGINEER / SCHOLAR ===
-Bonus: +1 INT, proficiency mechanical devices
+Bonus: +1 INT
+Training: complex mechanical devices
 Special: TINKER — jury-rig solutions (INT check, may create complications)
 
 === SLAYER (Dwarf only) ===
-Bonus: +2 STR, no armor (AC = 10 + DEX + CON/2)
-Special: DEATHSEEKER — immune to Fear/Terror. Cannot flee.
+Bonus: +2 STR, no armor (AC = 10 + DEX + floor(CON/2))
+Special: DEATHSEEKER — immune to Fear/Terror. DISABLES: retreat/flee actions while the Slayer oath remains active.
          +1 damage per Condition level. Oath: seek death against monsters.
 ```
+
+### Specialized Training
+
+The core system has no proficiency layer. IRON LAW uses a small training rule
+only for genuinely specialized equipment.
+
+```
+SPECIALIZED: Heavy weapons, blackpowder/Loading weapons, Heavy armor,
+             complex engineering devices, and GM-tagged exotic gear.
+UNTRAINED:   −2 to relevant attack/DEX/INT rolls with that specialized gear.
+             Wearing Heavy armor untrained also reduces movement by 5ft.
+COMMON GEAR: no proficiency check or penalty.
+```
+
+Soldier training covers specialized weapons and armor. Engineer training covers
+complex mechanical devices. Other backgrounds/abilities may grant training explicitly.
+
+---
 
 ### Step 3: Background
 
@@ -795,10 +1005,12 @@ Dwarf Exile — Order 2, Corruption 0, Decay 2
 ```
 Standard array: 3, 2, 2, 1, 1, 0
 Assign to STR, DEX, CON, INT, WIS, CHA
-Apply racial + role bonuses
+Apply origin + role modifiers, then clamp any negative final stat to 0.
+Stats 0–5 are mortal; 6+ is supernatural.
 
 HP = CON × 5 + 10
-AC = 10 + DEX + armor
+AC = 10 + DEX contribution + armor bonus
+Heavy armor: DEX contribution capped at +1
 ```
 
 ---
@@ -844,7 +1056,7 @@ CHOOSING TO FLEE when allies need you: scene shift = +1 Decay.
 ```
 Melee: d20 + STR vs AC
 Ranged: d20 + DEX vs AC
-Damage: weapon die + STR (melee) or DEX (ranged/finesse)
+Damage: weapon die + STR (melee) or DEX (ranged). Finesse weapons use STR or DEX for BOTH attack and damage
 
 STANCES:
 Aggressive: +2 attack, −2 AC
@@ -882,11 +1094,12 @@ Repeater Xbow   d6      60ft    3 shots/reload        8gc
 Blunderbuss     2d6     20ft    Loading, Loud, Cone   6gc
 
 PROPERTIES:
-Light — dual-wield | Heavy — needs STR 3+ | Finesse — STR or DEX
-Reach — +5ft | Loading — action to reload | Loud — alerts 300ft
+Light — dual-wield | Heavy weapon — needs STR 3+ | Finesse — STR or DEX for attack+damage
+Reach — +5ft | Loading — action to reload | Loud — normally audible up to 300ft
 Parry — reaction +1 AC | Armor Piercing — ignore 2 AC from armor
-Concealed — advantage to hide | Slow — last in initiative
+Concealed — advantage to hide | Slow weapon — −2 Initiative while readied
 Cone — 15ft cone, DEX DC 12 half
+Repeater Xbow 3 shots/reload — magazine holds 3 attacks; reloading the magazine is one action
 ```
 
 ---
@@ -902,25 +1115,37 @@ Half Plate      +6      Noisy                     25gc
 Full Plate      +8      Noisy, Heavy, Slow        100gc
 Gromril Armor   +9      Heavy                     Priceless
 Ithilmar Mail   +6                                Priceless
-Chaos Plate     +7      Heavy, +1 Corruption/day  Cursed
+Chaos Plate     +7      Heavy, DIRECT +1 Corruption/day worn  Cursed
 
 Buckler         +1      Two-hand weapon OK        8s
 Shield          +2                                1gc
 Tower Shield    +3      −5ft movement             3gc
+
+ARMOR PROPERTIES:
+Noisy — disadvantage on Stealth when movement/sound matters
+Heavy — DEX contribution to AC capped at +1; counts as Specialized training
+Slow — −5ft movement while worn
 ```
 
 ---
 
 ## CRITICAL HITS
 
+Use the core attack outcome first. A natural 20 shifts the outcome one tier
+better; it is **not** an automatic Crit if the shifted result still falls below Crit.
+
+On a final **Crit outcome**, apply the core double damage dice and choose/apply
+one relevant weapon effect:
+
 ```
-Natural 20: double weapon dice + effect by type:
-Slashing — Bleeding (d4/round until Medicine DC 12)
-Piercing — Extra damage die
+Slashing — Bleeding (d4/round until Medicine INT DC 12)
+Piercing — +1 extra weapon damage die after the core doubling
 Bludgeoning — CON DC 12 or Stunned 1 round
 Fire — Burning (d6/round until extinguished)
-Chaos — +1 Corruption AND mutation check
+Chaos — DIRECT +1 Corruption and mutation check
 ```
+
+Do not double damage a second time because the d20 was a natural 20.
 
 ---
 
@@ -961,22 +1186,34 @@ Magic channels raw Chaos through mortal will. Every spell is a controlled disast
 
 ```
 CASTING: d20 + INT + Wind Affinity vs DC
-Wind Affinity: +0 untrained | +2 trained | +4 master
+Wind Affinity: +0 initiated/untrained | +2 trained | +4 master
+
+ACCESS:
+- No magical access: cannot cast.
+- Witch/Mage role starts with one chosen Wind at TRAINED (+2).
+- INITIATED/UNTRAINED (+0) means the character has explicit access but little training.
+- MASTER (+4) requires a major teacher, ability, or level-up reward.
 
 DC: 10 cantrip | 13 standard | 16 powerful | 20 legendary | 24+ mythic
 ```
 
-Magic as the primary solution to a scene = amplifier (+1 to scene Force shift).
-The shift aligns with the Wind used. Magic always leaves a mark on the caster.
+Magic as the primary solution to a scene is a scene Force amplifier (+1 total
+scene shift, within the normal scene cap). The shift aligns with the Wind used.
+There is no generic per-cast Force gain unless a spell tradition says DIRECT COST.
+
+Core level-up option `new spell` is interpreted in IRON LAW as either a new
+signature technique within an accessible Wind or access to a new Wind at +0,
+subject to narrative training.
 
 ---
 
 ## MAGIC LIMITS
 
 ```
-SUSPICION: Any magic in a settlement = +1 Suspicion clock. Always.
-  Sanctioned wizard, hedge witch, subtle cantrip — doesn't matter.
-  People see. People talk. People report.
+SUSPICION: Magic ticks Suspicion only when witnessed, traceable, or when
+  illegal evidence remains. Visible sanctioned magic is usually +1; dark magic
+  is +2; daemon summoning is +3. Truly unseen/subtle magic gives no automatic
+  tick unless detection or later evidence exposes it. See Pressure Clocks.
 
 WIND RESISTANCE: Same magical solution to similar problem = +2 DC cumulative.
   First fireball to clear a room: DC 13.
@@ -993,11 +1230,13 @@ WIND RESISTANCE: Same magical solution to similar problem = +2 DC cumulative.
 Overcast IS a Push. Same rules:
 
 ```
-OVERCAST (FORCE): +1d4 to casting, +1 Corruption (always Corruption, any Wind)
-OVERCAST (BODY):  +1d6 to casting, +1 Condition (magical feedback)
+OVERCAST (FORCE): +1d4 to casting, DIRECT +1 Corruption (any Wind)
+OVERCAST (BODY):  +1d6 to casting, +1 Condition directly (magical feedback)
 ```
 
-Can stack multiple Overcasts. Each adds its cost.
+Maximum **one Overcast per casting roll**. It is the casting roll's Push, so it
+cannot stack with an ordinary Push or a second Overcast. Declared Overcast costs
+cannot be canceled by Fortune.
 
 ---
 
@@ -1018,31 +1257,36 @@ UTILITY:    minor trick cantrip | invisibility standard | teleport powerful
 ## MISCAST
 
 ```
+Resolve the casting check and core natural-1 tier shift first, then resolve
+at most ONE Miscast at the highest triggered severity:
+
 Natural 1-2: Minor Miscast
 Natural 1 + fail by 5+: Major Miscast
 Any Overcast + natural 1-2: Major Miscast
-Corruption 6+, any fail: Minor Miscast
+Corruption 6+, any failed cast: at least Minor Miscast
+
+If CHAOS BACKLASH and Miscast trigger on the same casting die, use the Miscast only.
 
 MINOR (d8):
 1: Stunned 1 round
 2: +1 Condition (internal burns)
 3: Spell hits wrong target
 4: Alerts everyone 500ft (+1 Suspicion clock)
-5: +1 Corruption
+5: DIRECT +1 Corruption
 6: Half effect
 7: Blinded 1 round
 8: Cannot cast until next round
 
 MAJOR (d10):
-1-2: +2 Condition, knocked prone, +1 Corruption
-3: +2 Corruption, whispers
+1-2: +2 Condition, knocked prone, DIRECT +1 Corruption
+3: DIRECT +2 Corruption, whispers
 4: Lesser daemon appears (fight it)
 5: Wild magic — random effects, GM improvises
 6: Permanent mutation (roll table)
 7: Portal flickers — something notices you
 8: Spell inverts (heal→harm, shield→vulnerability)
-9: +1 Corruption to everyone within 10ft
-10: Maximum power random direction. 3d6 area. +2 Corruption. +2 Suspicion clock.
+9: DIRECT +1 Corruption to everyone within 10ft
+10: Maximum power random direction. 3d6 area. DIRECT +2 Corruption. +2 Suspicion Pressure Clock.
 ```
 
 ---
@@ -1068,8 +1312,8 @@ Bonus: +1 AC while actively casting
 Risk: petrification (miscast: CON DC 14 or −5ft movement 1 hour)
 
 HIGH MAGIC (Elf only) — Force: Order
-Any Wind effect at +2 DC. Access to all, master of none.
-Risk: all miscast +1 severity
+Any Wind effect at +2 DC. Access to all Winds at +0 unless separately trained; master of none by default.
+Risk: Minor Miscast becomes Major; if Major already triggered, roll twice on the Major table and apply the more severe fitting result (no third Miscast tier)
 ```
 
 ### Corruption Winds
@@ -1085,14 +1329,16 @@ Stealth, illusion, fear.
 Bonus: advantage Stealth while maintaining shadow spell
 Risk: lost in shadows (miscast: WIS DC 14 or confused 1 round)
 
-DHAR (Dark Magic) — Force: Corruption (+2 per cast instead of +1)
+DHAR (Dark Magic) — Force: Corruption
 Raw power, no finesse. Any effect.
 Bonus: +2 to all casting rolls
-Risk: Miscast on 1-4 (not 1-2). +1 Corruption even on success.
-Illegal everywhere. Witch Hunters kill on sight.
+DIRECT COST: +2 Corruption per cast. This is the entire Dhar Force cost;
+do not add another generic +1 for casting.
+Risk: at least Minor Miscast on natural 1-4; normal rules may upgrade it to Major. Illegal almost everywhere; enforcement depends on era/region.
 
-CHAOS MAGIC (god-aligned) — Force: Corruption (+2)
+CHAOS MAGIC (god-aligned) — Force: Corruption
 Varies by patron god.
+DIRECT COST: +2 Corruption per cast.
 Not a Wind — raw Chaos through devotion.
 ```
 
@@ -1104,22 +1350,22 @@ Death magic, spirits, endings.
 Bonus: speak with dead (1 question per corpse, truthful)
 Risk: undead attention (miscast: nearest dead animate briefly)
 
-NECROMANCY (Shyish + Dhar) — Force: Decay (+2)
+NECROMANCY (Shyish + Dhar) — Force: Decay + Corruption
 Raise dead, drain life, bind spirits.
 Bonus: raised undead serve for INT hours
-Risk: +1 Corruption AND +1 Decay per use. Illegal everywhere.
-Miscast: raised dead may turn hostile.
+DIRECT COST: +1 Decay AND +1 Corruption per cast/use.
+Illegal almost everywhere; Miscast may turn raised dead hostile.
 ```
 
 ### Mixed Winds
 
 ```
-GHYRAN (Life) — Force: caster chooses Order or Corruption per cast
+GHYRAN (Life) — Scene alignment: caster chooses Order or Corruption when the magic contributes to the scene Force event
 Healing, growth, nature.
-Bonus: heal d8 instead of d6
+Bonus: increase healing dice one step (d8→d10; 2d8→2d10). Stabilize cantrips are unchanged
 Risk: uncontrolled growth (miscast: plants erupt 10ft, difficult terrain)
 
-GHUR (Beasts) — Force: caster chooses Order or Corruption per cast
+GHUR (Beasts) — Scene alignment: caster chooses Order or Corruption when the magic contributes to the scene Force event
 Shapeshifting, animal control.
 Bonus: beast form (1 hour, INT determines control)
 Risk: lose humanity (miscast: WIS DC 14 or beast mind d4 hours)
@@ -1133,13 +1379,26 @@ Risk: lose humanity (miscast: WIS DC 14 or beast mind d4 hours)
 
 ## OVERVIEW
 
-Gods are real. Prayer = CHA + faith modifier vs DC.
+Gods are real. Prayer uses CHA + faith modifier vs DC and core margin outcomes.
 
-Faith modifier: +0 casual | +2 devoted | +4 champion
+```
+PRAYER DC: 8 small sign | 12 useful blessing | 16 major intervention | 20+ miracle
 
-Every answered prayer: +1 to god's aligned Force (most gods = +1 Order).
+God relationship uses a core 0–6 faction-style reputation clock:
+Rep 0: blessings denied
+Rep 1-2: CASUAL   (+0 faith modifier)
+Rep 3-4: DEVOTED  (+2 faith modifier)
+Rep 5-6: CHAMPION (+4 faith modifier)
+```
 
-Faith is NOT a separate track. Your relationship with your god IS a faction clock (see Factions). Reputation 0 = blessings denied. Reputation 5-6 = auto-success 1/session.
+At Rep 5-6, once/session before rolling a prayer, declare Divine Favor: the
+prayer resolves as a normal Success (not Crit). Declared use is spent even if the
+fiction later makes it unnecessary, per the core activation-cost rule.
+
+The first answered prayer in a scene causes DIRECT +1 to that god's aligned Force
+(most Empire gods: Order). Further answered prayers in the same scene add no
+additional Force. Faith is not a separate stat/track; the 0–6 relationship clock
+is the source of the tier and modifier.
 
 ---
 
@@ -1185,7 +1444,7 @@ Sins: disrespecting the sea
 
 ```
 ASURYAN — fire immunity (1 round), +2 vs Chaos
-KHAINE — +2 melee, frenzy (risk: +1 Corruption)
+KHAINE — +2 melee, frenzy (risk: DIRECT +1 Corruption)
 ISHA — healing (as Shallya for elves)
 VAUL — repair any item, +1 crafted weapons
 ```
@@ -1219,7 +1478,7 @@ Mark: +2 CON, regen d4/round, −2 CHA, stench.
 SLAANESH — +CHA, +DEX, supernatural senses. Addiction.
 Mark: +1 CHA, +1 DEX, advantage social, must pursue pleasure (WIS DC 14).
 
-Accepting a Chaos Mark: +3 Corruption. Permanent. Cannot be removed.
+Accepting a Chaos Mark: DIRECT +3 Corruption. Permanent. Cannot be removed.
 ```
 
 ---
@@ -1230,11 +1489,35 @@ Mutations are consequences of Corruption thresholds, not a separate system.
 
 ## Trigger
 
+After a single event finishes changing Corruption, make **at most one routine
+mutation check** using the final Corruption value:
+
 ```
-At Corruption 3+, when Corruption increases:
-  d20: 18+ at Corruption 3, 14+ at 6, 10+ at 8, automatic at 10
-Also: Major Miscast, Chaos exposure, accepting Chaos gift
+Corruption 0-2: no routine check
+Corruption 3-5: d20 18+ -> Minor Mutation
+Corruption 6-7: d20 14+ -> Minor Mutation
+Corruption 8-9: d20 10+ -> Minor Mutation
+Corruption 10+: automatic Minor Mutation if the character is still playable
+
+SPECIAL TRIGGERS:
+- Corruption 8 threshold grants a Major Mutation if the character lacks one;
+  this replaces the routine check for that same Corruption-gain event.
+- Major Miscast / explicit Chaos exposure / explicit Chaos gift may call for a
+  mutation check even without Corruption gain.
+- One fictional event never creates multiple mutation checks unless it explicitly
+  says it grants multiple mutations.
 ```
+
+## Severity
+
+```
+MINOR MUTATION: roll once on the d12 table.
+MAJOR MUTATION: always Visible; roll twice and apply both results.
+  If a result duplicates an existing mutation, intensify it instead.
+  Each result/intensification counts as one mutation level for the Corruption floor.
+```
+
+---
 
 ## Visibility (d4)
 
@@ -1257,7 +1540,7 @@ Also: Major Miscast, Chaos exposure, accepting Chaos gift
 8:  Horns (d4 headbutt, +1 intimidation)
 9:  Wrong skin color (+2 Suspicion)
 10: Animal features (−2 CHA, +1 WIS)
-11: Extra limb (+5ft reach OR extra attack at −2)
+11: Extra limb (choose +5ft reach OR 1/combat bonus-action light/unarmed attack at −2; no extra main action)
 12: Beast legs (+10ft movement, no boots)
 
 DUPLICATE: same mutation = intensifies.
@@ -1273,7 +1556,7 @@ DUPLICATE: same mutation = intensifies.
 Empire: death sentence
 Kislev: exile
 Bretonnia: burned
-Dwarfs: impossible (magic resistance) — if it happens, total shame
+Dwarfs: extremely resistant, not immune. Mutation is rare and treated as catastrophic shame
 Elves: killed or exiled
 Chaos lands: normal, celebrated
 Border Princes: depends on local lord
@@ -1290,6 +1573,28 @@ Border Princes: depends on local lord
 Factions are expressions of forces. Use base clock system (0-6) for reputation.
 
 As forces shift, you drift toward aligned factions — or away from your starting one.
+
+### Faction Drift
+
+When a faction's listed `Drift:` matters to the campaign, create a hidden core
+0–6 **Drift Clock** for that faction.
+
+```
+Start: 2/6 unless the campaign begins mid-crisis.
+Tick ↑: faction solves a crisis through its listed vice, player reinforces that
+        method, leadership radicalizes, or external pressure rewards the drift.
+Tick ↓: reform succeeds, player creates a viable alternative, moderates gain power,
+        or the faction pays a real cost to resist its vice.
+
+3/6: behavior visibly changes; new demands/penalties appear.
+5/6: faction commits to the drift; opposition fractures or goes underground.
+6/6: drift consequence becomes real. Resolve it, then reset to 3/6 with a new
+     concrete goal or replace it with a new clock representing the transformed faction.
+0/6: drift checked for now; remove the clock until new pressure appears.
+```
+
+`Drift: doesn't change` means no Drift Clock. If a faction has multiple possible
+arrows, choose the one supported by current events when its clock is created.
 
 ---
 
@@ -1363,12 +1668,12 @@ Force: Order (maximum)
 Provides: celestial magic, Great Bastion
 Demands: conformity, zero tolerance for Chaos
 
-=== NIPPON ===
-Core: discipline as philosophy
-Force: Order (internalized)
-Drift: honor demands death over shame
+=== NIPPON [LOW-CANON] ===
+Official detail is sparse. Treat Nippon as a distant island realm and generate
+its local states, faiths, military traditions, and Force pressures for the
+campaign. Do not impose a universal Order alignment or honor/death mechanic.
 
-=== ARABY ===
+=== ARABY [LEGACY-LORE; EDITION-VARIABLE] ===
 Core: trade, faith, elemental pacts
 Force: Order (theocratic)
 Drift: Order → isolationism OR Corruption (djinn bargains gone wrong)
@@ -1376,13 +1681,10 @@ Provides: djinn-bound artifacts, desert warfare, trade routes
 Demands: respect for sultans and caliphs, trade agreements
 Key: Sultan of All Araby, Arabyan corsairs, djinn-binders
 
-=== IND ===
-Core: cosmic order through caste and dharma
-Force: Order (spiritual, rigid)
-Drift: Order → Decay (castes calcify) OR Corruption (rakshasa cults)
-Provides: tiger-warriors, mantra magic, philosophical knowledge
-Demands: caste obedience, ritual purity
-Key: Maharajas, Brahmin seers, Temple of the Thousand Gods
+=== IND [LOW-CANON] ===
+Official detail is sparse. Treat Ind as a broad eastern/southern region with
+campaign-generated polities, religions, monsters, and Force alignments. Avoid
+presenting one invented caste/religious model as setting-wide canon.
 ```
 
 ---
@@ -1435,13 +1737,11 @@ Greater Daemons: Bloodthirster (Khorne), Lord of Change (Tzeentch),
                  Great Unclean One (Nurgle), Keeper of Secrets (Slaanesh)
 GM note: daemons don't negotiate. They offer. The price is always you.
 
-=== KHURESH ===
-Core: serpent-empire, domination through venom and sorcery
-Force: Corruption (ancient, cold)
-Drift: Corruption → Decay (empires that eat themselves from within)
-Provides: blood-naga magic, poisons, slave armies
-Demands: subjugation, sacrifice
-Key: Naga-Queens, blood temples, jungle that hunts back
+=== KHURESH [LOW-CANON / OPTIONAL FRAMEWORK] ===
+Official detail is sparse. Serpentine horrors and hostile jungles are useful
+seeds, but a unified blood-naga empire, fixed slavery structure, and universal
+Corruption alignment are optional campaign inventions, not default canon.
+Generate the local threat/faction when Khuresh enters play.
 ```
 
 ---
@@ -1523,7 +1823,7 @@ Note: regular Dwarfs don't talk about them. The Grudge is too deep for words.
 ## THE EMPIRE
 
 ```
-Capital: Altdorf (Emperor, Colleges of Magic, Grand Theogonist)
+Capital/power center: Altdorf (2522: Emperor, Colleges of Magic, Grand Theogonist; 2276: Reikland center, no unified Emperor, Colleges not yet founded)
 Cities: Middenheim (Ulric, militant), Nuln (industry, cannons),
         Talabheim (fortress-crater), Marienburg (trade, smuggling)
 Threats: Beastmen in forests, Chaos cults in cities,
@@ -1628,13 +1928,23 @@ Fog, wolves, peasants who don't go out at night.
 
 ---
 
-# PART X: CLOCKS
+# PART X: PRESSURE CLOCKS
 
 ---
 
 ## OVERVIEW
 
-Uses base clock system. All clocks 0–10, thresholds 3/6/8/10.
+The tracks in Part X are **setting-specific Pressure Clocks** on a 0–10 scale (minimum 0, maximum 10).
+They do NOT replace inherited core clocks: companions, ordinary factions, items,
+locations, threats, Faith relationships, and Faction Drift still use 0–6.
+
+```
+PRESSURE CLOCKS: 0–10, thresholds usually 3/6/8/10.
+CORE CLOCKS:     0–6, exactly as gm-skill.md.
+```
+
+Core abilities that refer to a clock tick (for example GRAND STRATEGIST) also
+apply to hostile Pressure Clock ticks unless that track explicitly says otherwise.
 GM tracks these. Not player-facing unless specified.
 
 ---
@@ -1642,8 +1952,10 @@ GM tracks these. Not player-facing unless specified.
 ## SUSPICION (Personal, per region)
 
 ```
-Gain: visible magic +1, dark magic +2, mutation revealed +2,
-      violence +1, chaos items +2, daemon summoning +3
+Gain: witnessed/traceable visible magic +1, dark magic +2,
+      mutation revealed +2, public/traceable violence +1,
+      chaos items exposed +2, daemon summoning +3
+      Unseen subtle magic = 0 unless later detection/evidence exposes it.
 Reduce: lay low 1 week −1, bribe −1, new identity −1, patron vouches −2
 
 3: NOTICED — gossip, stares
@@ -1720,7 +2032,7 @@ Tick ↓: vengeance, offender suffers, reparation
 
 3: angry, −1 dealings with offender
 6: must act on grudge when possible
-8: obsessive, +1 Decay
+8: obsessive, DIRECT +1 Decay
 10: Slayer oath. Death or settlement.
 ```
 
@@ -1766,7 +2078,7 @@ Weakness: bound by code, cannot refuse challenge
 ```
 CHAOS CHAMPION | HP 65 | AC 18 | Deadly
 Daemon Weapon +8 (2d8+5 + d6 Chaos)
-Regen 5/round, Corruption Aura (+1 Corruption to wounded)
+Regen 5/round, Corruption Aura (first time it wounds a character each combat: DIRECT +1 Corruption to that character)
 Weakness: arrogant, patron-bound
 
 BEASTMAN GOR | HP 20 | AC 12 | Medium
@@ -1786,14 +2098,14 @@ Weakness: cowardly if detected
 
 GREY SEER | HP 35 | AC 12 | Deadly
 Warp Lightning +7 (4d6, DEX DC 16 half)
-Warpstone Tokens (3/day: +3 cast, +1 Corruption each)
+Warpstone Tokens (3/day: +3 cast, DIRECT +1 Corruption each)
 Weakness: paranoid, political enemies
 
 LESSER DAEMON | HP 25 | AC 14 | Medium
 Claws +5 (d8+3). Fear 1, Magic Resist +2, banished at 0 HP.
 
 GREATER DAEMON | HP 100+ | AC 20 | Legendary
-Varies by god (3d10+). Terror 3, Magic Resist +4, Corruption Aura d4/round.
+Varies by god (3d10+). Terror 3, Magic Resist +4. Corruption Aura: end of round, exposed mortals WIS DC 16; Fail = DIRECT +1 Corruption (max once/round per character).
 Campaign-defining encounter. Not casual combat.
 ```
 
@@ -1899,7 +2211,7 @@ TRUTH (d6): 1-2 true | 3-4 partial | 5 exaggerated | 6 false plant
 ## Mission Complications (d12)
 
 ```
-1:  Chaos taint — +1 Corruption if 1+ day here
+1:  Chaos taint — DIRECT +1 Corruption if 1+ day here
 2:  Skaven below — always. They want something here too.
 3:  Wrong patron — employer secretly Chaos/personal agenda/deceived
 4:  Collateral — innocents in crossfire. Save = harder. Ignore = +1 Decay.
@@ -1928,6 +2240,11 @@ COMPETENCE (d6): 1-2 incompetent | 3-4 average | 5 skilled | 6 exceptional
 ---
 
 # PART XIII: LEGENDARY CHARACTERS
+
+The roster below is the **2522 IC default roster**. In 2276 IC or a Custom era,
+do not import these names automatically. Keep only characters verified to exist
+in the selected period and generate era-appropriate rulers, officers, wizards,
+and rivals for everyone else.
 
 ```
 EMPIRE: Karl Franz (Emperor, Ghal Maraz), Balthasar Gelt (Gold Wizard),
@@ -2009,10 +2326,12 @@ Examples:
 ## CONSEQUENCE ESCALATION
 
 ```
-MINOR: +1 force, complication, NPC attitude shift
-MODERATE: +2 force, +1 Condition, clock tick, reputation change
-MAJOR: +3 force, mutation check, companion crisis, regional clock
-CATASTROPHIC: transformation, faction war, regional destruction
+MINOR: +1 scene Force, complication, NPC attitude shift
+MODERATE: up to +2 scene Force, +1 Condition, clock tick, reputation change
+MAJOR: up to +2 scene Force plus mutation check, companion crisis, or regional clock
+CATASTROPHIC: up to +3 scene Force, transformation, faction war, regional destruction
+
+Explicit DIRECT Force costs are applied separately and are not inflated by this table.
 ```
 
 ---
@@ -2020,11 +2339,12 @@ CATASTROPHIC: transformation, faction war, regional destruction
 ## SESSION START
 
 ```
-1. Region? (determines factions, threats, tone)
-2. Tone? Dark (Abercrombie) / Medium (Sapkowski) / Bleak (McCarthy)
-3. Difficulty? Standard / Hardcore (per gm-skill margin thresholds)
-4. Party or solo?
-5. Force bias? (all Order? mixed? one Corruption character?)
+1. Era? 2276 IC / 2522 IC (default) / End Times / Custom
+2. Region? (determines factions, threats, tone)
+3. Tone? Dark (Abercrombie) / Medium (Sapkowski) / Bleak (McCarthy)
+4. Difficulty? Casual / Standard / Hardcore (per gm-skill margin thresholds)
+5. Party or solo?
+6. Force bias? (all Order? mixed? one Corruption character?)
 ```
 
 ---
@@ -2033,12 +2353,13 @@ CATASTROPHIC: transformation, faction war, regional destruction
 
 ---
 
-## Three Currencies
+## Three Pressure Currencies
 
 ```
 FORCE     = who you become (strategic, long-term)
-CONDITION = can you survive (tactical, immediate)
-FORTUNE   = can you avoid it (insurance, limited)
+CONDITION = injury/strain right now (tactical, immediate)
+FORTUNE   = insurance against imposed nonlethal consequences
+Other core resources still exist: Fate, Heroism, ability uses, HP, clocks.
 ```
 
 ---
@@ -2046,7 +2367,7 @@ FORTUNE   = can you avoid it (insurance, limited)
 ## Push
 
 ```
-PUSH (FORCE): +1d4, +1 Force, −1 next related roll
+PUSH (FORCE): +1d4, DIRECT +1 aligned Force, −1 next related roll
               Small bonus now, small pain now, big price later.
 
 PUSH (BODY):  +1d6, +1 Condition, ignore Condition penalties this roll
@@ -2059,12 +2380,13 @@ PUSH (BODY):  +1d6, +1 Condition, ignore Condition penalties this roll
 
 ```
 ORDER:      law → control → oppression → system agent
-CORRUPTION: power → instability → mutation → Spawn (5+: lose Push choice. 7+: lose actions.)
+CORRUPTION: power → instability → mutation → Spawn (5+: Force Push hijacked. 7+: impulse checks; 9+: control saves.)
 DECAY:      survival → numbness → hollowness → undeath (5+: ignore Condition 1+2. 7+: immune mental.)
 
 Thresholds: 3 / 6 / 8 / 10
-One Force event per scene (+1 standard, up to +2 major/dual/amplified). Inaction: +1 Decay.
-Corruption 5+: Push (Force) always → Corruption. Push (Body) unchanged.
+One SCENE Force event per scene (+1 standard, up to +2 major/dual/amplified; +3 catastrophic).
+Explicit DIRECT Force costs bypass that cap and are never double-counted as the scene event.
+Inaction: +1 Decay. Corruption 5+: Push (Force) always → Corruption.
 ```
 
 ---
@@ -2072,15 +2394,15 @@ Corruption 5+: Push (Force) always → Corruption. Push (Body) unchanged.
 ## Condition
 
 ```
-Derived from HP (CON×5+10). Thresholds: 76%+ / 51-75% / 26-50% / 1-25% / 0
-0 healthy | 1 hurt (−1) | 2 wounded (disadv) | 3 critical (save to act) | 4 dying
+Separate 0–4 trauma track with HP floor (CON×5+10 HP).
+HP floors: 76%+→0 | 51-75%→1 | 26-50%→2 | 1-25%→3 | 0 HP→4
+0 healthy | 1 hurt (−1) | 2 wounded (DIS) | 3 critical (DIS + save to act) | 4 collapsed
 
-Condition goes UP as HP goes DOWN. It does NOT automatically go back DOWN when HP is healed.
-Only rest and explicit recovery reduce Condition.
-
-Heavy hit (≥25% max HP): +1 extra Condition
-Massive hit (≥50% max HP): +2 extra Condition
-Condition 4 survived = permanent Mark (max 3)
+HP healing lowers the floor but does not automatically lower current Condition.
+Condition 4 at HP<=0 = core dying state; mental/nonlethal 4 = collapse, not death.
+CON 6 UNKILLABLE functions exactly as core at 0 HP and below.
+Heavy hit (≥25% max HP): +1 extra Condition; Massive (≥50%): +2.
+Recovering from physical 4 = permanent Mark; mental 4 = Disorder. 3+ total = unplayable.
 ```
 
 ---
@@ -2088,11 +2410,12 @@ Condition 4 survived = permanent Mark (max 3)
 ## Fate & Fortune
 
 ```
-FATE: ★★ (permanent, never refreshes)
-  Cheat death at Condition 4 → stabilize at 3 + Mark.
+FATE: permanent, never refreshes
+  When you WOULD DIE: spend 1 → HP 1, Condition 3, clear death saves, gain Mark.
 
-FORTUNE: ◆◆◆ (per session)
-  Reroll | +2 | enemy reroll | −1 Condition | −1 Force
+FORTUNE: per session
+  Reroll | +2 | enemy reroll | −1 imposed Condition | −1 imposed Force
+  Cannot cancel death, HP floor, or voluntarily declared costs.
 ```
 
 ---
@@ -2100,10 +2423,21 @@ FORTUNE: ◆◆◆ (per session)
 ## Magic
 
 ```
-Cast: d20 + INT + Wind vs DC.
-Magic as primary solution = scene amplifier (+1 Force).
-Overcast = Push (Force or Body).
-Miscast: nat 1-2 minor, nat 1 + fail by 5 major.
+Cast: d20 + INT + Wind Affinity vs spell DC; magical access required.
+Magic as primary solution = scene Force amplifier within scene cap.
+Overcast = the casting roll's single Push (Force or Body); max one.
+Dhar/Chaos/Necromancy list explicit DIRECT Force costs.
+Miscast: resolve only the highest severity triggered on a cast.
+```
+
+---
+
+## Clocks
+
+```
+Core clocks (companions, factions, items, locations, threats, Faith, Drift): 0–6.
+IRON LAW Pressure Clocks (Suspicion, regional Chaos/Decay/War, Hunger, Grudge): 0–10.
+Faction Drift uses a hidden core 0–6 clock when a listed Drift becomes active.
 ```
 
 ---

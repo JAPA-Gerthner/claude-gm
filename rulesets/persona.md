@@ -6,6 +6,42 @@ For: social drama, supernatural mystery, time-pressure campaigns, coming-of-age 
 
 ---
 
+## BASE SYSTEM
+
+Persona inherits `gm-skill.md` unless explicitly replaced below.
+
+```
+REPLACES: CHARACTER CREATION
+  Use the Persona character creation overlay in this file. After creation, still
+  run the mandatory core 4/6/8/10 stat-threshold sync and add all unlocked core
+  abilities to the visible sheet.
+
+DISABLES: CORE MAGIC
+  Persona supernatural powers use PERSONA ABILITIES below, not core spell
+  circles/cooldowns. Mundane skills and core stat-threshold abilities remain active.
+
+REPLACES: CLASS-BASED HIT DIE
+  Persona PCs have no core class. All Persona PCs use d8 Hit Dice for core
+  Short Rest healing unless a specific permanent character ability replaces it.
+
+REPLACES: CHAPTER LEVEL UP
+  Use the Persona level-up choices under SEMESTERS. Quest rewards from the
+  Velvet Room are separate and do not replace chapter progression.
+
+REPLACES: SETTING ACTION TEMPLATE
+  Persona uses [ARCANA | CORE MODIFIERS] as its base option template. The Arcana
+  tag tracks Loyalty; all core option rules still apply, including visible DCs,
+  locked modifiers, Heroism, Devil's Bargains, TRICKSTER additions, DOUBLE TAKE,
+  companion options, and the trivial-only use of [-].
+```
+
+Core HP, AC, death saves, combat action economy, Heroism, clocks, companions,
+margin outcomes, rests, and stat thresholds remain active unless this file says
+otherwise. Persona-specific Loyalty is an identity mechanic; it does not replace
+Heroism or Companion clocks.
+
+---
+
 ## SETTING OVERVIEW
 
 Students by day, Persona users by night. Balance school life with shadow world expeditions. Your choices shape who you become.
@@ -94,10 +130,14 @@ EXPEDITION STRUCTURE:
 5. Exit via rift
 
 EXPLORATION TURN:
-Each "room" or area = one exploration action
-- GM describes environment
-- Player chooses: Scout / Push forward / Investigate / Rest
-- Encounter check (d6): 1-2 shadow, 3-4 discovery, 5-6 clear
+Each "room" or area = one exploration beat.
+- GM describes environment.
+- Scout / Push Forward / Investigate / Rest are APPROACH FAMILIES, not a
+  four-option replacement for the Persona/core response format.
+- Generate the normal 8-10 Persona BASE options from the situation, tag each
+  with Arcana + locked core modifiers, then apply core preflight additions.
+- Encounter check (d6): 1-2 shadow, 3-4 discovery, 5-6 clear.
+- Rest is safe only in a Safe Room; elsewhere it can trigger normal danger.
 
 EXPEDITION LENGTH:
 - Layer 1: 3-5 rooms to target
@@ -111,7 +151,7 @@ DISCOVERIES (d10):
 1. Rift to another layer (shortcut)
 2. Essence fragment (upgrade existing)
 3. Memory echo (lore, hints about threat)
-4. Safe room (full rest, no encounters)
+4. Safe room (Expedition Rest, no encounter)
 5. Trapped area (DEX save or damage)
 6. Lost ally NPC (rescue = recruitment chance)
 7. Shadow cache (random essence)
@@ -146,10 +186,18 @@ LAYER 4 (Abyss):
 
 ```
 RETREAT:
-- Can retreat any time (find rift back)
-- Retreat = mission failed, no quest reward
-- Injured allies = carried out (slower)
-- Dead allies = left behind (narrative weight)
+- You may ATTEMPT retreat at any time; it is not automatic under pressure.
+- Outside immediate danger: finding a known rift is trivial.
+- During combat/chase/active pursuit: use normal movement, reactions, checks,
+  and enemy pressure until the party reaches or creates an exit.
+- Retreat = mission failed, no quest reward.
+- Injured allies = carried out (slower; GM may impose a movement/check cost).
+- Dead allies = left behind unless recovered through play.
+
+EXPEDITION REST:
+- A Safe Room allows one core Short Rest without spending another Real World
+  action slot. It is NOT an 8-hour Long Rest and does not fully refresh resources.
+- One Safe Room cannot be farmed repeatedly during the same expedition.
 ```
 
 ```
@@ -160,13 +208,16 @@ Layers 1-3: Fixed difficulty
 - Layer 1 late-game = victory lap, shows progress
 
 Layer 4+: Always dangerous
-- Scales to party (GM adjusts)
-- Never trivial, always costs something
+- Scale encounter composition, enemy abilities, hazards, objectives, and numbers.
+- NEVER raise/lower a locked DC after considering the player build or modifiers.
+- Never trivial, always costs something.
 
 Semester Bosses: Always hard
-- Designed for current party power
-- Expect ally deaths, close calls
-- Victory should feel earned
+- Build the boss encounter for the campaign's current tier BEFORE presenting options.
+- Tune statblocks, abilities, phases, hazards, and reinforcements — not a locked DC
+  after seeing player modifiers.
+- Expect close calls; ally death is possible but never predetermined.
+- Victory should feel earned.
 ```
 
 ### Rifts
@@ -190,9 +241,11 @@ Finding rifts:
 ```
 THE VELVET ROOM
 - Exists between reality and Shadow World
-- ONLY place in Shadow World accessible during DAYTIME
-- Instant travel to ANY layer via rifts inside
-- Quest hub — main source of progression rewards
+- ONLY Shadow-adjacent place accessible during DAYTIME; daytime access is hub-only
+- Instant travel to any UNLOCKED layer via rifts inside
+- Quest hub — main source of Persona/Soul/Essence progression rewards
+- Entering a Shadow World layer still requires an Expedition action slot (normally Evening)
+- Daytime Velvet Room visits cannot start/continue an expedition unless a story event explicitly overrides the calendar
 
 IGOR (always present):
 - Ancient, long-nosed, unsettling smile
@@ -243,14 +296,15 @@ Time is your most limited resource.
 ```
 WEEKDAY (Monday - Friday):
 
-MORNING — Automatic
-- School, classes, events
-- No player choice
-- GM may trigger: tests, conflicts, news
+MORNING — Automatic calendar block
+- School, classes, events happen without consuming a free action slot.
+- There is no choice of morning ACTIVITY slot.
+- If a scene/conflict occurs, play it normally with core rolls and numbered options.
+- GM may trigger: tests, conflicts, news.
 
 AFTERNOON — 1 Action
 - Recruit ally / spend time with ally
-- Fulfill obligations (club, family)
+- Fulfill obligations (club, school duty)
 - Personal project
 
 EVENING — 1 Action
@@ -292,6 +346,23 @@ NOT ENOUGH TO:
 - Do everything you want
 ```
 
+### Action Slot Rules
+
+```
+REAL WORLD ACTION SLOT = a calendar resource, not a core Clock tick.
+- One listed Afternoon/Evening/Weekend activity consumes one slot.
+- An Expedition consumes the slot used to begin it; its internal rooms do not
+  consume additional Real World slots unless the fiction explicitly crosses into
+  a new calendar period.
+- Velvet Room hub visits may be folded into the same action that uses their
+  service; they do not create free extra expeditions.
+- Core INT 8 GRAND STRATEGIST cannot prevent calendar time from passing.
+
+Use core Clocks for things that can progress or regress independently:
+relationships, club standing, investigation progress, and the semester threat.
+Calendar dates/deadlines themselves are fixed time, not Clocks.
+```
+
 ### Special Days
 
 ```
@@ -318,12 +389,20 @@ Recruit NPCs in Real World. Take them to Shadow World — risk their lives.
 ### Ally Structure
 
 ```
-=== ALLY: [Name] ===
+=== ALLY / COMPANION: [Name] ===
 Arcana: [their Arcana]
 Role: [what they do]
 Status: [available / injured / dead]
-Relationship: [how close]
+Combat: HP [X] | AC [X] | relevant stats [record actual values]
+Role Ability: [one concrete trigger/effect/cooldown]
+Goal: [their personal quest]
+Clock: ●●●○○○ (start 3/6 unless fiction says otherwise)
+Relationship: [derived from Clock]
 ===
+
+Before an Ally joins an expedition, record their actual combat profile once;
+do not improvise changing HP/AC/modifiers from turn to turn. Core companion Bond
+Abilities and Persona Role Abilities may coexist if both are recorded.
 
 ROLES (examples):
 - Fighter: combat support, deals damage
@@ -343,46 +422,58 @@ RECRUITING AN ALLY:
 3. Help with their problem (attendant quest style)
 4. They join — now available for expeditions
 
-RELATIONSHIP LEVELS:
-- Acquaintance: will help occasionally
-- Friend: reliable, comes when asked
-- Close: always available, fights harder
-- Bonded: dies for you (literally)
+RELATIONSHIP LEVELS (map to the core Companion Clock):
+- 1-2/6 Acquaintance: will help occasionally; crisis loyalty at disadvantage
+- 3/6 Friend: reliable baseline
+- 4-5/6 Close: strongly committed; crisis loyalty at advantage at 5/6
+- 6/6 Bonded: companion quest resolves/rewards, then gains a new goal or may leave happy
+
+Use the core Companion rules for ticks, decay, crisis loyalty, CHA threshold
+abilities, and companion actions. `Bonded` never means automatic suicidal obedience;
+life-or-death loyalty still uses the core crisis check.
 ```
 
 ### Party in Shadow World
 
 ```
 TAKING ALLIES:
-- Choose who comes (0 to all available)
-- They ACT in combat/exploration (not passive bonuses)
-- Fighter fights, Medic heals, Hacker hacks
-- THEY CAN DIE — permanent loss
+- Choose who comes from available companions. There is no free `friend army`:
+  bringing more allies also escalates enemy attention, encounter composition,
+  logistics, and the number of people at risk under the core ALLIES AT RISK rule.
+- They ACT in combat/exploration (not passive bonuses).
+- Fighter fights, Medic heals, Hacker hacks.
+- THEY CAN DIE — permanent loss.
 
 ALLY DEATH:
-- If ally HP reaches 0 and not saved = dead
-- Dead = gone forever
-- Funeral scene in Real World (optional)
-- Their Arcana may haunt you (narrative)
+- Allies use core HP/death saves unless their template explicitly replaces them.
+- 0 HP = unconscious and death saves; 3 failures = dead, 3 successes = stable.
+- Massive damage and other core instant-death rules still apply.
+- Dead = gone forever unless a specific established supernatural effect says otherwise.
+- Funeral scene in Real World (optional).
+- Their Arcana may haunt you (narrative).
 
 ALLY INJURY:
-- Survive but wounded = unavailable for X days
-- Must recover in Real World
-- Can spend time with them to speed recovery
+- Survive but wounded = unavailable for a fiction-appropriate recovery period.
+- Set and record the exact return date immediately when the injury occurs; do not
+  keep it as an undefined `X days`.
+- Must recover in Real World.
+- Spending a meaningful action helping them may shorten recovery if the fiction
+  supports it; state the amount before resolving that action.
 ```
 
 ### Maintaining Relationships
 
 ```
 IGNORE ALLY TOO LONG:
-- Relationship degrades
-- May refuse to come on expeditions
-- Eventually leave (not dead, just gone)
+- Use core Companion decay: after 3 significant events of ignoring them, Clock −1.
+- Clock 1-2: they may refuse risky expeditions unless crisis loyalty succeeds.
+- Clock 0: leaves hostile / may become an enemy, per core Companion rules.
 
 SPEND TIME:
-- Keeps relationship strong
-- May unlock personal quests
-- Deepens bond = better performance
+- Meaningful help or a successful social scene may tick the Companion Clock +1.
+- Personal quests emerge from the companion Goal.
+- Better relationship improves crisis reliability; do not invent a second hidden
+  relationship meter.
 ```
 
 ---
@@ -392,20 +483,23 @@ SPEND TIME:
 Real World demands your time. Ignore at your peril.
 
 ```
-EXAMS (once per semester):
-- Must study or fail
-- FAIL = EXPELLED = GAME OVER
-- No second chances — manage your time
+SCHOOL STANDING (core Clock, 0-6; start 3):
+- Study / attend key obligations / solve school problems → may tick +1.
+- Repeated neglect, failed exams, serious misconduct → may tick −1.
+- Exam week resolves using current preparation and appropriate INT/WIS/CHA rolls.
+- 0/6 = disciplinary crisis; expulsion is a possible consequence after a final
+  scene/check, not an automatic one-roll GAME OVER.
 
-CLUBS/ACTIVITIES:
-- Skip too often = kicked out
-- Lose access to certain NPCs/locations
-- Some allies only available through clubs
+CLUB STANDING (one core Clock per important club, 0-6):
+- Meaningful attendance/help → +1 when earned.
+- Repeated neglect or betrayal → decay/tick down.
+- 0/6 = kicked out / access lost; 6/6 = reward, position, contact, or completed arc.
 
-MAIN THREAT DEADLINE:
-- End of semester = confrontation
-- Not ready = TPK risk
-- Allies help survive
+MAIN THREAT:
+- End-of-semester DATE is fixed calendar time and cannot be prevented by clock abilities.
+- Threat Preparedness / Investigation uses a normal core Clock.
+- Low preparedness makes the confrontation harder through established enemy
+  advantages, missing information, hazards, or reinforcements — not retroactive DC inflation.
 ```
 
 ---
@@ -426,8 +520,151 @@ VOID — contemplation, secrets, "waiting"
 Oppositions:
 SPARK <-> VOID (action vs contemplation)
 BOND <-> SHADOW (for others vs for self)
-ORDER — neutral, hostile to chaos extremes
+ORDER has NO opposed cluster; for an ORDER Persona, every non-ORDER cluster is
+neutral (−3). ORDER-tagged actions are neutral (−3) to non-ORDER Personas unless
+they are in that Persona's own cluster/opposition relationship.
 ```
+
+### Arcana in Society
+
+Arcana are not only Persona labels. They are the setting's shared vocabulary for
+values, instincts, and social conflict. Use the same structure for NPCs and
+factions so the world reflects the same ideological geometry as the player.
+
+```
+MANDATORY ALIGNMENT:
+- Every meaningful named NPC has one ARCANA alignment, even if they are not a
+  Persona user. It describes the value-pattern they instinctively respect.
+- Every meaningful faction/organization has one primary CLUSTER alignment. It
+  describes which family of values the institution treats as legitimate.
+- A member's personal Arcana does NOT have to match their faction's Cluster.
+  That mismatch is a ready-made source of loyalty, hypocrisy, reform, or revolt.
+- Arcana/Cluster are not supernatural mind-reading. Apply them only after values
+  become legible through words, choices, reputation, or observed behavior.
+```
+
+### Social Compatibility
+
+Use the existing Cluster relationships as the world's ideological map.
+
+```
+EXACT ARCANA — RESONANCE
+- Same Arcana means mutual LEGIBILITY, not automatic friendship or agreement.
+- Both characters recognize the same underlying value-pattern and can predict
+  what the other respects, fears, or reaches for under pressure.
+- When their shared Arcana points toward the SAME immediate goal or compatible
+  roles, the first relevant social roll between them in that scene has ADV.
+- When the same Arcana demands incompatible roles, ownership, interpretations,
+  or sacrifices, Resonance becomes FEEDBACK instead (see ARCANA CHEMISTRY).
+
+SAME CLUSTER, DIFFERENT ARCANA — TOLERANCE
+- They may disagree on method, but consider each other's values legitimate.
+- No Arcana friction modifier. Disagreement alone does not create hostility.
+
+NEUTRAL CLUSTER — DISTANCE
+- Different worldview, but no built-in ideological enemy relationship.
+- No automatic modifier; fiction and existing relationships decide.
+
+OPPOSED CLUSTER — FRICTION
+- The values directly challenge what the NPC/faction believes should guide life.
+- A social approach that asks them to endorse an opposed-Cluster value takes -2
+  on the relevant roll. Merely belonging to the opposed Cluster is NOT enough.
+
+ORDER SPECIAL CASE
+- ORDER has no opposed Cluster. Non-ORDER approaches are neutral unless another
+  specific relationship, taboo, or faction rule creates conflict.
+```
+
+**One modifier only:** use the most specific Arcana/Cluster relation; never stack
+Resonance/Tolerance/Distance/Friction with each other. These modifiers affect
+only value-laden social approaches, never unrelated combat, investigation, or
+routine service rolls.
+
+### Arcana Chemistry
+
+**Arcana is not personality.** It is the value-pattern a person returns to under
+pressure. An Emperor can be gentle; a Fool can be serious; a Devil can love
+someone sincerely. Arcana predicts the *shape of the choice*, not the surface
+mood.
+
+Same Arcana is therefore a feedback loop, not a compatibility score.
+
+```
+RESONANCE:
+- Shared Arcana + compatible immediate goal/roles = mutual legibility.
+- First relevant social roll in the scene has ADV.
+- NPC-NPC pairs usually coordinate unusually well when the shared pattern points
+  outward at a third problem, institution, enemy, or task.
+
+FEEDBACK:
+- If the shared Arcana demands mutually exclusive roles, resources,
+  interpretations, or sacrifices, do NOT grant Resonance ADV.
+- Before a roll, the GM names the visible Feedback risk.
+- On Partial/Fail, express that Arcana's Feedback complication in the fiction.
+  On Success+, the characters contain it for this beat; the underlying tendency
+  may still return later if circumstances remain unchanged.
+- Feedback may tick an existing Companion/Faction/Threat clock only when the
+  complication genuinely changes that relationship or institution.
+
+IMPORTANT:
+- Same Arcana does NOT mean "friends."
+- Same Cluster does NOT mean "allies."
+- Opposed Cluster does NOT mean "enemies."
+- Never build a 22x22 reaction matrix. For different Arcana, use their written
+  values + Cluster relation + current goals to derive chemistry in play.
+```
+
+#### Resonance Feedback by Arcana
+
+| Arcana | When two of them resonate | Feedback risk when the pattern turns inward |
+|---|---|---|
+| Fool | Instant permission to leap, explore, and ignore convention together | Risk escalation: each normalizes the other's next reckless step until neither wants to be the cautious one |
+| Magician | Fast improvisation, private jokes, layered tricks, creative problem-solving | Trickster duel: both expect an angle, hide contingencies, and start trying to out-clever the other |
+| Chariot | Mutual respect through action; frightening momentum against a common obstacle | Contest for victory: disagreement becomes challenge, retreat feels humiliating, and cooperation turns into competition |
+| Strength | Deep respect for courage, restraint, and controlled force | Silent endurance loop: both refuse to admit fear, pain, or need until the pressure finally breaks somewhere else |
+| Sun | Energy multiplies; confidence and openness become contagious | Positivity feedback: bad news gets minimized, caution feels disloyal, and the pair can cheer each other past obvious danger |
+| Empress | Care compounds; they rapidly create safety, comfort, and belonging | Smothering care: both decide what others need, compete to nurture, or make dependence feel like love |
+| Lovers | Immediate emotional recognition; choosing each other becomes effortless | Fusion: the bond becomes the whole world, outside duties and relationships fade, and disagreement feels like betrayal |
+| Temperance | Exceptional mediation; each instinctively searches for a bridge | Compromise paralysis: every hard edge gets blended away until nobody will choose, condemn, or accept necessary conflict |
+| Star | Hope becomes self-reinforcing; vulnerability feels unusually safe | Idealization bubble: each protects the other's dream from criticism until hope stops touching reality |
+| World | Powerful instinct to integrate people, ideas, and unfinished arcs | Assimilation: difference gets treated as something that must be reconciled, completed, or absorbed into one whole |
+| Emperor | Clear hierarchy, responsibility, and coordinated control over a shared domain | Sovereignty clash: both understand command perfectly, but neither naturally occupies the subordinate role |
+| Hierophant | Shared ritual, precedent, and institutional language create immediate legitimacy | Schism: small doctrinal differences become existential because both know exactly which rules are "supposed" to be sacred |
+| Justice | Strong procedural trust; evidence, promises, and fair terms are easy to establish | Tribunal spiral: each audits the other's consistency until mercy, context, and ordinary compromise look like corruption |
+| Judgement | They can force honest reckoning and recognize genuine attempts to change | Endless accounting: every wound demands acknowledgement, every pardon demands proof, and the past never quite finishes being tried |
+| Death | They cut through denial and can end doomed things without sentimentality | Cascade of endings: once removal becomes the answer, they keep finding one more bond, institution, or identity that "must die" |
+| Devil | Instant recognition of appetite, leverage, ambition, and forbidden desire | Mutual exploitation: intimacy becomes bargaining, every gift has an angle, and both keep testing who owns whom |
+| Tower | They see structural rot quickly and fear sacred cows less than anyone | Escalation: critique becomes demolition, demolition becomes purification, and neither wants to be the one who saves the last wall |
+| Moon | They notice ambiguity, fear, hidden motives, and unstable perceptions others miss | Paranoia loop: each validates the other's suspicion until uncertainty itself becomes evidence |
+| High Priestess | Silence is comfortable; implication and intuition carry enormous information | Secrecy spiral: both withhold what they know, infer around the gaps, and can become convinced they understand truths never actually spoken |
+| Hermit | Mutual respect for distance; they can think together without demanding performance | Shared disappearance: neither reaches outward, obligations decay, and the relationship becomes an island cut off from everyone else |
+| Wheel of Fortune | Strong tolerance for uncertainty, reversals, coincidence, and changing plans | Agency erosion: escalating bets and fatalism let "fate" decide choices both could have taken responsibility for |
+| Hanged Man | Extraordinary patience, perspective-taking, and willingness to sacrifice | Martyr stalemate: both wait, yield, or suffer for the other until action itself starts to feel selfish |
+
+**Group rule:** for a recurring group or faction scene, identify at most ONE
+Resonance pair and ONE Feedback/Friction fault line that matter right now. Do not
+simulate every pair. Change which relationship is foregrounded as goals and
+pressure change. This lets the player observe a faction evolving through its
+Arcana chemistry instead of facing a static hive mind.
+
+### Faction Alignment
+
+A faction's Cluster is broader than an NPC's Arcana. Two factions in the same
+Cluster can be bitter rivals while still recognizing each other's worldview as
+legitimate; opposed Clusters tend to disagree about ends, not merely methods.
+
+```
+FACTION PROFILE:
+Cluster: [SPARK / BOND / ORDER / SHADOW / VOID]
+Public Value: [what this institution says its Cluster means]
+Red Line: [which behavior it will not legitimize]
+Dominant Arcana: [optional; roll within Cluster for institutional style]
+Internal Dissent: [named NPC or bloc whose Arcana pulls elsewhere]
+```
+
+For any major recurring faction, create at least TWO named representatives with
+different Arcana. At least one may be outside the faction's Cluster. A faction is
+never a hive mind; its Cluster is institutional gravity, not a personality lock.
 
 ### Loyalty Modifiers
 
@@ -437,10 +674,11 @@ Action in your Cluster (different Arcana): +0
 Action in neutral Cluster: -3
 Action in opposed Cluster: -5
 
-When loyalty reaches 10 or less (danger zone):
-- Every action outside your Arcana = roll for Persona transformation
-- Transformation changes Persona to Arcana of that action
-- New Persona = new abilities, old upgrades LOST
+When Loyalty reaches 10 or less (danger zone):
+- A meaningful off-Arcana attempt triggers the flat transformation check in PERSONA SYSTEM.
+- Transformation changes Persona to the Arcana of that attempted action.
+- Only Persona-owned abilities/upgrades are replaced; permanent character/core
+  abilities, Soul, Essences, HP/stats, Heroism, and Companion clocks remain.
 ```
 
 ---
@@ -896,9 +1134,10 @@ Appearance: [description]
 Loyalty: [0-100, starts at 50]
 
 ABILITIES:
-- [Ability]: [narrative effect]
-- [Ability]: [narrative effect]
-- [Ability]: [narrative effect]
+- [Ability] — Tier [1-4]. [trigger/use]. [stat + target/DC if rolled].
+  [concrete effect; include damage/healing/duration if relevant].
+- [Ability] — Tier [1-4]. ...
+- [Ability] — Tier [1-4]. ...
 
 EVOLUTION: [current form]
 ===
@@ -917,25 +1156,43 @@ LOSING LOYALTY:
 - Action in neutral Cluster: -3
 - Action in opposed Cluster: -5
 
+LOYALTY TIMING:
+- Loyalty changes when the player commits to and meaningfully attempts the tagged
+  approach. Success/failure of the check does not erase the identity choice.
+- If the action is interrupted before it is meaningfully attempted, no Loyalty change.
+- Trivial actions and repeated micro-actions cannot farm Loyalty. Repeating the same
+  identity approach in the same scene changes Loyalty again only if stakes/context
+  meaningfully changed.
+
 TRANSFORMATION TRIGGER:
 When loyalty <= 10 (danger zone):
-1. Apply loyalty change from action FIRST
-2. If loyalty <= 10, roll d20 for EVERY action not matching your Arcana
-3. On 11+: Persona transforms to Arcana of that action
-4. On 10 or less: Persona stays, still in danger zone
+1. Apply Loyalty change from the attempted action FIRST.
+2. If loyalty <= 10 and the action does not match your current Arcana, make a
+   FLAT TRANSFORMATION CHECK: d20, no modifiers, no margin tiers.
+3. Natural 1/20 do not tier-shift this flat check.
+4. 11+: Persona transforms to the Arcana of that action.
+5. 1-10: Persona stays, still in danger zone.
 
-Loyalty cannot go below 0. Once in danger zone (10 or less), you must
-build it back up with your Arcana actions or risk transformation.
+Loyalty is capped at 0-100. Once in danger zone, build it back with your Arcana
+actions or risk transformation.
 
 HIGH LOYALTY BONUS:
-- Loyalty 50+: +1 to rolls when acting in your Arcana
-- Loyalty 100: +2 to rolls when acting in your Arcana
+- Loyalty 75-99: +1 to rolls when acting in your Arcana
+- Loyalty 100: +2 total to rolls when acting in your Arcana
 
 TRANSFORMATION EFFECTS:
-- New Persona, new Arcana
-- ALL abilities change (no carry-over)
-- Loyalty resets to 50
-- Essence upgrades remain (they're on YOU, not Persona)
+- New Persona, new Arcana; generate its name/appearance with the Persona Generator
+  and give it 2-3 Tier 1 abilities fitting the new Arcana
+- Persona-owned abilities and Persona-specific ability upgrades change (no carry-over)
+- Core stat-threshold abilities, chapter-earned character abilities, Soul tier,
+  Essences, HP, stats, Heroism, and Companion clocks remain
+- Loyalty resets to 50 BEFORE persistent Essence modifiers (e.g. Velvet Blessing)
+- Run mandatory core mechanics sync after transformation
+
+LOYALTY vs HEROISM:
+- Acting outside your Arcana does NOT automatically remove Heroism.
+- Heroism changes only when the action also supports/betrays the character's
+  established broader nature under the core Heroism rule.
 ```
 
 ### Staying in Character
@@ -951,10 +1208,16 @@ This prevents reroll spam while allowing character growth.
 
 ### Arcana Matching Bonus
 
-When interacting with NPC who shares your Arcana:
-- Advantage on social rolls
-- Easier to build relationship
-- Deeper understanding
+Use **Arcana Chemistry** above rather than a flat compatibility bonus.
+
+When interacting with an NPC who shares your Arcana:
+- Compatible shared impulse/roles → Resonance: ADV on the first relevant social
+  roll in the scene.
+- Incompatible role/claim/sacrifice → Feedback: no Resonance ADV; GM states the
+  Arcana-specific Feedback risk before the roll, and Partial/Fail may realize it.
+- A Success+ on a meaningful relationship scene may tick that Companion Clock +1.
+- Mutual legibility is narrative information, not mind-reading and not automatic
+  affection, loyalty, or agreement.
 
 ---
 
@@ -978,6 +1241,17 @@ BAD ABILITIES:
 - Ice: d6 ice damage (same thing different color)
 ```
 
+Every generated Persona ability MUST still have a mechanical record:
+- Tier/cooldown
+- trigger or declared use
+- roll stat and target/DC when uncertainty exists
+- explicit damage/healing/duration when those matter
+- one clear effect on clocks/options/position/conditions if it changes them
+
+The narrative description may be flexible, but the mechanical payload cannot change
+retroactively to fit the roll result. Cluster ability lists in GM TOOLS are seeds;
+assign these fields when an ability is actually granted.
+
 ### Ability Categories
 
 ```
@@ -997,15 +1271,27 @@ SUPPORT: Help allies
 - Buffs, heals, transfers, links
 ```
 
-### Magic Costs
+### Persona Ability Tiers
 
-Standard circle magic with consequences:
+Persona abilities replace core Magic. They are still ordinary core abilities:
+write a trigger/effect, roll stat + visible DC when uncertain, and state cooldown.
 
 ```
-CIRCLE 1: Minor effects, at-will or minor fatigue
-CIRCLE 2: Significant effects, fatigue or limited uses
-CIRCLE 3: Major effects, serious cost or once per expedition
-CIRCLE 4+: Extreme effects, dramatic cost, story permission
+TIER 1: Minor / flexible — at-will.
+TIER 2: Significant — 1/scene.
+TIER 3: Major — 1/expedition.
+TIER 4: Extreme — 1/chapter AND story permission.
+
+DEFAULT RESISTANCE WHEN AN ABILITY TARGETS AN UNWILLING CREATURE:
+- Physical restraint / blast / movement: attack roll or target DEX/CON as fiction fits
+- Fear / charm / illusion / command: target WIS
+- Deception / social manipulation: CHA vs 10 + target WIS where appropriate
+- GM sets and shows the DC before player modifiers; bosses may have explicit defenses.
+
+UPGRADING A PERSONA ABILITY:
+- Improve one clear dimension: effect, area, duration, reliability, or cooldown.
+- Do not silently increase multiple dimensions at once.
+- Persona-specific upgrades are lost if that Persona transforms.
 ```
 
 ---
@@ -1024,10 +1310,16 @@ Visual: [depends on current Arcana]
 ===
 
 SOUL RULES:
-- Visual form changes with Persona Arcana (see table)
-- Damage tier is PERMANENT (bound to you, not Persona)
-- Cannot find new weapons — only upgrade your Soul
-- Starts at d6, upgrades via Velvet Room quests
+- Visual form changes with Persona Arcana (see table).
+- Visual form is COSMETIC unless a separate ability/Essence says otherwise: `dual
+  daggers` does not grant an extra attack, `sword + shield` does not grant shield AC,
+  `greatsword` does not gain Heavy properties, etc.
+- Soul damage tier is PERMANENT (bound to you, not Persona).
+- In the Shadow World, the Soul is your only scaling weapon; mundane weapons do
+  not create a second weapon-progression track.
+- Starts at d6 when Awakening occurs, upgrades via Velvet Room quests.
+- Use STR for forceful/melee Soul attacks and DEX for precise/ranged Soul attacks
+  unless an established ability explicitly substitutes another stat.
 ```
 
 ### Soul Visual by Arcana
@@ -1129,19 +1421,24 @@ Pattern: Name → Source (how obtained) → Effect (one clear bonus)
 
 ## ACTION FORMAT
 
-ALL actions use [ARCANA, STAT] format. Combat, social, exploration — everything.
+ALL Persona base actions use `[ARCANA | CORE MODIFIERS]`. Combat, social,
+exploration — everything still follows the core option contract.
 
-This tracks loyalty automatically. Player sees which Arcana each choice belongs to.
+The Arcana tag tracks Loyalty. The modifier side shows the same locked information
+as core: STAT DC, ADV/DIS, bonuses/penalties, Heroism, Bargains, etc.
 
 ### Format
 
 ```
-[ARCANA, STAT] Action with stat check
-[ARCANA, -] Action without stat check
+[ARCANA | STR 12] Action with a roll
+[ARCANA | DEX 14, ADV, +surprise] Action with modifiers
+[ARCANA | -] Truly trivial action without a roll
 
-EVERY action has Arcana association.
-"-" means no stat check, but Arcana always present.
-No neutral actions — everything reflects who you are.
+EVERY offered action has an Arcana association. Lock the Arcana tag when the option
+is generated, based on the dominant method; never retag it after seeing the roll/result.
+`[-]` is legal only when the action is genuinely trivial under core rules.
+Do not hide a meaningful risk behind `[-]` because the Arcana or Persona would help.
+No Arcana-neutral options: every meaningful approach reflects who you are.
 ```
 
 ### Combat Example
@@ -1149,13 +1446,13 @@ No neutral actions — everything reflects who you are.
 ```
 GM: Shadow attacks!
 
-1. [CHARIOT, STR] Charge and strike — Persona amplifies blade
-2. [MAGICIAN, DEX] Feint and backstab — Persona distracts
-3. [FOOL, -] Throw random object — Persona guides it somehow
-4. [HERMIT, WIS] Analyze enemy — find weakness
-5. [TEMPERANCE, CHA] Try to calm it — Persona soothes
-6. [STAR, -] Use healing item on ally — share hope
-7. [DEATH, -] Tactical retreat — end this fight to fight another
+1. [CHARIOT | STR 12] Charge and strike — Persona amplifies blade
+2. [MAGICIAN | DEX 14] Feint and backstab — Persona distracts
+3. [FOOL | DEX 14, +improvised] Hurl a random object and trust instinct
+4. [HERMIT | WIS 12] Analyze enemy — find weakness
+5. [TEMPERANCE | CHA 16] Try to calm it — Persona soothes
+6. [STAR | -] Use a ready healing item on an adjacent ally
+7. [DEATH | DEX 12] Break contact and retreat toward the rift
 ```
 
 ### Social Example
@@ -1163,13 +1460,13 @@ GM: Shadow attacks!
 ```
 GM: Upperclassman is bullying a first-year in the hallway.
 
-1. [CHARIOT, STR] Confront bully directly, get in his face
-2. [EMPRESS, CHA] Comfort the victim, ignore bully
-3. [MAGICIAN, CHA] Trick bully into embarrassing himself
-4. [DEVIL, CHA] Blackmail bully — you know his secret
-5. [HERMIT, -] Walk past, not your problem
-6. [JUSTICE, CHA] Report to teacher, proper channels
-7. [FOOL, -] Yell something random, chaos ensues
+1. [CHARIOT | CHA 12] Confront bully directly, get in his face
+2. [EMPRESS | CHA 8] Comfort the victim and get them clear
+3. [MAGICIAN | CHA 14] Trick bully into embarrassing himself
+4. [DEVIL | CHA 16, +leverage] Blackmail bully — you know his secret
+5. [HERMIT | -] Walk past without engaging
+6. [JUSTICE | CHA 10] Report the incident through proper channels
+7. [FOOL | CHA 14] Disrupt the scene with a reckless public stunt
 ```
 
 ### Exploration Example
@@ -1177,13 +1474,13 @@ GM: Upperclassman is bullying a first-year in the hallway.
 ```
 GM: You found a locked door in Layer 2. Strange symbols on it.
 
-1. [CHARIOT, STR] Break it down
-2. [MAGICIAN, INT] Find a clever bypass
-3. [HIGH PRIESTESS, WIS] Meditate, let intuition guide
-4. [HIEROPHANT, INT] Study symbols, find ritual meaning
-5. [TOWER, STR] Destroy the whole wall
-6. [HERMIT, WIS] Wait and observe, see if something changes
-7. [WHEEL OF FORTUNE, -] Try random combination — trust fate
+1. [CHARIOT | STR 16] Break it down
+2. [MAGICIAN | INT 12] Find a clever bypass
+3. [HIGH PRIESTESS | WIS 14] Meditate, let intuition guide
+4. [HIEROPHANT | INT 12] Study symbols, find ritual meaning
+5. [TOWER | STR 18, +destructive] Destroy the whole wall
+6. [HERMIT | WIS 10] Wait and observe for a pattern
+7. [WHEEL OF FORTUNE | INT 16] Try a random combination and trust fate
 ```
 
 ### Why This Matters
@@ -1211,16 +1508,22 @@ COMPLEX SCENE (10 options):
 ```
 
 **Rules:**
-- Option 1 is always safe (your Arcana)
-- Options 2-3 are neutral (same cluster, +0)
-- Situational options are temptation (other clusters, -3 or -5 loyalty)
-- Last option creates momentum (repeat behavior = easier to continue)
+- These 8-10 are the Persona BASE options. Generate them first, then apply all
+  active core passives/additions (TRICKSTER, Bargains, DOUBLE TAKE, companions, etc.).
+- Every core-added option also receives the Arcana tag that best matches its actual
+  method. Loyalty applies normally; a Bargain/Heroism tag never replaces Arcana.
+- Option 1 is always LOYALTY-SAFE (+1), not fictionally safe or guaranteed to succeed.
+- Options 2-3 are Loyalty-neutral (same cluster, +0).
+- Situational options are temptation (other clusters, -3 or -5 Loyalty).
+- Last option creates momentum; it repeats the previous action's Arcana, not an
+  automatic mechanical bonus.
+- Every nontrivial option shows a locked DC and all known modifiers before choice.
 
 ---
 
 ## COMBAT
 
-Uses standard gm-skill.md combat system. See core rules for HP, damage, death saves.
+Uses standard `gm-skill.md` combat system: HP, AC, damage, death saves, initiative, action economy, conditions, Heroism, and stat-threshold combat abilities all remain active.
 
 Persona-specific additions below.
 
@@ -1263,13 +1566,20 @@ Who are you?
 Standard array: 4, 3, 3, 2, 2, 1
 Assign to: STR, DEX, CON, INT, WIS, CHA
 
-OR roll: 6 x (d4+1)
+RANDOM MODE: randomly shuffle the SAME array among the six stats.
+Do not use 6 × (d4+1); it has a much higher expected total than the standard array.
+
+HP = CON × 5.
+AC = 10 + DEX unless equipment/ability changes it.
+After stats are final, immediately run the mandatory core 4/6/8/10 threshold sync.
 ```
 
 ### Step 3: Starting Arcana
 
 ```
-Choose or roll d22 for starting Arcana.
+Choose an Arcana intentionally, OR use a true d22 roll if the player selects random generation.
+For random Arcana, result N maps to Major Arcana number N−1:
+1 = Fool (0), 2 = Magician (I), ... 22 = World (XXI).
 This determines your initial Persona's personality and abilities.
 
 Consider: What archetype fits your character concept?
@@ -1286,7 +1596,9 @@ Consider: What archetype fits your character concept?
 AWAKENING happens in play. Establish:
 - Arcana (from step 3)
 - Appearance concept (reflects your shadow self)
-- 2-3 starting abilities (narrative effects)
+- 2-3 starting Persona abilities; starting abilities are Tier 1 unless an
+  established story reward explicitly grants a higher tier
+- Record each ability using the mechanical Ability Design format
 - Loyalty starts at 50
 ```
 
@@ -1296,7 +1608,8 @@ AWAKENING happens in play. Establish:
 ESTABLISH:
 - Family situation
 - Why at this school
-- One existing relationship
+- One existing relationship; if mechanically important, instantiate it as a core
+  Companion at 3/6 with a Goal before play
 - One secret or complication
 ```
 
@@ -1304,10 +1617,13 @@ ESTABLISH:
 
 ```
 - School uniform
-- Basic weapon (d6) OR no weapon
 - Phone
 - Pocket money
-- No essences (earned in play)
+- Ordinary personal items that fit the concept
+- No Essences (earned in play)
+- Before Awakening: mundane weapons only if fiction provides them
+- On Awakening: Soul manifests at d6 and becomes the character's scaling Shadow
+  World weapon; mundane weapons do not create a second upgrade track
 ```
 
 ---
@@ -1315,6 +1631,23 @@ ESTABLISH:
 ## SEMESTERS
 
 Each semester = story arc.
+
+### Persona Chapter Level Up
+
+REPLACES the core `Choose 2: +1 stat | new ability | new spell | +10 HP` menu.
+At each core chapter end, Level +1 and choose TWO different rewards:
+
+```
+1. +1 stat (then run mandatory threshold sync)
+2. New permanent CHARACTER ability derived from chapter events
+3. +5 maximum HP
+4. Persona Training: upgrade one current Persona ability by one clear dimension
+   (lost if that Persona later transforms)
+```
+
+Velvet Room quest rewards are separate progression and can still upgrade Soul,
+Essences, or Persona abilities. Core Ally Fates/companion-clock checks still happen
+at chapter end.
 
 ### Structure
 
@@ -1352,6 +1685,17 @@ WINTER BREAK:
 ---
 
 ## THREAT GENERATOR
+
+Before rolling components, assign alignment:
+
+```
+ORGANIZED THREAT: roll/generate a FACTION CLUSTER.
+NAMED LEADER: roll/generate a personal ARCANA independently.
+
+The leader may match the faction, sit elsewhere in the same Cluster, or oppose
+it entirely. If they diverge, decide whether they are reforming, exploiting,
+hiding from, or preparing to betray the institution.
+```
 
 ### Components (d10 each)
 
@@ -1403,9 +1747,11 @@ METHOD — how:
 TIME: Weekday 2 actions | Weekend 3 actions | Week 16 total
 
 LOYALTY: +1 own Arcana | +0 cluster | -3 neutral | -5 opposed
-DANGER ZONE: <=10 loyalty | Transform on d20 >10
+HIGH: 75-99 = +1 own-Arcana rolls | 100 = +2 total
+DANGER ZONE: <=10 Loyalty | Flat d20 11+ transforms after off-Arcana attempt
+HIT DIE: d8 for all Persona PCs
 
-SOUL DAMAGE: d6 → d8 → d10 → d12
+SOUL DAMAGE: d6 → d8 → d10 → d12 | visual form is cosmetic
 
 TATTOO SLOTS: Heart (def) | Mind (mental) | Arms (off) | Shadow (wild)
 ```
@@ -1415,7 +1761,7 @@ TATTOO SLOTS: Heart (def) | Mind (mental) | Arms (off) | Shadow (wild)
 ```
 SPARK <---> VOID       (action vs contemplation)
 BOND  <---> SHADOW     (others vs self)
-ORDER = neutral        (hostile to both extremes)
+ORDER = no opposed cluster (all non-ORDER actions are −3 for ORDER Personas)
 
 If player is SPARK:
 - VOID actions = -5 (opposed)
@@ -1431,6 +1777,22 @@ BOND  (5): Empress, Lovers, Temperance, Star, World
 ORDER (4): Emperor, Hierophant, Justice, Judgement
 SHADOW(4): Death, Devil, Tower, Moon
 VOID  (4): High Priestess, Hermit, Wheel of Fortune, Hanged Man
+```
+
+### NPC & Faction Alignment
+
+```
+NPC = one Arcana.
+Faction = one primary Cluster.
+Exact Arcana = RESONANCE (mutual legibility), not automatic friendship.
+Compatible same-Arcana goal/roles = ADV on first relevant social roll/scene.
+Same-Arcana incompatible claims/roles = FEEDBACK; use that Arcana's listed risk.
+Same Cluster = tolerant, no friction modifier.
+Neutral Cluster = no automatic modifier.
+Opposed Cluster = -2 only when asking them to endorse opposed values.
+ORDER has no opposed Cluster.
+Major faction = at least 2 named representatives with different Arcana.
+Group scene = foreground at most 1 Resonance pair + 1 Feedback/Friction fault line.
 ```
 
 ### Arcana Keywords (for quick action tagging)
@@ -1452,17 +1814,24 @@ Fortune = fate, chance, accept | Hanged Man = sacrifice, perspective, pause
 ### Action Generation Checklist
 
 ```
-SIMPLE (8 options):
+SIMPLE BASE (8 options):
 [ ] 1. Player's Arcana (+1)
 [ ] 2-3. Player's Cluster (+0)
 [ ] 4-7. Other clusters (-3 or -5)
 [ ] 8. Previous action's Arcana (momentum)
 
-COMPLEX (10 options):
+COMPLEX BASE (10 options):
 [ ] 1. Player's Arcana (+1)
 [ ] 2-3. Player's Cluster (+0)
 [ ] 4-9. Other clusters (-3 or -5)
 [ ] 10. Previous action's Arcana (momentum)
+
+THEN CORE PREFLIGHT:
+[ ] Add TRICKSTER options if active
+[ ] Add required Devil's Bargain option(s)
+[ ] Add DOUBLE TAKE instant options in combat if active
+[ ] Add relevant Companion actions
+[ ] Show locked DC + all known modifiers on every nontrivial roll
 ```
 
 ### Layers
@@ -1519,15 +1888,40 @@ Recruitment: Prove you're not a threat to the school
 ===
 ```
 
+### Faction Alignment Generator
+
+```
+PRIMARY CLUSTER (d10):
+1-2: SPARK — initiative, freedom, momentum, proving through action
+3-4: BOND — care, belonging, reconciliation, mutual obligation
+5-6: ORDER — hierarchy, law, continuity, legitimate structure
+7-8: SHADOW — ambition, appetite, secrecy, power, self-interest
+9-10: VOID — restraint, patience, knowledge, fate, distance
+
+DOMINANT ARCANA: roll uniformly within the chosen Cluster.
+This colors HOW the institution expresses the Cluster; it does not require every
+member to share that Arcana.
+
+INTERNAL DISSENT (d6):
+1. Loyal critic — same Cluster, different Arcana
+2. Method war — same Cluster, incompatible tactics
+3. Pragmatist — neutral Cluster, tolerated for usefulness
+4. Reformer — neutral Cluster, wants institutional change
+5. Heretic — opposed Cluster, hiding or protected by status
+6. Schism — organized bloc pulling the faction toward another Cluster
+
+For a major faction, instantiate at least two named NPCs with different Arcana.
+```
+
 ### Ally Generator
 
 ```
-ARCANA (d10, then pick from cluster):
-1-2: SPARK (Fool, Magician, Chariot, Strength, Sun)
-3-4: BOND (Empress, Lovers, Temperance, Star, World)
-5-6: ORDER (Emperor, Hierophant, Justice, Judgement)
-7-8: SHADOW (Death, Devil, Tower, Moon)
-9-10: VOID (Priestess, Hermit, Fortune, Hanged Man)
+ARCANA: roll d10 for cluster, then roll uniformly within that cluster (do not pick):
+1-2: SPARK → d5: Fool, Magician, Chariot, Strength, Sun
+3-4: BOND → d5: Empress, Lovers, Temperance, Star, World
+5-6: ORDER → d4: Emperor, Hierophant, Justice, Judgement
+7-8: SHADOW → d4: Death, Devil, Tower, Moon
+9-10: VOID → d4: Priestess, Hermit, Fortune, Hanged Man
 
 ROLE (d6):
 1. Fighter — high damage, charges in
@@ -1571,19 +1965,19 @@ SETUP:
 - Scene: Hallway, bully pushing around first-year
 
 GM GENERATES 8 OPTIONS:
-1. [CHARIOT, STR] Grab bully by collar, slam against wall (+1)
-2. [STRENGTH, CHA] Step between them calmly, stare bully down (+0)
-3. [SUN, CHA] Joke loudly, defuse with humor (+0)
-4. [EMPRESS, CHA] Comfort the victim, ignore bully (-3)
-5. [DEVIL, CHA] Blackmail bully — you know his secret (-5)
-6. [HERMIT, -] Walk past, not your problem (-5)
-7. [JUSTICE, CHA] Report to teacher, proper channels (-3)
-8. [CHARIOT, STR] Same as #1, momentum from previous action (+1)
+1. [CHARIOT | STR 12] Grab bully by collar, slam against wall (+1)
+2. [STRENGTH | CHA 12] Step between them calmly, stare bully down (+0)
+3. [SUN | CHA 10] Joke loudly, defuse with humor (+0)
+4. [EMPRESS | CHA 8] Comfort the victim, get them clear (-3)
+5. [DEVIL | CHA 16, +secret] Blackmail bully — you know his secret (-5)
+6. [HERMIT | -] Walk past, not your problem (-5)
+7. [JUSTICE | CHA 10] Report to teacher, proper channels (-3)
+8. [CHARIOT | STR 12] Same as #1, momentum from previous action (+1)
 
-PLAYER CHOOSES: Option 5 [DEVIL, CHA]
+PLAYER CHOOSES: Option 5 [DEVIL | CHA 16, +secret]
 
 RESOLUTION:
-- GM: "Roll CHA" → Player rolls, succeeds
+- GM rolls the already-locked `[CHA 16, +secret]` check using core margin resolution
 - Narrative: Kenji smirks, mentions what he saw last week...
   bully goes pale and backs off
 - Loyalty: 47 - 5 = 42
@@ -1592,8 +1986,9 @@ RESOLUTION:
 IF LOYALTY WAS 8 (danger zone):
 - Apply -5 first → 8 - 5 = 3 (still <=10)
 - Roll d20 for transformation
-- On 11+: Persona transforms to DEVIL arcana
-- On 10 or less: Stays CHARIOT, loyalty = 3
+- On 11+: Persona transforms to DEVIL Arcana
+- On 1-10: stays CHARIOT, Loyalty = 3
+- This transformation check is flat: no modifiers and no margin tiers
 ```
 
 ### Persona Abilities by Cluster
@@ -1638,7 +2033,7 @@ VOID ABILITIES (utility, knowledge):
 ### Persona Generator
 
 ```
-PERSONA NAME (d20, pick mythology):
+PERSONA NAME (d20; use the rolled entry):
 Greek: 1-Ares, 2-Athena, 3-Hermes, 4-Apollo, 5-Artemis
 Norse: 6-Thor, 7-Loki, 8-Freya, 9-Odin, 10-Tyr
 Japanese: 11-Susano-o, 12-Amaterasu, 13-Izanagi, 14-Raijin, 15-Fujin

@@ -1,7 +1,7 @@
 # Rulesets Index
 
 battletech — MechWarrior Feudal Drama (The Sync, Honor Codes, Great Houses, Clans, Solaris)
-blades-lite — Haunted Industrial Heists (Doskvol)
+fallen-blades — Fallen Blades: Fractured Industrial Heists (Reflections, Crossfade, Contradictions, Doskvol)
 cthulhu — Cosmic Horror (Three Axes, Deception Budget)
 cursed-seas — Golden Age of Piracy (fantasy)
 cyberpunk-red — Dark Future (R. Talsorian 2020/RED/2077)
@@ -21,7 +21,8 @@ shadowrun-lite — Magic + Cyber + Corps (Simplified Shadowrun)
 stalker — Chernobyl Exclusion Zone (S.T.A.L.K.E.R. + Roadside Picnic)
 star-wars — Galaxy Far Far Away (All Eras)
 vtm — Vampire: The Masquerade (Beast Voice, Night Cycle, Arcade Disciplines, Generators)
-warhammer-40k — Grimdark far future (Imperium, Chaos, Xenos)
+warcraft-timeways — Bronze Dragonflight Temporal War (12 Anchors, Causal Drift, Exposure, Timeline Instability)
+warhammer-40k — IRON WILL: Mission Board, Theater War, asymmetric Control/Warp/Entropy, Scar Adaptation
 warhammer-fantasy — IRON LAW: Old World (Three Forces, Condition, Push, Drift)
 witcher — Monster Hunters (Sapkowski + CDPR)
 xianxia — Path of Immortality (Cultivation 0-10, Deviation, Dao Heart, Tribulations, Five Elements)

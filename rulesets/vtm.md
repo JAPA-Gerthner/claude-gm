@@ -18,24 +18,80 @@ Uses gm-skill.md core mechanics:
 
 **Do not duplicate base mechanics.** If gm-skill covers it, use it as-is unless this ruleset explicitly overrides.
 
+### EXPLICIT INHERITANCE CONTRACT
+
+VTM inherits all `gm-skill.md` mechanics unless explicitly replaced below.
+
+```
+REPLACES: DEATH — vampire HP/death saves
+  Vampires use the VTM Health/Torpor/Final Death system instead of core HP 0,
+  death saves, massive-damage instant death, and negative-HP death thresholds.
+
+REPLACES: VAMPIRE HP / REST / LEVEL-UP HP REFERENCES
+  Vampire PCs and vampire NPCs do not use core HP or Hit Dice. CON does not set
+  vampire Health; the default vampire Health track is 10 boxes.
+  Core Short/Long Rest healing does not apply to vampires; use the Night Cycle,
+  feeding, and DAMAGE AND HEALING instead.
+  Core level-up `+10 HP` becomes `+1 maximum Health box` (maximum 12).
+  In VTM, the core `new spell` level-up option becomes `+1 level in one known or
+  narratively earned Discipline` (maximum level 3).
+  Mortal and other non-vampire creatures may still use core HP unless a VTM
+  template explicitly gives them a Health track.
+
+REPLACES: MAGIC — vampire supernatural system
+  Core spell circles, spell cooldowns, and free-casting rules are disabled for
+  vampires. Disciplines (including Thaumaturgy/blood sorcery) use the VTM
+  Discipline Hunger/cost/roll rules instead.
+
+REPLACES: HP-BASED THRESHOLD EFFECTS AGAINST VAMPIRES
+  HARD TO KILL / UNKILLABLE / LAST STAND / DEATHLESS use the VTM translations
+  in DAMAGE AND HEALING.
+  EXECUTION: if a vampire has more than 75% of its maximum Health filled
+  (8/10, 9/11, 10/12), it is forced immediately into Torpor; this is not
+  Final Death unless the action also meets a Final Death rule.
+  ANNIHILATION: its normal instant-death result forces a vampire into Torpor.
+  Against a narrative vampire boss, its 20% max-HP effect becomes Aggravated
+  damage equal to 20% of maximum Health, rounded up (2 for 10 boxes; 3 for 11-12).
+  Mortals use the core effects normally.
+
+REPLACES: EXHAUSTED — vampire-only translation
+  1: disadvantage on physical and mental rolls
+  2: movement halved
+  3: Blood Surge unavailable; all healing costs +1 additional Hunger
+  4: movement reduced to a crawl; cannot take reactions
+  5: enter Torpor
+  Vampires do not halve HP from Exhaustion and do not die directly from the
+  core Exhaustion track.
+
+REPLACES: PLAYER RULES — roll modifier declarations only
+  VTM Push/Willpower declarations may modify a numbered option as
+  defined under VTM ROLL DECLARATIONS. Fictional actions remain
+  restricted to numbered options.
+
+REPLACES: VAMPIRE STATUS LINE
+  Show `Health: filled/total (S superficial, A aggravated)` instead of `HP: X/Y`.
+```
+
+Everything else remains active: six core stats, stat thresholds at 4/6/8/10, Heroism, margin resolution and difficulty, combat action economy, clocks, companions, natural 1/20 shifts, and numbered options.
+
 ---
 
 ## THREE CURRENCIES
 
-The game has exactly three costs. They do not overlap.
+VTM revolves around three vampire pressure currencies. They are not the only resources in `gm-skill.md`: Heroism, Health, Heat, clocks, boons, equipment, limited-use abilities, and relationships still exist.
 
 ```
-HUNGER    = tactical price (immediate risk)
+HUNGER    = tactical price (immediate predatory pressure)
             "How close is the Beast?"
 
 HUMANITY  = strategic price (long-term transformation)
             "Who are you becoming?"
 
-WILLPOWER = insurance (limited, spend to avoid the above)
+WILLPOWER = insurance (limited resistance)
             "Can you hold on?"
 ```
 
-Every significant choice costs one of these. If you can't identify which — the action is free or trivial.
+A significant VTM choice should normally expose at least one of these pressures. It does not need to literally spend one every time.
 
 ---
 
@@ -49,16 +105,36 @@ PUSH (HUNGER):   +1d6 to the roll
                  You let the Beast fuel you. Power now, hunger later.
 
 PUSH (HUMANITY): +1d4 to the roll
-                 Humanity check DC 12
-                 Fail: −1 Humanity
-                 Success: no Humanity loss, but the Beast remembers — the NEXT Beast temptation before dawn is +2 DC to refuse (does not stack). GM must offer one if a meaningful temptation occurs.
+                 Immediate Humanity/Path check DC 12 (separate from scene transgressions):
+                 Crit.Fail: −1 rating; next Beast temptation before dawn +2 DC
+                 Fail: −1 rating
+                 Partial/Success: no loss; next meaningful Beast temptation before dawn +2 DC
+                 Crit: no loss and no delayed temptation penalty
+                 The +2 temptation penalty never stacks.
                  You do what the Beast would do. Efficient. Inhuman.
 ```
 
-Both carry a price now and/or later. Hunger Push guarantees bodily debt; Humanity Push risks Humanity and, even on success, makes the next meaningful Beast temptation harder. Choice is real.
+Both carry a price now and/or later. Hunger Push guarantees bodily debt; Humanity Push risks the character's moral rating and usually leaves the Beast harder to refuse. Choice is real.
+
+A Push (Humanity) check is immediate and does NOT consume or replace the one transgression check allowed for that scene.
 
 Cannot Push both ways on same roll.
-Discipline use is a Push — follows same rules.
+Discipline use is NOT automatically a Push. It has its own Hunger cost. A Discipline roll may receive one additional ordinary Push.
+
+### VTM ROLL DECLARATIONS
+
+The player still chooses a numbered fictional action. For an option requiring a roll, these suffixes are legal:
+
+```
+3     = option 3 normally
+3-H   = option 3 + Push (Hunger)
+3-U   = option 3 + Push (Humanity)
+3-W   = option 3 + spend Willpower for +2
+```
+
+These suffixes modify the chosen option; they are not new fictional actions.
+
+`WP REROLL` is reactive: after seeing a roll but before consequences are resolved, the player may declare it to spend Willpower and reroll that die, keeping the second result. This is the only VTM reactive exception to numbered-option input.
 
 ---
 
@@ -102,21 +178,31 @@ Nothing is coincidence. Everyone is a pawn.
 
 ---
 
-## VAMPIRE ATTRIBUTES
+## VAMPIRE ATTRIBUTE CATEGORIES
+
+PHYSICAL / SOCIAL / MENTAL are category labels, not PC stats.
 
 ```
-PHYSICAL (STR+DEX+CON averaged):
-- Combat, chase, endurance
-- Vampires are inherently stronger than humans
+PLAYER ROLLS:
+PHYSICAL → use the relevant STR, DEX, or CON
+SOCIAL   → use CHA
+MENTAL   → use INT or WIS according to the action
 
-SOCIAL (CHA):
-- Manipulation, persuasion, lies
-- Key for Camarilla politics
+Never average stats for a roll.
 
-MENTAL (INT+WIS):
-- Investigation, occultism, tactics
-- Resisting mental disciplines, Beast control
+NPC SHORTHAND:
+NPC templates use PHYSICAL / SOCIAL / MENTAL as DEFENSE DCs.
+
+Active NPC modifier = listed defense − 10.
+Example: PHYSICAL 16 → +6 on an active physical NPC roll.
+         SOCIAL 18   → +8 on an active social NPC roll.
+         MENTAL 14   → +4 on an active mental NPC roll.
+
+AC = PHYSICAL rating unless a template explicitly gives another AC.
+All vampire NPCs use the VTM 10-box Health track unless stated otherwise.
 ```
+
+Category bonuses/penalties such as `−1 MENTAL` apply to every player roll mapped to that category; they never change the underlying stat.
 
 ---
 
@@ -124,6 +210,18 @@ MENTAL (INT+WIS):
 
 ```
 HUNGER: 0 1 2 3 4 5
+
+HUNGER CAP: 5.
+Forced Hunger increases at Hunger 5 are ignored numerically; Hunger remains 5.
+
+If a player voluntarily uses an effect whose Hunger cost would exceed 5:
+1. Hunger stays 5.
+2. Make Frenzy check DC 18 BEFORE resolving the action.
+3. Success+: action proceeds.
+4. Partial: action proceeds, then Beast takes control for 1 turn.
+5. Fail/Crit.Fail: action is lost and Frenzy begins.
+
+Declared costs are still spent even if Frenzy interrupts the action.
 
 0: SATED — full control. Beast silent.
    You ate well. Enjoy it while it lasts.
@@ -146,9 +244,9 @@ HUNGER: 0 1 2 3 4 5
 
 ```
 +1: Every night (waking)
-+1: Using Discipline
++listed Discipline cost (default +1; see DISCIPLINES for overrides)
 +1: Healing wounds (1 damage = 1 Hunger)
-+1: Physical enhancement (blood buff)
++1: Blood Surge — 1/scene, before STR/DEX/CON roll: +2 to that roll. Cannot combine with Push (Hunger).
 +1: Push (Hunger)
 ```
 
@@ -159,7 +257,7 @@ HUNGER: 0 1 2 3 4 5
 −1: Blood bags (need contacts)
 −2: Mortal (not killing, need to cover tracks)
 −3: Vampire blood (dangerous — Blood Bond risk)
- 0: Kill mortal = reset to Hunger 0 (Humanity check)
+ 0: Kill mortal = reset to Hunger 0 (Humanity/Path transgression check if the act violates the current code)
 ```
 
 ### Frenzy
@@ -167,7 +265,7 @@ HUNGER: 0 1 2 3 4 5
 Frenzy is not a separate system. It's what happens when Hunger wins.
 
 ```
-FRENZY CHECK: d20 + MENTAL − Hunger vs DC
+FRENZY CHECK: d20 + WIS − Hunger vs DC
 
 TRIGGERS:
   Hunger 4: any failed roll in stressful situation
@@ -181,7 +279,7 @@ DC:
   Extreme (fire, sun, diablerie opportunity): 18
 
 OUTCOMES:
-  Crit.Fail: Lost — d6 turns Beast control, Humanity check after
+  Crit.Fail: Lost — d6 turns Beast control, Humanity/Path transgression check after if applicable
   Fail: Frenzy — d4 turns Beast control
   Partial: Riding the Wave — 1 turn Beast, then regain control
   Success: Mastered — shaken but controlled
@@ -192,9 +290,9 @@ DURING FRENZY:
   Hunger: attack nearest blood source
   Terror: flee by any means (through allies if needed)
 
-LOW HUMANITY AMPLIFIES:
-  Humanity 4−: disadvantage on Frenzy checks
-  Humanity 2−: Frenzy lasts double duration
+LOW CONTROL RATING AMPLIFIES:
+  Control Rating 4−: disadvantage on Frenzy checks
+  Control Rating 2−: Frenzy lasts double duration
 ```
 
 ---
@@ -254,7 +352,7 @@ HUMANITY: 10 9 8 7 6 5 4 3 2 1 0
 ### Humanity Falls
 
 ```
-TRANSGRESSION → MENTAL roll vs DC
+TRANSGRESSION → d20 + WIS vs DC
 
 DC 8:  Minor (feeding recklessly, scaring mortal)
 DC 12: Moderate (killing in self-defense, torture for information)
@@ -266,7 +364,7 @@ Crit.Fail: −2 Humanity, immediate Frenzy check
 Fail: −1 Humanity
 Partial: Haunted — no loss, −1 next Frenzy check
 Success: Justified — no loss
-Crit: Transcended — no loss, possible +1 (GM decides)
+Crit: Transcended — no Humanity loss; clear Haunted if present
 
 ONE CHECK PER SCENE (like Force shifts).
 Multiple transgressions = use the worst.
@@ -287,21 +385,28 @@ REQUIREMENTS:
 - GM judges authenticity
 - Cannot be "farmed" — must emerge from play
 - Maximum +1 per chapter
-- Requires MENTAL roll DC 14. Fail = no change (not ready yet).
+- Requires WIS roll DC 14.
+- Crit.Fail / Fail: no increase; the attempt exposes a weakness or cost.
+- Partial: no increase yet, but establish concrete progress toward a later attempt.
+- Success / Crit: +1 Humanity (subject to chapter cap).
 
 Hardest thing in the game. The Beast never wants you to climb back.
 ```
 
 ### Humanity and the Beast
 
-```
-Beast Voice intensity scales with BOTH Hunger and Humanity:
+Beast Voice intensity scales with BOTH Hunger and Control Rating.
 
-             Hunger 0-2    Hunger 3    Hunger 4-5
-Humanity 7+: whispers      comments    demands
-Humanity 5-6: comments     demands     screams
-Humanity 3-4: demands      screams     CONTROLS
-Humanity 1-2: screams      CONTROLS    CONTROLS
+```
+CONTROL RATING:
+Normal Kindred → Humanity
+Sabbat on a Path → Path rating
+
+                  Hunger 0   Hunger 1-2   Hunger 3   Hunger 4-5
+Control 7+:       silent     whispers     comments   demands
+Control 5-6:      silent     comments     demands    screams
+Control 3-4:      whispers   demands      screams    CONTROLS
+Control 1-2:      comments   screams      CONTROLS   CONTROLS
 
 "CONTROLS" = GM may narrate Beast actions without Frenzy check.
 Player can spend Willpower to resist (once per scene).
@@ -338,7 +443,7 @@ The Beast is not a mechanic. It's a CHARACTER in the vampire's head.
 
 ### Beast Voice
 
-The Beast speaks ALWAYS — not just when hungry. It's the predator inside.
+The Beast is always present, but not always vocal. At Hunger 0 it is normally silent except during Terror or exceptional clan triggers. Beast Temptation does not occur at Hunger 0.
 
 ```
 === BEAST PERSONALITY BY CLAN ===
@@ -353,7 +458,7 @@ TREMERE: Thirst for knowledge. "His secrets are in his blood. Drink and know."
 
 === BEAST TRIGGERS (GM voices Beast when) ===
 
-ALWAYS (any Hunger):
+WHEN HUNGER > 0:
 - Blood visible or smelled
 - Someone insults/threatens you
 - Opportunity to dominate weaker being
@@ -376,24 +481,24 @@ GM: "She smiles at you from the bar. A vein pulses on her neck."
 When Beast suggests an action:
 
 IF PLAYER REFUSES:
-- MENTAL roll vs DC (Hunger × 3 + (7 − Humanity))
-  Low Humanity = harder to refuse
+- WIS roll vs DC = max(8, Hunger × 3 + (7 − Control Rating))
+  Low Control Rating = harder to refuse
 - Fail: −1 to next Frenzy check
 - Crit.Fail: Beast remembers. +2 DC next temptation.
 - Can spend Willpower to auto-resist (no roll, once per scene).
-  At low Humanity, resisting becomes rare — not impossible.
+  At low Control Rating, resisting becomes rare — not impossible.
 
 IF PLAYER AGREES:
 - Action happens
 - Hunger −1 ONLY if the action creates an unwanted consequence
   (harm, exposure, debt, loss, escalation)
 - If no real consequence occurred: no Hunger reduction
-- Humanity check may apply (by context)
+- Humanity/Path transgression check may apply (by context)
 - Beast quiets for d4 hours
 
 RIDING THE BEAST (on Partial Frenzy):
 - Act as Beast wants BUT keep partial control (choose target)
-- Humanity check after, but DC −2
+- Humanity/Path transgression check after if applicable, but DC −2
 ```
 
 ---
@@ -427,9 +532,11 @@ Structure for each night of play.
 • This is where Push decisions happen
 
 === DAWN ===
-• Humanity check (if transgressions this night)
+• Resolve ONLY a deferred Humanity/Path transgression check that was not already rolled
+  during its scene. Never roll twice for the same transgression.
+• Apply Masquerade investigation escalation if its trigger occurred this night
 • Tick active clocks
-• Heal Aggravated (1/night, costs Hunger +1)
+• Optional: heal 1 Aggravated (maximum once/night, costs Hunger +1)
 • Willpower does NOT refresh (session-based, not night-based)
 • Forced daysleep — sunrise is coming
 ```
@@ -457,7 +564,7 @@ Mortals (not killing):
 
 Mortals (to death):
 - Full reset to Hunger 0
-- HUMANITY CHECK DC 12
+- HUMANITY/PATH transgression check DC 12 if killing violates the current code
 - Must hide corpse
 
 Another vampire:
@@ -493,6 +600,8 @@ How close are you to exposure? GTA-style escalation.
 ```
 MASQUERADE: [current level]
 
+HEAT CAP: 0-5. Heat never exceeds 5.
+
 Level 0: Clean
 Level 1: Suspicious — someone saw something strange
 Level 2: Rumors — whispers in mortal circles
@@ -508,7 +617,7 @@ HEAT RISES:
 +3: Media, viral video
 
 HEAT DROPS:
-−1: Remove witness (kill — Humanity check — or memory wipe)
+−1: Remove witness (kill — Humanity/Path transgression check if applicable — or memory wipe)
 −1: Destroy recordings
 −2: Nosferatu cleanup (costs Major boon)
 −3: Scapegoat another vampire (they'll know)
@@ -516,8 +625,17 @@ HEAT DROPS:
 At Level 4+: You're hunted. Every night = survival.
 At Level 5: Second Inquisition involved. Run or die.
 
+INVESTIGATION ESCALATION:
+- Heat does NOT rise merely because a night passed.
+- At Dawn, increase Heat by +1 (maximum once per night) only if Heat is 2+ AND
+  at least one of these happened: a new Masquerade breach, an investigation
+  advanced successfully, or the player ignored a concrete warning/opportunity
+  to contain active exposure.
+- At Heat 5, further escalation does not raise Heat. Instead tick/create a visible
+  Second Inquisition THREAT clock or introduce an immediate investigation consequence.
+
 CONNECTION TO CURRENCIES:
-- Reducing Heat by killing = Humanity check
+- Reducing Heat by killing = Humanity/Path transgression check if the act violates the current code
 - Reducing Heat by boon = political cost
 - Ignoring Heat = it rises (like Decay)
 ```
@@ -533,16 +651,51 @@ CONNECTION TO CURRENCIES:
 Each discipline = 3 levels, one line each.
 
 ```
-COST: Every Discipline use = +1 Hunger (this IS a Push (Hunger) by default).
-OVERUSE: 3+ Discipline uses per night without feeding:
-  Each additional use = Hunger +2 instead of +1.
+COST: Every Discipline use = +1 Hunger. Discipline use is not automatically a Push.
+OVERUSE: After 3 Discipline uses in one night without feeding:
+  The DEFAULT +1 Hunger cost becomes +2 for each additional use.
+  An explicit Discipline cost higher than +1 is unchanged unless its line says otherwise.
+  Any feeding that actually reduces Hunger resets the consecutive-use count to 0.
   The blood runs thin. The Beast gets louder.
 
 EXTRA PUSH ON DISCIPLINE:
-  Can Push additionally when using a Discipline.
-  Push (Hunger): +1d6 to Discipline roll, +1 Hunger (total +2)
-  Push (Humanity): +1d4 to Discipline roll, Humanity check (success still makes next Beast temptation before dawn +2 DC)
-  Pushing a Discipline = desperation. The Beast LOVES it.
+  A Discipline roll may additionally use ONE ordinary Push.
+  Push (Hunger): +1d6 to Discipline roll, +1 additional Hunger.
+  Push (Humanity): +1d4 to Discipline roll, Humanity/Path check as normal.
+  Discipline cost and Push cost are separate.
+
+DISCIPLINE USE TYPES:
+  INSTANT — resolves once; pay the Discipline cost once.
+  SUSTAINED — lasts until scene end unless the line states another duration;
+              pay once on activation. Ending and reactivating it is a new use.
+  PER-ACTION — when a Discipline explicitly prices each extra action/attack/etc.,
+               each priced action is one use and counts toward OVERUSE.
+
+COST PRECEDENCE:
+  If a Discipline line explicitly says `Hunger +N`, that listed cost REPLACES the
+  default +1 Hunger for that use unless it explicitly says `additional`.
+  Never charge the default cost twice for one activation.
+
+DISCIPLINE ROLLS:
+  Roll only when uncertainty or resistance can change the outcome.
+  Self-only transformations/enhancements normally activate without a separate roll;
+  the modified action still uses the core roll if that action is uncertain.
+
+  DOMINATE / PRESENCE / DEMENTATION:
+    CHA vs target Mental defense (NPC MENTAL; PC passive WIS = 10 + WIS).
+  ANIMALISM:
+    WIS vs target Mental defense or situational DC.
+  AUSPEX:
+    WIS or INT vs situational DC; against concealment use opposing Mental defense.
+  THAUMATURGY / blood sorcery:
+    INT vs situational DC or the target's relevant defense.
+  OBFUSCATE:
+    DEX vs observer passive WIS when actively challenged; otherwise core stealth rules.
+  POTENCE / FORTITUDE / CELERITY / PROTEAN self-effects:
+    no activation roll; they modify STR/CON/DEX or the resulting action as written.
+
+  Use the core five margin outcomes. Partial means the Discipline works with a
+  complication, reduced duration/effect, exposure, or cost; it is not a full failure.
 ```
 
 ```
@@ -679,12 +832,17 @@ The Sword of Caine. They don't fight the Beast — they worship it.
 VAULDERIE — Blood communion ritual. All pack members mix blood in chalice and drink.
   Replaces Blood Bond with Pack Bond: loyalty to pack, not individuals.
   +2 to resist Dominate/Presence from non-pack Kindred.
-  Breaking Vaulderie: +2 Humanity loss, pack hunts you.
+  Breaking Vaulderie: Severe Path transgression check DC 16; pack becomes hostile and hunts the offender.
 
 PATHS OF ENLIGHTENMENT — Replace Humanity for Sabbat.
   Sabbat do not track Humanity. They follow Paths instead.
-  Path replaces Humanity mechanics, but NOT consequences. No Humanity ≠ no price.
-  Path rating works identically (0-10, same thresholds) but what triggers loss differs:
+  Path replaces Humanity for Control Rating, degeneration checks, Frenzy low-rating penalties, and moral consequences.
+  Path transgressions use the Humanity Falls outcome table but change Path rating instead of Humanity.
+  Path does NOT remove consequences. No Humanity ≠ no price.
+  Path rating uses the same 0-10 scale and Beast Control brackets, but Humanity-specific
+  mortal-social, Touchstone, food, and sunlight effects do NOT transfer to Paths.
+  Path 0 = lost to the Beast; the character becomes an NPC.
+  What triggers Path loss differs:
   - Path of Caine: lose rating for ignorance, weakness, mercy to enemies
   - Path of Cathari: lose rating for denying pleasure, showing restraint, boredom
   - Path of Death: lose rating for fearing death, preventing natural death, cowardice
@@ -692,7 +850,8 @@ PATHS OF ENLIGHTENMENT — Replace Humanity for Sabbat.
 
 CREATION RITES — Sabbat Embrace is brutal.
   Childe is drained, killed, buried alive. Claws out of grave or dies.
-  Survivors start at Humanity 4 (or Path 4). No gentle introduction.
+  Survivors start at Path 4. If a campaign explicitly uses Humanity-based Sabbat
+  instead of Paths, start at Humanity 4. No gentle introduction.
 
 PACK STRUCTURE:
   Pack = 4-8 vampires. Not a coterie — a military unit.
@@ -879,7 +1038,7 @@ TEYOLLOHCUANI (Life-Force Theft):
 Weakness: FIVE-DAY CYCLE
 Every 5 nights must hunt specific prey (roll d6):
 1-2: Child  |  3-4: Warrior  |  5-6: Elder
-Failure = Hunger +2 and Humanity check
+Failure = Hunger +2 and Humanity/Path transgression check if the failed hunt violates the current code
 
 Role: Judges of ancient oaths, death midwives, spirit speakers
 [BEAST]: Ritual hunger, patient inevitability
@@ -1305,8 +1464,8 @@ Combat is always expensive. This is by design.
 ```
 - Using Disciplines in combat → +Hunger per use
 - Taking damage → requires healing later → +Hunger
-- Killing a mortal → Humanity check
-- Killing a Kindred → Humanity check + political fallout
+- Killing a mortal → Humanity/Path transgression check if the act violates the current code
+- Killing a Kindred → Humanity/Path transgression check if applicable + political fallout
 - Frenzy risk compounds (Hunger rises, Beast gets louder)
 - Witnesses → +Heat
 
@@ -1323,14 +1482,15 @@ DAMAGE TYPES:
 
 SUPERFICIAL (/):
 - Bullets, blades, fists
-- Halved for vampires
+- Halved for vampires after other damage modifiers; round fractions UP
+- If an attack deals positive damage before halving, minimum final damage is 1
 
 AGGRAVATED (X):
 - Fire, sunlight, claws, fangs
 - NOT halved, heals LAST
 
-HEALTH: 10 boxes
-Track fills with / → converts to X
+HEALTH: 10 boxes by default (level-up may raise maximum to 12)
+Track fills with / and X as defined below.
 
 HEALING:
 Superficial: 1 Hunger = heal 2 (instant)
@@ -1347,8 +1507,47 @@ Weak (overcast): 2 Agg/round
 Direct: 5 Agg/round
 
 FIRE:
-Triggers Terror Frenzy — MENTAL DC 12
+Triggers Terror Frenzy — WIS DC 12
 Torch: 1 Agg | Bonfire: 2 Agg | Inferno: 5 Agg
+
+HEALTH TRACK:
+- Superficial damage fills empty boxes with `/`.
+- Aggravated damage fills empty boxes with `X`.
+- If no empty boxes remain, apply EACH overflow damage point separately:
+  • each Superficial overflow converts one existing `/` into `X`
+  • each Aggravated overflow converts one existing `/` into `X`
+- If no `/` remains, additional damage cannot fill beyond maximum Health;
+  apply Torpor/Final Death rules instead.
+- When ALL current maximum Health boxes are Aggravated → Torpor.
+
+VTM CON THRESHOLD TRANSLATIONS:
+CON 4 — HARD TO KILL
+  When taking any damage instance, roll d20. On 17+: ignore that entire damage instance.
+
+CON 6 — UNKILLABLE
+  When all current maximum Health boxes become Aggravated, remain conscious until the end of your next turn.
+  Then enter Torpor unless the condition was reversed.
+
+CON 8 — LAST STAND
+  When more than 75% of maximum Health is filled (8/10, 9/11, 10/12): +2 to all rolls.
+
+CON 10 — DEATHLESS
+  1/combat. When you would enter Torpor from damage: clear 1 Health box instead and remain active.
+  +2 to all rolls for the rest of combat. Stacks with LAST STAND where applicable.
+```
+
+---
+
+## STAKED
+
+```
+A stake through the heart causes STAKED, not Torpor.
+
+STAKED:
+- Aware but completely paralyzed
+- Helpless against feeding, restraint, transport, or deliberate destruction
+- Removing the stake ends STAKED at the start of the vampire's next turn
+- If the vampire also meets a Torpor trigger, Torpor takes precedence
 ```
 
 ---
@@ -1359,24 +1558,52 @@ Torch: 1 Agg | Bonfire: 2 Agg | Inferno: 5 Agg
 Death-like sleep. Not Final Death, but close.
 
 ENTERING:
-- All health = Aggravated
-- Hunger 5 + no blood for week
-- Staked (aware but paralyzed)
+- All Health boxes = Aggravated
+- Hunger 5 + no blood for one week
 - Voluntary (survive centuries)
 
-DURATION (by Generation):
+MINIMUM DURATION (by Generation):
 13th: 1 week
 12-11th: 1 month
 10-9th: 1 year
 8-7th: 10 years
 6th−: 50+ years
 
-WAKING:
-Natural: Min duration + all Agg healed
-Forced: Feed vampire directly, PHYSICAL DC (8 + months)
-Danger: Fire/sun nearby, MENTAL DC 15, wake in Frenzy
+NATURAL WAKING:
+- After minimum duration, clear all Health damage
+- Wake at Hunger 5
 
-In torpor: Helpless. Easy to stake/burn/diablerize.
+FORCED WAKING:
+Feed vampire blood directly, then roll CON vs Generation DC:
+13th DC 10 | 12-11th DC 12 | 10-9th DC 14 | 8-7th DC 16 | 6th− DC 18
+
+Crit.Fail / Fail: remains in Torpor; blood is consumed; next forced attempt next night
+Partial: wakes at Hunger 5; clear 1 Aggravated box
+Success: wakes at Hunger 4; clear 2 Aggravated boxes
+Crit: wakes at Hunger 3; clear 3 Aggravated boxes
+
+Fire and sunlight do not provide a free wake-up check. They threaten Final Death.
+In Torpor: helpless. Easy to stake, burn, decapitate, or diablerize.
+```
+
+---
+
+## FINAL DEATH
+
+```
+Conventional damage does not kill a vampire outright. Filling all Health with
+Aggravated damage causes Torpor first.
+
+FINAL DEATH occurs when:
+- a vampire is diablerized
+- a Torpid vampire takes at least 1 Aggravated damage from direct sunlight or an
+  inferno in 2 consecutive rounds after all defenses/ignore effects
+- a Torpid/helpless vampire is deliberately decapitated and the head is destroyed
+  or kept separated from the body
+- the body is destroyed beyond recovery
+- an explicit supernatural effect says it causes Final Death
+
+A stake alone never causes Final Death.
 ```
 
 ---
@@ -1384,7 +1611,11 @@ In torpor: Helpless. Easy to stake/burn/diablerize.
 ## GENERATION
 
 ```
-GENERATION — Blood potency (lower = stronger):
+GENERATION — lineage and blood-potency category (lower = narratively stronger):
+
+Generation does NOT add a generic modifier to rolls. Its power is represented by
+NPC stats, Disciplines, special abilities, Torpor resistance, status, and scenario
+permissions. Do not add an extra hidden "Generation bonus" unless a template says so.
 
 14-15th: Thin-bloods — weak, almost mortal
 12-13th: Neonates — typical young vampires
@@ -1393,19 +1624,76 @@ GENERATION — Blood potency (lower = stronger):
 6-7th: Methuselahs — legends
 
 BLOOD BONDS:
-Drink vampire blood 3× = Bound
+Drink the same vampire's blood on 3 SEPARATE NIGHTS = Bound.
+Multiple drinks during one night count only once.
 - Attraction and submission
 - Hard to resist commands
 - 1 year without = weakens
 
 DIABLERIE:
-Kill vampire and drink completely:
-- Lower generation by 1
-- Gain victim's power
-- Visible in aura (black veins)
-- Camarilla executes for this
-- HUMANITY CHECK DC 16
+Destroy a vampire and consume them completely.
+
+Generation:
+- If victim has LOWER generation than you: your Generation decreases by 1.
+- You can never become lower-generation than the victim from that diablerie.
+- Equal- or higher-generation victims provide no Generation improvement.
+
+Power:
+- Roll randomly among victim Disciplines that can improve you.
+- Gain +1 level in one eligible Discipline, maximum level 3.
+- If no Discipline is eligible, gain no Discipline level.
+
+Consequences:
+- Aura gains visible black veins/stain
+- Camarilla treats discovered diablerie as a capital crime
+- Humanity/Path transgression check DC 16 IF diablerie violates the character's current moral code
 ```
+
+---
+
+## VTM CHARACTER CREATION OVERLAY
+
+Use this after the core GM generates character-build options. VTM changes the
+fictional build components, but core stat thresholds and CHARACTER MECHANICS SYNC
+still apply immediately.
+
+```
+DEFAULT PLAYER KINDRED:
+Clan: choose one player clan from this ruleset
+Sect: Camarilla / Anarch / independent unless campaign says otherwise
+Predator Type: choose one
+Generation: 12th
+Health: 10 boxes
+Hunger: 2
+Humanity: 7
+Willpower: 3/3
+Masquerade Heat: 0
+
+STATS:
+Use array 4, 3, 3, 2, 2, 1 across STR/DEX/CON/INT/WIS/CHA.
+GM assigns it to match each offered archetype; player chooses a build.
+Immediately run core stat-threshold sync (4/6/8/10).
+
+DISCIPLINES:
+Choose two Clan Disciplines:
+- one starts at level 2
+- one starts at level 1
+The third starts at 0.
+No Discipline may begin above level 2 without a campaign-specific elder start.
+
+TOUCHSTONES:
+Humanity-based characters define 1-3 Touchstones before the first night.
+
+SABBAT / PATH START:
+If the campaign explicitly starts with Sabbat Creation Rites, that section's
+Humanity/Path 4 rule overrides the default Humanity 7. A Path character tracks
+Path rating instead of Humanity and does not use Humanity-based Touchstones unless
+fiction establishes them separately.
+```
+
+LEVEL-UP TRANSLATION:
+- `+10 HP` → +1 maximum Health box (max 12)
+- `new spell` → +1 level in one known or narratively earned Discipline (max 3)
 
 ---
 
@@ -1415,19 +1703,19 @@ How you hunt defines who you are.
 
 ```
 ALLEYCAT — Violence
-Roll: PHYSICAL DC 12 | Risk: +1 Heat per feed
+Roll: STR DC 12 | Risk: +1 Heat per feed
 
 SIREN — Seduction
-Roll: SOCIAL DC 10 | Risk: Emotional entanglements
+Roll: CHA DC 10 | Risk: Emotional entanglements
 
 SANDMAN — Sleepers
-Roll: MENTAL DC 12, PHYSICAL DC 10 | Risk: One victim per location
+Roll: INT DC 12, DEX DC 10 | Risk: One victim per location
 
 FARMER — Animals
-Roll: PHYSICAL DC 8 | Risk: Never below Hunger 1
+Roll: WIS DC 8 | Risk: Never below Hunger 1
 
 BAGGER — Medical
-Roll: SOCIAL DC 12 (maintain supply) | Risk: No resonance, supply can be cut
+Roll: CHA DC 12 (maintain supply) | Risk: No resonance, supply can be cut
 ```
 
 ---
@@ -1454,6 +1742,7 @@ Status changes through actions, not time.
 ## TOUCHSTONES
 
 Mortals who anchor Humanity. Lose them = lose yourself.
+This section applies to Humanity-based characters; Path characters use their Path obligations instead.
 
 ```
 Each PC: 1-3 Touchstones
@@ -1470,7 +1759,7 @@ Protect from harm: possible Humanity +1 (see Humanity Rises)
 
 DANGERS:
 If threatened: Enemies have leverage
-If dies: MENTAL DC 14 or −1 Humanity + Frenzy
+If dies: WIS DC 14 or −1 Humanity + Frenzy
 If learns truth: Accept / Reject / Break
 If YOU harm them: Humanity check DC 16
 
@@ -1493,8 +1782,8 @@ CONNECTION TO CURRENCIES:
 === HUNT COMPLICATIONS (d6) ===
 1: WITNESS — +1 Heat or deal with it
 2: WRONG TARGET — Ghoul, hunter, or claimed herd
-3: RESONANCE — Intense emotion, bonus but craving
-4: POLICE — MENTAL DC 12 to escape clean
+3: RESONANCE — Intense emotion in the blood. Apply the matching Blood Memory theme if Blood Memory triggers.
+4: POLICE — INT DC 12 to escape clean
 5: RIVAL — Another Kindred claims this territory
 6: CLEAN — No complications
 
@@ -1565,7 +1854,7 @@ Humanity: 6
 
 ## GENERATORS
 
-Tools for improvisation. Roll or choose.
+Tools for improvisation. Roll first; use the result as a seed. Do not manually choose a result unless the rolled result is impossible under established world state.
 
 ### Mission Generator
 
@@ -1951,12 +2240,14 @@ PUSH:
 HUNGER:   +1d6, +1 Hunger — body pays
 HUMANITY: +1d4, check DC 12 — fail: -1 Humanity; success: next Beast temptation before dawn +2 DC
 
-HUNGER: 0 sated → 3 Beast whispers → 4 Frenzy on fail → 5 Frenzy on stress
+HUNGER: 0 sated → 3 Beast comments → 4 Frenzy on fail → 5 Frenzy on stress
 HUMANITY: 7 start → 5 cold → 3 monster → 0 lost
-FRENZY: d20 + MENTAL − Hunger vs DC (embedded in Hunger 4+)
-DISCIPLINE: Hunger +1 per use. 3+/night without feeding = +2 each.
+FRENZY: d20 + WIS − Hunger vs DC (embedded in Hunger 4+)
+DISCIPLINE: default +1 Hunger/use; after 3 uses default becomes +2; explicit higher costs stay explicit; sustained = scene
 HEALING: Superficial 1H=2 | Aggravated 1H=1 (1/night)
-HEAT: 0 clean → 3 Sheriff → 5 Inquisition
+HEAT: cap 0-5 | 0 clean → 3 Sheriff → 5 Inquisition
+TORPOR: all current Health boxes Agg | STAKED ≠ Torpor | Final Death requires explicit destruction
+MAGIC: core spell circles/cooldowns disabled; Thaumaturgy uses Discipline rules
 NIGHT: DUSK → HUNT → AFFAIRS → DAWN
 WILLPOWER: reroll | +2 | resist Frenzy | resist Beast | composure
 ```
@@ -1968,10 +2259,12 @@ WILLPOWER: reroll | +2 | resist Frenzy | resist Beast | composure
 ```
 [ ] Night phase clear?
 [ ] Hunger tracked? (rises every night, every Discipline, every heal)
-[ ] Beast Voice at appropriate intensity? (Hunger × Humanity table)
+[ ] Beast Voice at appropriate intensity? (Hunger × Control Rating table)
 [ ] Frenzy checked at Hunger 4+?
-[ ] Humanity check for transgressions? (one per scene, worst)
-[ ] Heat consequences at 3+?
+[ ] Humanity/Path transgression check? (one per scene, worst; no duplicate at Dawn)
+[ ] Heat consequences at 3+? Investigation escalation max +1/night?
+[ ] Discipline duration/cost type clear (instant / sustained / per-action)?
+[ ] Torpor vs STAKED vs Final Death applied correctly?
 [ ] Clocks ticking?
 [ ] Touchstones in danger?
 [ ] Boons being tracked?
