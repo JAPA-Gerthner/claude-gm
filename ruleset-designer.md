@@ -2,6 +2,8 @@
 
 Entry point for developing and maintaining rulesets in gm-skill.
 
+All paths are relative to the repository root.
+
 ---
 
 ## Target Metrics
@@ -200,7 +202,7 @@ Before marking ruleset complete:
 ```
 You are a [LORE/GM/MECHANICS] EXPERT for [SETTING].
 
-Read: C:\Workspace\gm-skill\rulesets\[file].md
+Read: rulesets/[file].md
 
 Current: X lines. Target: ~1500-2000 lines.
 
@@ -221,7 +223,7 @@ Output format:
 ```
 You are a [LORE/GM/MECHANICS] REVIEWER for [SETTING].
 
-Read: C:\Workspace\gm-skill\rulesets\[file].md
+Read: rulesets/[file].md
 
 Review for [accuracy/usability/balance].
 

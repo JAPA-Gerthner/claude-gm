@@ -2,6 +2,8 @@
 
 Analyze player feedback with expert panel. Run this manually when you have accumulated feedback to review.
 
+All paths are relative to the repository root.
+
 ---
 
 ## How to Use
@@ -19,8 +21,8 @@ Analyze player feedback with expert panel. Run this manually when you have accum
 Read these files ONCE at start, keep in context:
 
 ```
-1. C:\Workspace\gm-skill\gm-skill.md (core rules)
-2. C:\Workspace\gm-skill\rulesets\[ruleset].md (if feedback mentions specific ruleset)
+1. gm-skill.md (core rules)
+2. rulesets/[ruleset].md (if feedback mentions specific ruleset)
 ```
 
 Create CONTEXT SUMMARY (~500 words):
@@ -35,7 +37,7 @@ This summary is passed to all agents. DO NOT re-read files per agent.
 ### PHASE 2: Feedback Collection
 
 ```bash
-ls C:\Workspace\gm-skill\feedback\
+ls feedback/
 ```
 
 Read all feedback files. Create list:

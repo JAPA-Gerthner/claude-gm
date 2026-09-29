@@ -37,6 +37,7 @@ claude-gm/
 │   ├── stalker.md           # Chernobyl Exclusion Zone
 │   ├── star-wars.md         # Galaxy Far Far Away
 │   ├── vtm.md               # Vampire: The Masquerade
+│   ├── warcraft-timeways.md # Bronze Dragonflight Temporal War
 │   ├── warhammer-40k.md     # Grimdark far future
 │   ├── warhammer-fantasy.md # IRON LAW: Old World
 │   ├── witcher.md           # Monster Hunters
@@ -188,15 +189,6 @@ python scripts/combat.py --initiative "PC:DEX2, NPC:DEX4"
 - 6 Exalt Types (Solar/Lunar/Dragon-Blooded/Sidereal/Abyssal/Infernal)
 - For: mythic demigod drama, nation-building, tragic power fantasy
 
-**iron-weltkrieg.md** — Dieselpunk Alternate History (Kaiserreich 1936):
-- Ideology Compass (10 ideologies from Kaiserreich)
-- Global Tension 0-100%, Nuclear Clock 0-10
-- Machines: Walkers, Flying Fortresses, Naval, Aviation
-- Crew Bonds, Machine Stress, Scale Shift (Soldier→Leader)
-- 20 Regional conflict clocks with cascade effects
-- Scale Thresholds (level 5/8/12 promotions)
-- For: alt-history war journalism, Balkan intrigue, industrial warfare
-
 **harry-potter.md** — Wizarding World:
 - The Descent (dark temptation 0-10, Stain mechanic)
 - Bonds (love as power, rate-limited)
@@ -253,6 +245,13 @@ python scripts/combat.py --initiative "PC:DEX2, NPC:DEX4"
 - Arcade Disciplines, 8 generators
 - For: urban horror, political intrigue
 
+**warcraft-timeways.md** — War of the Timeways (Bronze Dragonflight):
+- Timeline Ledger: 12 Anchors with hidden Fate Seeds, Causal Drift, cascade recalculation
+- Exposure (who noticed you) vs Instability (damage to causality), both 0-10
+- Visage / Dragon form, Bronze Callings, Doctrines, Temporal Fractures
+- Rival bronze cells, Echo/Overlap tables, 5 campaign frameworks
+- For: alternate Warcraft history, temporal espionage, causality puzzles
+
 **warhammer-fantasy.md** — IRON LAW (The Old World):
 - Three Forces (Order/Corruption/Decay), Push
 - Condition/HP bridge, Faction Drift
@@ -293,6 +292,7 @@ Quality rating based on: unique mechanics, central pressure, internal coherence,
 | dark-souls | Telegraph System + Hollowing Track. Kingdom/Boss/Enemy generators. Five campaign frameworks. Every cycle unique. |
 | disco-elysium | 24 skills-as-inner-voices. Thought Cabinet / Ideology / Copotype interlock. 10 districts, case generators, replayable detective noir. |
 | vtm | Three Currencies (Hunger/Humanity/Willpower), Push, Beast Voice × Humanity matrix, Night Cycle, 8 generators. |
+| warcraft-timeways | Timeline Ledger — 12 Anchors with hidden Fate Seeds and deterministic cascades; Exposure vs Instability separates being noticed from breaking history. |
 | warhammer-fantasy | IRON LAW. Three Forces (Order/Corruption/Decay), Push, Condition/HP bridge, Drift, Path of Blood/Hunger. |
 | warhammer-40k | IRON WILL. Mission Board + Theater Board make operations the engine; asymmetric Control/Warp/Entropy and Scar Adaptation turn authority, corruption, attrition, and survival into distinct long-term costs. |
 | deadlands | The Deal — every power feeds the Reckoners you fight; Fear/Dominion/Backlash clocks create inescapable Faustian tension across five arcane traditions. |
